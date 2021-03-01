@@ -1,0 +1,71 @@
+body {
+  padding: 100px 0 0 0px;
+  font-size: 18px;
+  height: 300vh; }
+
+.slider {
+  width: 750px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative; }
+  .slider img {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s; }
+    .slider img.active {
+      opacity: 1; }
+
+.controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .controls button {
+    margin: 0 10px; }
+
+.clickme {
+  margin: 0 auto;
+  display: block; }
+
+.wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .wrap--open {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+
+.modal {
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  padding: 20px;
+  position: relative;
+  z-index: 1; }
+
+.test::before {
+  content: attr(title); }

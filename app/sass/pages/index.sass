@@ -1,0 +1,85 @@
+@import "../var.sass"
+
+.big
+	padding-top: 24px
+	+xs
+		padding-top: 16px
+	.container
+		+flex(0,0,center,0)
+		+sm
+			justify-content: space-between
+		+xxs
+			flex-direction: column
+			align-items: center
+	&__wrap
+		position: relative
+		+hover
+			text-decoration: none
+			.big__thumb
+				transform: scale(1.01)
+				opacity: .7
+		&:not(:last-child)
+			margin-right: 50px
+			+xs
+				margin-right: 16px
+			+xxs
+				margin-bottom: 16px
+				margin-right: 0
+
+	&__thumb
+		display: block
+		width: 100%
+		max-width: 785px
+		+tran(all,.4s)
+		+md
+			max-width: 375px
+		+xs
+			max-width: 100%
+	&__title
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 16%
+		+flex(0,0,center,center)
+		+text(32,300,48,0)
+		+md			
+			font-size: 20px
+		+xs
+			font-size: 18px
+		+xxs
+			font-size: 32px
+	+xxs
+		flex-direction: column
+		align-items: center
+
+.latest
+	padding-top: 60px
+	+xs
+		padding-top: 32px
+
+.brands
+	padding-top: 84px
+	+xs
+		padding-top: 48px
+	&__list
+		padding-bottom: 24px
+		width: 100%
+	&__item
+		width: 148px
+		height: 148px
+		margin: 0 auto
+		+flex(0,0,0,center)
+		img
+			display: block
+			filter: grayscale(1)
+			margin: 0 auto
+			max-height: 100px
+			object-fit: contain
+			+tran(all,.2s)
+		+hover
+			img
+				filter: none
+				transform: scale(1.15)
+
+

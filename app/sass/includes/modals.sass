@@ -1,0 +1,79 @@
+@import "../var.sass"
+
+
+
+
+.modal
+  opacity: 0
+  pointer-events: none
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: $color-overlay
+  z-index: 400
+  +flex(0,0,center,center)
+  +tran(all,.4s)
+  &__close
+    position: absolute
+    top: 20px
+    right: 20px
+  &__win
+    width: 100%
+    max-width: 576px
+    background: $color-popup
+    border-radius: 32px
+    padding: 32px 0
+    text-align: center
+    position: relative
+    opacity: 0
+    transform: translateX(-50px)
+    +tran(all,.2s)
+  &__form
+    padding: 32px 48px 0 48px
+    border-top: 1px solid #EDEDED
+  &__title
+    margin-bottom: 32px
+    padding: 0 43px
+    &--left
+      text-align: left
+      margin-bottom: 16px
+  &__subtitle
+    padding: 0 43px
+    text-align: left
+    margin-bottom: 16px
+    +text(16,400,24,0)
+  &__accept
+    margin: 16px -16px 0 -16px
+    label
+      a
+        color: $color-primary
+
+
+  &Auth
+    &__row
+      padding: 0 16px 16px 21px
+      +flex(0,0,space-between,center)
+    &__register
+      margin: 8px 0
+      font-weight: 700
+  
+  &Check
+    .modal__subtitle
+      margin-bottom: 0
+      .btn--dashed
+        font-size: 16px
+  
+  &SuccessPass
+    .modal__subtitle
+      margin-bottom: 0
+
+  &--open
+    opacity: 1
+    pointer-events: auto
+    .modal__win
+      transform: none
+      opacity: 1      
+      +tran(all,.4s)
+      transition-delay: .4s

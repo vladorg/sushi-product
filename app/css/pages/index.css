@@ -1,0 +1,147 @@
+.big {
+  padding-top: 24px; }
+  @media (max-width: 768px) {
+    .big {
+      padding-top: 16px; } }
+  .big .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media (max-width: 992px) {
+      .big .container {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
+    @media (max-width: 500px) {
+      .big .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; } }
+  .big__wrap {
+    position: relative; }
+    .big__wrap:hover {
+      text-decoration: none; }
+      .big__wrap:hover .big__thumb {
+        -webkit-transform: scale(1.01);
+            -ms-transform: scale(1.01);
+                transform: scale(1.01);
+        opacity: .7; }
+    .big__wrap:not(:last-child) {
+      margin-right: 50px; }
+      @media (max-width: 768px) {
+        .big__wrap:not(:last-child) {
+          margin-right: 16px; } }
+      @media (max-width: 500px) {
+        .big__wrap:not(:last-child) {
+          margin-bottom: 16px;
+          margin-right: 0; } }
+  .big__thumb {
+    display: block;
+    width: 100%;
+    max-width: 785px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+    @media (max-width: 1199px) {
+      .big__thumb {
+        max-width: 375px; } }
+    @media (max-width: 768px) {
+      .big__thumb {
+        max-width: 100%; } }
+  .big__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 16%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 48px; }
+    @media (max-width: 1199px) {
+      .big__title {
+        font-size: 20px; } }
+    @media (max-width: 768px) {
+      .big__title {
+        font-size: 18px; } }
+    @media (max-width: 500px) {
+      .big__title {
+        font-size: 32px; } }
+  @media (max-width: 500px) {
+    .big {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.latest {
+  padding-top: 60px; }
+  @media (max-width: 768px) {
+    .latest {
+      padding-top: 32px; } }
+
+.brands {
+  padding-top: 84px; }
+  @media (max-width: 768px) {
+    .brands {
+      padding-top: 48px; } }
+  .brands__list {
+    padding-bottom: 24px;
+    width: 100%; }
+  .brands__item {
+    width: 148px;
+    height: 148px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .brands__item img {
+      display: block;
+      -webkit-filter: grayscale(1);
+              filter: grayscale(1);
+      margin: 0 auto;
+      max-height: 100px;
+      -o-object-fit: contain;
+         object-fit: contain;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+    .brands__item:hover img {
+      -webkit-filter: none;
+              filter: none;
+      -webkit-transform: scale(1.15);
+          -ms-transform: scale(1.15);
+              transform: scale(1.15); }

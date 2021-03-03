@@ -1,0 +1,298 @@
+@import "var.sass"
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  vertical-align: baseline
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+  display: block
+ol, ul
+  list-style: none
+blockquote, q
+  quotes: none
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: ''
+  content: none
+table
+  border-collapse: collapse
+  border-spacing: 0
+*
+  box-sizing: border-box
+  &:target, &:focus, &:active
+    border: none
+    outline: none
+body
+  font-size: $fz
+  font-weight: $fw
+  font-family: $ff
+  overflow-x: hidden
+  min-height: 300vh
+  background: $color_body
+  //background: grey
+button
+  font-family: $ff
+img
+  max-width: 100%
+  height: auto
+a
+  text-decoration: none
+  color: $color-text
+  +hover
+    text-decoration: underline
+
+
+
+
+
+
+
+
+.btn
+  border: 0
+  padding: 0
+  background: none
+  cursor: pointer
+  &--primary
+    display: block
+    width: 100%
+    padding: 19px 0
+    text-align: center
+    border-radius: 32px
+    background: $color-primary
+    +text(18,600,26,#fff)
+    +tran(all,.2s)
+    +hover
+      background: $color-primary-hover
+      text-decoration: none
+  &--dashed
+    border-bottom: 1px dashed #000
+    +text(14,400,24,#000)
+    +tran(all,.2s)
+    +hover
+      border-color: $transparent
+
+
+
+.title
+  +text(32,700,40,$color_text)
+.heading
+  +text(24,700,32,$color_text) 
+.container
+  width: $container
+  margin: 0 auto
+  +break(1600)
+    width: 95%
+
+
+
+
+.tooltip
+  display: inline-block
+  position: relative
+  &__wrap
+    opacity: 0
+    pointer-events: none
+    position: absolute
+    width: 443px
+    border-radius: 4px
+    +tran(all,.4s)
+    +text(14,400,24,#333)
+  &__content
+    background: $color-tooltip-content
+    padding: 24px 32px
+  &__pick
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    background: $color-tooltip-picker
+    line-height: 1
+    margin-left: 5px
+    position: relative
+    +text(14,0,0,#555)
+    +flex(0,0,center,center)
+    +tran(all,.2s)
+  &--dropBottom
+    .tooltip__wrap
+      top: 50%
+      right: -15px
+      padding-top: 125%
+      +before
+        position: absolute
+        top: 15px
+        right: 15px
+        border-right: 9px solid $transparent
+        border-bottom: 18px solid $color-tooltip-content
+        border-left: 9px solid $transparent
+  
+  +hover
+    .tooltip__pick
+      background: $color-primary-hover
+      color: #fff
+    .tooltip__wrap
+      opacity: 1
+      pointer-events: auto
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+.no-scroll
+  overflow-y: hidden
+  padding-right: 16px
+  .header--fix
+    padding-right: 16px
+
+
+  
+
+.scroll
+  &::-webkit-scrollbar
+    display: block
+    width: 2px
+    background: $transparent
+  &::-webkit-scrollbar-thumb
+    background: $color-primary    
+  &--radius
+    &::-webkit-scrollbar-track
+      margin-top: 10px
+      margin-bottom: 20px
+
+
+
+.field
+  margin-bottom: 16px
+  +last
+    margin-bottom: 0
+
+
+
+.input
+  width: 100%
+  background: $color-input
+  padding: 16px 0 16px 16px
+  border: 0
+  border-radius: 32px
+  +text(14,400,24,0)
+  &::-webkit-input-placeholder
+    color: $color-placeholder
+    +sm
+      font-size: 12px
+  &::-moz-placeholder
+    color: $color-placeholder
+    +sm
+      font-size: 12px
+  &:-moz-placeholder
+    color: $color-placeholder
+    +sm
+      font-size: 12px
+  &:-ms-input-placeholder
+    color: $color-placeholder
+    +sm
+      font-size: 12px
+
+
+.checkbox
+  position: relative
+  label
+    position: relative
+    cursor: pointer
+    +text(14,400,24,#000)
+    +flex(0,0,flex-start,center)
+    +before
+      display: block
+      width: 21px
+      height: 21px
+      border: 1px solid #E4E4E4
+      background: #fff
+      margin-right: 16px
+      box-sizing: border-box
+    +after
+      position: absolute
+      top: 4px
+      left: 2px
+      width: 18px
+      height: 15px
+      opacity: 0
+      background: url('../img/icons.png') -551px -5px no-repeat
+      +tran(all,.2s)
+  input
+    position: absolute
+    top: 0
+    left: 0
+    pointer-events: none
+    opacity: 0
+    &:checked
+      + label
+        +after
+          opacity: 1
+      
+
+
+.placeholder
+  &::-webkit-input-placeholder
+    +text(14,400,24,#564040)
+  &::-moz-placeholder
+    +text(14,400,24,#564040)
+  &:-moz-placeholder
+    +text(14,400,24,#564040)
+  &:-ms-input-placeholder
+    +text(14,400,24,#564040)
+
+
+    
+// @-moz-document url-prefix()
+// .scroll
+//   scrollbar-color: #fff rgba(0,0,0,0)
+//   scrollbar-width: thin
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes header
+  from
+    transform: translateY(-100%)
+  to
+    transform: translateY(0)
+
+// @keyframes progLine
+//   from
+//     opacity: 0
+//   to
+//     opacity: 1
+
+// @keyframes progCircle
+//   from
+//     opacity: 0
+//   to
+//     opacity: 1

@@ -10,7 +10,8 @@ uglifyjs = require('gulp-uglifyjs'),
 concat = require('gulp-concat'),             
 rename = require('gulp-rename'),           
 htmlmin = require('gulp-htmlmin'),      
-htmlreplace = require('gulp-html-replace');
+htmlreplace = require('gulp-html-replace'), 
+babel = require('gulp-babel');
 
 
 
@@ -22,8 +23,6 @@ gulp.task('sass', function() {
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}))
 });
-
-
 
 gulp.task('scripts', function() {
 	return gulp.src(['app/js/main.js', 'app/libs/**/*.js'])
@@ -94,6 +93,7 @@ gulp.task('buildCss', function() {
 gulp.task('buildJs', function() {
 	return gulp.src('app/js/**/*.js', '!app/js/**/*.min.js')
 	.pipe(concat('main.js'))
+	.pipe(babel({ "presets": ["@babel/preset-env"] }))
 	.pipe(gulp.dest('dist/js'))
 	.pipe(uglifyjs())
 	.pipe(rename({suffix: '.min'}))
@@ -111,7 +111,7 @@ gulp.task('b', gulp.parallel('clean', 'img', 'buildHtml', 'buildCss', 'buildJs',
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
-	gulp.watch(['app/js/main.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
+	gulp.watch(['app/js/**/*.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
 });
 
 

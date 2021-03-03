@@ -1,0 +1,525 @@
+@import "../var.sass"
+
+
+.header
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+
+
+  // header toolbar
+  &__top
+    background: $color-toolbar
+  &__toolbar
+    padding: 4px 0
+    +flex(0,0,flex-start,center)      
+  &__contacts
+    margin-right: 80px
+    +flex(0,0,space-between,center)
+    +break(1366)
+      margin-right: 40px
+    +sm
+      margin-right: 24px
+    a
+      +flex(0,0,flex-start,center)
+      +text(14,400,24,$color-text-white)
+      +before
+        margin-right: 9px
+      &:not(:last-child)
+        margin-right: 37px
+        +break(1366)
+          margin-right: 20px
+        +sm
+          margin-right: 10px
+      +hover
+        text-decoration: underline
+      +md
+        font-size: 12px
+      +sm
+        font-size: 10px
+  &__links
+    +flex(0,0,space-between,center)
+    li
+      &:not(:last-child)
+        margin-right: 32px
+        +md
+          margin-right: 16px
+        +sm
+          margin-right: 8px
+      &:nth-child(1n + 4)
+        +md
+          display: none
+      a
+        +text(14,400,24,$color-text-white)
+        +hover
+          text-decoration: underline
+        +md
+          font-size: 12px
+        +sm
+          font-size: 10px
+  &__languages
+    margin-left: auto
+    margin-right: 97px
+    +flex(0,0,space-between,center)
+    +text(14,600,24,0)
+    +break(1366)
+      margin-right: 50px
+    +md
+      font-size: 12px
+      margin-right: 25px
+    +sm
+      font-size: 10px
+      margin-right: 20px
+  &__lang
+    border-radius: 4px
+    color: #8b8d8f
+    padding: 0 4px
+    +hover
+      text-decoration: underline
+    &:not(:last-child)
+      margin-right: 5px
+    &--active
+      background: $color-primary
+      color: #fff
+      +hover
+        text-decoration: none
+  &__socials
+    +flex(0,0,space-between,center)
+    a
+      width: 20px
+      height: 20px
+      background: $color-primary
+      border-radius: 5px 0 5px 0
+      +flex(0,0,center,center)
+      +tran(all,.2s)
+      &:not(:last-child)
+        margin-right: 20px
+        +sm
+          margin-right: 5px
+      +hover
+        background: $color-primary-hover
+  
+  
+  //header center and bottom wrapper
+  &__inner
+    background: #fff
+    padding: 24px 0
+    +sm
+      padding: 16px 0
+
+
+  // header center area
+  &__center
+    +flex(0,0,flex-start,center)
+  &__logo
+    img
+      display: block
+      width: 234px
+      height: auto
+      object-fit: contain
+      +sm
+        width: 160px
+  &__search
+    width: 100%
+    max-width: 644px
+    position: relative
+    margin-left: 125px
+    +break(1600)
+      max-width: 530px
+      margin-left: 60px
+    +break(1366)
+      max-width: 425px
+      margin-left: 45px
+    +sm
+      max-width: 300px
+    label
+      position: absolute
+      top: 50%
+      left: 18px
+      transform: translateY(-50%)
+      +sm
+        left: 10px
+    input
+      width: 100%
+      padding: 10px 0 10px 55px
+      border-radius: 24px
+      background: rgba(238, 238, 238, 0.9)
+      border: 0
+      +text(14,400,24,0)
+      +sm
+        padding: 5px 0 5px 35px
+        font-size: 12px
+    button
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 152px
+      background: $color-primary
+      border-radius: 0px 24px 24px 0px
+      +text(14,600,24,#fff)
+      +tran(all,.2s)
+      +hover
+        background: $color-primary-hover
+      +break(1366)
+        width: 75px
+      +sm
+        width: 60px
+        font-size: 12px
+  &__tools
+    margin-left: auto
+    +flex(0,0,space-between,center)
+  &__tool
+    padding-left: 45px
+    position: relative
+    max-width: 150px
+    cursor: pointer
+    +break(1600)
+      max-width: 130px
+    +md
+      width: 24px
+      height: 24px
+    +before
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+    &:not(:last-child)
+      margin-right: 23px
+      +break(1600)
+        margin-right: 10px
+      +md
+        margin-right: 20px
+    &--auth
+      padding-left: 40px
+      a
+        display: block
+        +text(14,600,16,0)
+        +md
+          font-size: 0
+  &__toolName
+    +text(12,400,20,0)
+    +md
+      display: none
+  &__toolCount
+    background: $color-sup
+    border-radius: 8px
+    padding: 2px 6px
+    +text(14,700,20,#fff)
+    +md
+      font-size: 0
+      position: absolute
+      top: -10px
+      right: 7px
+      width: 20px
+      height: 20px
+      padding: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 50%
+    span
+      +md
+        font-size: 14px
+
+
+
+  // cart and wish drops
+  &Dropdown
+    opacity: 0
+    pointer-events: none
+    transform: translateY(30px)
+    position: absolute
+    width: 392px
+    top: calc(100% + 20px)
+    right: 0
+    background: #fff
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    padding: 2px 0 0 0
+    z-index: 100
+    +tran(all,.2s)
+    &__items
+      max-height: 293px
+      overflow: auto
+      box-shadow: inset 0 -5px 15px -15px black
+    &__item
+      padding: 16px 52px 16px 24px
+      position: relative
+      +flex(0,0,space-between,flex-start)
+      &:not(:last-child)
+        border-bottom: 1px solid #EDEDED
+    &__thumb
+      width: 74px
+      height: 74px
+      object-fit: contain
+      display: block
+      border: 1px solid #EDEDED
+      padding: 5px
+    &__caption
+      margin-left: 16px
+    &__name
+      display: block
+      max-width: 224px
+      max-height: 48px
+      overflow: hidden
+      text-overflow: ellipsis
+      +text(14,400,24,0)
+    &__price
+      +text(16,600,0,0)
+    &__del
+      position: absolute
+      top: 16px
+      right: 24px
+    &__bottom
+      padding: 20px 24px 16px 24px
+    &__total
+      margin-bottom: 16px
+      +text(16,400,21,0)
+      &--noCommerce
+        color: $color-sup
+      &--commerce
+        +flex(0,0,space-between,center)
+    .btn--dashed
+      margin: 8px auto 0 auto
+      display: block
+    &--open
+      opacity: 1
+      pointer-events: auto
+      transform: none
+  
+
+  // header bottom area
+  &__bottom
+    padding: 24px 0 0 0
+    position: relative
+    +flex(0,0,flex-start,center)
+    +sm
+      padding: 16px 0 0 0
+  &__nav
+    margin-left: 125px
+    +flex(0,0,flex-start,center)
+    +break(1600)
+      margin-left: 60px
+    +break(1366)
+      margin-left: 45px
+    li
+      &:not(:last-child)
+        margin-right: 32px
+        +sm
+          margin-right: 24px
+      a
+        +text(18,400,16,$color_text)
+        +md
+          font-size: 14px
+
+  
+  // header catalog
+  .catalog
+    width: 234px
+    +sm
+      width: 160px
+    +before
+      position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 200
+      background: $color-overlay
+      opacity: 0
+      pointer-events: none
+      +tran(all,.2s)
+    &__btn
+      padding: 12px 0
+      position: relative
+      z-index: 300
+      +text(16,700,24,0)
+      +flex(0,0,center,center)
+      +before
+        margin-right: 10px
+        +tran(transform,.2s)
+      +sm
+        padding: 6px 0
+        font-size: 14px
+    
+    &__wrap
+      position: absolute
+      top: calc( 100% + 10px )
+      left: 0
+      right: 0
+      z-index: 300
+      background: $color-catalog
+      border-radius: 16px
+      padding: 13px
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+      opacity: 0
+      pointer-events: none
+      transform: translateY(30px)
+      +tran(all,.4s)
+      +flex(0,0,space-between,0)
+      +break(1600)
+        //display: none
+
+    &__menu
+      width: 100%
+      padding: 0 0 0 10px
+      +flex(0,0,space-between,0)
+    &__products
+      width: calc(280px * 3 + 18px)
+      height: 100%
+      align-content: flex-start
+      +flex(0,wrap,space-between,flex-start)
+      +break(1600)
+        width: 100%
+    &__child
+      opacity: 0
+      pointer-events: none
+      overflow: hidden
+      position: absolute
+      top: 100%
+      left: 0
+      right: 0
+      background: $color-catalog-child
+      padding: 16px 16px 19px 16px
+      z-index: 1
+      +tran(all,.4s)
+    &__link
+      margin-bottom: 11px
+      padding: 13px 36px 0 16px
+      position: relative
+      width: 280px
+      +break(1600)
+        width: 33%
+      +break(1366)
+        width: 49%
+      +md
+        padding-top: 5px
+      a
+        +md
+          font-size: 14px
+      ul
+        li
+          &:not(:last-child)
+            margin-bottom: 16px
+          a
+            +text(16,400,24,0)
+            +md
+              font-size: 12px
+      +hover
+        > a
+          color: $color-primary
+          text-shadow: 0 0 1px #fa4616
+          text-decoration: none
+        .catalog__child
+          opacity: 1
+          pointer-events: auto        
+      &--parent
+        position: relative
+        +tran(all,.4s)
+        +before
+          width: 10px
+          height: 2px
+          background: $color-primary
+          position: absolute
+          top: 23px
+          right: 23px
+          transform: rotate(40deg)
+          border-radius: 10px
+          +tran(all,.2s)
+          +md
+            top: 16px
+        +after
+          width: 10px
+          height: 2px
+          background: $color-primary
+          position: absolute
+          top: 23px
+          right: 16px
+          transform: rotate(-40deg)
+          border-radius: 10px
+          +tran(all,.2s)
+          +md
+            top: 16px
+        +hover
+          background: $color-catalog-child
+          +before
+            transform: rotate(-40deg)
+          +after
+            transform: rotate(40deg)
+    &__pages
+      margin: 0 32px
+      .catalog__link
+        width: 100%
+    &__bannerWrap
+      +sm
+        display: none
+    &__banner
+      max-width: 300px
+      display: block
+      +md
+        max-width: 210px
+    
+    &--open
+      +before
+        opacity: 1
+        pointer-events: auto
+        transition-delay: .2s
+      .catalog__wrap
+        opacity: 1
+        pointer-events: auto
+        transform: none
+        transition-delay: .4s
+      .catalog__btn
+        background: $color-primary-hover
+        +before
+          transform: rotate(180deg)
+
+  
+
+  // header versions
+  &--opacity
+    .header__inner
+      background: $transparent
+  &--fix
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    animation: header .1s linear, fadeIn .4s linear
+    .header__inner
+      background: #fff
+    .header__logo, .header__nav, .header__top
+      display: none
+    .header__inner
+      .container
+        position: relative
+        +flex(row-reverse,0,space-between,center)
+      .header__center
+        width: 100%
+      .header__bottom
+        position: static
+        padding-top: 0
+      .header__search
+        max-width: 726px
+        margin-left: 102px
+        +break(1600)
+          max-width: 530px
+          margin-left: 60px
+        +break(1366)
+          max-width: 425px
+          margin-left: 45px
+        +sm
+          max-width: 300px
+
+
+
+.cart
+  &--noCommerce
+    .headerDropdown__price
+      display: none
+  &__price
+    font-weight: 600
+
+.wishlist
+  &--noCommerce
+    .headerDropdown__price
+      display: none

@@ -46,6 +46,11 @@ body
   min-height: 300vh
   background: $color_body
   //background: grey
+  &::-webkit-scrollbar
+    width: 3px
+    background: $transparent
+  &::-webkit-scrollbar-thumb
+    background: $color-primary
 button
   font-family: $ff
 img
@@ -56,13 +61,6 @@ a
   color: $color-text
   +hover
     text-decoration: underline
-
-
-
-
-
-
-
 
 .btn
   border: 0
@@ -88,20 +86,15 @@ a
     +hover
       border-color: $transparent
 
-
-
 .title
   +text(32,700,40,$color_text)
 .heading
-  +text(24,700,32,$color_text) 
+  +text(24,700,32,$color_text)
 .container
   width: $container
   margin: 0 auto
   +break(1600)
-    width: 95%
-
-
-
+    width: 92%
 
 .tooltip
   display: inline-block
@@ -140,7 +133,7 @@ a
         border-right: 9px solid $transparent
         border-bottom: 18px solid $color-tooltip-content
         border-left: 9px solid $transparent
-  
+
   +hover
     .tooltip__pick
       background: $color-primary-hover
@@ -149,29 +142,13 @@ a
       opacity: 1
       pointer-events: auto
 
-  
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
 .no-scroll
   overflow-y: hidden
-  padding-right: 16px
+  padding-right: 3px
   .header--fix
-    padding-right: 16px
-
-
-  
+    //padding-right: 3px
+  .banner
+    margin-right: 3px
 
 .scroll
   &::-webkit-scrollbar
@@ -179,28 +156,33 @@ a
     width: 2px
     background: $transparent
   &::-webkit-scrollbar-thumb
-    background: $color-primary    
+    background: $color-primary
   &--radius
     &::-webkit-scrollbar-track
       margin-top: 10px
       margin-bottom: 20px
 
-
+.fields
+  +flex(0,0,space-between,flex-start)
+  &--two
+    .field
+      width: 48%
 
 .field
   margin-bottom: 16px
   +last
     margin-bottom: 0
 
-
-
-.input
+.input, .textarea
   width: 100%
   background: $color-input
   padding: 16px 0 16px 16px
   border: 0
   border-radius: 32px
+  +tran(all,.4s)
   +text(14,400,24,0)
+  &--err
+    box-shadow: 0 0 3px 0px $color-input-error
   &::-webkit-input-placeholder
     color: $color-placeholder
     +sm
@@ -218,6 +200,9 @@ a
     +sm
       font-size: 12px
 
+.textarea
+  resize: none
+  height: 96px
 
 .checkbox
   position: relative
@@ -253,8 +238,6 @@ a
       + label
         +after
           opacity: 1
-      
-
 
 .placeholder
   &::-webkit-input-placeholder
@@ -266,8 +249,6 @@ a
   &:-ms-input-placeholder
     +text(14,400,24,#564040)
 
-
-    
 // @-moz-document url-prefix()
 // .scroll
 //   scrollbar-color: #fff rgba(0,0,0,0)
@@ -285,14 +266,28 @@ a
   to
     transform: translateY(0)
 
-// @keyframes progLine
-//   from
-//     opacity: 0
-//   to
-//     opacity: 1
-
-// @keyframes progCircle
-//   from
-//     opacity: 0
-//   to
-//     opacity: 1
+.arrow
+  +before
+    width: 10px
+    height: 2px
+    background: $color-primary
+    position: absolute
+    top: 23px
+    right: 23px
+    transform: rotate(40deg)
+    border-radius: 10px
+    +tran(all,.2s)
+    +md
+      top: 16px
+  +after
+    width: 10px
+    height: 2px
+    background: $color-primary
+    position: absolute
+    top: 23px
+    right: 16px
+    transform: rotate(-40deg)
+    border-radius: 10px
+    +tran(all,.2s)
+    +md
+      top: 16px

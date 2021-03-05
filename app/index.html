@@ -6,11 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- build:css -->
   <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
 </head>
 
 <body>
-  <header class="header">
+  <header class="header header--opacity">
     <div class="header__top">
       <div class="container header__toolbar">
         <div class="header__contacts">
@@ -19,7 +22,7 @@
         </div>
         <ul class="header__links">
           <li><a href="/delivery.html">Оплата і доставка</a></li>
-          <li><a href="#">Передзвоніть мені</a></li>
+          <li><a href="#" class="open_callback">Передзвоніть мені</a></li>
           <li><a href="/reviews.html">Відгуки</a></li>
         </ul>
         <div class="header__languages">
@@ -38,7 +41,8 @@
       <div class="container">
         <div class="header__center">
           <a href="/" class="header__logo">
-            <img src="img/logo.svg" alt="Logo">
+            <img src="img/logo.svg" class="header__logoDefault" alt="Logo">
+            <img src="img/logo-white.svg" class="header__logoWhite" alt="Logo">
           </a>
           <form action="#" class="header__search">
             <label class="ic-search" for="header_search"></label>
@@ -48,13 +52,24 @@
           </form>
           <div class="header__tools">
 
-            <div class="header__tool header__tool--auth ic-user open_auth">
-              <a href="#">Особистий кабінет</a>
+            <div class="header__tool header__tool--auth header__tool--logged ic-user open_logged">
+              <a href="#" class="arrow">Особистий кабінет</a>
+              <!-- <div class="header__tool header__tool--auth ic-user open_auth">
+              <a href="#">Особистий кабінет</a> -->
+              <div class="headerDropdown logged">
+                <ul>
+                  <li><a href="/account.html">Личная информация</a></li>
+                  <li><a href="/wishlist.html">Список избранного</a></li>
+                  <li><a href="/orders.html">История заказов</a></li>
+                  <li><a href="/bonus.html">Мій бонусний рахунок</a></li>
+                  <li><a href="#">Выйти из аккаунта</a></li>
+                </ul>
+              </div>
             </div>
 
+            <button class="btn ic-search-big header__searchMobile"></button>
 
-
-            <div class="header__tool open_wish ic-heart">
+            <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
               <div class="header__toolCount"><span>5</span> товаров</div>
               <div class="headerDropdown wishlist wishlist--noCommerce">
@@ -120,7 +135,9 @@
               </div>
             </div>
 
-            <div class="header__tool open_cart ic-cart">
+            <div class="header__tool header__tool--cart open_cart ic-cart" data-link="/cart.html">
+              <!-- data-link value is required for redirecting to cart page on mobile devices -->
+
               <div class="header__toolName">В кошику</div>
               <div class="header__toolCount"><span>0</span> товаров</div>
               <!-- if no commerce ? addclass cart--noCommerce -->
@@ -208,6 +225,8 @@
               </div>
             </div>
 
+            <button class="btn ic-burger header__burger"></button>
+
           </div>
         </div>
         <div class="header__bottom">
@@ -219,7 +238,7 @@
                   <li class="catalog__link">
                     <a href="/category.html">Бакалея</a>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="/category.html">Мука и панировка</a>
                     <ul class="catalog__child">
                       <li>
@@ -233,7 +252,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="/category.html">Водоросли и грибы</a>
                     <ul class="catalog__child">
                       <li>
@@ -256,7 +275,7 @@
                   <li class="catalog__link">
                     <a href="/category.html">Уксус</a>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="/category.html">Икра</a>
                     <ul class="catalog__child">
                       <li>
@@ -270,7 +289,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="/category.html">Лапша</a>
                     <ul class="catalog__child">
                       <li>
@@ -290,7 +309,7 @@
                   <li class="catalog__link">
                     <a href="/category.html">Рис</a>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="/category.html">Рыба</a>
                     <ul class="catalog__child">
                       <li>
@@ -333,7 +352,7 @@
                   <li class="catalog__link">
                     <a href="#">Актуальное</a>
                   </li>
-                  <li class="catalog__link catalog__link--parent">
+                  <li class="catalog__link catalog__link--parent arrow">
                     <a href="#">Подборки</a>
                     <ul class="catalog__child">
                       <li>
@@ -374,15 +393,53 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
   </header>
+
+  <section class="banner">
+    <div class="banner__slider">
+      <div class="banner__slides swiper-wrapper">
+        <div class="banner__slide swiper-slide">
+          <img src="img/banners/main.jpg" alt="">
+          <div class="banner__caption">
+            <div class="banner__title">Лучший ассортимент продуктов для HoReCa</div>
+            <a href="/link1" class="btn btn--primary banner__link">В каталог</a>
+          </div>
+        </div>
+        <div class="banner__slide swiper-slide">
+          <img src="img/banners/main2.jpg" alt="">
+          <div class="banner__caption">
+            <div class="banner__title">Lorem ipsum dolor sit amet consectetur.</div>
+            <a href="/link2" class="btn btn--primary banner__link">Перейти</a>
+          </div>
+        </div>
+        <div class="banner__slide swiper-slide">
+          <img src="img/banners/main.jpg" alt="">
+          <div class="banner__caption">
+            <div class="banner__title">Лучший ассортимент продуктов для HoReCa</div>
+            <a href="/link3" class="btn btn--primary banner__link">Узнать подробнее</a>
+          </div>
+        </div>
+        <div class="banner__slide swiper-slide">
+          <img src="img/banners/main2.jpg" alt="">
+          <div class="banner__caption">
+            <div class="banner__title">Lorem ipsum dolor sit amet consectetur.</div>
+            <a href="/link4" class="btn btn--primary banner__link">Вперед</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="banner__dots swiper-pagination"></div>
+    </div>
+
+    <!-- static window for contain slides info -->
+    <div class="banner__captions">
+      <div class="banner__caption">
+        <div class="banner__title banner__title--anim">Лучший ассортимент продуктов для HoReCa</div>
+        <a href="#" class="btn btn--primary banner__link banner__link--anim">В каталог</a>
+      </div>
+    </div>
+
+  </section>
 
 
 
@@ -406,10 +463,10 @@
       <div class="modal__title heading">Вхiд в особистий кабiнет</div>
       <form action="#" class="modal__form">
         <div class="field">
-          <input type="email" class="input" name="email" placeholder="E-mail*">
+          <input type="email" class="input input" name="email" placeholder="E-mail*">
         </div>
         <div class="field">
-          <input type="password" class="input" name="password" placeholder="Пароль*">
+          <input type="password" class="input input" name="password" placeholder="Пароль*">
         </div>
         <div class="modalAuth__row">
           <div class="checkbox">
@@ -483,7 +540,6 @@
     </div>
   </div>
 
-
   <!-- register -->
   <div class="modal modalRegister">
     <div class="modal__win">
@@ -523,11 +579,116 @@
     </div>
   </div>
 
+  <!-- ask question -->
+  <div class="modal modalAsk">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште питання</div>
+      <div class="modal__subtitle">Залиште ваші контактні дані і питання. Наш менеджер зв'яжеться з вами в найкоротші
+        терміни!</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Реєстрація</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="ask_accept" required>
+            <label for="ask_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add review -->
+  <div class="modal modalReview">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+      <div class="modal__subtitle">є питання по обслуговуванню або є запитання? Залишіть свій відгук! Ваше помiдомлення
+        потрапить вiдразу до дирекотра “Сушi Продукт” !</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Реєстрація</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="review_accept" required>
+            <label for="review_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- callback -->
+  <div class="modal modalCallback">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Замовити дзвiнок</div>
+      <div class="modal__subtitle">Є питання по обслуговуванню або є запитання? Залишіть свій номер телефону, i ми
+        обов'язково вам зателефонуємо!</div>
+      <form action="#" class="modal__form">
+        <div class="field">
+          <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Коментар"></textarea>
+        </div>
+        <button class="btn btn--primary">Надiслати</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="callback_accept" required>
+            <label for="callback_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
 
 
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- build:js -->
   <script src="js/main.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>

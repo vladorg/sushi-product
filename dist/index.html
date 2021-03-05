@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
 </head>
 
 <body>
-  <header class="header">
+  <header class="header header--opacity">
     <div class="header__top">
       <div class="container header__toolbar">
         <div class="header__contacts">
@@ -19,7 +20,7 @@
         </div>
         <ul class="header__links">
           <li><a href="/delivery.html">Оплата і доставка</a></li>
-          <li><a href="#">Передзвоніть мені</a></li>
+          <li><a href="#" class="open_callback">Передзвоніть мені</a></li>
           <li><a href="/reviews.html">Відгуки</a></li>
         </ul>
         <div class="header__languages">
@@ -38,7 +39,8 @@
       <div class="container">
         <div class="header__center">
           <a href="/" class="header__logo">
-            <img src="img/logo.svg" alt="Logo">
+            <img src="img/logo.svg" class="header__logoDefault" alt="Logo">
+            <img src="img/logo-white.svg" class="header__logoWhite" alt="Logo">
           </a>
           <form action="#" class="header__search">
             <label class="ic-search" for="header_search"></label>
@@ -48,103 +50,144 @@
           </form>
           <div class="header__tools">
 
-            <div class="header__tool header__tool--auth ic-user">
-              <!-- if logged -->
-              <!-- <a href="/account.html" class="ic-user">Особистий кабінет</a> -->
-              <!-- else -->
-              <a href="#" class="open_auth">Особистий кабінет</a>
-              <!-- endif -->
+            <div class="header__tool header__tool--auth ic-user open_auth">
+              <a href="#">Особистий кабінет</a>
             </div>
 
+            <button class="btn ic-search-big header__searchMobile"></button>
 
-
-            <div class="header__tool open_wish ic-heart">
+            <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
-              <div class="header__toolCount">5 товаров</div>
-              <div class="headerDropdown wishlist">
+              <div class="header__toolCount"><span>5</span> товаров</div>
+              <div class="headerDropdown wishlist wishlist--noCommerce">
                 <div class="headerDropdown__items scroll scroll--radius">
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/1.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
-                      фасоване, 1 кг</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
+                        фасоване, 1 кг</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
+                    <button class="btn ic-trash headerDropdown__del"></button>
+                  </div>
+                  <div class="headerDropdown__item">
+                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
+                    <button class="btn ic-trash headerDropdown__del"></button>
+                  </div>
+                  <div class="headerDropdown__item">
+                    <img src="img/products/1.png" class="headerDropdown__thumb">
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
+                        фасоване, 1 кг</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
+                    <button class="btn ic-trash headerDropdown__del"></button>
+                  </div>
+                  <div class="headerDropdown__item">
+                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
-                  <div class="headerDropdown__total">
-                    Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
-                    <div class="tooltip tooltip--dropBottom">
-                      <div class="tooltip__pick">?</div>
-                      <div class="tooltip__wrap">
-                        <div class="tooltip__content">Додайте обранi товари до кошика та
-                          оформiть замовлення, слiдучи простим крокам.
-                          Пiсля успишного оформлення з Вами зв’яжеться наш менеджер та
-                          повiдомить вам вартiсть замовлення, умови оплати i доставки, i
-                          вiдповiсть на усi запитання.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="/checkout.html" class="btn btn--primary">Перейти до обраного</a>
+                  <a href="/wishlist.html" class="btn btn--primary">Перейти до обраного</a>
                 </div>
               </div>
             </div>
 
-            <div class="header__tool open_cart ic-cart">
+            <div class="header__tool header__tool--cart open_cart ic-cart" data-link="/cart.html">
+              <!-- data-link value is required for redirecting to cart page on mobile devices -->
+
               <div class="header__toolName">В кошику</div>
-              <div class="header__toolCount">0 товаров</div>
-              <div class="headerDropdown cart">
+              <div class="header__toolCount"><span>0</span> товаров</div>
+              <!-- if no commerce ? addclass cart--noCommerce -->
+              <div class="headerDropdown cart cart--noCommerce">
                 <div class="headerDropdown__items scroll scroll--radius">
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/1.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
-                      фасоване, 1 кг</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
+                        фасоване, 1 кг</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/1.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
-                      фасоване, 1 кг</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
+                        фасоване, 1 кг</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb">
-                    <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
-                      60% жиру, 200г</a>
+                    <div class="headerDropdown__caption">
+                      <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
+                        60% жиру, 200г</a>
+                      <div class="headerDropdown__price">589 грн</div>
+                    </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
-                  <div class="headerDropdown__total">
+                  <!-- if no-commerce -->
+                  <div class="headerDropdown__total headerDropdown__total--noCommerce">
                     Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
                     <div class="tooltip tooltip--dropBottom">
                       <div class="tooltip__pick">?</div>
@@ -157,11 +200,19 @@
                       </div>
                     </div>
                   </div>
+                  <!-- else -->
+                  <!-- <div class="headerDropdown__total headerDropdown__total--commerce">
+          <div class="cart__total">Разом:</div>
+          <div class="cart__price">838,54 грн</div>
+        </div> -->
+                  <!-- endif -->
                   <a href="/checkout.html" class="btn btn--primary">Оформити замовлення</a>
                   <button class="btn btn--dashed">Перейти до кошика</button>
                 </div>
               </div>
             </div>
+
+            <button class="btn ic-burger header__burger"></button>
 
           </div>
         </div>
@@ -304,7 +355,7 @@
                   </li>
                 </ul>
               </nav>
-              <a href="#">
+              <a href="#" class="catalog__bannerWrap">
                 <img src="img/banners/catalog.jpg" alt="" class="catalog__banner">
               </a>
             </div>
@@ -329,15 +380,20 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
   </header>
+
+  <section class="banner">
+    <div class="banner__slides swiper-wrapper">
+      <div class="banner__slide swiper-slide">
+        <img src="img/banners/main.jpg" alt="">
+      </div>
+      <div class="banner__slide swiper-slide">
+        <img src="img/banners/main.jpg" alt="">
+      </div>
+    </div>
+    <div class="banner__dots swiper-pagination"></div>
+    
+  </section>
 
 
 
@@ -361,10 +417,10 @@
       <div class="modal__title heading">Вхiд в особистий кабiнет</div>
       <form action="#" class="modal__form">
         <div class="field">
-          <input type="email" class="input" name="email" placeholder="E-mail*">
+          <input type="email" class="input input" name="email" placeholder="E-mail*">
         </div>
         <div class="field">
-          <input type="password" class="input" name="password" placeholder="Пароль*">
+          <input type="password" class="input input" name="password" placeholder="Пароль*">
         </div>
         <div class="modalAuth__row">
           <div class="checkbox">
@@ -386,7 +442,6 @@
     </div>
   </div>
 
-
   <!-- forgot password -->
   <div class="modal modalForgot">
     <div class="modal__win">
@@ -407,7 +462,8 @@
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
       <div class="modal__title modal__title--left heading">Скидання паролю</div>
-      <div class="modal__subtitle">На ваш email було вiдправлене посилання на скидання паролю. Якщо посилання не прийшло - перевiрте спам або спробуйте <button class="btn btn--dashed open_reset">вiдправити ще раз</button>.</div>
+      <div class="modal__subtitle">На ваш email було вiдправлене посилання на скидання паролю. Якщо посилання не прийшло
+        - перевiрте спам або спробуйте <button class="btn btn--dashed open_reset">вiдправити ще раз</button>.</div>
     </div>
   </div>
 
@@ -437,7 +493,6 @@
       <div class="modal__subtitle">Пароль успiшно змiнено!</div>
     </div>
   </div>
-
 
   <!-- register -->
   <div class="modal modalRegister">
@@ -478,11 +533,113 @@
     </div>
   </div>
 
+  <!-- ask question -->
+  <div class="modal modalAsk">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште питання</div>
+      <div class="modal__subtitle">Залиште ваші контактні дані і питання. Наш менеджер зв'яжеться з вами в найкоротші
+        терміни!</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Реєстрація</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="ask_accept" required>
+            <label for="ask_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add review -->
+  <div class="modal modalReview">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+      <div class="modal__subtitle">є питання по обслуговуванню або є запитання? Залишіть свій відгук! Ваше помiдомлення потрапить вiдразу до дирекотра “Сушi Продукт” !</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Реєстрація</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="review_accept" required>
+            <label for="review_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- callback -->
+  <div class="modal modalCallback">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Замовити дзвiнок</div>
+      <div class="modal__subtitle">Є питання по обслуговуванню або є запитання? Залишіть свій номер телефону, i ми обов'язково вам зателефонуємо!</div>
+      <form action="#" class="modal__form">
+        <div class="field">
+          <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Коментар"></textarea>
+        </div>
+        <button class="btn btn--primary">Надiслати</button>
+        <div class="modal__accept">
+          <div class="checkbox">
+            <input type="checkbox" name="accept" id="callback_accept" required>
+            <label for="callback_accept"><span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки
+                  персональних даних</a></span></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
 
 
 
-  <script src="js/main.js"></script>
+
+  <script src="js/main.min.js"></script>
+
 </body>
 
 </html>

@@ -1,10 +1,14 @@
 @import "../var.sass"
 
-
 .header
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
   position: relative
   z-index: 100
+  +xs
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
 
   // header toolbar
   &__top
@@ -13,7 +17,7 @@
       display: none
   &__toolbar
     padding: 4px 0
-    +flex(0,0,flex-start,center)      
+    +flex(0,0,flex-start,center)
   &__contacts
     margin-right: 80px
     +flex(0,0,space-between,center)
@@ -99,8 +103,7 @@
           margin-right: 5px
       +hover
         background: $color-primary-hover
-  
-  
+
   //header center and bottom wrapper
   &__inner
     background: #fff
@@ -109,7 +112,7 @@
       padding: 16px 0
     +xs
       padding: 8px 0
-
+      +tran(all,.2s)
 
   // header center area
   &__center
@@ -142,13 +145,19 @@
       max-width: 300px
     +xs
       position: absolute
-      bottom: -100%
-      left: 0
-      right: 0
+      bottom: -40%
+      left: 4%
+      right: 4%
       margin: 0
       max-width: 100%
       opacity: 0
       pointer-events: none
+      width: auto
+      +tran(all,.4s)
+    &--open
+      bottom: -75%
+      opacity: 1
+      pointer-events: auto
     label
       position: absolute
       top: 50%
@@ -183,6 +192,12 @@
       +sm
         width: 60px
         font-size: 12px
+  .open_mobile
+    +tran(all,.2s)
+    transition-delay: .4s
+    &--hidden
+      opacity: 0
+      transition-delay: .8s
 
   // widgets like wishlist, cart
   &__tools
@@ -200,7 +215,7 @@
     max-width: 145px
     cursor: pointer
     +break(1600)
-      max-width: 130px
+      //max-width: 130px
     +xs
       padding-left: 0
     +before
@@ -222,6 +237,8 @@
     // auth link
     &--auth
       padding-left: 40px
+      +md
+        margin-right: 40px !important
       +xs
         display: none
       a
@@ -231,7 +248,7 @@
           text-decoration: none
         +md
           font-size: 0
-    
+
     // auth link when logged
     &--logged
       > a
@@ -239,17 +256,25 @@
           top: 50%
           right: 7px
           transform: rotate(40deg) translateY(-50%)
+          +md
+            right: -2px
         +after
           top: 50%
           right: 0
           transform: rotate(-40deg) translateY(-50%)
+          +md
+            right: -10px
     &.open_logged--opened
       > a
         +before
           right: 6px
           transform: rotate(-40deg) translateY(-50%)
+          +md
+            right: -4px
         +after
           transform: rotate(40deg) translateY(-50%)
+          +md
+            right: -10px
 
     //wishlist link
     &--wish
@@ -263,7 +288,7 @@
     &--cart
       +md
         width: 32px
-        height: 32px 
+        height: 32px
       +xs
         margin: 0 33px 0 38px!important
 
@@ -299,8 +324,6 @@
         font-size: 14px
       +xs
         font-size: 10px
-
-
 
   // cart and wish drops
   &Dropdown
@@ -372,6 +395,9 @@
       padding: 18px 16px
       right: unset
       left: 0
+      +md
+        left: unset
+        right: -50%
       ul
         li
           &:not(:last-child)
@@ -381,7 +407,6 @@
             +hover
               text-decoration: none
               color: $color-primary
-  
 
   // header bottom area
   &__bottom
@@ -409,7 +434,6 @@
         +md
           font-size: 14px
 
-  
   // header catalog
   .catalog
     width: 234px
@@ -438,7 +462,7 @@
       +break(1366)
         padding: 6px 0
         font-size: 14px
-    
+
     &__wrap
       position: absolute
       top: calc( 100% + 10px )
@@ -509,7 +533,7 @@
           text-decoration: none
         .catalog__child
           opacity: 1
-          pointer-events: auto        
+          pointer-events: auto
       &--parent
         position: relative
         +tran(all,.4s)
@@ -531,7 +555,7 @@
       display: block
       +md
         max-width: 210px
-    
+
     &--open
       +before
         opacity: 1
@@ -547,11 +571,15 @@
         +before
           transform: rotate(180deg)
 
-  
-
   // header versions
   &--opacity
     box-shadow: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    +xs
+      background: rgba(0, 0, 0, 0.4)
     .header__inner
       background: $transparent
     .header__tool
@@ -565,18 +593,25 @@
     .header__logoWhite
       display: block !important
   &--fix
-    position: sticky
+    position: fixed
     top: 0
-    width: 100%
-    animation: header .1s linear, fadeIn .4s linear
+    left: 0
+    right: 0
+    animation: header .2s linear, fadeIn .4s linear
+    +xs
+      animation: none
     .header__inner
       background: #fff
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+      +tran(all,.2s)
     .header__logo, .header__nav, .header__top
       display: none
     .header__inner
       .container
         position: relative
         +flex(row-reverse,0,space-between,center)
+        +xs
+          position: static
       .header__center
         width: 100%
       .header__bottom
@@ -593,6 +628,9 @@
           margin-left: 45px
         +sm
           max-width: 300px
+        +xs
+          max-width: 100%
+          margin: 0
     .header__tool
       color: $color-text
       > a
@@ -600,7 +638,180 @@
     .header__nav li a
       color: $color-text
 
+// mobile burger menu
+.mobileMenu
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: $color-overlay
+  opacity: 0
+  pointer-events: none
+  z-index: 200
+  +tran(all,.4s)
+  &__close
+    position: absolute
+    top: 28px
+    right: 17px
+    opacity: 0
+    +tran(all,.2s)
+    transition-delay: 1s
+  &__inner
+    position: fixed
+    top: 0
+    left: -100%
+    right: 0
+    background: #fff
+    z-index: 300
+    width: calc(100% - 4% - 28px)
+    max-height: 100vh
+    overflow: auto
+    +tran(all,.4s)
+  &--open
+    +xs
+      opacity: 1
+      pointer-events: auto
+    .mobileMenu__close
+      opacity: 1
+    .mobileMenu__inner
+      +xs
+        left: 0
+        transition-delay: .4s
+  &__header
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    padding: 16px
+    position: sticky
+    top: 0
+    background: #fff
+    z-index: 100
+    +flex(0,0,space-between,center)
+  &__logo
+    img
+      display: block
+      width: 160px
+  &__langs
+    .header__languages
+      font-size: 14px
+      margin-right: 0
+    .header__lang
+      margin-right: 0
+      color: $color_text
+      &--active
+        color: #fff
+  &__lang
+  &__main
+    background: $color-mobile-menu-back
+    max-height: 455px
+    overflow: auto
+    > ul
+      position: relative
+      overflow: auto
+  &__item
+    padding-left: 26px
+    &:not(:last-child)
+      > a
+        border-bottom: 1px solid #D6D6D6
+    a
+      display: block
+      padding: 16px 0 16px 50px
+      position: relative
+      letter-spacing: 0.02em
+      +text(12,600,24,$color-text)
+      +hover
+        color: $color-primary
+        text-decoration: none
+      i
+        position: absolute
+        width: 32px
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        +before
+          margin: 0 auto
+  &__child
+    position: absolute
+    top: 0
+    left: 26px
+    left: -100%
+    right: unset
+    bottom: 0
+    background: $color-mobile-menu-back
+    z-index: 10
+    +tran(all,.4s)
+    &--open
+      left: 26px
+      right: 0
+      .mobileCatalog__opener
+        opacity: 1
+        +tran(all,.4s)
+        transition-delay: .4s
+    li
+      &:not(.mobileMenu__root)
+        a
+          padding-left: 25px
+  &__root
+    position: relative
+    background: rgba(57, 181, 74, 0.1)
+    margin-left: -26px
+    padding-left: 26px
+    +before
+      position: absolute
+      top: 50%
+      left: 26px
+      transform: translateY(-50%)
+    a
+      padding-left: 72px!important
+      border: 0
+      i
+        left: 22px!important
 
+  &__footer
+    background: #292929
+    padding: 16px 32px
+    .header__contacts
+      flex-wrap: wrap
+      a
+        margin: 0 0 8px 0
+        +text(14,600,24,$color-text-white)
+    .header__socials
+      justify-content: flex-start
+      a:not(:last-child)
+        margin-right: 24px
+
+.mobileCatalog
+  &__item
+    position: relative
+    &:not(:last-child)
+      a
+        border-bottom: 0
+    a
+      letter-spacing: 0
+      +text(18,400,0,0)
+  &__opener
+    width: 50px
+    height: 50px
+    position: absolute
+    top: 0
+    right: 0
+    opacity: 0
+    +before
+      top: 50%
+    +after
+      top: 50%
+  &__child
+    max-height: 0
+    overflow: hidden
+    padding-left: 23px
+    +tran(all,.4s)
+    &--open
+      max-height: 300px
+      overflow: auto
+      direction: rtl
+    li
+      a
+        font-size: 16px
+        letter-spacing: 0.01em
 
 // fixes for correct front in commerce or no commerce version
 .cart

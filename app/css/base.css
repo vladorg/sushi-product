@@ -49,13 +49,23 @@ body {
   font-weight: 400;
   font-family: "Open Sans";
   overflow-x: hidden;
-  min-height: 300vh;
+  height: 200vh;
   background: #FDFCFC; }
   body::-webkit-scrollbar {
     width: 3px;
     background: rgba(0, 0, 0, 0); }
   body::-webkit-scrollbar-thumb {
     background: #FA4616; }
+  body.column {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
 
 button {
   font-family: "Open Sans"; }
@@ -92,6 +102,12 @@ a {
     .btn--primary:hover {
       background: #E44318;
       text-decoration: none; }
+    @media (max-width: 768px) {
+      .btn--primary {
+        padding: 16px 0;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px; } }
   .btn--dashed {
     border-bottom: 1px dashed #000;
     font-size: 14px;
@@ -189,8 +205,16 @@ a {
 .no-scroll {
   overflow-y: hidden;
   padding-right: 3px; }
-  .no-scroll .banner {
+  @media (max-width: 768px) {
+    .no-scroll {
+      padding-right: 0; } }
+  .no-scroll .header--fix {
     margin-right: 3px; }
+  .no-scroll .header--opacity {
+    margin-right: 3px; }
+    @media (max-width: 768px) {
+      .no-scroll .header--opacity {
+        margin-right: 0; } }
 
 .scroll::-webkit-scrollbar {
   display: block;
@@ -237,6 +261,9 @@ a {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px; }
+  @media (max-width: 768px) {
+    .input, .textarea {
+      padding: 10px 0 10px 16px; } }
   .input--err, .textarea--err {
     -webkit-box-shadow: 0 0 3px 0px #f00;
             box-shadow: 0 0 3px 0px #f00; }
@@ -270,22 +297,9 @@ a {
   .checkbox label {
     position: relative;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #000;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    width: 21px;
+    height: 21px;
+    display: inline-block; }
     .checkbox label::before {
       content: '';
       display: block;
@@ -304,7 +318,7 @@ a {
       width: 18px;
       height: 15px;
       opacity: 0;
-      background: url("../img/icons.png") -551px -5px no-repeat;
+      background: url("../img/icons.svg") -551px -5px no-repeat;
       -webkit-transition: all 0.2s;
       -o-transition: all 0.2s;
       transition: all 0.2s; }

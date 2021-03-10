@@ -3,289 +3,303 @@
   display: block;
   width: 13px;
   height: 16px;
-  background: url("../img/icons.png") -99px -5px no-repeat; }
+  background: url("../img/icons.svg") -99px -5px no-repeat; }
 
 .ic-arrow-active::before {
   content: '';
   display: block;
   width: 7px;
   height: 14px;
-  background: url("../img/icons.png") -21px -5px no-repeat; }
+  background: url("../img/icons.svg") -21px -5px no-repeat; }
 
 .ic-arrow-back::before {
   content: '';
   display: block;
   width: 18px;
   height: 16px;
-  background: url("../img/icons.png") -495px -5px no-repeat; }
+  background: url("../img/icons.svg") -495px -5px no-repeat; }
 
 .ic-arrow-black::before {
   content: '';
   display: block;
   width: 14px;
   height: 7px;
-  background: url("../img/icons.png") -145px -5px no-repeat; }
+  background: url("../img/icons.svg") -145px -5px no-repeat; }
 
 .ic-arrow-disable::before {
   content: '';
   display: block;
   width: 7px;
   height: 14px;
-  background: url("../img/icons.png") -38px -5px no-repeat; }
+  background: url("../img/icons.svg") -38px -5px no-repeat; }
 
 .ic-burger::before {
   content: '';
   display: block;
   width: 18px;
   height: 12px;
-  background: url("../img/icons.png") -523px -5px no-repeat; }
+  background: url("../img/icons.svg") -523px -5px no-repeat; }
 
 .ic-card::before {
   content: '';
   display: block;
   width: 25px;
   height: 17px;
-  background: url("../img/icons.png") -607px -5px no-repeat; }
+  background: url("../img/icons.svg") -607px -5px no-repeat; }
 
 .ic-cart::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -795px -5px no-repeat; }
+  background: url("../img/icons.svg") -795px -5px no-repeat; }
 
 .ic-cart-white::before {
   content: '';
   display: block;
   width: 27px;
   height: 26px;
-  background: url("../img/icons.png") -678px -5px no-repeat; }
+  background: url("../img/icons.svg") -678px -5px no-repeat; }
 
 .ic-catalog::before {
   content: '';
   display: block;
   width: 14px;
   height: 14px;
-  background: url("../img/icons.png") -169px -5px no-repeat; }
+  background: url("../img/icons.svg") -169px -5px no-repeat; }
 
 .ic-check::before {
   content: '';
   display: block;
   width: 18px;
   height: 15px;
-  background: url("../img/icons.png") -551px -5px no-repeat; }
+  background: url("../img/icons.svg") -551px -5px no-repeat; }
 
 .ic-check-green::before {
   content: '';
   display: block;
   width: 14px;
   height: 15px;
-  background: url("../img/icons.png") -193px -5px no-repeat; }
+  background: url("../img/icons.svg") -193px -5px no-repeat; }
 
 .ic-f1::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -837px -5px no-repeat; }
+  background: url("../img/icons.svg") -837px -5px no-repeat; }
 
 .ic-f2::before {
   content: '';
   display: block;
   width: 32px;
   height: 28px;
-  background: url("../img/icons.png") -879px -5px no-repeat; }
+  background: url("../img/icons.svg") -879px -5px no-repeat; }
 
 .ic-f3::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -921px -5px no-repeat; }
+  background: url("../img/icons.svg") -921px -5px no-repeat; }
 
 .ic-f4::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -963px -5px no-repeat; }
+  background: url("../img/icons.svg") -963px -5px no-repeat; }
 
 .ic-f5::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -1005px -5px no-repeat; }
+  background: url("../img/icons.svg") -1005px -5px no-repeat; }
 
 .ic-f6::before {
   content: '';
   display: block;
   width: 32px;
   height: 30px;
-  background: url("../img/icons.png") -1047px -5px no-repeat; }
+  background: url("../img/icons.svg") -1047px -5px no-repeat; }
 
 .ic-facebook::before {
   content: '';
   display: block;
   width: 6px;
   height: 14px;
-  background: url("../img/icons.png") -5px -5px no-repeat; }
+  background: url("../img/icons.svg") -5px -5px no-repeat; }
 
 .ic-heart::before {
   content: '';
   display: block;
   width: 30px;
   height: 28px;
-  background: url("../img/icons.png") -715px -5px no-repeat; }
+  background: url("../img/icons.svg") -715px -5px no-repeat; }
 
 .ic-heart-grey::before {
   content: '';
   display: block;
   width: 30px;
   height: 28px;
-  background: url("../img/icons.png") -755px -5px no-repeat; }
+  background: url("../img/icons.svg") -755px -5px no-repeat; }
 
 .ic-heart-small::before {
   content: '';
   display: block;
   width: 14px;
   height: 14px;
-  background: url("../img/icons.png") -217px -5px no-repeat; }
+  background: url("../img/icons.svg") -217px -5px no-repeat; }
 
 .ic-home::before {
   content: '';
   display: block;
   width: 14px;
   height: 16px;
-  background: url("../img/icons.png") -241px -5px no-repeat; }
+  background: url("../img/icons.svg") -241px -5px no-repeat; }
 
 .ic-instagram::before {
   content: '';
   display: block;
   width: 14px;
   height: 14px;
-  background: url("../img/icons.png") -265px -5px no-repeat; }
+  background: url("../img/icons.svg") -265px -5px no-repeat; }
 
 .ic-lines::before {
   content: '';
   display: block;
   width: 18px;
   height: 11px;
-  background: url("../img/icons.png") -579px -5px no-repeat; }
+  background: url("../img/icons.svg") -579px -5px no-repeat; }
 
 .ic-mail::before {
   content: '';
   display: block;
   width: 12px;
   height: 12px;
-  background: url("../img/icons.png") -55px -5px no-repeat; }
+  background: url("../img/icons.svg") -55px -5px no-repeat; }
 
 .ic-mail-white::before {
   content: '';
   display: block;
   width: 16px;
   height: 17px;
-  background: url("../img/icons.png") -361px -5px no-repeat; }
+  background: url("../img/icons.svg") -361px -5px no-repeat; }
 
 .ic-marker::before {
   content: '';
   display: block;
   width: 14px;
   height: 17px;
-  background: url("../img/icons.png") -289px -5px no-repeat; }
+  background: url("../img/icons.svg") -289px -5px no-repeat; }
 
 .ic-pencil::before {
   content: '';
   display: block;
   width: 14px;
   height: 14px;
-  background: url("../img/icons.png") -313px -5px no-repeat; }
+  background: url("../img/icons.svg") -313px -5px no-repeat; }
 
 .ic-phone::before {
   content: '';
   display: block;
   width: 12px;
   height: 12px;
-  background: url("../img/icons.png") -77px -5px no-repeat; }
+  background: url("../img/icons.svg") -77px -5px no-repeat; }
 
 .ic-phone-white::before {
   content: '';
   display: block;
   width: 14px;
   height: 13px;
-  background: url("../img/icons.png") -337px -5px no-repeat; }
+  background: url("../img/icons.svg") -337px -5px no-repeat; }
 
 .ic-search::before {
   content: '';
   display: block;
   width: 17px;
   height: 17px;
-  background: url("../img/icons.png") -387px -5px no-repeat; }
+  background: url("../img/icons.svg") -387px -5px no-repeat; }
 
 .ic-star::before {
   content: '';
   display: block;
   width: 17px;
   height: 16px;
-  background: url("../img/icons.png") -414px -5px no-repeat; }
+  background: url("../img/icons.svg") -414px -5px no-repeat; }
 
 .ic-telegram::before {
   content: '';
   display: block;
   width: 13px;
   height: 12px;
-  background: url("../img/icons.png") -122px -5px no-repeat; }
+  background: url("../img/icons.svg") -122px -5px no-repeat; }
 
 .ic-trash::before {
   content: '';
   display: block;
   width: 17px;
   height: 17px;
-  background: url("../img/icons.png") -441px -5px no-repeat; }
+  background: url("../img/icons.svg") -441px -5px no-repeat; }
 
 .ic-trash-black::before {
   content: '';
   display: block;
   width: 17px;
   height: 17px;
-  background: url("../img/icons.png") -468px -5px no-repeat; }
+  background: url("../img/icons.svg") -468px -5px no-repeat; }
 
 .ic-truck::before {
   content: '';
   display: block;
   width: 26px;
   height: 21px;
-  background: url("../img/icons.png") -642px -5px no-repeat; }
+  background: url("../img/icons.svg") -642px -5px no-repeat; }
 
 .ic-user::before {
   content: '';
   display: block;
   width: 32px;
   height: 32px;
-  background: url("../img/icons.png") -1089px -5px no-repeat; }
+  background: url("../img/icons.svg") -1089px -6px no-repeat; }
 
 .ic-close::before {
   content: '';
+  content: '';
   display: block;
-  width: 14px;
-  height: 14px;
-  background: url("../img/icons/close.svg");
-  background-size: contain; }
+  width: 15px;
+  height: 15px;
+  background: url("../img/icons.svg") -1225px -13px no-repeat; }
 
 .ic-close-black::before {
   content: '';
+  content: '';
   display: block;
-  width: 14px;
-  height: 14px;
-  background: url("../img/icons/close-black.svg");
-  background-size: contain;
-  background-repeat: no-repeat; }
+  width: 15px;
+  height: 15px;
+  background: url("../img/icons.svg") -1254px -13px no-repeat; }
 
 .ic-search-big::before {
   content: '';
+  content: '';
   display: block;
-  width: 24px;
-  height: 24px;
-  background: url("../img/icons/search-big.svg");
-  background-size: contain;
-  background-repeat: no-repeat; }
+  width: 26px;
+  height: 26px;
+  background: url("../img/icons.svg") -1130px -8px no-repeat; }
+
+.ic-catalog-orange::before {
+  content: '';
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons.svg") -1169px -11px no-repeat; }
+
+.ic-arrow-orange::before {
+  content: '';
+  content: '';
+  display: block;
+  width: 7px;
+  height: 15px;
+  background: url("../img/icons.svg") -1205px -13px no-repeat; }

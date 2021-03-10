@@ -1,85 +1,77 @@
 @import "../var.sass"
 
-.big
-	padding-top: 24px
-	+xs
-		padding-top: 16px
-	.container
-		+flex(0,0,center,0)
-		+sm
-			justify-content: space-between
-		+xxs
-			flex-direction: column
-			align-items: center
-	&__wrap
-		position: relative
-		+hover
-			text-decoration: none
-			.big__thumb
-				transform: scale(1.01)
-				opacity: .7
-		&:not(:last-child)
-			margin-right: 50px
-			+xs
-				margin-right: 16px
-			+xxs
-				margin-bottom: 16px
-				margin-right: 0
 
-	&__thumb
-		display: block
-		width: 100%
-		max-width: 785px
-		+tran(all,.4s)
-		+md
-			max-width: 375px
-		+xs
-			max-width: 100%
-	&__title
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-		height: 16%
-		+flex(0,0,center,center)
-		+text(32,300,48,0)
-		+md			
-			font-size: 20px
-		+xs
-			font-size: 18px
-		+xxs
-			font-size: 32px
-	+xxs
-		flex-direction: column
-		align-items: center
+.home
+  .categories
+    padding-top: 80px
 
-.latest
-	padding-top: 60px
-	+xs
-		padding-top: 32px
+.categories
+  &__items
+    padding-top: 25px
+    display: grid
+    grid-template-columns: repeat(4,1fr)
+    grid-gap: 16px
+    width: 100%
+  &__slider
+    margin: -15px
+    padding: 15px
+    &.swiper-container-initialized
+      .categories__items
+        display: flex
+        grid-gap: 0
+  &__thumb
+    position: relative
+    +before
+      position: absolute
+      top: 11px
+      left: 0
+      width: 80px
+      height: 68px
+      background: url('/img/layout/green.svg')
+      transform: rotate(27deg)
+    img
+      position: relative
+      z-index: 1
+      min-width: 141px
+      height: 94px
+      object-fit: contain
+  &__item
+    width: 100%
+    //max-width: 372px
+    border-radius: 16px
+    background: $color-categories
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    padding: 13px 28px
+    //margin: 0 16px
+    opacity: 0
+    +flex(0,0,flex-start,center)
+    &.swiper-slide-visible
+      opacity: 1
+    span
+      display: inline-block
+      margin-left: 58px
+      letter-spacing: 0.01em
+      +text(18,600,26,0)
+    +hover
+      text-decoration: none
 
-.brands
-	padding-top: 84px
-	+xs
-		padding-top: 48px
-	&__list
-		padding-bottom: 24px
-		width: 100%
-	&__item
-		width: 148px
-		height: 148px
-		margin: 0 auto
-		+flex(0,0,0,center)
-		img
-			display: block
-			filter: grayscale(1)
-			margin: 0 auto
-			max-height: 100px
-			object-fit: contain
-			+tran(all,.2s)
-		+hover
-			img
-				filter: none
-				transform: scale(1.15)
+.sectionHeading
+  &__titles
+    +flex(0,0,flex-start,flex-end)
+  &__title
+  &__link
+    margin-left: 16px
+    letter-spacing: 0.02em
+    +text(12,600,24, $color-primary)
 
+.sliderArrows
+  display: none
+  &__prev
+  &__next
+  &__active
+  
+
+
+.products
+  padding-top: 104px
 

@@ -36,10 +36,8 @@
 
   
 .banner
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
+  position: relative
+  overflow: hidden
   &__slides
   &__slide
     position: relative
@@ -51,10 +49,14 @@
       left: 0
       z-index: 2
       background: linear-gradient(179.77deg, #121212 -36.29%, rgba(75, 75, 75, 0) 99.6%)
+      +xs
+        display: none
     img
+      display: block
       width: 100%
-      height: 953px
+      height: 100%
       object-fit: cover
+      min-height: 540px
   &__caption
     position: absolute
     top: 50%
@@ -63,11 +65,27 @@
     border-radius: 48px 8px
     padding: 44px 40px 39px 40px
     z-index: 10
+    width: 100%
     max-width: 712px
     transform: translateY(-50%)
     display: none
     +break(1600)
       left: 4%
+      top: unset
+      bottom: 15%
+      transform: none
+    +md
+      padding: 30px
+      bottom: 25px
+    +sm
+      max-width: 55%
+      padding: 20px
+    +xs
+      max-width: 92%
+      transform: translateX(-50%)
+      left: 50%
+      bottom: 140px
+      padding: 30px 14px 12px 14px
   &__captions
     //display: none
     .banner__caption
@@ -78,17 +96,28 @@
     opacity: 0
     +tran(all,.2s)
     +text(48,700,64,0)
+    +break(1600)
+      +text(36,0,46,0)
+    +md
+      margin-bottom: 20px
+    +sm
+      +text(20,0,24,0)
+    +xs
+      +text(24,0,32,0)
     &--anim
       opacity: 1
   &__link
     max-width: 320px
     color: $color-primary
     +tran(all,.2s)
+    +sm
+      font-size: 16px
+      padding: 15px 0
     &--anim
       font-size: 18px
       color: #fff
+      
   &__dots
-    +flex(column,0,0,0)
     position: absolute
     top: 50%
     transform: translateY(-50%)
@@ -96,6 +125,18 @@
     left: unset!important
     bottom: unset!important
     width: auto!important
+    +flex(column,0,0,0)
+    +break(1600)
+      right: 4%
+      bottom: 15% !important
+      top: unset
+      transform: none
+    +md
+      bottom: 25px !important
+    +xs
+      flex-direction: row
+      right: 50%
+      transform: translateX(50%)
   .swiper-pagination-bullet
     opacity: 1
     font-size: 0
@@ -111,8 +152,12 @@
     background: radial-gradient(#fff 4px, $transparent 4px)
     position: relative
     margin: 0 0 17px 0!important
+    +xs
+      margin: 0 22px 0 0!important
     &:last-child
       margin-bottom: 0!important
+      +xs
+        margin-right: 0 !important
   .swiper-pagination-bullet-active
     background: $transparent
     .progressCircle

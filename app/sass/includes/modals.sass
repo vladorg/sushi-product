@@ -16,26 +16,47 @@
   +flex(0,0,center,center)
   +tran(all,.4s)
   &__close
-    position: absolute
+    position: sticky
     top: 20px
     right: 20px
+    z-index: 20
+    float: right
   &__win
     width: 100%
     max-width: 576px
     background: $color-popup
     border-radius: 32px
-    padding: 32px 0
+    padding: 0 0 32px 0
     text-align: center
     position: relative
     opacity: 0
     transform: translateX(-50px)
+    max-height: 92%
+    overflow: auto
     +tran(all,.2s)
+    +xs
+      max-width: 92%
+      padding: 0 0 20px 0
+      border-radius: 8px
+
   &__form
-    padding: 32px 48px 0 48px
-    border-top: 1px solid #EDEDED
+    padding: 0 48px 0 48px
+    +xs
+      padding: 20px 20px 0 20px
   &__title
     margin-bottom: 32px
-    padding: 0 43px
+    padding: 32px 43px
+    border-bottom: 1px solid #EDEDED
+    +xs
+      padding: 20px
+      font-size: 18px
+      position: sticky
+      top: 0
+      background: #fff
+      z-index: 10
+    +xxs
+      +text(14,0,18,0)
+      margin-bottom: 12px
     &--left
       text-align: left
       margin-bottom: 16px
@@ -44,9 +65,20 @@
     text-align: left
     margin-bottom: 16px
     +text(16,400,24,0)
+    +xs
+      padding: 0 20px
   &__accept
     margin: 16px -16px 0 -16px
-    label
+    +flex(0,0,flex-start,flex-start)
+    +xs
+      justify-content: center
+      margin: 16px 0 0 0
+    span
+      margin-left: 16px
+      text-align: left
+      +text(14,400,24,0)
+      +xxs
+        +text(12,0,16,0)
       a
         color: $color-primary
 
@@ -55,9 +87,19 @@
     &__row
       padding: 0 16px 16px 21px
       +flex(0,0,space-between,center)
+      +xxs
+        flex-direction: column
+        padding: 0 0 16px 0
     &__register
       margin: 8px 0
       font-weight: 700
+    &__remember
+      +flex(0,0,flex-start,center)
+      +xxs
+        margin-bottom: 8px
+      span
+        margin-left: 16px
+        +text(14,400,24,0)
   
   &Check
     .modal__subtitle

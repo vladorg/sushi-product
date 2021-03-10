@@ -79,7 +79,7 @@ gulp.task('buildFonts', function() {
 });
 
 gulp.task('buildCss', function() {
-	return gulp.src('app/css/*.css')
+	return gulp.src('app/css/*.css', '!app/css/libs/*.css')
 	.pipe(concat('style.css'))
 	.pipe(gulp.dest('dist/css/'))
 	.pipe(cssnano({autoprefixer: {
@@ -100,12 +100,17 @@ gulp.task('buildJs', function() {
 	.pipe(gulp.dest('dist/js'))
 });
 
+gulp.task('buildCssLibs', function() {
+	return gulp.src('app/css/libs/*.css')
+	.pipe(gulp.dest('dist/css/libs'))
+});
+
 gulp.task('buildLibs', function() {
 	return gulp.src('app/libs/**/*')
 	.pipe(gulp.dest('dist/libs'))
 });
 
-gulp.task('b', gulp.parallel('clean', 'img', 'buildHtml', 'buildCss', 'buildJs', 'buildFonts', 'buildLibs'));
+gulp.task('b', gulp.parallel('clean', 'img', 'buildHtml', 'buildCss', 'buildCssLibs', 'buildJs', 'buildFonts', 'buildLibs'));
 
 
 gulp.task('watch', function() {

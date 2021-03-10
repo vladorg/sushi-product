@@ -43,7 +43,7 @@ body
   font-weight: $fw
   font-family: $ff
   overflow-x: hidden
-  min-height: 300vh
+  height: 200vh
   background: $color_body
   //background: grey
   &::-webkit-scrollbar
@@ -51,6 +51,9 @@ body
     background: $transparent
   &::-webkit-scrollbar-thumb
     background: $color-primary
+  &.column
+    //min-height: 100vh
+    +flex(column,0,0,0)
 button
   font-family: $ff
 img
@@ -79,6 +82,9 @@ a
     +hover
       background: $color-primary-hover
       text-decoration: none
+    +xs
+      padding: 16px 0
+      +text(16,700,24,0)
   &--dashed
     border-bottom: 1px dashed #000
     +text(14,400,24,#000)
@@ -145,10 +151,14 @@ a
 .no-scroll
   overflow-y: hidden
   padding-right: 3px
+  +xs
+    padding-right: 0
   .header--fix
-    //padding-right: 3px
-  .banner
     margin-right: 3px
+  .header--opacity
+    margin-right: 3px
+    +xs
+      margin-right: 0
 
 .scroll
   &::-webkit-scrollbar
@@ -181,6 +191,8 @@ a
   border-radius: 32px
   +tran(all,.4s)
   +text(14,400,24,0)
+  +xs
+    padding: 10px 0 10px 16px
   &--err
     box-shadow: 0 0 3px 0px $color-input-error
   &::-webkit-input-placeholder
@@ -209,8 +221,9 @@ a
   label
     position: relative
     cursor: pointer
-    +text(14,400,24,#000)
-    +flex(0,0,flex-start,center)
+    width: 21px
+    height: 21px
+    display: inline-block
     +before
       display: block
       width: 21px
@@ -226,7 +239,7 @@ a
       width: 18px
       height: 15px
       opacity: 0
-      background: url('../img/icons.png') -551px -5px no-repeat
+      background: url('../img/icons.svg') -551px -5px no-repeat
       +tran(all,.2s)
   input
     position: absolute

@@ -1,11 +1,12 @@
 window.onload = () => {
 
-  let getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector);
-
+  const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector);
+  const isMobile = window.innerWidth < 768 ? true : false;
 
   // BASE ================================================
 
-  const modal_close = getElem('.modal__close', false),
+  const main_slider = getElem('.banner__slider'),
+    modal_close = getElem('.modal__close', false),
     modals = {
       root: getElem('.modal', false),
       auth: {
@@ -99,6 +100,7 @@ window.onload = () => {
             modals.root[i].classList.remove('modal--open');
             document.body.classList.remove('no-scroll');
             document.body.classList.remove('hasActiveModal');
+            console.log(1);
           }
         }
       }
@@ -108,51 +110,61 @@ window.onload = () => {
 
 
   // main slider
-  const swiper = new Swiper('.banner__slider', {
-    slidesPerView: 1,
-    slidesPerColumn: 1,
-    progressbarOpposite: true,
-    loop: true,
-    effect: 'slide',
-    autoplay: {
-      delay: 4000,
-    },
-    autoHeight: true,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<div class="dot swiper-pagination-bullet"><div class="progressCircle"><div class="progressCircle__inner"><div class="progressCircle__mask full"><div class="fill"></div></div><div class="progressCircle__mask half"><div class="fill"></div></div><div class="progressCircle__inside"></div></div></div></div>';
+  if (main_slider) {
+    const swiper_main = new Swiper(main_slider, {
+      slidesPerView: 1,
+      slidesPerColumn: 1,
+      progressbarOpposite: true,
+      loop: true,
+      effect: 'slide',
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false
       },
-    },
-  });
+      autoHeight: false,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<div class="dot swiper-pagination-bullet"><div class="progressCircle"><div class="progressCircle__inner"><div class="progressCircle__mask full"><div class="fill"></div></div><div class="progressCircle__mask half"><div class="fill"></div></div><div class="progressCircle__inside"></div></div></div></div>';
+        },
+      },
+    });
 
 
-  // function on customize slides change effect
-  swiper.on('slideChangeTransitionStart', function () {
-    let slide_text = getElem('.banner .swiper-slide-active .banner__title').innerText;
-    let slide_btn_text = getElem('.banner .swiper-slide-active .banner__link').innerText;
-    let slide_btn_href = getElem('.banner .swiper-slide-active .banner__link').getAttribute('href');
-    function getSlideLink(){
-      return getElem('.banner .swiper-slide-active .banner__link').getAttribute('href');
-    }
-    //console.log(setTimeout(getSlideLink, 500));
-    
-    let caption = getElem('.banner__captions .banner__caption');
+    // function on customize slides change effect
+    swiper_main.on('slideChangeTransitionStart', function () {
+      let slide_text = getElem('.banner .swiper-slide-active .banner__title').innerText;
+      let slide_btn_text = getElem('.banner .swiper-slide-active .banner__link').innerText;
+      let slide_btn_href = getElem('.banner .swiper-slide-active .banner__link').getAttribute('href');
+      let caption = getElem('.banner__captions .banner__caption');
 
-    caption.querySelector('.banner__title').classList.remove('banner__title--anim');    
-    caption.querySelector('.banner__link').classList.remove('banner__link--anim');
-    setTimeout(() => {
-      caption.querySelector('.banner__title').innerHTML = slide_text;
-      caption.querySelector('.banner__link').innerHTML = slide_btn_text;
-      caption.querySelector('.banner__link').setAttribute('href', slide_btn_href);
-    }, 200);
-    setTimeout(() => {
-      caption.querySelector('.banner__title').classList.add('banner__title--anim');
-      caption.querySelector('.banner__link').classList.add('banner__link--anim');
-    }, 250);
-  });
+      // animation fade out caption elements
+      caption.querySelector('.banner__title').classList.remove('banner__title--anim');
+      caption.querySelector('.banner__link').classList.remove('banner__link--anim');
+
+      setTimeout(() => {
+        caption.querySelector('.banner__title').innerHTML = slide_text;
+        caption.querySelector('.banner__link').innerHTML = slide_btn_text;
+        caption.querySelector('.banner__link').setAttribute('href', slide_btn_href);
+      }, 200); // switch caption content when fade out animation will end
+      setTimeout(() => {
+        caption.querySelector('.banner__title').classList.add('banner__title--anim');
+        caption.querySelector('.banner__link').classList.add('banner__link--anim');
+      }, 400); // fade in caption with new content
+    });
+
+  }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -162,6 +174,7 @@ window.onload = () => {
   const catalog_btn = getElem('.catalog__btn', false),
     catalog = getElem('.catalog'),
     header = getElem('.header'),
+    banner = getElem('.banner'),
     open_wish = getElem('.open_wish', false),
     open_cart = getElem('.open_cart', false),
     wishlist_wrap = getElem('.header__tool--wish'),
@@ -170,7 +183,15 @@ window.onload = () => {
     cart = getElem('.cart'),
     logged = getElem('.logged'),
     logged_wrap = getElem('.header__tool--logged'),
-    open_logged = getElem('.open_logged', false);
+    open_logged = getElem('.open_logged', false),
+    open_mobile = getElem('.open_mobile', false),
+    close_mobile = getElem('.close_mobile', false),
+    mobile_menu = getElem('.mobileMenu'),
+    open_child = getElem('.open_child', false),
+    close_child = getElem('.close_child', false),
+    mobile_catalog_child_opener = getElem('.mobileCatalog__opener', false),
+    open_search = getElem('.open_search', false),
+    search = getElem('.header__search');
 
   // open catalog 
   if (catalog_btn) {
@@ -192,17 +213,30 @@ window.onload = () => {
     }
   }
 
+
   // header for all pages except checkout
   if (!header.classList.contains('header--checkout')) {
 
     // fix header
-    let header_height = header.clientHeight;
-    window.addEventListener('scroll', () => {
-      if (this.pageYOffset > header_height) {
+    var scroll_height;
+    window.addEventListener('scroll', function () {
+
+      if (isMobile) {
+        scroll_height = banner ? banner.clientHeight : header.clientHeight;
+      } else {
+        scroll_height = header.clientHeight;
+      }
+
+      if (this.pageYOffset > scroll_height) {
+        header.classList.remove('header--opacity');
         header.classList.add('header--fix');
       } else if (this.pageYOffset == 0) {
         header.classList.remove('header--fix');
+        if (banner) {
+          header.classList.add('header--opacity');
+        }
       }
+
     });
 
     // open cart
@@ -240,6 +274,7 @@ window.onload = () => {
     // open logged
     for (let i = 0; i < open_logged.length; i++) {
       open_logged[i].addEventListener('click', e => {
+        e.preventDefault();
         cart.classList.remove('headerDropdown--open');
         wishlist.classList.remove('headerDropdown--open');
         setTimeout(() => {
@@ -254,6 +289,7 @@ window.onload = () => {
     logged.addEventListener('click', e => e.stopPropagation());
 
 
+    // close drops when click outside them
     document.addEventListener('click', e => {
       if (!cart_wrap.contains(e.target)) {
         cart.classList.remove('headerDropdown--open');
@@ -261,14 +297,119 @@ window.onload = () => {
       if (!wishlist_wrap.contains(e.target)) {
         wishlist.classList.remove('headerDropdown--open');
       }
-      if (!logged_wrap.contains(e.target)) {
-        logged.classList.remove('headerDropdown--open');
-        for (let i=0;i<open_logged.length;i++) {
-          open_logged[i].classList.remove('open_logged--opened');        
+      if (logged_wrap) {
+        if (!logged_wrap.contains(e.target)) {
+          logged.classList.remove('headerDropdown--open');
+          for (let i = 0; i < open_logged.length; i++) {
+            open_logged[i].classList.remove('open_logged--opened');
+          }
         }
+      }
+
+    });
+
+    // open search
+    for (let i = 0; i < open_search.length; i++) {
+      open_search[i].addEventListener('click', () => {
+        search.classList.toggle('header__search--open');
+      });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // MOBILE MENU
+    // open
+    for (let i = 0; i < open_mobile.length; i++) {
+      open_mobile[i].addEventListener('click', () => {
+        open_mobile[i].classList.add('open_mobile--hidden');
+        mobile_menu.classList.add('mobileMenu--open');
+        document.body.classList.add('no-scroll');
+      });
+    }
+
+    // close
+    for (let i = 0; i < close_mobile.length; i++) {
+      close_mobile[i].addEventListener('click', () => {
+        mobile_menu.classList.remove('mobileMenu--open');
+        document.body.classList.remove('no-scroll');
+        for (let i = 0; i < open_mobile.length; i++) {
+          open_mobile[i].classList.remove('open_mobile--hidden');
+        }
+      });
+    }
+
+    // open child menu
+    for (let i = 0; i < open_child.length; i++) {
+      open_child[i].addEventListener('click', e => {
+        e.preventDefault();
+        open_child[i].parentNode.querySelector('.mobileMenu__child').classList.add('mobileMenu__child--open');
+      });
+    }
+
+    // close child menu
+    for (let i = 0; i < close_child.length; i++) {
+      close_child[i].addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+        close_child[i].parentNode.classList.remove('mobileMenu__child--open');
+      });
+    }
+
+    // open child catalog items
+    for (let i = 0; i < mobile_catalog_child_opener.length; i++) {
+      mobile_catalog_child_opener[i].addEventListener('click', e => {
+        let item = mobile_catalog_child_opener[i].parentNode.querySelector('.mobileCatalog__child');
+        item.classList.toggle('mobileCatalog__child--open');
+      });
+    }
+
+
+  } // end header for all pages except checkout
+
+
+
+  // HOME PAGE
+
+  const home_categories = getElem('.home .categories .categories__slider');
+
+  // home categories slider
+  if (home_categories) {
+
+    let items_count = home_categories.querySelectorAll('.categories__item').length;
+
+    const home_categories_slider = new Swiper(home_categories, {
+      slidesPerView: 4,
+      spaceBetween: 16,
+      init: false,
+      loop: false,
+      watchSlidesVisibility: true,
+      slideVisibleClass: 'swiper-slide-visible',
+      autoplay: {
+        delay: 400000,
+        disableOnInteraction: false
+      }
+    });    
+
+    home_categories_slider.on('init', function () {
+      if (items_count <= 4) {
+        this.destroy(false, true);
       }
     });
 
+    home_categories_slider.init();
 
   }
 

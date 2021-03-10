@@ -1,1 +1,53 @@
 @import "../var.sass"
+
+
+
+.footer
+  background: $color_footer
+  margin-top: auto
+  &__wrap
+    padding: 30px 18px
+    +flex(0,0,flex-start,0)
+  &__title
+    text-transform: uppercase
+    margin-bottom: 10px
+    +text(14,800,18,0)
+  &__subtitle
+    +text(16,400,20,#38382F)
+  &__main
+    margin-right: 102px
+    align-self: flex-end
+  &__logo
+    display: block
+    width: 234px
+  &__socials
+    margin-top: 22px
+    justify-content: center
+  &__copy
+    margin-top: 20px
+    text-align: center
+    +text(14,300,16,0)
+  &__list
+    margin-right: 50px
+    li
+      &:not(:last-child)
+        margin-bottom: 8px
+      a
+        display: block
+        +text(16,400,19,#38382F)
+    &--contacts
+      li
+        &:not(:last-child)
+          margin-bottom: 16px
+        a
+          +flex(0,0,flex-start,center)
+          +before
+            margin-right: 10px
+  &__rev
+    margin-left: auto
+    max-width: 330px
+  &__button
+    max-width: 133px
+    margin-top: 24px
+    padding: 15px 0
+    +text(16,700,24,$color-text-white)

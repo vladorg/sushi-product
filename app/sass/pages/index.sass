@@ -7,7 +7,6 @@
 
 .categories
   &__items
-    padding-top: 25px
     display: grid
     grid-template-columns: repeat(4,1fr)
     grid-gap: 16px
@@ -15,10 +14,16 @@
   &__slider
     margin: -15px
     padding: 15px
+    +tran(all,.8s)
     &.swiper-container-initialized
       .categories__items
         display: flex
         grid-gap: 0
+      .categories__item
+        opacity: 0
+        transition: opacity .2s
+        &.swiper-slide-visible
+          opacity: 1
   &__thumb
     position: relative
     +before
@@ -37,16 +42,11 @@
       object-fit: contain
   &__item
     width: 100%
-    //max-width: 372px
     border-radius: 16px
     background: $color-categories
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
     padding: 13px 28px
-    //margin: 0 16px
-    opacity: 0
     +flex(0,0,flex-start,center)
-    &.swiper-slide-visible
-      opacity: 1
     span
       display: inline-block
       margin-left: 58px
@@ -54,24 +54,324 @@
       +text(18,600,26,0)
     +hover
       text-decoration: none
+      box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32)
+  .sectionHeading
+    margin-bottom: 15px
+  &.slider-disabled
+    .sliderArrows
+      display: none !important
 
-.sectionHeading
+.section
+  &__heading
+    margin-bottom: 40px
+    +flex(0,wrap,space-between,center)
   &__titles
     +flex(0,0,flex-start,flex-end)
   &__title
+  &__subtitle
+    width: 100%
+    margin-top: 24px
+    a
+      +text(18,400,24, $color-primary)
   &__link
     margin-left: 16px
     letter-spacing: 0.02em
     +text(12,600,24, $color-primary)
 
 .sliderArrows
-  display: none
+  +flex(0,0,flex-start,center,inline-flex)
   &__prev
+    margin-right: 5px
   &__next
-  &__active
+    +before
+      transform: rotate(180deg)
+  &__arrow
+    width: 24px
+    height: 24px
+    border-radius: 4px
+    +tran(all,.4s)
+    +flex(0,0,center,center) 
+    &--active
+      background: $color-primary
+      +before
+        width: 7px
+        height: 14px
+        background: url(../img/icons.svg) -21px -5px no-repeat
+      +hover
+        background: $color-primary-hover
+      &.sliderArrows__prev
+        +before
+          transform: rotate(180deg)
+      &.sliderArrows__next
+        +before
+          transform: none
+    &.swiper-button-lock
+      display: none
   
 
 
-.products
+.productsSlider
   padding-top: 104px
+  padding-bottom: 104px
+  &__buttons
+    padding: 26px 0 0 0
+  &__btn
+    +text(18,400,24,#898989)
+    &:not(:last-child)
+      margin-right: 60px
+    &--active
+      font-weight: 700
+      color: $color-primary
+  &__tabs
+    position: relative
+    height: 510px
+    overflow: hidden
+  &__tabWrap
+    margin: -15px
+    padding: 15px
+    opacity: 0
+    pointer-events: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0    
+    &--active
+      opacity: 1
+      pointer-events: auto
+      animation: fadeIn .6s linear
+    &.swiper-container-initialized
+      .productsSlider__tab
+        display: flex
+        grid-gap: 0
+      .swiper-slide
+        opacity: 0
+        transition: opacity .2s
+      .swiper-slide-visible
+        opacity: 1
+  &__tab
+  &__arrows
+    display: none
+    &--active
+      display: flex
+  .section__titles
+    width: 100%
+  .section__heading
+    margin: 0 0 40px 0
+    position: relative
+  .sliderArrows
+    position: absolute
+    bottom: 0
+    right: 0 
 
+.partners
+  &__slider
+    margin: -15px
+    padding: 15px
+  &__item
+    height: 184px
+    background: #FFFFFF
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    opacity: 0
+    +flex(0,0,center,center)
+    transition: opacity .2s
+    &.swiper-slide-visible
+      opacity: 1
+    img
+      display: block
+  &__btn
+    max-width: 320px
+    margin: 32px auto 0 auto
+    padding: 17px 0
+  .section__heading
+    position: relative
+  .sliderArrows
+    position: absolute
+    bottom: 0
+    right: 0 
+
+
+
+.aboutBlock
+  padding: 200px 0
+  position: relative
+  +before
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 638px
+    background: url('../img/layout/background-primary-top.svg')
+    background-repeat: no-repeat
+    background-size: 100%
+  +after
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 638px
+    background: url('../img/layout/background-primary-bottom.svg')
+    background-repeat: no-repeat
+    background-size: 100%
+  &__wrap
+    padding-right: calc((100% - 1540px) / 2)
+    position: relative
+    z-index: 10
+    +flex(0,0,space-between,center)
+  &__imgWrap
+    width: 913px
+    height: 961px
+  &__img
+    width: 100%
+    max-width: 913px
+    height: 961px
+    background-repeat: no-repeat
+    background-size: contain
+    +tran(all,.8s)
+  &__content
+    max-width: 43%
+  &__items
+    +flex(0,wrap,space-between,flex-start)
+  &__item
+    max-width: 45%
+    margin-bottom: 29px
+  &__itemTitle
+    display: block
+  &__itemText
+    display: block
+    margin-top: 16px
+    letter-spacing: 0.01em
+    +text(16,400,24,#38382F)
+  &__title
+    text-transform: uppercase
+    +text(48,700,56,0)
+  &__subtitle
+    margin: 32px 0 56px 0
+    +text(18,400,24,#1B1B1B)
+  &__link
+    margin-top: 11px
+    max-width: 415px
+    padding: 17px 0
+
+
+
+.clients
+  padding-top: 104px
+  &__slider
+    margin: -15px
+    padding: 15px
+  .section__heading
+    position: relative
+  .sliderArrows
+    position: absolute
+    bottom: 0
+    right: 0 
+
+
+
+.recipes
+  margin-top: 104px
+  //padding-bottom: 143px
+  +before
+    background: url('../img/layout/background-green-top.svg')
+    background-repeat: no-repeat
+    height: 550px
+    background-size: 100%
+  +after
+    background: url('../img/layout/background-green-bottom.svg')
+    background-repeat: no-repeat
+    height: 550px
+    background-size: 100%
+  .aboutBlock__wrap
+    padding-right: 100px
+    padding-left: calc((100% - 1540px) / 2)
+    align-items: unset
+  .aboutBlock__subtitle
+    margin-bottom: 40px
+  &__content
+    max-width: 46%
+  &__imgWrap
+    width: 818px
+    height: 959px
+  &__img
+    max-width: 818px
+    height: 959px
+    background-repeat: no-repeat
+    background-size: contain
+  &__list
+    padding-bottom: 40px
+    +flex(0,0,space-between,0)
+  &__left
+  &__right
+    +flex(column,0,space-between,0)
+  &__categories
+    position: absolute
+    top: 14px
+    left: 16px
+    z-index: 10
+    a
+      display: inline-block
+      padding: 6px 17px
+      background: rgba(255, 255, 255, 0.55)
+      backdrop-filter: blur(4px)
+      border-radius: 13.5px
+      +text(12,400,20,#303030)
+      +tran(all,.4s)
+      &:not(:last-child)
+        margin-right: 8px
+      +hover
+        text-decoration: none
+        background: #fff
+  &__thumb
+    display: block
+    overflow: hidden
+    img
+      width: 100%
+      height: 199px
+      object-fit: cover
+      +tran(all,.4s)
+      +hover
+        transform: scale(1.1)
+  &__date
+    margin-bottom: 2px
+    +text(12,400,20,#636060)
+  &__title
+    display: block
+    max-height: 71px
+    overflow: hidden
+    text-overflow: ellipsis
+    +text(18,700,24,0)
+  &__desc
+    max-height: 47px
+    overflow: hidden
+    text-overflow: ellipsis
+    +text(16,300,24,#000)  
+  &__caption
+    padding: 2px 8px 8px 8px
+  &__end
+    margin-bottom: 24px
+  &__item
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    width: 302px
+    background: #fff
+    overflow: hidden
+    position: relative
+    &--big
+      width: 416px
+      height: 100%
+      .recipes__thumb
+        width: 100%
+        height: 464px
+        img
+          display: block
+          width: 100%
+          height: auto
+      .recipes__caption
+        padding: 10px 16px 24px 16px
+      .recipes__date
+        margin-bottom: 4px
+      .recipes__title
+        max-height: 97px
+        margin-bottom: 8px
+        +text(24,0,32,0)

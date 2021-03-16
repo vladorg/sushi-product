@@ -61,13 +61,17 @@
     .sliderArrows
       display: none !important
 
+
 .section
+  +tran(all,.8s)
+  &--hide
+    opacity: 0
+    transform: translateY(70px)
   &__heading
     margin-bottom: 40px
     +flex(0,wrap,space-between,center)
   &__titles
     +flex(0,0,flex-start,flex-end)
-  &__title
   &__subtitle
     width: 100%
     margin-top: 24px
@@ -77,6 +81,7 @@
     margin-left: 16px
     letter-spacing: 0.02em
     +text(12,600,24, $color-primary)
+
 
 .sliderArrows
   +flex(0,0,flex-start,center,inline-flex)
@@ -109,7 +114,6 @@
       display: none
   
 
-
 .productsSlider
   padding-top: 104px
   padding-bottom: 104px
@@ -125,7 +129,6 @@
   &__tabs
     position: relative
     height: 510px
-    overflow: hidden
   &__tabWrap
     margin: -15px
     padding: 15px
@@ -148,7 +151,6 @@
         transition: opacity .2s
       .swiper-slide-visible
         opacity: 1
-  &__tab
   &__arrows
     display: none
     &--active
@@ -162,6 +164,7 @@
     position: absolute
     bottom: 0
     right: 0 
+
 
 .partners
   &__slider
@@ -191,7 +194,6 @@
     right: 0 
 
 
-
 .aboutBlock
   padding: 200px 0
   position: relative
@@ -218,16 +220,12 @@
     position: relative
     z-index: 10
     +flex(0,0,space-between,center)
-  &__imgWrap
-    width: 913px
-    height: 961px
   &__img
     width: 100%
     max-width: 913px
     height: 961px
     background-repeat: no-repeat
     background-size: contain
-    +tran(all,.8s)
   &__content
     max-width: 43%
   &__items
@@ -254,7 +252,6 @@
     padding: 17px 0
 
 
-
 .clients
   padding-top: 104px
   &__slider
@@ -268,10 +265,8 @@
     right: 0 
 
 
-
 .recipes
   margin-top: 104px
-  //padding-bottom: 143px
   +before
     background: url('../img/layout/background-green-top.svg')
     background-repeat: no-repeat
@@ -301,7 +296,6 @@
   &__list
     padding-bottom: 40px
     +flex(0,0,space-between,0)
-  &__left
   &__right
     +flex(column,0,space-between,0)
   &__categories
@@ -330,8 +324,6 @@
       height: 199px
       object-fit: cover
       +tran(all,.4s)
-      +hover
-        transform: scale(1.1)
   &__date
     margin-bottom: 2px
     +text(12,400,20,#636060)
@@ -357,6 +349,10 @@
     background: #fff
     overflow: hidden
     position: relative
+    +hover
+      .recipes__thumb
+        img
+          transform: scale(1.1)
     &--big
       width: 416px
       height: 100%
@@ -375,3 +371,90 @@
         max-height: 97px
         margin-bottom: 8px
         +text(24,0,32,0)
+
+
+.feedback
+  .container
+    +flex(0,0,center,center)
+  &__title
+    text-transform: uppercase
+    letter-spacing: 0.02em
+    +text(64,700,76,0)
+  &__btn
+    margin-top: 48px
+    max-width: 446px
+  &__managers
+    min-width: 431px
+    min-height: 703px
+    position: relative
+    &--load
+      +before
+        width: 256px
+        height: 256px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-image: url(../img/spin.jpg)
+  &__manager
+    display: none
+    position: relative
+    img
+      display: block
+      width: 431px
+      height: 703px
+      object-fit: contain
+    &--active
+      display: block
+  &__caption
+    max-width: 343px
+    width: 100%
+    border-radius: 30px 0 0 0
+    position: absolute
+    left: -48px
+    bottom: 82px
+    background: linear-gradient(89.55deg, #39B54A 36.86%, #39B54A 50.72%, rgba(57, 181, 74, 0) 81.3%)
+    padding: 11px 25px
+    color: #fff
+  &__name
+    white-space: nowrap
+    +text(32,700,40,0)
+  &__worker
+    +text(18,400,24,0)
+
+
+.seo
+  background: $color-seo-block
+  padding: 80px 0 50px 0
+  &__title
+    text-transform: uppercase
+    margin-bottom: 30px
+    +text(36,600,48,0)
+  &__text
+    letter-spacing: 0.02em
+    max-height: 136px
+    overflow: hidden
+    +tran(all,.4s)
+    +text(16,300,21,0)
+    p
+      margin-bottom: 30px
+  &__more
+    position: relative
+    padding-right: 40px
+    +text(14,400,19,$color-primary)
+    +before
+      top: 50%
+    +after
+      top: 50%
+  &--full
+    .seo__text
+      max-height: 900px
+    .seo__more
+      +before
+        transform: rotate(-40deg) translateY(-50%)
+      +after
+        transform: rotate(40deg) translateY(-50%)
+        right: 17px
+  &--scroll
+    .seo__text
+      overflow-y: auto

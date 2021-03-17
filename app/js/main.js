@@ -1,7 +1,16 @@
 window.onload = () => {
 
-  const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector);
-  const isMobile = window.innerWidth < 768 ? true : false;
+  const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector),
+    isMobile = window.innerWidth < 768 ? true : false,
+    getCoords = elem => elem.getBoundingClientRect().top + pageYOffset;
+
+
+
+
+
+
+
+
 
   // BASE ================================================
 
@@ -45,7 +54,23 @@ window.onload = () => {
         opener: getElem('.open_callback', false),
         item: getElem('.modalCallback')
       }
+    },
+    top_btn = getElem('.toTop');
+
+
+
+  // scroll top button show and scrolled
+  window.addEventListener('scroll', e => {
+    if (pageYOffset >= 900) {
+      top_btn.classList.add('toTop--active');
+    } else {
+      top_btn.classList.remove('toTop--active');
     }
+  });
+  top_btn.addEventListener('click', e => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 
   // open modals
   openModals(modals.auth.opener, modals.auth.item, 'auth'); // auth
@@ -417,6 +442,20 @@ window.onload = () => {
       nextEl: null,
       prevEl: null
     },
+    breakpoints: {
+      1400: {
+        slidesPerView: 4
+      },
+      1024: {
+        slidesPerView: 3
+      },
+      600: {
+        slidesPerView: 2
+      },
+      320: {
+        slidesPerView: 1
+      }
+    }
   };
   let partners_params = {
     slidesPerView: 5,
@@ -428,6 +467,23 @@ window.onload = () => {
       nextEl: null,
       prevEl: null
     },
+    breakpoints: {
+      1400: {
+        slidesPerView: 5
+      },
+      1200: {
+        slidesPerView: 4
+      },
+      1024: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 2
+      },
+      320: {
+        slidesPerView: 2
+      }
+    }
   }
 
   // switch active status for slider arrows when slides swiping will end of start
@@ -535,58 +591,25 @@ window.onload = () => {
     }
 
     // main sections show
-    let s1 = getElem('.categories');
-    let s2 = getElem('.productsSlider');
-    let s3 = getElem('.partners');
-    let s4 = getElem('.aboutBlock');
-    let s5 = getElem('.clients');
-    let s6 = getElem('.recipes');
-    let s7 = getElem('.feedback');
+    let elems = [
+        getElem('.categories'),
+        getElem('.productsSlider'),
+        getElem('.partners'),
+        getElem('.aboutBlock'),
+        getElem('.clients'),
+        getElem('.recipes'),
+        getElem('.feedback')
+      ],
+      cords = [],
+      showBlocks = (cord, block) => pageYOffset >= (cord - 500) ? block.classList.remove('section--hide') : null;
 
-
-
-    window.addEventListener('scroll', function () {
-
-      let cord1 = getCoords(s1);
-      let cord2 = getCoords(s2);
-      let cord3 = getCoords(s3);
-      let cord4 = getCoords(s4);
-      let cord5 = getCoords(s5);
-      let cord6 = getCoords(s6);
-      let cord7 = getCoords(s7);
-
-      console.clear();
-      console.log(cord7);
-      console.log(pageYOffset);
-
-      if (pageYOffset >= (cord1 - 500)) {
-        s1.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord2 - 500)) {
-        s2.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord3 - 500)) {
-        s3.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord4 - 500)) {
-        s4.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord5 - 500)) {
-        s5.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord6 - 500)) {
-        s6.classList.remove('section--hide');
-      }
-      if (pageYOffset >= (cord7 - 500)) {
-        s7.classList.remove('section--hide');
-      }
+    elems.forEach(item => {
+      cords.push(getCoords(item));   
+      pageYOffset > 0 ? item.classList.remove('section--hide') : null;
     });
 
+    window.addEventListener('scroll', e => elems.forEach((item, index) => showBlocks(cords[index], item) ));
 
-    function getCoords(elem) {
-      var box = elem.getBoundingClientRect();
-      return box.top + pageYOffset;
-    }
 
   }
 

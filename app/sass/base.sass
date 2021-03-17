@@ -139,6 +139,27 @@ a
         border-right: 9px solid $transparent
         border-bottom: 18px solid $color-tooltip-content
         border-left: 9px solid $transparent
+  &--preview
+    .tooltip__wrap
+      top: 50%
+      right: 0
+      padding-top: 125%
+      transform: translateX(calc(50% - 28px))
+      z-index: 10
+      width: 400px
+      +before
+        position: absolute
+        top: 15px
+        right: 50%
+        transform: translateX(calc(50% + 19px))
+        border-right: 9px solid $transparent
+        border-bottom: 18px solid $color-tooltip-content
+        border-left: 9px solid $transparent
+  &--short
+    .tooltip__content
+      padding: 14px
+      max-height: 100px
+      overflow: auto
 
   +hover
     .tooltip__pick
@@ -155,6 +176,8 @@ a
     padding-right: 0
   .header--fix
     margin-right: 3px
+    +xs
+      margin-right: 0
   .header--opacity
     margin-right: 3px
     +xs
@@ -305,11 +328,10 @@ a
     +md
       top: 16px
 
-.products 
+.products
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-gap: 16px
-
 
 .preview
   width: 100%
@@ -319,6 +341,10 @@ a
   background: #fff
   position: relative
   padding: 11px 16px 24px 16px
+  +tran(all,.4s)
+  +hover
+    box-shadow: 0px 2px 10px $color-preview-hover
+
   &__stickers
     position: absolute
     top: 11px
@@ -390,4 +416,24 @@ a
     +flex(0,0,center,center)
     +before
       margin-right: 17px
-  
+
+.toTop
+  position: fixed
+  bottom: 25px
+  right: 15px
+  z-index: 10
+  background: $color-primary
+  border-radius: 50%
+  width: 50px
+  height: 50px
+  opacity: 0
+  pointer-events: none
+  +flex(0,0,center,center)
+  +tran(all,.4s)
+  +hover
+    background: $color-primary-hover
+  +before
+    transform: rotate(-90deg)
+  &--active
+    opacity: 1
+    pointer-events: auto

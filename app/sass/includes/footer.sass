@@ -6,17 +6,32 @@
   background: $color_footer
   margin-top: auto
   &__wrap
-    padding: 30px 18px
+    padding: 30px 0
     +flex(0,0,flex-start,0)
+    +xs
+      padding: 44px 0 24px 0
+      +flex(column,0,0,center)
+    +xxs
+      align-items: flex-start
   &__title
     text-transform: uppercase
     margin-bottom: 10px
     +text(14,800,18,0)
   &__subtitle
     +text(16,400,20,#38382F)
+    +break(1400)
+      font-size: 14px
+    +xs
+      font-size: 16px
   &__main
     margin-right: 102px
     align-self: flex-end
+    +break(1400)
+      margin-right: 50px
+    +xs
+      align-self: center
+      order: 3
+      margin-right: 0
   &__logo
     display: block
     width: 234px
@@ -29,25 +44,48 @@
     +text(14,300,16,0)
   &__list
     margin-right: 50px
+    +break(1400)
+      margin-right: 25px
+    +sm
+      display: none
     li
       &:not(:last-child)
         margin-bottom: 8px
       a
         display: block
         +text(16,400,19,#38382F)
+        +break(1400)
+          font-size: 14px
+        +xs
+          font-size: 16px
     &--contacts
+      +sm
+        display: block
+      +xs
+        order: 1
+        margin: 0 0 32px 0
+        width: 330px
       li
         &:not(:last-child)
           margin-bottom: 16px
         a
+          white-space: nowrap
           +flex(0,0,flex-start,center)
           +before
             margin-right: 10px
   &__rev
     margin-left: auto
     max-width: 330px
+    +xs
+      margin-left: 0
+      order: 2
+      margin-bottom: 46px
+    +xxs
+      max-width: 100%
   &__button
     max-width: 133px
     margin-top: 24px
     padding: 15px 0
     +text(16,700,24,$color-text-white)
+    +xs
+      max-width: 100%

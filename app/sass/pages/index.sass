@@ -4,6 +4,8 @@
 .home
   .categories
     padding-top: 80px
+    +xs
+      padding-top: 40px
 
 .categories
   &__items
@@ -37,9 +39,11 @@
     img
       position: relative
       z-index: 1
-      min-width: 141px
+      width: 141px
       height: 94px
       object-fit: contain
+      +xs
+        max-width: 105px
   &__item
     width: 100%
     border-radius: 16px
@@ -52,6 +56,10 @@
       margin-left: 58px
       letter-spacing: 0.01em
       +text(18,600,26,0)
+      +break(1600)
+        margin-left: 10px
+      +xs
+        margin: 0 auto
     +hover
       text-decoration: none
       box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32)
@@ -81,6 +89,8 @@
     margin-left: 16px
     letter-spacing: 0.02em
     +text(12,600,24, $color-primary)
+    +xs
+      display: none
 
 
 .sliderArrows
@@ -115,8 +125,7 @@
   
 
 .productsSlider
-  padding-top: 104px
-  padding-bottom: 104px
+  padding: 104px 0
   &__buttons
     padding: 26px 0 0 0
   &__btn
@@ -137,7 +146,8 @@
     position: absolute
     top: 0
     left: 0
-    right: 0    
+    right: 0
+    //overflow: visible
     &--active
       opacity: 1
       pointer-events: auto
@@ -178,16 +188,27 @@
     opacity: 0
     +flex(0,0,center,center)
     transition: opacity .2s
+    +xs
+      height: 150px
     &.swiper-slide-visible
       opacity: 1
     img
       display: block
+      +xs
+        max-width: 100px
   &__btn
     max-width: 320px
     margin: 32px auto 0 auto
     padding: 17px 0
+    +xxs
+      max-width: 100%
   .section__heading
     position: relative
+    +sm
+      padding-right: 50px
+  .section__subtitle
+    +xs
+      display: none
   .sliderArrows
     position: absolute
     bottom: 0
@@ -195,7 +216,6 @@
 
 
 .aboutBlock
-  padding: 200px 0
   position: relative
   +before
     position: absolute
@@ -203,62 +223,117 @@
     left: 0
     right: 0
     height: 638px
-    background: url('../img/layout/background-primary-top.svg')
+    background-image: url('../img/layout/background-primary-top.svg')
     background-repeat: no-repeat
     background-size: 100%
+    +xs
+      background-size: cover
+      transform: rotateY(180deg)
   +after
     position: absolute
     bottom: 0
     left: 0
     right: 0
     height: 638px
-    background: url('../img/layout/background-primary-bottom.svg')
+    background-image: url('../img/layout/background-primary-bottom.svg')
     background-repeat: no-repeat
     background-size: 100%
+    background-position: bottom
+    +xs
+      background: url('../img/layout/background-primary-top.svg')
+      background-size: cover
+      transform: rotateY(180deg) rotateX(180deg)
   &__wrap
-    padding-right: calc((100% - 1540px) / 2)
     position: relative
     z-index: 10
+    padding: 200px calc((100% - 1540px) / 2) 200px 0
     +flex(0,0,space-between,center)
+    +break(1600)
+      padding: 100px 4%
+    +xs
+      padding: 160px 4%
   &__img
     width: 100%
-    max-width: 913px
+    max-width: 52%
     height: 961px
     background-repeat: no-repeat
     background-size: contain
+    background-position: center
+    +sm
+      display: none
   &__content
     max-width: 43%
+    +break(1600)
+      max-width: 47%
+    +sm
+      max-width: 100%
   &__items
     +flex(0,wrap,space-between,flex-start)
   &__item
-    max-width: 45%
+    width: 45%
     margin-bottom: 29px
+    +xs
+      width: 100%
   &__itemTitle
+    position: relative
     display: block
+    +break(1600)
+      +text(24,0,32,0)
+    +xs
+      padding-left: 48px
+    +before
+      display: none
+      position: absolute
+      top: 0
+      left: 0
+      +xs
+        display: block
+    br
+      +xs
+        display: none
   &__itemText
     display: block
     margin-top: 16px
     letter-spacing: 0.01em
     +text(16,400,24,#38382F)
+    +xs
+      margin-top: 12px
   &__title
     text-transform: uppercase
     +text(48,700,56,0)
+    +break(1600)
+      +text(30,0,36,0)
+    +xs
+      +text(24,0,32,0)
   &__subtitle
     margin: 32px 0 56px 0
     +text(18,400,24,#1B1B1B)
+    +break(1600)
+      margin: 24px 0
+    +xs
+      font-size: 16px
   &__link
     margin-top: 11px
     max-width: 415px
     padding: 17px 0
+    +break(550)
+      margin-top: 3px
 
 
 .clients
   padding-top: 104px
+  +xs
+    padding-top: 0
   &__slider
     margin: -15px
     padding: 15px
   .section__heading
     position: relative
+    +sm
+      padding-right: 50px
+  .section__subtitle
+    +xs
+      display: none
   .sliderArrows
     position: absolute
     bottom: 0
@@ -267,27 +342,47 @@
 
 .recipes
   margin-top: 104px
+  +xs
+    margin-top: 50px
   +before
-    background: url('../img/layout/background-green-top.svg')
+    background-image: url('../img/layout/background-green-top.svg')
     background-repeat: no-repeat
     height: 550px
     background-size: 100%
+    +xs
+      transform: rotateY(180deg)
+      background-size: cover
   +after
-    background: url('../img/layout/background-green-bottom.svg')
+    background-image: url('../img/layout/background-green-bottom.svg')
     background-repeat: no-repeat
     height: 550px
     background-size: 100%
+    +xs
+      background-image: url('../img/layout/background-green-top.svg')
+      transform: rotateY(180deg) rotateX(180deg)
+      background-size: cover
   .aboutBlock__wrap
-    padding-right: 100px
-    padding-left: calc((100% - 1540px) / 2)
-    align-items: unset
+    padding: 200px 100px 150px calc((100% - 1540px) / 2)
+    +break(1600)
+      padding: 200px 4% 150px 4%
+    +xs
+      padding-top: 175px
+  .aboutBlock__link
+    +break(550)
+      margin-top: 32px
+      max-width: 100%
+  .aboutBlock__img
+    max-width: 51%
   .aboutBlock__subtitle
     margin-bottom: 40px
   &__content
     max-width: 46%
+    +sm
+      max-width: 100%
   &__imgWrap
     width: 818px
     height: 959px
+    max-width: 52%
   &__img
     max-width: 818px
     height: 959px
@@ -295,9 +390,21 @@
     background-size: contain
   &__list
     padding-bottom: 40px
-    +flex(0,0,space-between,0)
+    +flex(0,0,flex-start,0)
+    +break(550)
+      padding-bottom: 16px
+      +flex(column,0,0,center)
+  &__left
+    width: 55%
+    +break(550)
+      width: 100%
   &__right
+    width: 41%
+    margin-left: 32px
     +flex(column,0,space-between,0)
+    +break(550)
+      width: 100%
+      margin: 16px 0 0 0
   &__categories
     position: absolute
     top: 14px
@@ -313,26 +420,64 @@
       +tran(all,.4s)
       &:not(:last-child)
         margin-right: 8px
+        +md
+          margin-right: 0
       +hover
         text-decoration: none
         background: #fff
+      +md
+        font-size: 10px
+        padding: 3px 10px
+      +break(550)
+        font-size: 12px
+        padding: 6px 17px
+        background: #fff
+  &__rate
+    position: absolute
+    bottom: 16px
+    left: 16px
+    background: rgba(255, 255, 255, 0.55)
+    width: 64px
+    height: 32px
+    border-radius: 13.5px
+    backdrop-filter: blur(4px)
+    +text(12,400,20,0)
+    +flex(row-reverse,0,center,center)
+    +before
+      margin-left: 4px
   &__thumb
     display: block
     overflow: hidden
+    width: 100%
+    height: 199px
+    position: relative
+    +break(1400)
+      height: auto
+    +break(550)
+      height: 190px
     img
       width: 100%
-      height: 199px
+      height: 100%
       object-fit: cover
       +tran(all,.4s)
   &__date
     margin-bottom: 2px
     +text(12,400,20,#636060)
+    +break(550)
+      margin-top: 16px
   &__title
     display: block
     max-height: 71px
     overflow: hidden
     text-overflow: ellipsis
     +text(18,700,24,0)
+    +md
+      max-height: 54px
+      +text(14,0,18,#000) 
+    +break(550)
+      max-height: 97px
+      margin-bottom: 8px
+      +text(24,0,32,0)
   &__desc
     max-height: 47px
     overflow: hidden
@@ -340,53 +485,87 @@
     +text(16,300,24,#000)  
   &__caption
     padding: 2px 8px 8px 8px
+    +break(550)
+      padding: 16px
   &__end
     margin-bottom: 24px
+    +break(550)
+      text-align: center
+      +text(16,0,24,0)
   &__item
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
     border-radius: 16px
     width: 302px
+    width: 100%
     background: #fff
     overflow: hidden
     position: relative
+    &:not(:last-child)
+      margin-bottom: 16px
+      +break(550)
+        margin-bottom: 0
+    &:nth-child(1n + 2)
+      +break(550)
+        display: none
     +hover
       .recipes__thumb
         img
           transform: scale(1.1)
     &--big
       width: 416px
+      width: 100%
       height: 100%
       .recipes__thumb
         width: 100%
         height: 464px
+        +break(1400)
+          height: auto
+        +break(550)
+          height: 190px
         img
           display: block
           width: 100%
-          height: auto
+          height: 100%
       .recipes__caption
         padding: 10px 16px 24px 16px
+        +break(550)
+          padding: 16px
       .recipes__date
         margin-bottom: 4px
       .recipes__title
         max-height: 97px
         margin-bottom: 8px
         +text(24,0,32,0)
+        +md
+          +text(18,0,24,0)
+        +break(550)
+          +text(24,0,32,0)
 
 
 .feedback
+  +sm
+    margin-top: 61px
   .container
     +flex(0,0,center,center)
   &__title
     text-transform: uppercase
     letter-spacing: 0.02em
     +text(64,700,76,0)
+    +md
+      +text(48,0,56,0)
+    +xs
+      +text(32,0,38,0)
   &__btn
     margin-top: 48px
     max-width: 446px
+    +xs
+      margin-top: 40px
   &__managers
     min-width: 431px
     min-height: 703px
     position: relative
+    +sm
+      display: none
     &--load
       +before
         width: 256px
@@ -404,10 +583,10 @@
       width: 431px
       height: 703px
       object-fit: contain
+      object-position: bottom
     &--active
       display: block
   &__caption
-    max-width: 343px
     width: 100%
     border-radius: 30px 0 0 0
     position: absolute
@@ -426,16 +605,25 @@
 .seo
   background: $color-seo-block
   padding: 80px 0 50px 0
+  position: relative
+  z-index: 10
+  +sm
+    padding: 20px 0
+    margin-top: 80px
   &__title
     text-transform: uppercase
     margin-bottom: 30px
     +text(36,600,48,0)
+    +sm
+      font-weight: 700
   &__text
     letter-spacing: 0.02em
     max-height: 136px
     overflow: hidden
     +tran(all,.4s)
     +text(16,300,21,0)
+    +xs
+      max-height: 148px
     p
       margin-bottom: 30px
   &__more

@@ -77,6 +77,9 @@
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center; }
+    @media (max-width: 768px) {
+      .footer__socials a:not(:last-child) {
+        margin-right: 20px; } }
   .footer__copy {
     margin-top: 20px;
     text-align: center;
@@ -115,7 +118,7 @@
             -ms-flex-order: 1;
                 order: 1;
         margin: 0 0 32px 0;
-        width: 330px; } }
+        width: 100%; } }
     .footer__list--contacts li:not(:last-child) {
       margin-bottom: 16px; }
     .footer__list--contacts li a {

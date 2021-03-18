@@ -175,6 +175,8 @@
       +sm
         padding: 5px 0 5px 35px
         font-size: 12px
+      +xs
+        background: #eee
     button
       position: absolute
       top: 0
@@ -367,7 +369,7 @@
       text-overflow: ellipsis
       +text(14,400,24,0)
     &__price
-      +text(16,600,0,0)
+      +text(16,600,0,$color-text)
     &__del
       position: absolute
       top: 16px
@@ -376,7 +378,7 @@
       padding: 20px 24px 16px 24px
     &__total
       margin-bottom: 16px
-      +text(16,400,21,0)
+      +text(16,400,21,$color-text)
       &--noCommerce
         color: $color-sup
       &--commerce

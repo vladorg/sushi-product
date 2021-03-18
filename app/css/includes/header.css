@@ -300,6 +300,9 @@
         .header__search input {
           padding: 5px 0 5px 35px;
           font-size: 12px; } }
+      @media (max-width: 768px) {
+        .header__search input {
+          background: #eee; } }
     .header__search button {
       position: absolute;
       top: 0;
@@ -569,7 +572,8 @@
       line-height: 24px; }
     .headerDropdown__price {
       font-size: 16px;
-      font-weight: 600; }
+      font-weight: 600;
+      color: #242426; }
     .headerDropdown__del {
       position: absolute;
       top: 16px;
@@ -580,7 +584,8 @@
       margin-bottom: 16px;
       font-size: 16px;
       font-weight: 400;
-      line-height: 21px; }
+      line-height: 21px;
+      color: #242426; }
       .headerDropdown__total--noCommerce {
         color: #52B44E; }
       .headerDropdown__total--commerce {

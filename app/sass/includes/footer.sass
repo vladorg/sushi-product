@@ -38,6 +38,10 @@
   &__socials
     margin-top: 22px
     justify-content: center
+    a
+      &:not(:last-child)
+        +xs
+          margin-right: 20px
   &__copy
     margin-top: 20px
     text-align: center
@@ -64,7 +68,7 @@
       +xs
         order: 1
         margin: 0 0 32px 0
-        width: 330px
+        width: 100%
       li
         &:not(:last-child)
           margin-bottom: 16px

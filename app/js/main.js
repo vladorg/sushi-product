@@ -435,6 +435,7 @@ window.onload = () => {
   let slider_params = {
     slidesPerView: 4,
     spaceBetween: 16,
+    init: false,
     watchOverflow: true,
     watchSlidesVisibility: true,
     slideVisibleClass: 'swiper-slide-visible',
@@ -453,13 +454,15 @@ window.onload = () => {
         slidesPerView: 2
       },
       320: {
-        slidesPerView: 1
+        slidesPerView: 1,
+        spaceBetween: 0
       }
     }
   };
   let partners_params = {
     slidesPerView: 5,
     spaceBetween: 16,
+    init: false,
     watchOverflow: true,
     watchSlidesVisibility: true,
     slideVisibleClass: 'swiper-slide-visible',
@@ -505,19 +508,24 @@ window.onload = () => {
   }
 
   // initialization
-  sliderRender(home_categories_slider, 'categories_slider', 'categories', '.categories');
-  sliderRender(home_special, 'home_special_slider', 'special', '.productsSlider');
-  sliderRender(home_bestseller, 'home_bestseller_slider', 'bestseller', '.productsSlider');
-  sliderRender(home_new, 'home_new_slider', 'new', '.productsSlider');
+  sliderRender(home_categories_slider, 'categories_slider', 'categories', '.categories', slider_params);
+  sliderRender(home_special, 'home_special_slider', 'special', '.productsSlider', slider_params, true);
+  sliderRender(home_bestseller, 'home_bestseller_slider', 'bestseller', '.productsSlider', slider_params, true);
+  sliderRender(home_new, 'home_new_slider', 'new', '.productsSlider', slider_params, true);
   sliderRender(home_partners, 'home_partners_slider', 'partners', '.partners', partners_params);
   sliderRender(home_clients, 'home_clients_slider', 'clients', '.clients', partners_params);
 
-  function sliderRender(elem, slider, id, root, params = slider_params) {
-    if (elem) {
+  function sliderRender(elem, slider, id, root, params, desk_only = false) {
+    if (elem) {    
       params.navigation.nextEl = `${root} .sliderArrows__next--${id}`;
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
       let slider = new Swiper(elem, params);
       sliderArrows(slider);
+      if (desk_only) {
+        !isMobile ? slider.init() : null;
+      } else {
+        slider.init()
+      }
     }
   }
 
@@ -589,6 +597,12 @@ window.onload = () => {
         });
       }
     }
+
+
+    // main parallax
+    // new Backpax('.js-parallax');
+    $('.parallax-background').parallaxBackground({});
+   
 
     // main sections show
     let elems = [

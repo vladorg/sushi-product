@@ -5,10 +5,9 @@
   z-index: 100; }
   @media (max-width: 768px) {
     .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0; } }
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0; } }
   .header__top {
     background: #242424; }
     @media (max-width: 768px) {
@@ -926,7 +925,12 @@
     @media (max-width: 768px) {
       .header--fix {
         -webkit-animation: none;
-                animation: none; } }
+                animation: none;
+        position: -webkit-sticky;
+        position: sticky; } }
+    @media (max-width: 768px) {
+      .header--fix.header--banner {
+        position: fixed; } }
     .header--fix .header__inner {
       background: #fff;
       -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);

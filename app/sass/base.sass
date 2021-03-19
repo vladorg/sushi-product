@@ -43,7 +43,6 @@ body
   font-weight: $fw
   font-family: $ff
   overflow-x: hidden
-  height: 200vh
   background: $color_body
   //background: grey
   &::-webkit-scrollbar
@@ -52,7 +51,7 @@ body
   &::-webkit-scrollbar-thumb
     background: $color-primary
   &.column
-    //min-height: 100vh
+    min-height: 100vh
     +flex(column,0,0,0)
 button
   font-family: $ff
@@ -361,6 +360,7 @@ a
     padding: 1px 13px
     border-radius: 8px 2px 8px 2px
     text-align: center
+    white-space: nowrap
     +text(14,600,24,#fff)
     &:not(:last-child)
       margin-bottom: 8px
@@ -370,6 +370,8 @@ a
       background: $color-sticker-exc
     &--spec
       background: $color-sticker-spec
+    &--green
+      background: $color-sticker-green
   &__wish
     position: absolute
     top: 20px
@@ -444,3 +446,65 @@ a
   &--active
     opacity: 1
     pointer-events: auto
+
+
+
+.breadcrumbs
+  padding: 24px 0 42px 0
+  +xs
+    padding: 40px 0 32px 0
+  &__list
+    +flex(0,0,flex-start,center)
+  &__item
+    position: relative
+    padding-right: 8px
+    margin-right: 8px
+    +text(14,400,18, #C5C5C5)
+    +before
+      position: absolute
+      top: 50%
+      right: 0
+      width: 1px
+      height: 14px
+      background: #C5C5C5
+      transform: translateY(-50%)
+    a
+      +text(14,400,18, #C5C5C5)
+    &--start
+      a
+        +flex(0,0,flex-start,center)
+        +before
+          margin-right: 8px
+    &--end
+      +before
+        display: none
+
+
+.primary-bg
+  position: relative
+  +before
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 638px
+    background-image: url('../img/layout/background-primary-top.svg')
+    background-repeat: no-repeat
+    background-size: 100%
+    +xs
+      background-size: cover
+      background-image: url('../img/layout/background-primary-top-mobile.svg')
+  +after
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 638px
+    background-image: url('../img/layout/background-primary-bottom.svg')
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: bottom
+    +xs
+      background-image: url('../img/layout/background-primary-bottom-mobile.svg')
+      background-size: cover
+

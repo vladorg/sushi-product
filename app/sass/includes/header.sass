@@ -5,10 +5,8 @@
   position: relative
   z-index: 100
   +xs
-    position: fixed
+    position: sticky
     top: 0
-    left: 0
-    right: 0
 
   // header toolbar
   &__top
@@ -602,6 +600,10 @@
     animation: header .2s linear, fadeIn .4s linear
     +xs
       animation: none
+      position: sticky
+    &.header--banner
+      +xs
+        position: fixed
     .header__inner
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)

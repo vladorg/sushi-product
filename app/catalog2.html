@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Category</title>
+  <title>Category child</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
   <!-- build:css -->
@@ -394,193 +394,711 @@
     </div>
   </header>
 
-  <main class="category">
-    <div class="layout">
-
+  <div class="layout layout--left">
+    <aside class="sidebar sidebar--catalog scroll">
+      <div class="sidebar__title heading ic-arrow-back close_category_catalog">Каталог</div>
+      <nav class="navigation">        
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Икра</a>
+          </li>
+          <li class="navigation__item navigation__item--hasChild">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Сыры</a>
+            <ul class="navigation__child scroll">
+              <li>
+                <a href="#">Сыры 1</a>
+              </li>
+              <li>
+                <a href="#">Сыры 2</a>
+              </li>
+              <li>
+                <a href="#">Сыры 3</a>
+              </li>
+              <li>
+                <a href="#">Сыры 4</a>
+              </li>
+              <li>
+                <a href="#">Сыры 5</a>
+              </li>
+              <li>
+                <a href="#">Сыры 6</a>
+              </li>
+              <li>
+                <a href="#">Сыры 7</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Бакалея</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Акция</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Рис</a>
+          </li>
+          <li class="navigation__item navigation__item--hasChild">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Соусы</a>
+            <ul class="navigation__child scroll">
+              <li>
+                <a href="#">Соусы 1</a>
+              </li>
+              <li>
+                <a href="#">Соусы 2</a>
+              </li>
+              <li>
+                <a href="#">Соусы 3</a>
+              </li>
+              <li>
+                <a href="#">Соусы 4</a>
+              </li>
+              <li>
+                <a href="#">Соусы 5</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Водоросли и грибы</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Новинки</a>
+          </li>
+          <li class="navigation__item navigation__item--hasChild">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Мука и панировка</a>
+            <ul class="navigation__child scroll">
+              <li>
+                <a href="#">Мука и панировка 1</a>
+              </li>
+              <li>
+                <a href="#">Мука и панировка 2</a>
+              </li>
+              <li>
+                <a href="#">Мука и панировка 3</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Лапша</a>
+          </li>
+          <li class="navigation__item navigation__item--hasChild">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Икра</a>
+            <ul class="navigation__child scroll">
+              <li>
+                <a href="#">Массаго</a>
+              </li>
+              <li>
+                <a href="#">Тобика</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Собственное производство</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Сливки</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Эксклюзив</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Рыба</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Актуальное</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Фасованная продукция</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Подборки</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Уксус</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Фасованная продукция</a>
+          </li>
+          <li class="navigation__item">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Морепродукты</a>
+          </li>
+          <li class="navigation__item navigation__item--hasChild">
+            <button class="btn arrow navigation__childOpener"></button>
+            <a href="#">Сопутствующие товары</a>
+            <ul class="navigation__child scroll">
+              <li>
+                <a href="#">Сопутствующие товары 1</a>
+              </li>
+              <li>
+                <a href="#">Сопутствующие товары 2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main categoryChild primary-bg primary-bg--category">
+      
       <section class="breadcrumbs">
         <div class="container">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item breadcrumbs__item--start">
               <a href="./index.html" class="ic-home">Главная</a>
             </li>
-            <li class="breadcrumbs__item breadcrumbs__item--end">Каталог товарiв</li>
+            <li class="breadcrumbs__item">
+              <a href="./catalog.html">Каталог товарiв</a>
+            </li>
+            <li class="breadcrumbs__item breadcrumbs__item--end">Мука и панировка</li>
           </ul>
         </div>
       </section>
 
-      <section class="section offers">
-        <div class="container">
-          <div class="section__heading">
-            <div class="section__titles">
-              <div class="section__title heading">Наші пропозиції</div>
-            </div>
-          </div>
-          <div class="section__sliderWrap">
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--offers"></button>
-            <div class="offers__slider swiper-container">
-              <div class="offers__items swiper-wrapper">
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--spec">Акция</div>
-                    <div class="offer__title"><span>200+</span>акційних товарiв</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/1.jpg" class="offer__thumb">
-                </div>
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--new">Новинка</div>
-                    <div class="offer__title"><span>24/7</span>оновлення товарів</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/2.jpg" class="offer__thumb">
-                </div>
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--green">Собственное производство</div>
-                    <div class="offer__title"><span>35</span>власних товарiв</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/3.jpg" class="offer__thumb">
-                </div>
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
-                    <div class="offer__title"><span>50+</span>ексклюзивних товарів</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/4.jpg" class="offer__thumb">
-                </div>
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--green">Актуальное</div>
-                    <div class="offer__title"><span>100+</span>актуальних товарiв</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/5.jpg" class="offer__thumb">
-                </div>
-                <div class="offer swiper-slide">
-                  <div class="offer__info">
-                    <div class="preview__sticker preview__sticker--green">Подборки</div>
-                    <div class="offer__title"><span>10+</span>авторських збірок</div>
-                    <a href="#" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-                  </div>
-                  <img src="./img/offers/6.jpg" class="offer__thumb">
-                </div>
-              </div>
-            </div>
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--offers sliderArrows__arrow--active"></button>
-          </div>
+      <h1 class="title">Мука и панировка</h1>
+
+      <section class="categoryChild__sort">
+        <button class="categoryChild__catalog btn btn--primary open_category_catalog ic-lines">Каталог</button>
+        <div class="dropdown sort ic-arrow-black">
+          <div class="dropdown__title">За популярністю</div>
+          <ul class="dropdown__list">
+            <li>
+              <a href="#">За популярністю</a>
+            </li>
+            <li>
+              <a href="#">За популярністю</a>
+            </li>
+            <li>
+              <a href="#">За популярністю</a>
+            </li>
+            <li>
+              <a href="#">За популярністю</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown view ic-arrow-black">
+          <div class="dropdown__title">12</div>
+          <ul class="dropdown__list">
+            <li>
+              <a href="#">12</a>
+            </li>
+            <li>
+              <a href="#">24</a>
+            </li>
+            <li>
+              <a href="#">36</a>
+            </li>
+            <li>
+              <a href="#">48</a>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="section categories primary-bg">
-        <div class="container">
-          <div class="section__heading">
-            <div class="section__titles">
-              <div class="section__title heading">Каталог товарiв</div>
+      <section class="section products products--category">
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <!-- if logged -->
+            <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
+            <!-- else -->
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <!-- endif -->
+            <a href="./product.html">
+              <img src="./img/products/1.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">1Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+            <!-- if commerce -->
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">6 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- else -->
+            <!-- <div class="preview__info">
+              <div class="preview__infoTitle">
+                Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- endif -->
+            <div class="preview__bottom">
+              <!-- if commerce -->
+              <div class="preview__price">
+                <span>124,00 грн</span>
+                <!-- if special -->
+                <span class="preview__special">235,70 грн</span>
+                <!-- endif -->
+              </div>
+              <!-- endif -->
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
             </div>
           </div>
-          <div class="categories__items">
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/bakaleya.png" alt="">
-              </div>
-              <span>Бакалея</span>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/2.png" alt="" class="preview__thumb">
             </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/muka.png" alt="">
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Водорості Katana Норі 5 листів</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">10 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
               </div>
-              <span>Мука и панировка</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/vasabi.png" alt="">
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>48,49 грн</span>
               </div>
-              <span>Васаби</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/imbir.png" alt="">
-              </div>
-              <span>Имбирь</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/uksus.png" alt="">
-              </div>
-              <span>Уксус</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/vodorosli.png" alt="">
-              </div>
-              <span>Водоросли и грибы</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/ikra.png" alt="">
-              </div>
-              <span>Икра</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/lapsha.png" alt="">
-              </div>
-              <span>Лапша</span>
-            </a>
-
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/more.png" alt="">
-              </div>
-              <span>Морепродукты</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/ris.png" alt="">
-              </div>
-              <span>Рис</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/ryba.png" alt="">
-              </div>
-              <span>Рыба</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/sop.png" alt="">
-              </div>
-              <span>Сопутстующие товары</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/sousi.png" alt="">
-              </div>
-              <span>Соусы</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/sir.png" alt="">
-              </div>
-              <span>Сыры и сливки</span>
-            </a>
-            <a href="./catalog.html" class="categories__item">
-              <div class="categories__thumb">
-                <img src="./img/category/fas.png" alt="">
-              </div>
-              <span>Фасованная продукция</span>
-            </a>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
           </div>
-        </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/3.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">24 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>54,49 грн</span>
+                <span class="preview__special">59,15 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--spec">Акция</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/4.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сьомга (лосось) філе охолоджене, 1кг</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">1 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>529,00 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <!-- if logged -->
+            <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
+            <!-- else -->
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <!-- endif -->
+            <a href="./product.html">
+              <img src="./img/products/1.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">1Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+            <!-- if commerce -->
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">6 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- else -->
+            <!-- <div class="preview__info">
+              <div class="preview__infoTitle">
+                Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- endif -->
+            <div class="preview__bottom">
+              <!-- if commerce -->
+              <div class="preview__price">
+                <span>124,00 грн</span>
+                <!-- if special -->
+                <span class="preview__special">235,70 грн</span>
+                <!-- endif -->
+              </div>
+              <!-- endif -->
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/2.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Водорості Katana Норі 5 листів</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">10 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>48,49 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/3.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">24 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>54,49 грн</span>
+                <span class="preview__special">59,15 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--spec">Акция</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/4.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сьомга (лосось) філе охолоджене, 1кг</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">1 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>529,00 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <!-- if logged -->
+            <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
+            <!-- else -->
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <!-- endif -->
+            <a href="./product.html">
+              <img src="./img/products/1.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">1Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+            <!-- if commerce -->
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">6 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- else -->
+            <!-- <div class="preview__info">
+              <div class="preview__infoTitle">
+                Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- endif -->
+            <div class="preview__bottom">
+              <!-- if commerce -->
+              <div class="preview__price">
+                <span>124,00 грн</span>
+                <!-- if special -->
+                <span class="preview__special">235,70 грн</span>
+                <!-- endif -->
+              </div>
+              <!-- endif -->
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/2.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Водорості Katana Норі 5 листів</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">10 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>48,49 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/3.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">24 уп</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>54,49 грн</span>
+                <span class="preview__special">59,15 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__stickers">
+              <div class="preview__sticker preview__sticker--new">Новинка</div>
+              <div class="preview__sticker preview__sticker--spec">Акция</div>
+            </div>
+            <button class="btn ic-heart-grey preview__wish open_auth"></button>
+            <a href="./product.html">
+              <img src="./img/products/4.png" alt="" class="preview__thumb">
+            </a>
+            <div class="preview__art">Код: 12213354</div>
+            <a href="./product.html" class="preview__name">Сьомга (лосось) філе охолоджене, 1кг</a>
+            <div class="preview__info">
+              <div class="preview__infoTitle">
+                Мін. Замовлення:
+                <span class="preview__infoValue">1 кг</span>
+                <div class="tooltip tooltip--preview tooltip--short">
+                  <div class="tooltip__pick">?</div>
+                  <div class="tooltip__wrap">
+                    <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sequi a
+                      commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__bottom">
+              <div class="preview__price">
+                <span>529,00 грн</span>
+              </div>
+              <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+            </div>
+          </div>
       </section>
 
-    </div>
-  </main>
+      <section class="section more">
+        <button class="btn">Загрузить еще</button>
+      </section>
+
+      <section class="section pagination">
+        <ul>
+          <li class="pagination__current">
+            <a href="">1</a>
+          </li>
+          <li>
+            <a href="">2</a>
+          </li>
+          <li>
+            <a href="">3</a>
+          </li>
+          <li>
+            <a href="">4</a>
+          </li>
+          <li class="pagination__delim">...</li>
+          <li>
+            <a href="">23</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
 
   <div class="footer">
     <div class="container">

@@ -122,3 +122,158 @@
       text-overflow: ellipsis
 
 
+
+
+.categoryChild
+  &__sort
+    padding: 40px 0 15px 0
+    +flex(0,0,flex-start,center)
+    +xs
+      padding-bottom: 54px
+    .dropdown
+      &:not(:last-child)
+        margin-right: 24px
+        +xs
+          margin-right: 0
+  &__catalog
+    width: 109px
+    padding: 8px 0
+    border-radius: 8px
+    margin-right: 16px
+    +flex(0,0,center,center)
+    display: none
+    +text(15,400,20,#fff)
+    +sm
+      display: flex
+    +before
+      margin-right: 7px
+.sort
+  +xs
+    margin-left: auto
+.view
+  width: 75px
+  +sm
+    display: none
+
+
+
+.navigation
+  &__title
+  &__list
+  &__child
+    opacity: 0
+    max-height: 0
+    overflow: hidden
+    padding-top: 0
+    +tran(all,.4s)
+    li
+      padding-left: 24px
+      &:not(:last-child)
+        margin-bottom: 16px
+    a
+      +text(16,400,24,0)
+  &__childOpener
+    position: absolute
+    top: 0
+    right: 0
+    width: 50px
+    height: 24px
+    display: none
+    +before
+      top: 50%
+    +after
+      top: 50%
+  &__item
+    padding-right: 56px
+    &--hasChild
+      position: relative
+      .navigation__childOpener
+        display: block
+    &--open
+      > a
+        font-weight: 600!important
+        text-decoration: none
+        color: $color-primary
+      .navigation__child
+        margin-top: 16px
+        opacity: 1
+        max-height: 500px
+      .arrow
+        +before
+          right: 22px
+          transform: rotate(-40deg) translateY(-50%)
+        +after
+          transform: rotate(40deg) translateY(-50%)
+    &--scroller
+      .navigation__child
+        overflow: auto
+    &:not(:last-child)
+      margin-bottom: 16px
+    > a
+      display: block
+      overflow: hidden
+      text-overflow: ellipsis
+      +text(18,400,24,0)
+      +tran(padding-bottom,.4s)
+      +md
+        font-size: 16px
+      +hover
+        font-weight: 600
+        text-decoration: none
+        color: $color-primary
+  
+
+
+.pagination
+	padding: 16px 0 80px 0
+	+xs
+		padding: 24px 0 0 0
+	ul
+		+flex(0,0,center,center)
+		li
+			&:not(:last-child)
+				margin-right: 10px
+			a
+				width: 37px
+				height: 37px
+				border-radius: 4px
+				+flex(0,0,center,center)
+				+text(14,600,24,0)
+				+tran(all,.4s)
+				+hover
+					background: $color-primary
+          text-decoration: none
+          color: #fff
+			&:nth-child(1n + 5)
+				+xs
+					display: none
+						
+	&--blog
+		padding-top: 41px
+		max-width: 920px
+		+xs
+			padding-bottom: 40px
+	&--actions
+		padding: 64px 0 32px 0
+	&__delim
+    margin: 0 24px 0 8px!important
+    +xs
+      display: block !important
+    + li
+      display: block !important
+	&__current
+		a
+      border: 2px solid $color-primary
+      background: $color-primary
+      color: #fff
+    
+
+.more
+  text-align: center
+  padding: 54px 0 0 0
+  +xs
+    padding: 40px 0 0 0
+  button
+    +text(18,600,24,$color-primary)
+    +hover
+      text-decoration: underline

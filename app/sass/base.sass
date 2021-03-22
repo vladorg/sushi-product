@@ -112,6 +112,8 @@ a
     border-radius: 4px
     +tran(all,.4s)
     +text(14,400,24,#333)
+    +xs
+      +text(12,0,18,0)
   &__content
     background: $color-tooltip-content
     padding: 24px 32px
@@ -139,29 +141,27 @@ a
         border-bottom: 18px solid $color-tooltip-content
         border-left: 9px solid $transparent
   &--preview
+    position: static
     .tooltip__wrap
-      top: 50%
-      right: 0
-      padding-top: 125%
-      transform: translateX(calc(50% - 28px))
       z-index: 10
-      width: 400px
-      +xs
-        width: 320px
+      width: auto
+      top: 0
+      left: 0
+      right: 0
+      padding-top: 30px
       +before
         position: absolute
-        top: 15px
+        top: -15px
         right: 50%
-        transform: translateX(calc(50% + 19px))
         border-right: 9px solid $transparent
         border-bottom: 18px solid $color-tooltip-content
         border-left: 9px solid $transparent
+        display: none
   &--short
     .tooltip__content
       padding: 14px
       max-height: 100px
       overflow: auto
-
   +hover
     .tooltip__pick
       background: $color-primary-hover
@@ -335,6 +335,12 @@ a
   grid-gap: 16px
   +xs
     grid-template-columns: repeat(1, 1fr)
+  &--category
+    grid-template-columns: repeat(3, 1fr)
+    +md
+      grid-template-columns: repeat(2, 1fr)
+    +xs
+      grid-template-columns: repeat(1, 1fr)
 
 .preview
   width: 100%
@@ -397,6 +403,7 @@ a
     +text(16,400,19,0)
   &__infoTitle
     color: $color-sup
+    position: relative
   &__infoValue
     color: $color-text
   &__bottom
@@ -420,9 +427,12 @@ a
     text-decoration-line: line-through
     +text(18,400,21.6,#636363)
   &__buy
+    width: 50%
     max-width: 183px
     padding: 15px 0
     +flex(0,0,center,center)
+    +sm
+      font-size: 14px
     +before
       margin-right: 17px
 
@@ -451,10 +461,10 @@ a
 
 .breadcrumbs
   padding: 24px 0 42px 0
-  +xs
+  +sm
     padding: 40px 0 32px 0
   &__list
-    +flex(0,0,flex-start,center)
+    +flex(0,wrap,flex-start,center)
   &__item
     position: relative
     padding-right: 8px
@@ -507,4 +517,127 @@ a
     +xs
       background-image: url('../img/layout/background-primary-bottom-mobile.svg')
       background-size: cover
+  
+  &--category
+    +before
+      display: none
+      +xs
+        display: block
+        top: 7%
+        background-position: bottom
+        z-index: -1
+    +after
+      display: none
+      +xs
+        display: block
+        z-index: -1
+        bottom: 7%
+      
 
+
+
+.layout
+  width: 100%
+  &--left
+    position: relative
+    +flex(0,0,space-between,0)
+    .main
+      width: $main
+      padding: 0 calc((100% - 1540px) / 2) 104px 51px
+      +break(1600)
+        width: calc(100% - 20%)
+        padding: 0 4% 104px 25px
+      +sm
+        width: 100%
+        padding: 0 4% 80px 4%
+    .breadcrumbs
+      .container
+        width: 100%
+
+
+.sidebar
+  width: $sidebar
+  background: $color-sidebar
+  padding-left: calc((100% - 1540px) / 2)
+  padding-top: 93px
+  +break(1600)
+    width: 20%
+    padding-left: 4%
+  +sm
+    display: none
+  &--catalog
+    +sm
+      display: block
+      position: fixed
+      top: 67px
+      left: -100%
+      padding: 0
+      width: 100%
+      z-index: 10
+      padding: 40px 0 123px 16px
+      overflow: auto
+      max-height: calc(100vh - 67px)
+      +tran(all,.4s)
+  &--open
+    left: 0
+  &__title
+    padding-bottom: 12px
+    margin-bottom: 16px
+    border-bottom: 1px solid #D6D6D6
+    +sm
+      +flex(0,0,flex-start,center)
+    +before
+      display: none !important
+      +sm
+        display: block !important
+        margin-right: 20px
+
+.dropdown
+	width: 172px
+	max-width: 100%
+	position: relative
+	z-index: 1
+	+text(14,500,24,0)
+	+before
+		position: absolute
+		top: 16px
+		right: 5px
+		+tran(all,.2s)
+	+break(1400)
+		width: 200px
+	&:hover
+		cursor: pointer
+	&__title
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    border: 1px solid #C1C1C1
+    border-radius: 8px
+    padding: 7px 32px 7px 12px
+    +text(15,400,20,#000)
+	&__list
+		opacity: 0
+		max-height: 0px
+		overflow: hidden
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		border: 1px solid #C1C1C1
+		border-top: 0
+		border-radius: 0 0 4px 4px
+		padding: 8px 30px 8px 16px
+		background: #fff
+		box-shadow: 0px 4px 8px #C1C1C1
+		+tran(all,.4s)
+		li
+			margin: 5px 0
+	&--open
+    z-index: 10
+    +before
+      transform: rotate(-180deg)
+    .dropdown__title
+      border-radius: 8px 8px 0 0
+    .dropdown__list
+      opacity: 1
+      max-height: 999px

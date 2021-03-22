@@ -1,0 +1,20 @@
+.productPage__main {
+  padding-bottom: 104px; }
+
+.productPageImages {
+  width: 100%;
+  max-width: 449px; }
+  .productPageImages__top img {
+    width: 449px;
+    height: 449px;
+    display: block;
+    -o-object-fit: contain;
+       object-fit: contain; }
+  .productPageImages__bottom {
+    padding-top: 16px; }
+    .productPageImages__bottom img {
+      width: 106px;
+      height: 106px;
+      display: block;
+      -o-object-fit: contain;
+         object-fit: contain; }

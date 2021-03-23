@@ -5,18 +5,22 @@
 
 
 .productPage
-  &__main
+  &Main
     padding-bottom: 104px
+    .container
+      +flex(0,0,space-between,0)
   
   &Images
     width: 100%
     max-width: 449px
+    position: relative
     &__top
       img
         width: 449px
         height: 449px
         display: block
         object-fit: contain
+        cursor: zoom-in
     &__bottom
       padding-top: 16px
       img
@@ -24,3 +28,118 @@
         height: 106px
         display: block
         object-fit: contain
+        cursor: pointer
+  &Info
+    width: 1146px
+    height: 571px
+    padding-left: 76px
+    +flex(column,wrap,flex-start,0)
+    &__title
+      max-width: 483px
+      max-height: 148px
+      overflow: hidden
+      text-overflow: ellipsis
+      +text(28,700,37,#000)
+    &__info
+      padding-top: 54px
+      //padding-right: 80px
+      max-width: 483px
+    &__code
+      +text(16,400,21,#C5C5C5)
+    &__row
+      position: relative
+      overflow: hidden
+      +tran(all,.4s)
+      transition: max-height .4s, margin-bottom .4s, opacity .4s .3s
+      +flex(0,0,space-between,center)
+      +text(16,400,21,#000)
+      +before
+        position: absolute
+        bottom: 5px
+        left: 0
+        right: 0
+        border-bottom: 1px dotted #D6D6D6
+      &:not(:last-child)
+        margin-bottom: 8px
+      &:nth-child(1n + 7)
+        max-height: 0
+        margin-bottom: 0
+        opacity: 0
+      span
+        background: $color_body
+        position: relative
+    &__rows
+      margin-top: 23px
+      padding-right: 5px
+      max-height: 375px
+      overflow: auto
+      &--full
+        .productPageInfo__row
+          &:nth-child(1n + 7)
+            max-height: 30px
+            opacity: 1
+            &:not(:last-child)
+              margin-bottom: 8px
+    &__more
+      margin-top: 12px
+      +text(16,400,21,$color-primary)
+      +tran(all,.2s)
+      +hover
+        text-decoration: underline
+      &--hide
+        opacity: 0
+        pointer-events: none
+        position: absolute
+  &Checkout
+    width: 448px
+    margin-left: auto
+    background: #fff
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)   
+    border-radius: 14px
+    position: relative
+    padding: 32px 24px 0 24px
+    &__wish
+      position: absolute
+      top: 60px
+      right: 26px
+    &__priceWrap
+      padding: 0 60px 23px 0
+    &__price
+      display: block
+      +text(48,700,63,#000)
+    &__min
+      display: block
+      position: relative
+      +text(18,600,21,$color-primary)
+    &__tools
+      padding-bottom: 16px
+      margin-bottom: 16px
+      border-bottom: 1px solid #D6D6D6
+      +flex(0,0,space-between,center)
+    &__buy
+      max-width: 183px
+    &__drops
+  
+  &Tabs
+    padding-top: 0
+    +text(16,400,24,#000)
+    &__tabs
+      height: 623px
+    &__tab
+      background: #fff
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+      border-radius: 16px
+      padding: 32px 24px 24px 24px
+  
+
+  &Description
+    
+    p
+      margin-bottom: 16px
+    ul
+      margin-bottom: 24px
+      li
+        &:not(:last-child)
+          margin-bottom: 16px
+  &Cooking
+  &Recipes

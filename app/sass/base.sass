@@ -361,6 +361,7 @@ a
     position: absolute
     top: 11px
     left: 16px
+    z-index: 5 
   &__sticker
     width: 100%
     padding: 1px 13px
@@ -641,3 +642,159 @@ a
     .dropdown__list
       opacity: 1
       max-height: 999px
+
+
+
+
+.accordion
+  &__title
+    cursor: pointer
+    +flex(0,0,flex-start,center)
+    +text(16,600,19,0)
+    +before
+      top: 10px
+      right: 7px
+      background: #000
+    +after
+      top: 10px
+      right: 0
+      background: #000
+    i
+      display: inline-block
+      margin-right: 18px
+  &__content
+    max-height: 0
+    opacity: 0
+    overflow: hidden
+    padding-top: 0
+    padding-right: 5px
+    +tran(all,.4s)
+    &--scroll
+      overflow: auto
+    .productPageInfo__row
+      &:nth-child(1n + 7)
+        max-height: 100px
+        opacity: 1
+      span
+        background: #fff
+      &:not(:last-child)
+        margin-bottom: 16px
+      span
+        padding: 0 10px 0 0
+        + span
+          padding: 0 0 0 10px
+  &__item
+    position: relative
+    padding-bottom: 16px
+    margin-bottom: 16px
+    border-bottom: 1px solid #D6D6D6
+    &--open
+      .accordion__title
+        +before
+          background: $color-primary
+          right: 6px
+          transform: rotate(-40deg) translateY(-50%)
+        +after
+          background: $color-primary
+          transform: rotate(40deg) translateY(-50%)
+      .accordion__content
+        max-height: 187px
+        opacity: 1
+        margin-top: 16px
+        
+  
+  &__btn
+  &__opener
+    position: absolute
+    top: 0
+    right: 0
+    width: 30px
+    height: 30px
+    background: grey
+
+
+
+.quantly
+  +flex(0,0,flex-start,center)
+  &__inner
+    width: 93px
+    padding-right: 24px
+    position: relative
+  &__label
+    display: inline-block
+    margin-right: 8px
+    +text(14,600,19,0)
+  &__input
+    width: 100%
+    padding: 15px 0
+    border-radius: 8px 0 0 8px
+    border: 1px solid #D6D6D6
+    background-repeat: 0
+    text-align: center
+    +text(20,400,26,#000)
+  &__plus
+    top: 0
+    border-radius: 0px 8px 0px 0px
+    border-bottom: 0!important
+    +after
+      width: 9px
+      height: 1px
+      background: #D6D6D6
+      transform: rotate(90deg)
+      position: absolute
+  &__minus
+    bottom: 0
+    border-radius: 0px 0px 8px 0px
+  &__button
+    position: absolute
+    width: 24px
+    height: 29px
+    right: 0
+    border: 1px solid #D6D6D6
+    border-left: 0
+    +flex(0,0,center,center)
+    +before
+      width: 9px
+      height: 1px
+      background: #D6D6D6
+      position: absolute
+    +hover
+      +before
+        background: #000
+      +after
+        background: #000
+
+
+
+
+.items
+  &__item
+    background: #fff
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    +flex(0,0,space-between,center)
+  &__colFirst
+    width: 238px
+  &__colSecond
+    width: 379px
+  &__colThird
+    width: 600px
+  &__colFourth
+    width: 246px
+
+
+
+
+
+.list-check
+  li
+    padding-left: 32px
+    position: relative
+    +before
+      position: absolute
+      top: 50%
+      left: 0
+      width: 18px
+      height: 15px
+      background-image: url('../img/icons/check.svg')
+      transform: translateY(-50%)

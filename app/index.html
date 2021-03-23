@@ -526,26 +526,26 @@
             <a href="./catalog.html" class="section__link">Переглянути все</a>
           </div>
           <div class="productsSlider__buttons">
-            <button class="btn productsSlider__btn productsSlider__btn--active" data-slider="special">Акции</button>
-            <button class="btn productsSlider__btn" data-slider="bestseller">Хит продаж</button>
-            <button class="btn productsSlider__btn" data-slider="new">Новинки</button>
+            <button class="btn productsSlider__btn productsSlider__btn--active" data-tab="special">Акции</button>
+            <button class="btn productsSlider__btn" data-tab="bestseller">Хит продаж</button>
+            <button class="btn productsSlider__btn" data-tab="new">Новинки</button>
           </div>
 
           <!-- nav arrows for sliders, all required -->
           <div class="sliderArrows sliderArrows--static productsSlider__arrows productsSlider__arrows--active"
-            data-slider="special">
+            data-tab="special">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--special"></button>
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--special sliderArrows__arrow--active"></button>
           </div>
-          <div class="sliderArrows productsSlider__arrows" data-slider="bestseller">
+          <div class="sliderArrows productsSlider__arrows" data-tab="bestseller">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--bestseller"></button>
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--bestseller sliderArrows__arrow--active"></button>
           </div>
-          <div class="sliderArrows productsSlider__arrows" data-slider="new">
+          <div class="sliderArrows productsSlider__arrows" data-tab="new">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--new"></button>
             <button
@@ -556,7 +556,7 @@
         <div class="productsSlider__tabs">
 
           <div class="productsSlider__tabWrap productsSlider__tabWrap--active productsSlider__special swiper-container"
-            data-slider="special">
+            data-tab="special">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -865,7 +865,7 @@
             </div>
           </div>
 
-          <div class="productsSlider__tabWrap productsSlider__bestseller swiper-container" data-slider="bestseller">
+          <div class="productsSlider__tabWrap productsSlider__bestseller swiper-container" data-tab="bestseller">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -1174,7 +1174,7 @@
             </div>
           </div>
 
-          <div class="productsSlider__tabWrap productsSlider__new swiper-container" data-slider="new">
+          <div class="productsSlider__tabWrap productsSlider__new swiper-container" data-tab="new">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -2342,17 +2342,26 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-1.7.1.min.js"
-    integrity="sha256-iBcUE/x23aI6syuqF7EeT/+JFBxjPs5zeFJEXxumwb0=" crossorigin="anonymous"></script>
+  <!-- jquery required for only pages: MAIN, PRODUCT -->
+  <script src="./libs/jquery/jquery.min.js"></script>
+  <!-- end jquery -->
+
+  <!-- parallax required for MAIN page only -->  
   <script src="./libs/parallax/TweenLite.js"></script>
   <script src="./libs/parallax/CSSPlugin.js"></script>
   <script src="./libs/parallax/parallax_background.js"></script>
+  <!-- end parallax -->
 
-  <script src="./libs/swiper-bundle.min.js"></script>
+  <!-- fancybox required for PRODUCT page only -->
+  <script src="./libs/lightbox/jquery.fancybox.min.js"></script>
+  <!-- end fancybox -->
 
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  
   <!-- build:js -->
   <script src="js/main.js"></script>
   <!-- endbuild -->
+  
 </body>
 
 </html>

@@ -303,3 +303,11 @@
   width: 7px;
   height: 15px;
   background: url("../img/icons.svg") -1205px -13px no-repeat; }
+
+.ic-box-black::before {
+  content: '';
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url("../img/icons.svg") -1281px -8px no-repeat; }

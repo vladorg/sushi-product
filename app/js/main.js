@@ -56,7 +56,9 @@ window.onload = () => {
     },
     top_btn = getElem('.toTop'),
     seo_btn = getElem('.seo__more', false),
-    open_dropdown = getElem('.dropdown__title', false);
+    open_dropdown = getElem('.dropdown__title', false),
+    open_acordion = getElem('.accordion__title', false),
+    prod_btns_wrap = getElem('.productsSlider__buttons');
 
   // scroll top button show and scrolled
   window.addEventListener('scroll', e => {
@@ -240,13 +242,6 @@ window.onload = () => {
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
       let slider = new Swiper(elem, params);
       sliderArrows(slider);
-
-      // if (desk_only) {
-      //   !isMobile ? slider.init() : null;
-      // } else {
-      //   slider.init()
-      // }
-      console.log(slider);
       if (device_mode == 'desktop') {
         isMobile ? null : slider.init();
         console.log('desktop');
@@ -300,13 +295,64 @@ window.onload = () => {
 
   // default dropdown
   if (open_dropdown) {
-    for (var i = 0; i < open_dropdown.length; i++) {
+    for (let i = 0; i < open_dropdown.length; i++) {
       open_dropdown[i].addEventListener('click', function (e) {
         e.preventDefault();
         let list = this.parentNode;
         list.classList.toggle('dropdown--open');
       });
     }
+  }
+
+  // default acordion
+  if (open_acordion) {
+    for (let i = 0; i < open_acordion.length; i++) {
+      open_acordion[i].addEventListener('click', e => {
+        if (open_acordion[i].parentNode.classList.contains('accordion__item--open')) {
+          open_acordion[i].parentNode.classList.remove('accordion__item--open');    
+          open_acordion[i].parentNode.querySelector('.accordion__content').classList.remove('accordion__content--scroll');      
+          setTimeout(() => {
+            open_acordion[i].parentNode.querySelector('.accordion__content').classList.remove('scroll');
+            
+          }, 400);
+        } else {
+          open_acordion[i].parentNode.classList.add('accordion__item--open');          
+          setTimeout(() => {
+            open_acordion[i].parentNode.querySelector('.accordion__content').classList.add('scroll');
+            open_acordion[i].parentNode.querySelector('.accordion__content').classList.add('accordion__content--scroll');
+          }, 400);
+        }
+      });
+    }
+  }
+
+  // tabs switch
+  if (prod_btns_wrap) {
+    prod_btns_wrap.addEventListener('click', function (e) {
+      if (e.target.classList.contains('productsSlider__btn')) {
+        let tab = e.target.dataset.tab;
+
+        for (let i = 0; i < tabs_prod.length; i++) {
+          tabs_prod[i].classList.remove('productsSlider__tabWrap--active');
+          if (tabs_prod[i].dataset.tab == tab) {
+            tabs_prod[i].classList.add('productsSlider__tabWrap--active');
+          }
+        }
+
+        for (let i = 0; i < prod_arrows.length; i++) {
+          prod_arrows[i].classList.remove('productsSlider__arrows--active');
+          if (prod_arrows[i].dataset.tab == tab) {
+            prod_arrows[i].classList.add('productsSlider__arrows--active');
+          }
+        }
+
+        for (let i = 0; i < prod_btns.length; i++) {
+          prod_btns[i].classList.remove('productsSlider__btn--active');
+        }
+
+        e.target.classList.add('productsSlider__btn--active');
+      }
+    });
   }
 
 
@@ -559,7 +605,6 @@ window.onload = () => {
     home_new = getElem('.productsSlider__new'),
     home_partners = getElem('.partners__slider'),
     home_clients = getElem('.clients__slider'),
-    prod_btns_wrap = getElem('.productsSlider__buttons'),
     prod_btns = getElem('.productsSlider__btn', false),
     prod_arrows = getElem('.productsSlider__arrows', false),
     tabs_prod = getElem('.productsSlider__tabWrap', false);
@@ -574,37 +619,6 @@ window.onload = () => {
     sliderRender(home_new, 'home_new_slider', 'new', '.productsSlider', slider_params, 'desktop');
     sliderRender(home_partners, 'home_partners_slider', 'partners', '.partners', partners_params);
     sliderRender(home_clients, 'home_clients_slider', 'clients', '.clients', partners_params);
-
-
-    // main product tabs switch
-    if (prod_btns_wrap) {
-      prod_btns_wrap.addEventListener('click', function (e) {
-        if (e.target.classList.contains('productsSlider__btn')) {
-          let slider = e.target.dataset.slider;
-
-          for (let i = 0; i < tabs_prod.length; i++) {
-            tabs_prod[i].classList.remove('productsSlider__tabWrap--active');
-            if (tabs_prod[i].dataset.slider == slider) {
-              tabs_prod[i].classList.add('productsSlider__tabWrap--active');
-            }
-          }
-
-          for (let i = 0; i < prod_arrows.length; i++) {
-            prod_arrows[i].classList.remove('productsSlider__arrows--active');
-            if (prod_arrows[i].dataset.slider == slider) {
-              console.log(prod_arrows[i]);
-              prod_arrows[i].classList.add('productsSlider__arrows--active');
-            }
-          }
-
-          for (let i = 0; i < prod_btns.length; i++) {
-            prod_btns[i].classList.remove('productsSlider__btn--active');
-          }
-
-          e.target.classList.add('productsSlider__btn--active');
-        }
-      });
-    }
 
     // main feedback managers random show
     showManager();
@@ -684,7 +698,7 @@ window.onload = () => {
             sidebar_item[i].parentNode.classList.toggle('navigation__item--scroller');
           }, 400);
         }
-  
+
       })
     }
   }
@@ -730,20 +744,29 @@ window.onload = () => {
 
 
   // PRODUCT PAGE
-  var galleryThumbs = new Swiper('.productPageImages__bottom', {
+  const galleryThumbs = new Swiper('.productPageImages__bottom', {
     spaceBetween: 8,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
-  });
-  var galleryTop = new Swiper('.productPageImages__top', {
-    thumbs: {
-      swiper: galleryThumbs
-    }
+  }),
+    galleryTop = new Swiper('.productPageImages__top', {
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    }),
+    product_info_opener = getElem('.productPageInfo__more'),
+    product_info_rows = getElem('.productPageInfo__rows');
+
+  product_info_opener.addEventListener('click', e => {
+    product_info_opener.classList.add('productPageInfo__more--hide');
+    setTimeout(() => {
+      product_info_rows.classList.add('productPageInfo__rows--full');
+    }, 200);
   });
 
-  
+
 
 
 

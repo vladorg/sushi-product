@@ -7,17 +7,29 @@
 .productPage
   &Main
     padding-bottom: 104px
+    position: relative
+    z-index: 10
+    +xs
+      padding-bottom: 40px
     .container
       +flex(0,0,space-between,0)
+      +md
+        flex-direction: column
+        align-items: center
   
   &Images
     width: 100%
-    max-width: 449px
+    max-width: 29%
     position: relative
+    +md
+      max-width: 50%
+    +sm
+      max-width: 100%
     &__top
       img
-        width: 449px
+        width: 100%
         height: 449px
+        height: auto
         display: block
         object-fit: contain
         cursor: zoom-in
@@ -30,20 +42,35 @@
         object-fit: contain
         cursor: pointer
   &Info
-    width: 1146px
+    width: 100%
     height: 571px
     padding-left: 76px
     +flex(column,wrap,flex-start,0)
+    +break(1440)
+      padding-left: 25px
+    +md
+      padding: 24px 0 0 0
+    +xs
+      flex-wrap: nowrap
+      height: auto
+      padding-top: 16px
     &__title
-      max-width: 483px
+      max-width: 48%
       max-height: 148px
       overflow: hidden
       text-overflow: ellipsis
+      order: 1
       +text(28,700,37,#000)
+      +xs
+        max-width: 100%
     &__info
       padding-top: 54px
-      //padding-right: 80px
-      max-width: 483px
+      max-width: 48%
+      order: 2
+      +xs
+        max-width: 100%
+        order: 3
+        padding-top: 24px
     &__code
       +text(16,400,21,#C5C5C5)
     &__row
@@ -69,7 +96,7 @@
         background: $color_body
         position: relative
     &__rows
-      margin-top: 23px
+      margin-top: 24px
       padding-right: 5px
       max-height: 375px
       overflow: auto
@@ -92,54 +119,158 @@
         position: absolute
   &Checkout
     width: 448px
+    max-width: 48%
     margin-left: auto
     background: #fff
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)   
     border-radius: 14px
     position: relative
     padding: 32px 24px 0 24px
+    order: 3
+    +sm
+      padding: 24px 12px
+    +xs
+      max-width: 100%
+      width: 100%
+      order: 2
+      margin-top: 24px
+      padding: 24px 12px 0 12px
     &__wish
       position: absolute
       top: 60px
       right: 26px
+      +xxs
+        top: 35px
     &__priceWrap
-      padding: 0 60px 23px 0
+      padding: 0 35px 23px 0
+      +xxs
+        padding: 0 0 23px 0
     &__price
       display: block
+      white-space: 
+      max-width: 100%
+      overflow: hidden
+      text-overflow: ellipsis
       +text(48,700,63,#000)
+      +xxs
+        padding-right: 50px
     &__min
       display: block
       position: relative
+      +flex(0,0,0,center)
       +text(18,600,21,$color-primary)
+      +xxs
+        margin-top: 16px
     &__tools
       padding-bottom: 16px
       margin-bottom: 16px
       border-bottom: 1px solid #D6D6D6
       +flex(0,0,space-between,center)
+      +xxs
+        flex-wrap: wrap
     &__buy
       max-width: 183px
+      +xxs
+        max-width: 100%
+        width: 100%
+        margin-top: 24px
     &__drops
   
   &Tabs
-    padding-top: 0
+    padding: 0
     +text(16,400,24,#000)
+    +before
+      top: 295px
+      +xs
+        display: none
+    +after
+      display: none
+      +xs
+        display: block
+        z-index: -1
+        bottom: -60px
+    .section__heading
+      margin-bottom: 24px
     &__tabs
-      height: 623px
+      height: 392px
+      +tran(all,.4s)
+      +xs
+        height: auto
     &__tab
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
       border-radius: 16px
       padding: 32px 24px 24px 24px
+      margin: 0
+      +xs
+        padding: 24px 8px 16px 16px
+    .productsSlider__btn
+      &:not(:last-child)
+        +xs
+          margin-bottom: 24px
   
 
-  &Description
-    
+  &Description    
     p
       margin-bottom: 16px
     ul
-      margin-bottom: 24px
+      &:not(:last-child)
+        margin-bottom: 24px
       li
         &:not(:last-child)
           margin-bottom: 16px
   &Cooking
+    min-height: 272px
+    +xs
+      min-height: 1px
   &Recipes
+    +xs
+      background: $transparent
+      padding: 0
+      box-shadow: none
+    .sliderArrows__arrow
+      display: none
+      +xs
+        display: flex
+    &__title
+      margin-bottom: 24px
+      +xs
+        display: none
+
+
+.related
+  .container
+    position: relative
+  &__wrap
+    +xs
+      position: relative
+  .section__titles
+    flex-wrap: wrap
+  .section__link
+    +xs
+      margin: 16px 0 0 0
+  .preview__buy
+    +break(374)
+      width: 56px
+      font-size: 0
+      +before
+        margin-right: 0
+  .preview__price
+    +break(374)
+      max-width: 65%
+  &__slider
+    margin: -15px
+    padding: 15px
+    +xs
+      padding: 15px 50px
+    &.swiper-container-initialized
+      .products
+        display: flex
+        grid-gap: 0
+    .swiper-slide
+      opacity: 0
+      +tran(opacity,.2s)
+      &.swiper-slide-visible
+        opacity: 1
+
+

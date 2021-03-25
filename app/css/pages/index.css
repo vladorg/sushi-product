@@ -201,6 +201,12 @@
     font-weight: 600;
     line-height: 24px;
     color: #FA4616; }
+    @media (max-width: 768px) {
+      .section__link {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: #FA4616; } }
 
 .sliderArrows {
   display: -webkit-inline-box;
@@ -302,7 +308,10 @@
     color: #898989; }
     @media (max-width: 768px) {
       .productsSlider__btn {
-        display: block; } }
+        display: block;
+        text-align: left;
+        font-size: 23px;
+        line-height: 27px; } }
     .productsSlider__btn:not(:last-child) {
       margin-right: 60px; }
       @media (max-width: 768px) {

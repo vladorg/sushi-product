@@ -184,7 +184,11 @@ window.onload = () => {
     spaceBetween: 16,
     init: false,
     watchOverflow: true,
+    watchSlidesProgress: true,
     watchSlidesVisibility: true,
+    observer: true,
+    observeParents: true,
+    //rebuildOnUpdate: true,
     slideVisibleClass: 'swiper-slide-visible',
     navigation: {
       nextEl: null,
@@ -244,14 +248,12 @@ window.onload = () => {
       sliderArrows(slider);
       if (device_mode == 'desktop') {
         isMobile ? null : slider.init();
-        console.log('desktop');
       } else if (device_mode == 'mobile') {
         isMobile ? slider.init() : null;
-        console.log('mobile');
       } else {
         slider.init();
-        console.log('all');
       }
+      console.log(params.breakpoints);
     }
   }
 
@@ -309,14 +311,14 @@ window.onload = () => {
     for (let i = 0; i < open_acordion.length; i++) {
       open_acordion[i].addEventListener('click', e => {
         if (open_acordion[i].parentNode.classList.contains('accordion__item--open')) {
-          open_acordion[i].parentNode.classList.remove('accordion__item--open');    
-          open_acordion[i].parentNode.querySelector('.accordion__content').classList.remove('accordion__content--scroll');      
+          open_acordion[i].parentNode.classList.remove('accordion__item--open');
+          open_acordion[i].parentNode.querySelector('.accordion__content').classList.remove('accordion__content--scroll');
           setTimeout(() => {
             open_acordion[i].parentNode.querySelector('.accordion__content').classList.remove('scroll');
-            
+
           }, 400);
         } else {
-          open_acordion[i].parentNode.classList.add('accordion__item--open');          
+          open_acordion[i].parentNode.classList.add('accordion__item--open');
           setTimeout(() => {
             open_acordion[i].parentNode.querySelector('.accordion__content').classList.add('scroll');
             open_acordion[i].parentNode.querySelector('.accordion__content').classList.add('accordion__content--scroll');
@@ -330,15 +332,23 @@ window.onload = () => {
   if (prod_btns_wrap) {
     prod_btns_wrap.addEventListener('click', function (e) {
       if (e.target.classList.contains('productsSlider__btn')) {
+
+        // get target tab
         let tab = e.target.dataset.tab;
 
+        // update tabs
         for (let i = 0; i < tabs_prod.length; i++) {
           tabs_prod[i].classList.remove('productsSlider__tabWrap--active');
           if (tabs_prod[i].dataset.tab == tab) {
+            let wrap = tabs_prod[i].parentNode;
+            setTimeout(() => {
+              wrap.style.height = `${tabs_prod[i].clientHeight}px`;
+            }, 0);
             tabs_prod[i].classList.add('productsSlider__tabWrap--active');
           }
         }
 
+        // update slider arrows
         for (let i = 0; i < prod_arrows.length; i++) {
           prod_arrows[i].classList.remove('productsSlider__arrows--active');
           if (prod_arrows[i].dataset.tab == tab) {
@@ -346,6 +356,7 @@ window.onload = () => {
           }
         }
 
+        // update buttons active class
         for (let i = 0; i < prod_btns.length; i++) {
           prod_btns[i].classList.remove('productsSlider__btn--active');
         }
@@ -744,13 +755,24 @@ window.onload = () => {
 
 
   // PRODUCT PAGE
-  const galleryThumbs = new Swiper('.productPageImages__bottom', {
-    spaceBetween: 8,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-  }),
+  const related_products = getElem('.related__slider'),
+    product_recipes = getElem('.itemsSlider'),
+    galleryThumbs = new Swiper('.productPageImages__bottom', {
+      spaceBetween: 8,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 4
+        },
+        320: {
+          slidesPerView: 3
+        }
+
+      }
+    }),
     galleryTop = new Swiper('.productPageImages__top', {
       thumbs: {
         swiper: galleryThumbs
@@ -759,12 +781,19 @@ window.onload = () => {
     product_info_opener = getElem('.productPageInfo__more'),
     product_info_rows = getElem('.productPageInfo__rows');
 
-  product_info_opener.addEventListener('click', e => {
-    product_info_opener.classList.add('productPageInfo__more--hide');
-    setTimeout(() => {
-      product_info_rows.classList.add('productPageInfo__rows--full');
-    }, 200);
-  });
+  if (product_info_opener && product_info_rows) {
+    product_info_opener.addEventListener('click', e => {
+      product_info_opener.classList.add('productPageInfo__more--hide');
+      setTimeout(() => {
+        product_info_rows.classList.add('productPageInfo__rows--full');
+      }, 200);
+    });
+  }
+
+
+  //elem, slider, id, root, params, device_mode = 'all' --- args
+  sliderRender(related_products, 'related_products_slider', 'related', '.related', slider_params);
+  sliderRender(product_recipes, 'product_recipes_slider', 'recipes', '.productPageRecipes', slider_params, 'mobile');
 
 
 

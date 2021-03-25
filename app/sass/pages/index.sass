@@ -120,9 +120,9 @@
   &__link
     margin-left: 16px
     letter-spacing: 0.02em
-    +text(12,600,24, $color-primary)
+    +text(12,600,24,$color-primary)
     +xs
-      //display: none
+      +text(14,400,17,$color-primary)
 
 
 .sliderArrows
@@ -186,6 +186,8 @@
     +text(18,400,24,#898989)
     +xs
       display: block
+      text-align: left
+      +text(23,0,27,0)
     &:not(:last-child)
       margin-right: 60px
       +xs

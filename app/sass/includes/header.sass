@@ -394,6 +394,7 @@
       right: 24px
     &__bottom
       padding: 20px 24px 16px 24px
+      text-align: center
     &__total
       margin-bottom: 16px
       +text(16,400,21,$color-text)
@@ -403,7 +404,9 @@
         +flex(0,0,space-between,center)
     .btn--dashed
       margin: 8px auto 0 auto
-      display: block
+      display: inline-block
+      +hover
+        text-decoration: none
     &--open
       opacity: 1
       pointer-events: auto

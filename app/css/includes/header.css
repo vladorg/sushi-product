@@ -601,7 +601,8 @@
       top: 16px;
       right: 24px; }
     .headerDropdown__bottom {
-      padding: 20px 24px 16px 24px; }
+      padding: 20px 24px 16px 24px;
+      text-align: center; }
     .headerDropdown__total {
       margin-bottom: 16px;
       font-size: 16px;
@@ -625,7 +626,9 @@
                 align-items: center; }
     .headerDropdown .btn--dashed {
       margin: 8px auto 0 auto;
-      display: block; }
+      display: inline-block; }
+      .headerDropdown .btn--dashed:hover {
+        text-decoration: none; }
     .headerDropdown--open {
       opacity: 1;
       pointer-events: auto;

@@ -145,6 +145,13 @@
   height: 28px;
   background: url("../img/icons.svg") -755px -5px no-repeat; }
 
+.ic-heart-green::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 28px;
+  background: url("../img/icons.svg") -1343px -7px no-repeat; }
+
 .ic-heart-small::before {
   content: '';
   display: block;
@@ -249,6 +256,13 @@
   width: 17px;
   height: 17px;
   background: url("../img/icons.svg") -468px -5px no-repeat; }
+
+.ic-trash-white::before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: url("../img/icons.svg") -1318px -13px no-repeat; }
 
 .ic-truck::before {
   content: '';

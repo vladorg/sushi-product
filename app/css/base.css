@@ -108,6 +108,9 @@ a {
         font-size: 16px;
         font-weight: 700;
         line-height: 24px; } }
+  .btn--disabled {
+    background: #D8D8D8 !important;
+    cursor: no-drop; }
   .btn--dashed {
     border-bottom: 1px dashed #000;
     font-size: 14px;

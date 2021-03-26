@@ -221,7 +221,7 @@
                   </div>
                   <!-- endif -->
                   <a href="/checkout.html" class="btn btn--primary">Оформити замовлення</a>
-                  <button class="btn btn--dashed">Перейти до кошика</button>
+                  <a href="./cart.html" class="btn btn--dashed">Перейти до кошика</a>
                 </div>
               </div>
             </div>
@@ -409,13 +409,504 @@
         </div>
       </section>
 
-      <div class="container">
-        <h1 class="heading">Кошик</h1>
-      </div>
+      <section class="section">
+        <div class="container">
+          <h1 class="heading">Кошик</h1>
+        </div>
+      </section>
 
-      <section class="section cartItems"></section>
+      <!-- data-empty value is required for js delete item function -->
+      <!-- if empty ? cartContent--empty -->
+      <section class="section cartContent primary-bg">
+        <div class="container">
+          <div class="cartContentEmpty" data-empty="Ваша корзина пустая!">
+            <!-- if empty -->
+            <!-- text empty here -->
+            <!-- endif -->
+          </div>
 
-      <section class="section productsSlider related">
+          <!-- !if empty -->
+          <div class="cartContentMobile">
+            <div class="cartContentMobile__content">
+              11 товаров на сумму <strong>156,23 грн</strong>
+            </div>
+            <button class="btn ic-trash cartContent__removeAll"></button>
+          </div>
+          <div class="cartContentProducts">
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+                <div class="cartContentProducts__special">59,15 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+                <div class="cartContentProducts__special">59,15 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+                <div class="cartContentProducts__special">59,15 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+                <div class="cartContentProducts__special">59,15 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+                <div class="cartContentProducts__special">59,15 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__price">
+                <div class="cartContentProducts__title">Цена за шт:</div>
+                <div class="cartContentProducts__cost">54,49 грн</div>
+              </div>
+              <div class="cartContentProducts__total">
+                <div class="cartContentProducts__title">Итого:</div>
+                <div class="cartContentProducts__all">1254,49 грн</div>
+              </div>
+            </div>
+          </div>
+          <div class="cartContentTotal" id="cart_total">
+            <div class="cartContentTotal__promo header__search">
+              <input class="placeholder" name="promo" type="text" id="cart_promo" placeholder="Код знижки / промокод">
+              <button class="btn btn--disabled" id="cart_promo_add">Використати</button>
+            </div>
+            <div class="cartContentTotal__inner">
+              <div class="cartContentTotal__row">
+                <span class="cartContentTotal__rowTitle">2 товари на суму:</span>
+                <span class="cartContentTotal__rowValue">838,54 грн</span>
+              </div>
+              <div class="cartContentTotal__row">
+                <span class="cartContentTotal__rowTitle">Знижка:</span>
+                <span class="cartContentTotal__rowValue">-10 грн</span>
+              </div>
+              <div class="cartContentTotal__row cartContentTotal__row--total">
+                <span class="cartContentTotal__rowTitle">Разом до сплати:</span>
+                <span class="cartContentTotal__rowValue">828,54 грн</span>
+              </div>
+            </div>
+            <div class="cartContentTotal__checkout">
+              <a href="./checkout.html" class="btn btn--primary">Оформити замовлення</a>
+            </div>
+          </div>
+          <!-- endif -->
+        </div>
+      </section>
+
+      <section class="section cartPage__related productsSlider related">
         <div class="container">
 
           <div class="section__heading">

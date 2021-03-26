@@ -1,0 +1,367 @@
+@import "../var.sass"
+
+
+.cartPage
+  &__related
+    +xs
+      display: none
+  
+
+.cartContent
+  padding-top: 40px
+  +xs
+    padding-top: 24px
+  +before
+    z-index: -1
+    top: unset
+    bottom: -500px
+    +xs
+      bottom: -150px
+  +after
+    display: none
+  &--empty
+    .cartContentEmpty
+      display: block !important
+    &.container
+      +xs
+        width: 92%!important
+  .container
+    +flex(0,0,space-between,flex-start)
+    +sm
+      +flex(column,0,0,center)
+    +xs
+      width: 100%
+
+  
+  &Mobile
+    width: 100%
+    padding: 0 4%
+    margin-bottom: 24px
+    +flex(0,0,space-between,center)
+    display: none
+    +xs
+      display: flex
+    &__content
+      +text(14,400,17,0)
+  
+
+
+  &Empty
+    display: none
+    background: #fff
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    width: 100%
+    padding: 24px
+
+    
+  &Products
+    width: calc(100% - 416px - 32px)
+    +break(1600)
+      width: 73%
+    +md
+      width: 70%
+    +sm
+      width: 100%
+    +xs
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    &__item
+      background: #fff
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+      border-radius: 16px
+      padding: 24px
+      min-height: 96px
+      +flex(0,0,space-between,0)
+      +break(1600)
+        padding: 24px 10px
+      +xs
+        box-shadow: none
+        border-radius: 0
+        padding: 24px 4% 16px 4%
+      &:not(:last-child)
+        margin-bottom: 16px
+        +xs
+          margin-bottom: 0
+          border-bottom: 1px solid #979797
+    &__thumb
+      position: relative
+      align-self: center
+      +xs
+        max-width: 10%
+      .headerDropdown__thumb
+        width: 96px
+        height: 96px
+        +tran(all,.2s)
+        +break(1600)
+          width: 50px
+          height: 50px
+        +md
+          width: 96px
+          height: 96px
+        +xs
+          border: none
+          padding: 0
+          width: auto
+          height: auto
+          min-width: 29px
+        +hover
+          border-color: #d6d6d6
+    &__del
+      position: absolute
+      top: -10px
+      right: -10px
+      width: 25px
+      height: 25px
+      border: 1px solid #EDEDED
+      border-radius: 50%
+      background: #fff
+      +flex(0,0,center,center)
+      +tran(all,.4s)
+      +xs
+        display: none
+      +before
+        position: absolute
+        top: 50%
+        left: 50%
+        transform-origin: 0 0
+        transform: scale(1) translate(-50%, -50%)
+        +tran(all,.4s)
+      +after
+        width: 17px
+        height: 17px
+        opacity: 0
+        background: url(../img/icons.svg) -1318px -13px no-repeat
+        position: absolute
+        top: 50%
+        left: 50%
+        transform-origin: 0 0
+        transform: scale(0) translate(-50%, -50%)
+        +tran(all,.4s)
+      +hover
+        border-color: $color-primary
+        background: $color-primary
+        +tran(all,.4s)
+        +before
+          opacity: 0
+          transform: scale(0) translate(-50%, -50%)
+        +after
+          opacity: 1
+          transform: scale(1) translate(-50%, -50%)
+    &__info
+      width: 435px
+      margin: 0 10px 0 20px
+      +flex(column,0,0,0)
+      +xs
+        margin: 0 5px
+        width: auto
+    &__wish
+      margin-top: auto
+      position: relative
+      padding-left: 35px
+      +flex(0,0,flex-start,center)
+      +xs
+        display: none
+      +before
+        transform: scale(.7)
+        position: absolute
+        left: 0
+      +after
+        position: absolute
+        left: 0
+        width: 30px
+        height: 28px
+        transform: scale(.7)
+        opacity: 0
+        background: url("../img/icons.svg") -1343px -7px no-repeat
+
+      &.wish_add--added
+        cursor: no-drop
+        +after
+          opacity: 1
+        span
+          color: $color-sup
+          border-color: $color-sup
+          animation: fadeIn .5s linear
+          +hover
+            border-color: $color-sup
+    &__quantly
+      margin: 0 10px
+      +flex(column,0,0,flex-start)
+      +xs
+        margin: 0 5px
+      .quantly__inner
+        margin-top: 8px
+        +break(1600)
+          width: 75px
+      .quantly__button
+        +xs
+          display: none
+      .quantly__input
+        +xs
+          pointer-events: none
+          border: none
+          width: 100%
+          margin: 0
+          +text(14,400,17,0)
+    &__price
+      margin: 0 10px
+      +md
+        display: none
+      +sm
+        display: block
+      +xs
+        display: none
+    &__total
+      margin: 0 10px
+      max-width: 35%
+      +xs
+        margin: 0 5px
+    &__name
+      max-height: 48px
+      max-width: 100%
+      overflow: hidden
+      text-overflow: ellipsis
+      +text(18,600,24,0)
+      +break(1600)
+        +text(14,0,18,0)
+      +xs
+        font-weight: 400
+        line-height: 17px
+        max-height: 51px
+    &__min
+      margin-top: 8px
+      +xs
+        display: none
+      .preview__infoTitle, .preview__infoValue
+        color: $color-primary
+    &__title
+      white-space: nowrap
+      +text(14,600,18,#000)
+      +xs
+        font-weight: 400
+        margin: 0
+    &__cost
+      margin-top: 12px
+      +text(18,600,29,0)
+      +break(1600)
+        +text(14,0,18,0)
+    &__special
+      margin-top: 4px
+      text-decoration-line: line-through
+      +text(18,400,21,#636363)
+      +break(1600)
+        +text(14,0,18,0)
+    &__all
+      margin-top: 12px
+      white-space: nowrap
+      max-width: 100%
+      overflow: hidden
+      text-overflow: ellipsis
+      +text(24,700,29,$color-primary)
+      +break(1600)
+        +text(20,600,24,0)
+
+
+  &Total
+    width: 416px
+    position: sticky
+    top: 150px
+    background: #fff
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 16px
+    padding: 32px 0 24px 0
+    +break(1600)
+      width: 25%
+    +md
+      width: 28%
+    +sm
+      width: 100%
+      margin-top: 24px
+    +xs
+      position: static
+      border-radius: 0
+      padding: 24px 0
+    &__promo
+      padding: 0 24px
+      margin: 0
+      max-width: 100%
+      +break(1600)
+        padding: 0 10px
+      +xs
+        position: relative
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        opacity: 1
+        pointer-events: auto
+        padding: 0 4%
+      input
+        padding-left: 15px
+      button
+        right: 24px
+        width: auto
+        padding: 0 10px
+        +break(1600)
+          right: 10px
+          font-size: 12px
+          max-width: 100%
+          text-overflow: ellipsis
+          overflow: hidden
+        +xs
+          right: 4%
+    &__inner
+      border-top: 1px solid #EDEDED
+      border-bottom: 1px solid #EDEDED
+      padding: 32px 24px
+      margin-top: 24px
+      +break(1600)
+        padding: 32px 10px
+      +xs
+        padding: 24px 4%
+    &__rowTitle
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      +md
+        max-width: 33%
+      +xs
+        max-width: 48%
+    &__rowValue
+      font-weight: 600
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      +md
+        max-width: 66%
+      +xs
+        max-width: 50%
+    &__row
+      margin-bottom: 16px
+      +text(16,400,24,0)
+      +flex(0,0,space-between,center)
+      +break(1600)
+        font-size: 14px
+        margin-bottom: 8px
+      &--total
+        margin: 8px 0 0 0
+        .cartContentTotal__rowTitle
+          font-weight: 700
+          +break(1600)
+            +text(16,600,24,0)
+        .cartContentTotal__rowValue
+          +text(32,700,40,0)
+          +break(1600)
+            +text(18,600,24,0)
+    
+    &__checkout
+      padding: 32px 24px 0 24px
+      +break(1600)
+        padding: 32px 10px 0 10px
+      +xs
+        padding: 24px 4% 0 4%
+      a
+        padding: 15px 0
+        font-size: 16px
+        +break(1600)
+          font-size: 14px

@@ -839,7 +839,7 @@ window.onload = () => {
       promo_add_timer = setTimeout(promo_btn_changer, 400);
     });
   }
-  
+
 
   function promo_btn_enable() {
     if (!this.value == '' && this.value.length > 3) {
@@ -878,7 +878,7 @@ window.onload = () => {
       for (let i = 0; i < items.length; i++) {
         let item_hide = items[i].animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300 });
         item_hide.addEventListener('finish', () => {
-          items[i].remove();          
+          items[i].remove();
           if (cart_page_empty) {
             cart_page_empty.innerText = cart_page_empty.dataset.empty;
           }
@@ -889,6 +889,164 @@ window.onload = () => {
       }
       //header_height = header.clientHeight
     });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  // CHECKOUT PAGE
+
+  const checkout_tab_btn = getElem('.checkoutOrderCustomer__btn', false),
+    checkout_tab = getElem('.checkoutOrderCustomer__form', false),
+    customer_accept = getElem('#customer_accept'),
+    customer_log = getElem('#customer_log')
+  checkout_order = getElem('#checkout_order'),
+    checkout_customer = getElem('.checkoutOrderCustomer'),
+    checkout_info = getElem('.checkoutOrderInfo');
+
+
+  if (checkout_tab_btn) {
+
+    // switch customer tabs and toggle inputs disabled status
+    for (let i = 0; i < checkout_tab_btn.length; i++) {
+      checkout_tab_btn[i].addEventListener('click', e => {
+        let tab = checkout_tab_btn[i].dataset.tab;
+
+        for (let i = 0; i < checkout_tab_btn.length; i++) {
+          checkout_tab_btn[i].classList.remove('checkoutOrderCustomer__btn--active');
+        }
+        checkout_tab_btn[i].classList.add('checkoutOrderCustomer__btn--active');
+
+        for (let i = 0; i < checkout_tab.length; i++) {
+          if (checkout_tab[i].dataset.tab == tab) {
+            checkout_tab[i].classList.add('checkoutOrderCustomer__form--active');
+
+            // activate
+            let inputs = checkout_tab[i].querySelectorAll('input');
+            activateInputs(inputs, false);
+
+          } else {
+            checkout_tab[i].classList.remove('checkoutOrderCustomer__form--active');
+
+            // disactivate
+            let inputs = checkout_tab[i].querySelectorAll('input');
+            activateInputs(inputs, true);
+          }
+        }
+      });
+    }
+
+  }
+
+  // accept checkout first step
+  confirmFirstStep(customer_accept);
+
+  // auth button
+  confirmFirstStep(customer_log);
+
+
+  // order create
+  if (checkout_order) {
+    checkout_order.addEventListener('click', e => {
+      let inputs = [];
+      if (checkout_customer) {
+        inputs_temp = checkout_customer.querySelectorAll('input');
+        inputs_temp.forEach(el => {
+          !el.disabled ? inputs.push(el) : null;
+        });
+      }
+      let customer_status = validate(inputs, 'default');
+      customer_status ? checkout_customer.dataset.valid = 'true' : checkout_customer.dataset.valid = 'false';
+    });
+  }
+
+  function activateInputs(items, flag) {
+    if (items) {
+      for (let i = 0; i < items.length; i++) {
+        flag ? items[i].disabled = true : items[i].disabled = false;
+      }
+    }
+  }
+
+  function validate(items, mode) {
+    let result = null;
+
+    if (mode == 'default') {
+      if (items) {
+        items.forEach(el => {
+          if (el.value == "" || el.value.length < 3) {
+            el.classList.remove('input--ok');
+            el.classList.add('input--err');
+            result = false;
+          } else {
+            el.classList.remove('input--err');
+            el.classList.add('input--ok');
+
+            result != false ? result = true : null;
+          }
+        });
+      } else {
+        console.log('items is not defined!');
+      }
+    } else {
+      console.log('validate mode is no defined!');
+    }
+
+    return result;
+  }
+
+
+  function getValues(items) {
+    let result = {};
+    items.forEach(el => {
+      let key = el.getAttribute('name');
+      let val = el.value;
+      result[key] = val;
+    });
+
+    return result;
+  }
+
+
+  function confirmFirstStep(item) {
+    if (item) {
+      item.addEventListener('click', e => {
+        let inputs = [];
+        if (checkout_customer) {
+          inputs_temp = checkout_customer.querySelectorAll('input.required');
+          inputs_temp.forEach(el => {
+            !el.disabled ? inputs.push(el) : null;
+          });
+        }
+        let customer_status = validate(inputs, 'default');
+        if (customer_status) {
+          checkout_customer.dataset.valid = 'true';
+          checkout_order.disabled = false;
+          checkout_order.classList.remove('btn--disabled');
+        } else {
+          checkout_customer.dataset.valid = 'false';
+          checkout_order.disabled = true;
+          checkout_order.classList.add('btn--disabled');
+        }
+
+        // if auth - prepare auth data for ajax
+        if (item == customer_log) {
+          let checkout_auth_data = JSON.stringify(getValues(inputs));
+          console.log(checkout_auth_data);
+        } else {
+          // go to next step
+        }
+
+      });
+    }
   }
 
 

@@ -209,6 +209,15 @@ a
   margin-bottom: 16px
   +last
     margin-bottom: 0
+  &--street
+    margin: 0 16px 0 0
+    width: 223px!important      
+  &--house
+    margin-bottom: 0
+    width: 96px!important
+  &__subtitle
+    margin-top: 8px
+    +text(12,400,20,#949494)
 
 .input, .textarea
   width: 100%
@@ -216,12 +225,15 @@ a
   padding: 16px 0 16px 16px
   border: 0
   border-radius: 32px
+  border: 1px solid $transparent
   +tran(all,.4s)
   +text(14,400,24,0)
   +xs
     padding: 10px 0 10px 16px
   &--err
-    box-shadow: 0 0 3px 0px $color-input-error
+    border-color: $color-primary
+  &--ok
+    border-color: $color-sup
   &::-webkit-input-placeholder
     color: $color-placeholder
     +sm
@@ -239,20 +251,31 @@ a
     +sm
       font-size: 12px
 
+
+.input
+  &--line
+    border-bottom: 1px solid #979797
+    border-radius: 0
+    background: $transparent
+    padding-left: 9px !important
+
 .textarea
   resize: none
   height: 96px
+  border-radius: 16px
+  font-family: $ff
 
 .checkbox
-  position: relative
-  label
+  display: none
+  + label
     position: relative
     cursor: pointer
-    width: 21px
-    height: 21px
+    padding-left: 35px
     display: inline-block
+    +text(16,400,24,0)
     +before
-      display: block
+      position: absolute
+      left: 0
       width: 21px
       height: 21px
       border: 1px solid #E4E4E4
@@ -268,16 +291,46 @@ a
       opacity: 0
       background: url('../img/icons.svg') -551px -5px no-repeat
       +tran(all,.2s)
-  input
-    position: absolute
-    top: 0
-    left: 0
-    pointer-events: none
-    opacity: 0
-    &:checked
-      + label
-        +after
-          opacity: 1
+  &:checked
+    + label
+      +after
+        opacity: 1
+
+.radio
+  display: none
+  + label
+    position: relative
+    display: inline-block
+    cursor: pointer
+    padding-left: 32px
+    letter-spacing: 0.01em
+    +text(16,400,24,0)
+    +before
+      position: absolute
+      left: 0
+      width: 24px
+      height: 24px
+      border-radius: 50%
+      border: 1px solid $color-primary
+      background: #fff
+      margin-right: 16px
+      box-sizing: border-box
+    +after
+      position: absolute
+      top: 6px
+      left: 6px
+      width: 12px
+      height: 12px
+      opacity: 0
+      background: $color-primary
+      border-radius: 50%
+      +tran(all,.2s)
+  &:checked
+    + label
+      font-weight: 600
+      +after
+        opacity: 1
+  
 
 .placeholder
   &::-webkit-input-placeholder
@@ -940,3 +993,29 @@ a
       height: 15px
       background-image: url('../img/icons/check.svg')
       transform: translateY(-50%)
+
+
+  
+
+
+.select
+  width: auto
+  &__item
+    +hover
+      text-decoration: underline
+  .dropdown
+    width: auto
+    &--open
+      .arrow
+        +before
+          transform: rotate(-40deg)
+        +after
+          transform: rotate(40deg)
+  .dropdown__title
+    background: $color-input
+    border: none
+    border-radius: 32px
+    padding: 10px 0 10px 14px
+    +text(14,400,24,$color-placeholder)
+  .dropdown__list
+    border: none

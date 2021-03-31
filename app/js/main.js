@@ -59,7 +59,8 @@ window.onload = () => {
     open_dropdown = getElem('.dropdown__title', false),
     open_acordion = getElem('.accordion__title', false),
     prod_btns_wrap = getElem('.productsSlider__buttons'),
-    wish_add = getElem('.wish_add', false);
+    wish_add = getElem('.wish_add', false),
+    select_item = getElem('.select__item', false);
 
   // scroll top button show and scrolled
   window.addEventListener('scroll', e => {
@@ -388,6 +389,22 @@ window.onload = () => {
 
       });
     }
+  }
+
+
+  // custom select
+  if (select_item) {
+    for (let i = 0; i < select_item.length; i++) {
+      select_item[i].addEventListener('click', e => {
+        let select_val = select_item[i].dataset.value;
+        let parent = select_item[i].closest('.select');
+
+        parent.querySelector('input[type=hidden]').value = select_val;
+        parent.querySelector('.dropdown').classList.remove('dropdown--open');
+        parent.querySelector('.dropdown__title').innerText = select_val;
+      });
+    }
+
   }
 
 
@@ -908,9 +925,17 @@ window.onload = () => {
     checkout_tab = getElem('.checkoutOrderCustomer__form', false),
     customer_accept = getElem('#customer_accept'),
     customer_log = getElem('#customer_log')
-  checkout_order = getElem('#checkout_order'),
+    checkout_order = getElem('#checkout_order'),
     checkout_customer = getElem('.checkoutOrderCustomer'),
-    checkout_info = getElem('.checkoutOrderInfo');
+    checkout_customer_inner = getElem('.checkoutOrderCustomer__inner'),
+    checkout_change = getElem('.checkoutOrder__change', false),
+    checkout_form = getElem('.checkoutOrder'),
+    checkout_customer_saved = getElem('.checkoutOrderCustomer .checkoutOrder__saved'),
+    checkout_info = getElem('.checkoutOrderInfo'),
+    checkout_info_trigger = getElem('.checkoutOrderInfo__defaultContent span'),
+    checkout_info_radios = getElem('.checkoutOrderInfo input[type=radio]', false),
+    checkout_city_pick = getElem('.checkoutOrderDelivery__cityAcc', false),
+    checkout_new_address = getElem('.new_address', false);
 
 
   if (checkout_tab_btn) {
@@ -930,14 +955,14 @@ window.onload = () => {
             checkout_tab[i].classList.add('checkoutOrderCustomer__form--active');
 
             // activate
-            let inputs = checkout_tab[i].querySelectorAll('input');
+            let inputs = checkout_tab[i].querySelectorAll('input, textarea');
             activateInputs(inputs, false);
 
           } else {
             checkout_tab[i].classList.remove('checkoutOrderCustomer__form--active');
 
             // disactivate
-            let inputs = checkout_tab[i].querySelectorAll('input');
+            let inputs = checkout_tab[i].querySelectorAll('input, textarea');
             activateInputs(inputs, true);
           }
         }
@@ -946,25 +971,108 @@ window.onload = () => {
 
   }
 
+  if (checkout_city_pick) {
+    for (let i = 0; i < checkout_city_pick.length; i++) {
+      checkout_city_pick[i].addEventListener('click', e => {
+        let city = checkout_city_pick[i].innerText;
+        let parent = checkout_city_pick[i].closest('.checkoutOrderDelivery__city');
+
+        parent.querySelector('input[name=city]').value = city;
+      });
+    }
+  }
+
+  if (checkout_change) {
+    checkout_change.forEach(el => {
+      el.addEventListener('click', e => {
+        let current_step = getElem(`.${el.dataset.step}`);
+        let all_steps = getElem('.checkoutOrder__step', false);
+        let step_saved = current_step.querySelector('.checkoutOrder__saved');
+        all_steps.forEach(elem => {
+          elem.classList.remove('checkoutOrder__step--active');
+        });
+        step_saved.innerHTML = "";
+        current_step.classList.add('checkoutOrder__step--active');
+        current_step.classList.remove('checkoutOrder__step--completed');
+      });
+    });    
+  }
+
   // accept checkout first step
   confirmFirstStep(customer_accept);
 
   // auth button
   confirmFirstStep(customer_log);
 
+  if (checkout_info_radios) {
+    checkout_info_radios.forEach(el => {
+      if (el.classList.contains('checkoutOrder__hasContent')) {
+
+        // disable/enable inputs on change active radio child content
+        el.addEventListener('click', e => {
+          let parent = el.closest('.checkoutOrder__item');
+          let inputs = parent.querySelectorAll('.checkoutOrder__wrap input, .checkoutOrder__wrap textarea');
+          let others = parent.parentNode.querySelectorAll('.checkoutOrder__wrap input, .checkoutOrder__wrap textarea');
+          others.forEach(el => {
+            let parent = el.closest('.checkoutOrder__item');
+            let inputs = parent.querySelectorAll('.checkoutOrder__wrap input, .checkoutOrder__wrap textarea');
+            activateInputs(inputs, true);
+          });
+          activateInputs(inputs, false);
+        });
+
+      }
+    });
+  }
+
+  if (checkout_new_address) {
+    checkout_new_address.forEach(el => {
+      el.addEventListener('click', e => {
+        let parent = el.closest('.checkoutOrder__content');
+        let item_hide = parent.querySelector('.checkoutOrder__wrap');
+        let item_show = parent.querySelector('.checkoutOrder__newAddress');
+        let inputs_show = item_show.querySelectorAll('input, textarea');
+        let hide = item_hide.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400 });
+
+        activateInputs(inputs_show, false);
+
+        hide.addEventListener('finish', () => {
+          item_hide.innerHTML = item_show.innerHTML;
+          item_show.remove();
+        });
+      });
+    });
+  }
+
+  if (checkout_info_trigger) {
+    checkout_info_trigger.addEventListener('click', e => customer_log.click());
+  }
 
   // order create
   if (checkout_order) {
     checkout_order.addEventListener('click', e => {
+      e.preventDefault();
       let inputs = [];
-      if (checkout_customer) {
-        inputs_temp = checkout_customer.querySelectorAll('input');
+      if (checkout_info) {
+        inputs_temp = checkout_info.querySelectorAll('input.required, textarea.required');
         inputs_temp.forEach(el => {
           !el.disabled ? inputs.push(el) : null;
         });
       }
-      let customer_status = validate(inputs, 'default');
-      customer_status ? checkout_customer.dataset.valid = 'true' : checkout_customer.dataset.valid = 'false';
+      let info_status = validate(inputs, 'default');
+
+      if (info_status) {
+        checkout_info.dataset.valid = 'true';
+      } else {
+        checkout_info.dataset.valid = 'false';
+      }
+
+      if (JSON.parse(checkout_customer.dataset.valid) && JSON.parse(checkout_info.dataset.valid)) {
+        checkout_form.submit();
+      } else {
+        isMobile ? window.scrollTo({ top: getCoords(checkout_info), behavior: 'smooth' }) : null;
+      }
+
     });
   }
 
@@ -977,22 +1085,38 @@ window.onload = () => {
   }
 
   function validate(items, mode) {
-    let result = null;
+    var result = null;
 
     if (mode == 'default') {
       if (items) {
-        items.forEach(el => {
-          if (el.value == "" || el.value.length < 3) {
-            el.classList.remove('input--ok');
-            el.classList.add('input--err');
-            result = false;
-          } else {
-            el.classList.remove('input--err');
-            el.classList.add('input--ok');
+        if (items.length > 0) {
+          items.forEach(el => {
+            if (el.value == "" || el.value.length < 3) {
+              if (el.parentNode.classList.contains('select')) {
+                el.parentNode.classList.remove('select--ok');
+                el.parentNode.classList.add('select--err');
+              } else {
+                el.classList.remove('input--ok');
+                el.classList.add('input--err');
+              }
+              console.log(`failed validate: ${el.getAttribute('name')}`);
+              result = false;
+            } else {
+              if (el.parentNode.classList.contains('select')) {
+                el.parentNode.classList.remove('select--err');
+                el.parentNode.classList.add('select--ok');
+              } else {
+                el.classList.remove('input--err');
+                el.classList.add('input--ok');
+              }
 
-            result != false ? result = true : null;
-          }
-        });
+              result != false ? result = true : null;
+            }
+          });
+        } else {
+          result = true;
+          console.log('no items for validate!');
+        }
       } else {
         console.log('items is not defined!');
       }
@@ -1002,7 +1126,6 @@ window.onload = () => {
 
     return result;
   }
-
 
   function getValues(items) {
     let result = {};
@@ -1015,34 +1138,64 @@ window.onload = () => {
     return result;
   }
 
-
   function confirmFirstStep(item) {
     if (item) {
       item.addEventListener('click', e => {
         let inputs = [];
+        let inputs_save = [];
+
+        // prepare fields for validate and save
         if (checkout_customer) {
-          inputs_temp = checkout_customer.querySelectorAll('input.required');
+          let inputs_temp = checkout_customer.querySelectorAll('input');
           inputs_temp.forEach(el => {
-            !el.disabled ? inputs.push(el) : null;
+            if (!el.disabled && el.classList.contains('required')) {
+              inputs.push(el);
+              inputs_save.push(el);
+            } else if (!el.disabled) {
+              inputs_save.push(el);
+            }
           });
         }
-        let customer_status = validate(inputs, 'default');
-        if (customer_status) {
-          checkout_customer.dataset.valid = 'true';
-          checkout_order.disabled = false;
-          checkout_order.classList.remove('btn--disabled');
-        } else {
-          checkout_customer.dataset.valid = 'false';
-          checkout_order.disabled = true;
-          checkout_order.classList.add('btn--disabled');
-        }
 
-        // if auth - prepare auth data for ajax
+        // validate found fields
+        let customer_status = validate(inputs, 'default');
+        let checkout_customer_values = getValues(inputs_save);
+
+        
         if (item == customer_log) {
-          let checkout_auth_data = JSON.stringify(getValues(inputs));
-          console.log(checkout_auth_data);
+          let checkout_customer_data = JSON.stringify(checkout_customer_values);
+          // if auth - send ajax auth request
         } else {
-          // go to next step
+          /* if validate successfly
+            - set valid status for customer stage
+            - enable order button
+            - save customer info
+            - hide first step
+          */
+          if (customer_status) {
+            checkout_customer.dataset.valid = 'true';
+            checkout_order.disabled = false;
+            checkout_order.classList.remove('btn--disabled');
+                       
+            let checkout_customer_hide = checkout_customer_inner.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400 });
+            checkout_customer_hide.addEventListener('finish', () => {
+              checkout_customer.classList.remove('checkoutOrder__step--active');
+              checkout_customer.classList.add('checkoutOrder__step--completed');
+              setTimeout(() => {
+                checkout_info.classList.add('checkoutOrder__step--active'); 
+              }, 200);
+            });
+            for (let k in checkout_customer_values) {
+              let item = document.createElement('span');
+              checkout_customer_values[k] ? item.innerHTML = checkout_customer_values[k] : item.innerHTML = '---';
+              checkout_customer_saved.appendChild(item);
+            }
+          } else {
+            checkout_customer.dataset.valid = 'false';
+            checkout_order.disabled = true;
+            checkout_order.classList.add('btn--disabled');
+            checkout_customer.classList.remove('checkoutOrderCustomer--completed');
+          }
         }
 
       });

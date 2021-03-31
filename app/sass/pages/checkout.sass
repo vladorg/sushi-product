@@ -2,6 +2,10 @@
 
 .header
   &--checkout
+    .header__logo
+      img
+        +xs
+          width: 120px
     .header__inner
       padding: 19px 0
     .header__center
@@ -11,30 +15,43 @@
       p
         margin-right: 17px
         +text(16,300,19,#000)
+        +xs
+          display: none
       .header__contacts
+        margin: 0
         a
           +text(16,600,19,$color-text)
+          +xs
+            font-size: 12px
 
 .footer
   &--checkout
-    margin-top: 72px
+    margin-top: auto
     padding-bottom: 24px
     background: $transparent
     .footer__copy
       text-align: left
       margin-top: 0
+      +xs
+        text-align: center
 
 .checkout
 
   &Page
-    padding-top: 32px
+    padding: 32px 0 72px 0
+    .title
+      +xs
+        font-size: 24px
   
   &Order
     +flex(0,0,space-between,flex-start)
-    .cartContentTotal
-      //display: none
+    +sm
+      +flex(column,0,0,center)
     &__title
       padding: 24px
+      +xs
+        padding: 24px 4% 24px 4%
+        +text(18,700,24,#000)
     &__content
       display: none
       margin-top: 24px
@@ -45,7 +62,10 @@
         +text(14,400,24,#AFAFAF)
     &__newAddress
       +flex(0,0,space-between,center)
+      animation: fadeIn .4s linear
       display: none
+      &--enabled
+        display: flex
     &__item
       &:not(:last-child)
         margin-bottom: 24px
@@ -53,32 +73,83 @@
         ~ .checkoutOrder__content
           display: block
     &__wrap
+      position: relative
       +flex(0,0,space-between,center)
+      +xs
+        flex-wrap: wrap
       .select
         width: 100%
         max-width: 75%
-      
+        +xs
+          max-width: 100%
+          margin-bottom: 12px
+      &--disabled
+        display: none
+    &__saved
+      padding: 0 24px 24px 48px
+      +xs
+        padding: 0 4% 24px 4%
+      span
+        display: inline-block
+        +text(18,400,24,#000)
+        &:not(:last-child)
+          margin-right: 3px
+          &::after
+            content: ','
+            display: inline-block
+    &__change
+      position: absolute
+      top: 24px
+      right: 24px
+      letter-spacing: 0.02em
+      opacity: 0
+      pointer-events: none
+      +tran(all,.4s)
+      +text(12,600,24,#000)
+      +before
+        position: absolute
+        top: 50%
+        left: -19px
+        margin-top: -7px
+    &__step
+      &--completed
+        .checkoutOrder__change
+          opacity: 1
+          pointer-events: auto
+          transition-delay: .4s
+        .checkoutOrder__title
+          padding: 24px 130px 24px 4%
       
     &Customer
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
       border-radius: 16px
       margin-bottom: 32px
+      position: relative
+      +xs
+        border-radius: 0
       &__nav
         padding: 16px 48px 0 48px
         border-bottom: 1px solid #EDEDED
+        +xs
+          padding: 16px 4% 0 4%
       &__btn
         border-bottom: 4px solid $transparent
         padding-bottom: 8px
         +text(18,400,24,#585858)
+        +xxs
+          font-size: 14px
         &:not(:last-child)
           margin-right: 32px
         &--active
           border-color: $color-primary
       &__forms
         padding: 48px
-        max-width: 485px
+        max-width: 555px
         box-sizing: content-box
+        +xs
+          max-width: 100%
+          padding: 24px 4%
       &__form
         display: none
         &--active
@@ -86,16 +157,32 @@
           animation: fadeIn .3s linear
         .btn--primary
           margin-top: 32px
+          +xs
+            margin-top: 24px
+      &__inner
+        display: none
+      &.checkoutOrder__step
+        &--active
+          .checkoutOrder__saved
+            display: none
+          .checkoutOrderCustomer__inner
+            display: block
     
     &Info
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
       border-radius: 16px
+      +xs
+        border-radius: 0
       &__default
         padding: 0 24px 24px 24px
+        +xs
+          padding: 0 4% 24px 4%
         &Content
           margin-top: 16px
           +text(18,400,24,0)
+          +xs
+
           span
             color: $color-primary
             cursor: pointer
@@ -103,20 +190,30 @@
           margin-bottom: 0
       &__inner
         display: none
-      &--active
-        .checkoutOrderInfo__default
-          display: none
-        .checkoutOrderInfo__inner
-          display: block
+        animation: fadeIn .5s linear
       &__title
         margin-bottom: 32px
         +text(18,600,24,0)
+        +xs
+          margin-bottom: 24px
       &__stage
         padding: 24px 81px
-        max-width: 525px
+        max-width: 555px
         box-sizing: content-box
+        +md
+          padding: 24px 4%
         &:not(:last-child)
           border-bottom: 1px solid #EDEDED
+      &.checkoutOrder__step
+        .checkoutOrderInfo__default
+          display: block
+        .checkoutOrderInfo__inner
+          display: none 
+        &--active
+          .checkoutOrderInfo__default
+            display: none
+          .checkoutOrderInfo__inner
+            display: block  
 
     &Delivery
       //display: none
@@ -128,6 +225,9 @@
         +text(14,400,24,0)
         &:not(:last-child)
           margin-right: 14px
+        &:nth-child(1n + 5)
+          +xxs
+            display: none
 
     &Payment
       //display: none
@@ -142,7 +242,69 @@
 
   &Content
     margin-top: 58px
+    +xs
+      margin-top: 24px
+    .container
+      +xs
+        width: 100%
     .input
       padding: 10px 0 10px 16px
     .btn--primary
       padding: 15px 0
+    .cartContentProducts
+      +md
+        width: 60%
+      +sm
+        width: 100%
+      +xs
+        box-shadow: none
+    .cartContentTotal
+      padding: 24px 0
+      +md
+        width: 38%
+      +sm
+        width: 100%
+        margin-top: 32px
+      &__title
+        padding: 0 24px
+        +break(1600)
+          padding: 0 10px
+        +sm
+          padding: 0 24px
+        +xs
+          padding: 0 4%
+      &__promo
+        +sm
+          padding: 0 24px
+        +xs
+          padding: 0 4%
+        input
+          +xs
+            padding: 10px 0 10px 15px
+      &__inner
+        +sm
+          padding: 32px 24px
+        +xs
+          padding: 24px 4%
+      &__checkout
+        +sm
+          padding: 32px 24px 0 24px
+        +xs
+          padding: 24px 4% 0 4%
+      &__terms
+        padding: 13px 24px 0 24px
+        +text(14,400,24,0)
+        +xs
+          padding: 13px 4% 0 4%
+        a
+          color: $color-primary
+      &--noCommerce
+        .checkoutOrderInfo__title, .cartContentTotal__promo
+          display: none
+        .cartContentTotal__inner
+          border-top: none
+          margin-top: 0
+          padding: 0 24px 24px 24px
+          +xs
+            padding: 0 4% 24px 4%
+

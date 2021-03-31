@@ -352,8 +352,10 @@
         .cartContentTotal__rowValue
           +text(32,700,40,0)
           +break(1600)
-            +text(18,600,24,0)
-    
+            +text(18,600,24,0)   
+        &NoCommerce
+          .cartContentTotal__rowValue
+            +text(18,400,24,#000)
     &__checkout
       padding: 32px 24px 0 24px
       +break(1600)
@@ -365,3 +367,10 @@
         font-size: 16px
         +break(1600)
           font-size: 14px
+    &__info
+      padding-top: 16px
+      p
+        letter-spacing: 0.01em
+        +text(16,400,24,0)
+        &:not(:last-child)
+          margin-bottom: 16px

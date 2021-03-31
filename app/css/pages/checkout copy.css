@@ -45,7 +45,7 @@
           font-size: 12px; } }
 
 .footer--checkout {
-  margin-top: auto;
+  margin-top: 72px;
   padding-bottom: 24px;
   background: rgba(0, 0, 0, 0); }
   .footer--checkout .footer__copy {
@@ -56,7 +56,7 @@
         text-align: center; } }
 
 .checkoutPage {
-  padding: 32px 0 72px 0; }
+  padding-top: 32px; }
   @media (max-width: 768px) {
     .checkoutPage .title {
       font-size: 24px; } }

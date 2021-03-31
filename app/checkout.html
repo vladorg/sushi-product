@@ -45,49 +45,53 @@
       <div class="container">
         <form action="#" class="checkoutOrder">
           <div class="cartContentProducts">
-            <div class="checkoutOrderCustomer" data-valid="false">
+            <div class="checkoutOrderCustomer checkoutOrder__step checkoutOrder__step--active" data-valid="false">
               <div class="checkoutOrder__title heading">1. Вкажіть контактну інформацію</div>
-              <!-- <button class="btn btn--dashed checkoutOrder__change">Редагувати</button> -->
-              <div class="checkoutOrderCustomer__nav">
-                <button type="button" data-tab="new"
-                  class="btn checkoutOrderCustomer__btn checkoutOrderCustomer__btn--active checkoutOrderCustomer__btnNew">Новий
-                  покупець</button>
-                <button type="button" data-tab="login"
-                  class="btn checkoutOrderCustomer__btn checkoutOrderCustomer__btnLog">Постійний
-                  клієнт</button>
-              </div>
-              <div class="checkoutOrderCustomer__forms">
-                <div data-tab="new"
-                  class="checkoutOrderCustomer__new checkoutOrderCustomer__form checkoutOrderCustomer__form--active">
-                  <div class="field">
-                    <input class="input required" type="text" name="phone" placeholder="Телефон">
-                  </div>
-                  <div class="fields fields--two field--two">
-                    <div class="field">
-                      <input class="input required" type="text" name="firstname" placeholder="Iм'я">
-                    </div>
-                    <div class="field">
-                      <input class="input required" type="text" name="lastname" placeholder="Прізвище">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <input class="input required" type="email" name="email" placeholder="E-mail">
-                    <div class="field__subtitle">Будь ласка, заповніть e-mail для отримання статусу замовлення</div>
-                  </div>
-                  <button type="button" class="btn btn--primary" id="customer_accept">Далi</button>
+
+              <button type="button" class="btn btn--dashed ic-pencil checkoutOrder__change" data-step="checkoutOrderCustomer">Редагувати</button>
+              <div class="checkoutOrder__saved"></div>
+              <div class="checkoutOrderCustomer__inner">
+                <div class="checkoutOrderCustomer__nav">
+                  <button type="button" data-tab="new"
+                    class="btn checkoutOrderCustomer__btn checkoutOrderCustomer__btn--active checkoutOrderCustomer__btnNew">Новий
+                    покупець</button>
+                  <button type="button" data-tab="login"
+                    class="btn checkoutOrderCustomer__btn checkoutOrderCustomer__btnLog">Постійний
+                    клієнт</button>
                 </div>
-                <div data-tab="login" class="checkoutOrderCustomer__log checkoutOrderCustomer__form">
-                  <div class="field">
-                    <input class="input required" type="email" name="email" placeholder="Email" disabled>
+                <div class="checkoutOrderCustomer__forms">
+                  <div data-tab="new"
+                    class="checkoutOrderCustomer__new checkoutOrderCustomer__form checkoutOrderCustomer__form--active">
+                    <div class="field">
+                      <input class="input required" type="text" name="phone" placeholder="Телефон">
+                    </div>
+                    <div class="fields fields--two field--two">
+                      <div class="field">
+                        <input class="input required" type="text" name="firstname" placeholder="Iм'я">
+                      </div>
+                      <div class="field">
+                        <input class="input required" type="text" name="lastname" placeholder="Прізвище">
+                      </div>
+                    </div>
+                    <div class="field">
+                      <input class="input required" type="email" name="email" placeholder="E-mail">
+                      <div class="field__subtitle">Будь ласка, заповніть e-mail для отримання статусу замовлення</div>
+                    </div>
+                    <button type="button" class="btn btn--primary" id="customer_accept">Далi</button>
                   </div>
-                  <div class="field">
-                    <input class="input required" type="password" name="password" placeholder="Пароль" disabled>
+                  <div data-tab="login" class="checkoutOrderCustomer__log checkoutOrderCustomer__form">
+                    <div class="field">
+                      <input class="input required" type="email" name="email" placeholder="Email" disabled>
+                    </div>
+                    <div class="field">
+                      <input class="input required" type="password" name="password" placeholder="Пароль" disabled>
+                    </div>
+                    <button type="button" class="btn btn--primary" id="customer_log">Увiйти</button>
                   </div>
-                  <button type="button" class="btn btn--primary" id="customer_log">Увiйти</button>
                 </div>
               </div>
             </div>
-            <div class="checkoutOrderInfo checkoutOrderInfo--active" data-valid="false">
+            <div class="checkoutOrderInfo checkoutOrder__step" data-valid="false">
               <div class="checkoutOrder__title heading">2. Виберіть спосіб доставки і оплати</div>
 
               <div class="checkoutOrderInfo__default">
@@ -100,7 +104,7 @@
                 <div class="checkoutOrderDelivery checkoutOrderInfo__stage">
                   <div class="checkoutOrderInfo__title">Доставка</div>
                   <div class="field checkoutOrderDelivery__city">
-                    <input class="input input--line" type="text" name="city"
+                    <input class="input input--line required" type="text" name="city"
                       placeholder="Вкажіть місто доставки або оберiть" id="order_city">
                     <div class="checkoutOrderDelivery__cityList">
                       <button type="button" class="btn checkoutOrderDelivery__cityAcc">Дніпро</button>
@@ -113,44 +117,46 @@
                   <div class="checkoutOrder__list">
 
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="delivery" id="delivery_sam">
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="delivery" id="delivery_sam" value="Самовивіз из наших складiв" checked>
                       <label for="delivery_sam">Самовивіз из наших складiв</label>
                       <div class="checkoutOrder__content">
-                        <div class="select">
-                          <input type="hidden" class="select__value" name="warehouse_sushi" id="warehouse_sushi">
-                          <div class="dropdown select__wrap">
-                            <div class="dropdown__title arrow">Оберiть склад самовивозу</div>
-                            <ul class="dropdown__list">
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 1">Склад 1</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 2">Склад 2</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 3">Склад 3</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 4">Склад 4</button>
-                              </li>
-                            </ul>
+                        <div class="checkoutOrder__wrap">
+                          <div class="select">
+                            <input type="hidden" class="select__value required" name="warehouse_sushi" id="warehouse_sushi">
+                            <div class="dropdown select__wrap">
+                              <div class="dropdown__title arrow">Оберiть склад самовивозу</div>
+                              <ul class="dropdown__list scroll">
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 1">Склад 1</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 2">Склад 2</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 3">Склад 3</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 4">Склад 4</button>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="delivery" id="delivery_sushi" checked>
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="delivery" id="delivery_sushi" value="Доставка “Суши Продукт”">
                       <label for="delivery_sushi">Доставка “Суши Продукт”</label>
                       <div class="checkoutOrder__content">
                         <p>Виберіть вашу адресу зі списку і вкажіть новий</p>
                         <div class="checkoutOrder__wrap">
                           <div class="select">
-                            <input type="hidden" class="select__value" name="delivery_sushi_address"
+                            <input type="hidden" class="select__value required" name="delivery_sushi_address"
                               id="delivery_sushi_address" disabled>
                             <div class="dropdown select__wrap">
                               <div class="dropdown__title arrow">Оберiть адресу</div>
-                              <ul class="dropdown__list">
+                              <ul class="dropdown__list scroll">
                                 <li>
                                   <button type="button" class="btn select__item" data-value="Адрес 1">Адрес 1</button>
                                 </li>
@@ -166,65 +172,76 @@
                               </ul>
                             </div>
                           </div>
-                          <button type="button" class="btn btn--dashed">Інша адреса</button>
+                          <button type="button" class="btn btn--dashed new_address">Інша адреса</button>
                         </div>
                         <div class="checkoutOrder__newAddress">
                           <div class="fields fields--two">
                             <div class="field field--street">
-                              <input class="input" type="text" name="sushi_addr_street" placeholder="Вулиця" disabled>
+                              <input class="input required" type="text" name="sushi_addr_street" placeholder="Вулиця" disabled>
                             </div>
                             <div class="field field--house">
-                              <input class="input" type="text" name="sushi_addr_house" placeholder="Дiм" disabled>
+                              <input class="input required" type="text" name="sushi_addr_house" placeholder="Дiм" disabled>
                             </div>
                           </div>
-                          <div class="field">
+                          <div class="field field--tooltip">
                             <input class="checkbox" type="checkbox" name="save_address_sushi" id="save_address_sushi"
                               checked disabled>
                             <label for="save_address_sushi">Зберегти адресу</label>
+                            <div class="tooltip tooltip--preview tooltip--short">
+                              <div class="tooltip__pick">?</div>
+                              <div class="tooltip__wrap">
+                                <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                  elit.
+                                  Sequi a
+                                  commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="delivery" id="delivery_np_del">
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="delivery" id="delivery_np_del" value="Доставка у відділення “Нова Пошта”">
                       <label for="delivery_np_del">Доставка у відділення “Нова Пошта”</label>
                       <div class="checkoutOrder__content">
-                        <div class="select">
-                          <input type="hidden" class="select__value" name="warehouse_np" id="warehouse_np" disabled>
-                          <div class="dropdown select__wrap">
-                            <div class="dropdown__title arrow">Оберiть склад самовивозу</div>
-                            <ul class="dropdown__list">
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 1">Склад 1</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 2">Склад 2</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 3">Склад 3</button>
-                              </li>
-                              <li>
-                                <button type="button" class="btn select__item" data-value="Склад 4">Склад 4</button>
-                              </li>
-                            </ul>
+                        <div class="checkoutOrder__wrap">
+                          <div class="select">
+                            <input type="hidden" class="select__value required" name="warehouse_np" id="warehouse_np" disabled>
+                            <div class="dropdown select__wrap">
+                              <div class="dropdown__title arrow">Оберiть склад самовивозу</div>
+                              <ul class="dropdown__list scroll">
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 1">Склад 1</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 2">Склад 2</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 3">Склад 3</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn select__item" data-value="Склад 4">Склад 4</button>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="delivery" id="delivery_np_cur">
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="delivery" id="delivery_np_cur" value="Адресна доставка “Нова Пошта”">
                       <label for="delivery_np_cur">Адресна доставка “Нова Пошта”</label>
                       <div class="checkoutOrder__content">
                         <p>Виберіть вашу адресу зі списку і вкажіть новий</p>
                         <div class="checkoutOrder__wrap">
                           <div class="select">
-                            <input type="hidden" class="select__value" name="delivery_sushi_address"
+                            <input type="hidden" class="select__value required" name="delivery_sushi_address"
                               id="delivery_sushi_address" disabled>
                             <div class="dropdown select__wrap">
                               <div class="dropdown__title arrow">Оберiть адресу</div>
-                              <ul class="dropdown__list">
+                              <ul class="dropdown__list scroll">
                                 <li>
                                   <button type="button" class="btn select__item" data-value="Адрес 1">Адрес 1</button>
                                 </li>
@@ -240,15 +257,15 @@
                               </ul>
                             </div>
                           </div>
-                          <button type="button" class="btn btn--dashed">Інша адреса</button>
+                          <button type="button" class="btn btn--dashed new_address">Інша адреса</button>
                         </div>
                         <div class="checkoutOrder__newAddress">
                           <div class="fields fields--two">
                             <div class="field field--street">
-                              <input class="input" type="text" name="np_currier_street" placeholder="Вулиця" disabled>
+                              <input class="input required" type="text" name="np_currier_street" placeholder="Вулиця" disabled>
                             </div>
                             <div class="field field--house">
-                              <input class="input" type="text" name="np_currier_house" placeholder="Дiм" disabled>
+                              <input class="input required" type="text" name="np_currier_house" placeholder="Дiм" disabled>
                             </div>
                           </div>
                           <div class="field">
@@ -276,7 +293,7 @@
                   <div class="checkoutOrderInfo__title">Оплата</div>
                   <div class="checkoutOrder__list">
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="payment" id="order_beznal" checked>
+                      <input class="radio" type="radio" name="payment" id="order_beznal" value="Безготівкова" checked>
                       <label for="order_beznal">Безготівкова</label>
                       <div class="checkoutOrder__content checkoutOrder__content--light">Безготівкова оплата через
                         розрахунковий рахунок. Більш
@@ -290,19 +307,23 @@
                   <div class="checkoutOrderInfo__title">Отримувач</div>
                   <div class="checkoutOrder__list">
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="recipient" id="order_recipient_me" value="Я" checked>
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="recipient" id="order_recipient_me" value="Я" checked>
                       <label for="order_recipient_me">Я</label>
                       <div class="checkoutOrder__content">
-                        <textarea class="textarea" name="order_recipient_comment"
+                        <div class="checkoutOrder__wrap">
+                          <textarea class="textarea required" name="order_recipient_comment"
                           placeholder="Додайте коментар до замовлення"></textarea>
+                        </div>
                       </div>
                     </div>
                     <div class="checkoutOrder__item">
-                      <input class="radio" type="radio" name="recipient" id="order_recipient_diff" value="Iнша людина">
+                      <input class="radio checkoutOrder__hasContent" type="radio" name="recipient" id="order_recipient_diff" value="Iнша людина">
                       <label for="order_recipient_diff">Iнша людина</label>
                       <div class="checkoutOrder__content">
-                        <textarea class="textarea" name="order_recipient_comment"
+                        <div class="checkoutOrder__wrap">
+                          <textarea class="textarea required" name="order_recipient_comment"
                           placeholder="Додайте коментар до замовлення" disabled></textarea>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -313,11 +334,27 @@
 
             </div>
           </div>
-          <div class="cartContentTotal">
+
+          <!-- if no commerce -- add class 'cartContentTotal--noCommerce' -->
+          <div class="cartContentTotal cartContentTotal--noCommerce1">
+            <div class="cartContentTotal__title checkoutOrderInfo__title">Разом</div>
             <div class="cartContentTotal__promo header__search">
               <input class="placeholder" name="promo" type="text" id="cart_promo" placeholder="Код знижки / промокод">
               <button type="button" class="btn btn--disabled" id="cart_promo_add">Використати</button>
             </div>
+
+            <!-- if no commerce -->
+            <!-- <div class="cartContentTotal__inner">
+              <div class="cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--totalNoCommerce">
+                <span class="cartContentTotal__rowTitle">Номер замовлення:</span>
+                <span class="cartContentTotal__rowValue">1234858746</span>
+              </div>
+              <div class="cartContentTotal__info">
+                <p>Оформіть товари з кошика, слідуючи простим крокам.</p>
+                <p>Після успішного оформлення з вами зв'яжеться менеджер і повідомить вартість вашого замовлення і умови доставки і оплати, і відповість на всі ваші запитання.</p>
+              </div>              
+            </div> -->
+            <!-- else -->
             <div class="cartContentTotal__inner">
               <div class="cartContentTotal__row">
                 <span class="cartContentTotal__rowTitle">2 товари на суму:</span>
@@ -336,9 +373,18 @@
                 <span class="cartContentTotal__rowValue">828,54 грн</span>
               </div>
             </div>
+            <!-- endif -->
+
             <div class="cartContentTotal__checkout">
-              <button type="submit" class="btn btn--primary btn--disabled" id="checkout_order" disabled>Оформити замовлення</a>
+              <button type="submit" class="btn btn--primary btn--disabled" id="checkout_order" disabled>
+                <!-- if no commerce -->
+                <!-- Довідатися про ціни -->
+                <!-- else -->
+                Оформити замовлення
+                <!-- endif -->
+              </button>
             </div>
+            <div class="cartContentTotal__terms">Підтверджуючи замовлення, я приймаю умови <a href="#">угоди користувача</a>.</div>
           </div>
         </form>
       </div>

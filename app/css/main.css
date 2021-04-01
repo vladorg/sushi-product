@@ -297,7 +297,7 @@ a {
   background: #FA4616; }
 
 .scroll--radius::-webkit-scrollbar-track {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px; }
 
 .fields {
@@ -432,12 +432,14 @@ a {
   font-family: "Open Sans"; }
 
 .checkbox {
-  display: none; }
+  opacity: 0;
+  position: absolute; }
   .checkbox + label {
     position: relative;
     cursor: pointer;
     padding-left: 35px;
     display: inline-block;
+    text-align: left;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px; }
@@ -958,8 +960,9 @@ a {
     .sidebar--catalog {
       display: block;
       position: fixed;
-      top: 67px;
+      top: 170px;
       left: -100%;
+      bottom: 0;
       padding: 0;
       width: 100%;
       z-index: 10;
@@ -969,6 +972,9 @@ a {
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       transition: all 0.4s; } }
+  @media (max-width: 768px) {
+    .sidebar--catalog {
+      top: 67px; } }
   .sidebar--open {
     left: 0; }
   .sidebar__title {
@@ -1477,6 +1483,93 @@ a {
       .items__btn {
         font-size: 12px;
         padding: 8px 0; } }
+  .itemsWishlist .items__item:not(:last-child) {
+    margin-bottom: 16px; }
+  .itemsWishlist__stickers {
+    width: 150px; }
+  .itemsWishlist__info {
+    width: 474px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .itemsWishlist__set {
+    width: 361px;
+    padding: 0 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .itemsWishlist__set .quantly {
+      margin-right: 24px; }
+    .itemsWishlist__set .preview__price {
+      max-width: 100%; }
+  .itemsWishlist__tools {
+    width: 215px;
+    padding: 0 16px;
+    position: relative; }
+    .itemsWishlist__tools .preview__buy {
+      max-width: 100%;
+      width: 100%; }
+  .itemsWishlist__thumb {
+    margin-right: 32px; }
+    .itemsWishlist__thumb img {
+      width: 102px;
+      height: 114px;
+      -o-object-fit: contain;
+         object-fit: contain; }
+  .itemsWishlist__code {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #979797; }
+  .itemsWishlist__name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px; }
+  .itemsWishlist__del {
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    width: 100%;
+    letter-spacing: 0.02em;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 .list-check li {
   padding-left: 32px;
@@ -2179,7 +2272,12 @@ a {
   .modal__title {
     margin-bottom: 32px;
     padding: 32px 43px;
-    border-bottom: 1px solid #EDEDED; }
+    border-bottom: 1px solid #EDEDED;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1; }
     @media (max-width: 768px) {
       .modal__title {
         padding: 20px;
@@ -2292,6 +2390,19 @@ a {
       font-size: 16px; }
   .modalSuccessPass .modal__subtitle {
     margin-bottom: 0; }
+  .modalUserAddress__address {
+    padding-bottom: 24px;
+    position: relative; }
+  .modalUserAddress__title {
+    padding-bottom: 8px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px; }
+  .modalUserAddress__del {
+    position: absolute;
+    top: 0;
+    right: 0; }
   .modal--open {
     opacity: 1;
     pointer-events: auto; }
@@ -6812,3 +6923,281 @@ a {
   @media (max-width: 992px) {
     .successContent__link {
       margin: 0 auto; } }
+
+.accountPage .title {
+  margin-bottom: 24px; }
+
+.accountPageSidebar {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #000; }
+  @media (max-width: 1199px) {
+    .accountPageSidebar .heading {
+      font-size: 18px;
+      line-height: 24px; } }
+  @media (max-width: 768px) {
+    .accountPageSidebar .heading {
+      font-size: 24px;
+      line-height: 32px; } }
+  .accountPageSidebar .close_category_catalog {
+    display: none; }
+    @media (max-width: 992px) {
+      .accountPageSidebar .close_category_catalog {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; } }
+  .accountPageSidebar__head {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #D6D6D6; }
+    .accountPageSidebar__head li:not(:last-child) {
+      margin-bottom: 8px; }
+    .accountPageSidebar__head li a {
+      color: #000; }
+  .accountPageSidebar__id {
+    color: #7E7E7E; }
+  .accountPageSidebar__nav {
+    padding: 16px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .accountPageSidebar__link {
+    display: inline-block;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+    @media (max-width: 1199px) {
+      .accountPageSidebar__link {
+        font-size: 14px;
+        line-height: 20px; } }
+    .accountPageSidebar__link:not(:last-child) {
+      margin-bottom: 32px; }
+      @media (max-width: 1199px) {
+        .accountPageSidebar__link:not(:last-child) {
+          margin-bottom: 16px; } }
+    .accountPageSidebar__link:hover {
+      border-color: #FA4616; }
+    .accountPageSidebar__link a {
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      .accountPageSidebar__link a:hover {
+        text-decoration: none;
+        color: #FA4616;
+        font-weight: 700; }
+    .accountPageSidebar__link--active {
+      border-color: #FA4616; }
+      .accountPageSidebar__link--active a {
+        color: #FA4616;
+        font-weight: 700; }
+        .accountPageSidebar__link--active a:hover {
+          text-decoration: none; }
+
+.accountPageUser__header {
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.accountPageUser__change {
+  position: relative;
+  margin-left: 35px;
+  font-size: 12px;
+  font-weight: 600; }
+  .accountPageUser__change::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -19px;
+    margin-top: -7px; }
+
+.accountPageUser__navOpener {
+  width: auto;
+  padding: 8px 10px;
+  margin-bottom: 26px; }
+
+.accountPageUserContacts {
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px; }
+  @media (max-width: 768px) {
+    .accountPageUserContacts {
+      margin: 0 -4% 16px -4%;
+      padding: 16px 4%;
+      border-radius: 0; } }
+  .accountPageUserContacts__content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    @media (max-width: 768px) {
+      .accountPageUserContacts__content {
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap; } }
+  .accountPageUserContacts__self {
+    width: 35%;
+    margin-right: 32px; }
+    @media (max-width: 1199px) {
+      .accountPageUserContacts__self {
+        width: 48%; } }
+    @media (max-width: 768px) {
+      .accountPageUserContacts__self {
+        width: 100%;
+        margin: 0 0 16px 0; } }
+  .accountPageUserContacts__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .accountPageUserContacts__row:not(:last-child) {
+      margin-bottom: 16px; }
+  .accountPageUserContacts__key {
+    width: 49%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #949494; }
+  .accountPageUserContacts__value {
+    width: 49%;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px; }
+    @media (max-width: 500px) {
+      .accountPageUserContacts__value {
+        white-space: normal; } }
+  .accountPageUserContacts__organization {
+    width: 45%; }
+    @media (max-width: 1199px) {
+      .accountPageUserContacts__organization {
+        width: 48%; } }
+    @media (max-width: 768px) {
+      .accountPageUserContacts__organization {
+        width: 100%; } }
+
+.accountPageUserAddress {
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 24px; }
+  @media (max-width: 768px) {
+    .accountPageUserAddress {
+      margin: 0 -4%;
+      padding: 16px 4%;
+      border-radius: 0; } }
+  .accountPageUserAddress__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    @media (max-width: 1199px) {
+      .accountPageUserAddress__list {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
+  .accountPageUserAddress__checked {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .accountPageUserAddress__checked::before {
+      content: attr(data-checked);
+      display: block;
+      padding-left: 32px;
+      opacity: 0;
+      pointer-events: none;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #949494; }
+      @media (max-width: 768px) {
+        .accountPageUserAddress__checked::before {
+          max-height: 32px;
+          overflow: hidden;
+          -o-text-overflow: ellipsis;
+             text-overflow: ellipsis;
+          font-size: 12px;
+          line-height: 16px; } }
+  .accountPageUserAddress__item {
+    width: 30%;
+    position: relative;
+    padding-bottom: 28px;
+    margin: 0 32px 16px 0; }
+    @media (max-width: 1199px) {
+      .accountPageUserAddress__item {
+        width: 48%;
+        margin: 0 0 16px 0; } }
+    @media (max-width: 500px) {
+      .accountPageUserAddress__item {
+        padding-bottom: 36px;
+        width: 100%; } }
+    .accountPageUserAddress__item input:checked + label {
+      font-weight: 400; }
+    .accountPageUserAddress__item input:checked ~ .accountPageUserAddress__checked::before {
+      opacity: 1;
+      pointer-events: auto;
+      -webkit-transition-delay: .2s;
+           -o-transition-delay: .2s;
+              transition-delay: .2s; }
+  .accountPageUserAddress__add {
+    margin-top: 48px;
+    max-width: 280px;
+    padding: 15px 0; }
+    @media (max-width: 500px) {
+      .accountPageUserAddress__add {
+        max-width: 100%;
+        margin-top: 0; } }

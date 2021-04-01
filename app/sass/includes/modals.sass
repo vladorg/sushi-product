@@ -47,6 +47,10 @@
     margin-bottom: 32px
     padding: 32px 43px
     border-bottom: 1px solid #EDEDED
+    position: sticky
+    top: 0
+    background: #fff
+    z-index: 1
     +xs
       padding: 20px
       font-size: 18px
@@ -110,6 +114,20 @@
   &SuccessPass
     .modal__subtitle
       margin-bottom: 0
+
+  
+  &UserAddress
+    &__address
+      padding-bottom: 24px
+      position: relative
+    &__title
+      padding-bottom: 8px
+      text-align: left
+      +text(16,700,24,0)
+    &__del
+      position: absolute
+      top: 0
+      right: 0
 
   &--open
     opacity: 1

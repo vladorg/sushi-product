@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account user</title>
+  <title>Bonus</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
   <!-- build:css -->
@@ -394,9 +394,35 @@
     </div>
   </header>
 
-  <div class="layout layout--left">
-    <aside class="sidebar sidebar--catalog scroll"></aside>
-    <main class="main accountPage accountUser primary-bg primary-bg--category">
+  <div class="layout layout--left accountPage">
+    <aside class="accountPageSidebar sidebar sidebar--catalog scroll">
+      <div class="sidebar__title heading ic-arrow-back close_category_catalog">Особистий кабiнет</div>
+      <ul class="accountPageSidebar__head">
+        <li class="heading">Іван Петров</li>
+        <li class="accountPageSidebar__id">ID7895654</li>
+        <li class="accountPageSidebar__phone">
+          <a href="tel:+38(050)123 12 12">+38(050)123 12 12</a>
+        </li>
+        <li class="accountPageSidebar__email">
+          <a href="mailto:Email@email.com">Email@email.com</a>
+        </li>
+      </ul>
+      <ul class="accountPageSidebar__nav">
+        <li class="accountPageSidebar__link">
+          <a href="./account.html">Особисті дані</a>
+        </li>
+        <li class="accountPageSidebar__link">
+          <a href="./wishlist.html">Обране</a>
+        </li>
+        <li class="accountPageSidebar__link">
+          <a href="./orders.html">Мої замовлення</a>
+        </li>
+        <li class="accountPageSidebar__link accountPageSidebar__link--active">
+          <a href="./bonus.html">Мій бонусний рахунок</a>
+        </li>
+      </ul>
+    </aside>
+    <main class="main accountPageUser">
       
       <section class="breadcrumbs">
         <div class="container">
@@ -404,14 +430,19 @@
             <li class="breadcrumbs__item breadcrumbs__item--start">
               <a href="./index.html" class="ic-home">Главная</a>
             </li>
-            <li class="breadcrumbs__item breadcrumbs__item--end">Особистий кабінет</li>
+            <li class="breadcrumbs__item">
+              <a href="./account.html">Особистий кабiнет</a>
+            </li>
+            <li class="breadcrumbs__item breadcrumbs__item--end">Мій бонусний рахунок</li>
           </ul>
         </div>
       </section>
 
-      <h1 class="title">Особисті дані</h1>
+      <h1 class="title">Мій бонусний рахунок</h1>
 
-      <section class="section"></section>
+      <button class="accountPageUser__navOpener categoryChild__catalog btn btn--primary open_category_catalog ic-lines">Мій бонусний рахунок</button>
+
+      
 
     </main>
   </div>
@@ -716,6 +747,135 @@
             <label for="callback_accept"></label>
           </div>
           <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- change user profile info -->
+  <div class="modal modalUserInfo">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Контактні дані</div>
+      <form action="#" class="modal__form">
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_first" placeholder="Iм'я" value="Iван">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_last" placeholder="Прiзвище" value="Петров">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_middle" placeholder="По-батькові" value="Не вказано">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_number" placeholder="+38(050)___ -__-__" value="+38(050) 123-12-12">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="user_change_email" placeholder="E-mail" value="E-mail@email.com">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_birth" placeholder="День народження" value="25.12.1986">
+        </div>    
+        <div class="field">
+          <input type="text" class="input" name="user_change_organization" placeholder="Організація" value="ООО ”Суши Продукт”">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_organization_id" placeholder="ID організації" value="365488749">
+        </div>
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="user_change_accept" required checked>
+          <label for="user_change_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- change user profile addresses -->
+  <div class="modal modalUserAddress">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Адреси доставки
+      </div>
+      <form action="#" class="modal__form">
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 1</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_1" placeholder="Мiсто" value="Харкiв">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_1" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_1" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 2</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_2" placeholder="Мiсто" value="Харкiв">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_2" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_2" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 3</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_3" placeholder="Мiсто" value="Харкiв">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_3" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_3" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+
+
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="address_change_accept" required checked>
+          <label for="address_change_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add user profile address -->
+  <div class="modal modalAddAddress">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Додати адресу</div>
+      <form action="#" class="modal__form">
+
+        <div class="modalUserAddress__address">
+          <div class="field">
+            <input type="text" class="input" name="add_address_city" placeholder="Мiсто">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="add_address_street" placeholder="Вулиця">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="add_address_house" placeholder="Дiм">
+          </div>
+        </div>
+
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="address_add_accept" required checked>
+          <label for="address_add_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>

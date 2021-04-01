@@ -2,6 +2,7 @@ window.onload = () => {
 
   const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector),
     isMobile = window.innerWidth < 768 ? true : false,
+    isTablet = window.innerWidth > 768 && window.innerWidth < 992 ? true : false,
     getCoords = elem => elem.getBoundingClientRect().top + pageYOffset;
 
 
@@ -52,6 +53,18 @@ window.onload = () => {
       callback: {
         opener: getElem('.open_callback', false),
         item: getElem('.modalCallback')
+      },
+      user_info: {
+        opener: getElem('.open_user_info', false),
+        item: getElem('.modalUserInfo')
+      },
+      user_address: {
+        opener: getElem('.open_user_address', false),
+        item: getElem('.modalUserAddress')
+      },
+      add_address: {
+        opener: getElem('.open_add_address', false),
+        item: getElem('.modalAddAddress')
       }
     },
     top_btn = getElem('.toTop'),
@@ -83,7 +96,9 @@ window.onload = () => {
   openModals(modals.change_success.opener, modals.change_success.item, 'change success'); // change success
   openModals(modals.ask.opener, modals.ask.item, 'ask'); // ask
   openModals(modals.review.opener, modals.review.item, 'review'); // review
-  openModals(modals.callback.opener, modals.callback.item, 'callback'); // callback
+  openModals(modals.user_info.opener, modals.user_info.item, 'user_info'); // change user info
+  openModals(modals.user_address.opener, modals.user_address.item, 'user_address'); // change user addresses
+  openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // change user addresses
 
   function openModals(elem, modal, name) {
     if (modal) {
@@ -759,6 +774,8 @@ window.onload = () => {
   if (category_catalog_opener) {
     for (let i = 0; i < category_catalog_opener.length; i++) {
       category_catalog_opener[i].addEventListener('click', e => {
+        let header_height = header.clientHeight;
+        category_catalog.style.top = `${header_height}px`;
         category_catalog.classList.add('sidebar--open');
         document.body.classList.add('no-scroll');
       });
@@ -769,6 +786,7 @@ window.onload = () => {
   if (category_catalog_closer) {
     for (let i = 0; i < category_catalog_closer.length; i++) {
       category_catalog_closer[i].addEventListener('click', e => {
+        isTablet ? category_catalog.classList.remove('sidebar--open') : null;
         isMobile ? category_catalog.classList.remove('sidebar--open') : null;
         document.body.classList.remove('no-scroll');
       });

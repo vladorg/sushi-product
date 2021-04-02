@@ -943,7 +943,7 @@ window.onload = () => {
     checkout_tab = getElem('.checkoutOrderCustomer__form', false),
     customer_accept = getElem('#customer_accept'),
     customer_log = getElem('#customer_log')
-    checkout_order = getElem('#checkout_order'),
+  checkout_order = getElem('#checkout_order'),
     checkout_customer = getElem('.checkoutOrderCustomer'),
     checkout_customer_inner = getElem('.checkoutOrderCustomer__inner'),
     checkout_change = getElem('.checkoutOrder__change', false),
@@ -1013,7 +1013,7 @@ window.onload = () => {
         current_step.classList.add('checkoutOrder__step--active');
         current_step.classList.remove('checkoutOrder__step--completed');
       });
-    });    
+    });
   }
 
   // accept checkout first step
@@ -1105,6 +1105,7 @@ window.onload = () => {
   function validate(items, mode) {
     var result = null;
 
+    // mode default is default
     if (mode == 'default') {
       if (items) {
         if (items.length > 0) {
@@ -1179,7 +1180,7 @@ window.onload = () => {
         let customer_status = validate(inputs, 'default');
         let checkout_customer_values = getValues(inputs_save);
 
-        
+
         if (item == customer_log) {
           let checkout_customer_data = JSON.stringify(checkout_customer_values);
           // if auth - send ajax auth request
@@ -1194,13 +1195,13 @@ window.onload = () => {
             checkout_customer.dataset.valid = 'true';
             checkout_order.disabled = false;
             checkout_order.classList.remove('btn--disabled');
-                       
+
             let checkout_customer_hide = checkout_customer_inner.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400 });
             checkout_customer_hide.addEventListener('finish', () => {
               checkout_customer.classList.remove('checkoutOrder__step--active');
               checkout_customer.classList.add('checkoutOrder__step--completed');
               setTimeout(() => {
-                checkout_info.classList.add('checkoutOrder__step--active'); 
+                checkout_info.classList.add('checkoutOrder__step--active');
               }, 200);
             });
             for (let k in checkout_customer_values) {
@@ -1217,6 +1218,54 @@ window.onload = () => {
         }
 
       });
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ACCOUNT PAGE
+
+  const order_info_opener = getElem('.order_info_opener', false);
+
+  if (order_info_opener) {
+    let order_info_opener_timer;
+    order_info_opener.forEach(el => {
+      let order_info_sliding_binded = order_info_sliding.bind(el);
+
+      el.addEventListener('click', e => {        
+        clearTimeout(order_info_opener_timer);
+        order_info_opener_timer = setTimeout(order_info_sliding_binded, 300);
+      });
+    });
+    
+    function order_info_sliding() {
+      let parent = this.closest('.accountPageOrders__item');
+      let item_inner = parent.querySelector('.accountPageOrders__inner');
+      let item_arrow = this.closest('.accountPageOrders__opener');
+
+      item_inner.classList.toggle('accountPageOrders__inner--open');
+      setTimeout(() => {
+        item_arrow.classList.toggle('accountPageOrders__opener--open');
+      }, 400);
+      if (item_inner.classList.contains('accountPageOrders__inner--scroll')) {
+        item_inner.classList.remove('accountPageOrders__inner--scroll');
+      } else {
+        setTimeout(() => {
+          item_inner.classList.add('accountPageOrders__inner--scroll');
+        }, 600);
+      }
     }
   }
 

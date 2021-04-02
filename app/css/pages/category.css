@@ -347,7 +347,7 @@
       color: #FA4616; }
 
 .pagination {
-  padding: 16px 0 80px 0; }
+  padding: 16px 0 0 0; }
   @media (max-width: 768px) {
     .pagination {
       padding: 24px 0 0 0; } }
@@ -390,8 +390,8 @@
       transition: all 0.4s; }
       .pagination ul li a:hover {
         background: #FA4616;
-          background-text-decoration: none;
-          background-color: #fff; }
+        text-decoration: none;
+        color: #fff; }
     @media (max-width: 768px) {
       .pagination ul li:nth-child(1n + 5) {
         display: none; } }

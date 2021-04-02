@@ -995,37 +995,130 @@ a
   
   &Wishlist
     .items__item
+      +xs
+        padding: 16px
+        +flex(row,wrap,0,0)
       &:not(:last-child)
         margin-bottom: 16px
     &__stickers
       width: 150px
+      +md
+        display: none
+      +xs
+        display: block
+        width: 100%
+      .preview__stickers
+        +xs
+          position: static
+          padding-right: 24px
+          +flex(0,wrap,flex-start,flex-start)
+      .preview__sticker
+        +break(1600)
+          font-size: 12px
+        +xs
+          width: auto
+          margin-right: 11px
+        &:nth-child(1n + 5)
+          display: none
+        &:nth-child(1n + 3)
+          +xxs
+            display: none
     &__info
       width: 474px
-      +flex(row,0,space-between,center)
+      +flex(row,0,flex-start,center)
+      +break(1600)
+        width: 420px
+      +md
+        width: 40%
+      +xs
+        width: 100%
+        padding: 0
+        margin-bottom: 16px
     &__set
       width: 361px
       padding: 0 16px
       +flex(0,0,space-between,center)
+      +break(1600)
+        width: 415px
+      +md
+        width: 60%
+      +xs
+        position: relative
+        padding: 90px 0 0 0
+        overflow: visible
+      +xxs
+        padding-top: 50px
+        width: 45%
       .quantly
         margin-right: 24px
+        +xs
+          position: absolute
+          top: 0
+        .quantly__button
+          +xxs
+            width: 32px
+            height: 32px
+        .quantly__input
+          +xxs
+            width: 32px
+            height: 32px
       .preview__price
         max-width: 100%
+        min-height: 53px
+        +flex(column,0,center,0)
+        span
+          +xs
+            display: block
     &__tools
       width: 215px
       padding: 0 16px
       position: relative
+      +md
+        width: 15%
+      +sm
+        display: flex
+      +xs
+        position: static
+        align-self: flex-end
+        width: 35%
+        padding: 0
+      +xxs
+        width: 54%
       .preview__buy
         max-width: 100%
         width: 100%
+        +before
+          +md
+            margin-right: 0
+          +xs
+            margin-right: 16px
+        +md
+          font-size: 0
+        +xs
+          font-size: 16px
     &__thumb
       margin-right: 32px
+      width: 25%
+      +md
+        margin-right: 16px
+      +xs
+        width: 25%
       img
         width: 102px
         height: 114px
         object-fit: contain
+        +xs
+          width: 134px
+          height: auto
+    &__names
+      width: 75%
     &__code
       +text(13,400,16,#979797)
     &__name
+      display: block
+      max-height: 63px
+      overflow: hidden
+      text-overflow: ellipsis
       +text(18,600,21,0)
     &__del
       position: absolute
@@ -1033,8 +1126,19 @@ a
       left: 0
       width: 100%
       letter-spacing: 0.02em
-      +text(12,600,24,#000)
+      +text(12,600,18,#000)
       +flex(0,0,center,center)
+      +xs
+        bottom: unset
+        top: 16px
+        left: unset
+        right: 16px
+        width: auto
+        font-size: 0
+      +before
+        +xs
+          background: url("../img/icons.svg") -441px -5px no-repeat!important
+
 
 .list-check
   li

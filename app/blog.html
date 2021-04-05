@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orders</title>
+  <title>Blog</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
   <!-- build:css -->
@@ -394,35 +394,28 @@
     </div>
   </header>
 
-  <div class="layout layout--left accountPage">
+  <div class="layout layout--left blogPage">
     <aside class="accountPageSidebar sidebar sidebar--catalog scroll">
-      <div class="sidebar__title heading ic-arrow-back close_category_catalog">Особистий кабiнет</div>
-      <ul class="accountPageSidebar__head">
-        <li class="heading">Іван Петров</li>
-        <li class="accountPageSidebar__id">ID7895654</li>
-        <li class="accountPageSidebar__phone">
-          <a href="tel:+38(050)123 12 12">+38(050)123 12 12</a>
-        </li>
-        <li class="accountPageSidebar__email">
-          <a href="mailto:Email@email.com">Email@email.com</a>
-        </li>
-      </ul>
+      <div class="sidebar__title heading ic-arrow-back close_category_catalog">Категорії</div>
+      <div class="accountPageSidebar__head">
+        <div class="heading">Блог</div>
+      </div>
       <ul class="accountPageSidebar__nav">
-        <li class="accountPageSidebar__link">
-          <a href="./account.html">Особисті дані</a>
-        </li>
-        <li class="accountPageSidebar__link">
-          <a href="./wishlist.html">Обране</a>
-        </li>
         <li class="accountPageSidebar__link accountPageSidebar__link--active">
-          <a href="./orders.html">Мої замовлення</a>
+          <a href="#">Усе (456)</a>
         </li>
         <li class="accountPageSidebar__link">
-          <a href="./bonus.html">Мій бонусний рахунок</a>
+          <a href="#">Новинки (54)</a>
+        </li>
+        <li class="accountPageSidebar__link">
+          <a href="#">Рецепти (12)</a>
+        </li>
+        <li class="accountPageSidebar__link">
+          <a href="#">HoReCa (78)</a>
         </li>
       </ul>
     </aside>
-    <main class="main accountPageUser">
+    <main class="main blogPage__inner">
       
       <section class="breadcrumbs">
         <div class="container">
@@ -430,454 +423,112 @@
             <li class="breadcrumbs__item breadcrumbs__item--start">
               <a href="./index.html" class="ic-home">Главная</a>
             </li>
-            <li class="breadcrumbs__item">
-              <a href="./account.html">Особистий кабiнет</a>
-            </li>
-            <li class="breadcrumbs__item breadcrumbs__item--end">Мої замовлення</li>
+            <li class="breadcrumbs__item breadcrumbs__item--end">Блог</li>
           </ul>
         </div>
       </section>
 
-      <h1 class="title">Мої замовлення</h1>
+      <h1 class="title">Новинки в блозі</h1>
 
-      <button class="accountPageUser__navOpener categoryChild__catalog btn btn--primary open_category_catalog ic-lines">Мої замовлення</button>
-      
-      <section class="section accountPageOrders">
-        <div class="accountPageOrders__titles">
-          <div class="accountPageOrders__col accountPageOrders__number">Номер замовлення</div>
-          <div class="accountPageOrders__col accountPageOrders__status">Статус</div>
-          <div class="accountPageOrders__col accountPageOrders__date">Дата</div>
-          <div class="accountPageOrders__col accountPageOrders__sum">Сума</div>
-          <div class="accountPageOrders__col accountPageOrders__opener"></div>
-        </div>
-        <div class="accountPageOrders__items">
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--sended">ДОСТАВЛЕНИЙ</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+      <button class="accountPageUser__navOpener categoryChild__catalog btn btn--primary open_category_catalog ic-lines">Категорії</button>
+
+      <section class="section blogPageArticles">
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">КОРИСНІ ПОРАДИ</a>
+            <a href="#">HoReCa</a>
           </div>
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--inWork">в роботі</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/1.jpg" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ТРЕНДИ РЕСТОРАННОГО БІЗНЕСУ В 2021 РОЦІ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
           </div>
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--sended">ДОСТАВЛЕНИЙ</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+        </article>
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">РЕЦЕПТИ</a>
+            <a href="#">СОУСИ</a>
           </div>
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--inWork">в роботі</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/2.png" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ЯК ЗРОБИТИ СОУС АЙОЛІ ТА З ЧИМ ЙОГО ПОДАТИ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
           </div>
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--sended">ДОСТАВЛЕНИЙ</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+        </article>
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">КОРИСНІ ПОРАДИ</a>
+            <a href="#">HoReCa</a>
           </div>
-          <div class="accountPageOrders__item">
-            <div class="accountPageOrders__heading">
-              <div class="accountPageOrders__col accountPageOrders__number">№124637947</div>
-              <div class="accountPageOrders__col accountPageOrders__status accountPageOrders__status--inWork">в роботі</div>
-              <div class="accountPageOrders__col accountPageOrders__date">13.08.2020</div>
-              <div class="accountPageOrders__col accountPageOrders__sum">14 235 грн</div>
-              <div class="accountPageOrders__col accountPageOrders__opener order_info_opener">
-                <button class="btn btn--dashed">Розгорнути</button>
-                <i class="arrow"></i>
-              </div>
-            </div>
-            <div class="accountPageOrders__inner scroll scroll--radius">
-              <div class="accountPageOrders__about">
-                <div class="accountPageOrders__part accountPageOrders__part--main">
-                  <div class="accountPageOrders__title">Інформація про замовлення</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Самовивіз из наших складiв</li>
-                    <li>Харків, вулиця 23-го Августа, будинок 5</li>
-                    <li>Іван Петров</li>
-                    <li>+38(050)123 12 12</li>
-                    <li>Email@email.com</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part">
-                  <div class="accountPageOrders__title">Інформація про товар</div>
-                  <ul class="accountPageOrders__info">
-                    <li>Сьомга (лосось) філе охолоджене <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Сир-крем Hochland вершковий 60% жиру, 200г <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                    <li>Водорості Katana Норі 5 листів <span class="accountPageOrders__count">(кол-во 5)</span></li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--count">
-                  <div class="accountPageOrders__title">Кількість</div>
-                  <ul class="accountPageOrders__info">
-                    <li>5</li>
-                    <li>8</li>
-                    <li>13</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--sale">
-                  <div class="accountPageOrders__title">Скидка</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-                <div class="accountPageOrders__part accountPageOrders__part--total">
-                  <div class="accountPageOrders__title">Сума</div>
-                  <ul class="accountPageOrders__info">
-                    <li>589 грн</li>
-                    <li>896 грн</li>
-                    <li>132 грн</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accountPageOrders__tools">
-                <button class="btn btn--dashed accountPageOrders__download">Скачати інформацію</button>
-                <button class="btn btn--dashed accountPageOrders__repeat">Повторити замовлення</button>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--sale">
-                  <span class="cartContentTotal__rowTitle">Скидка:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-                <div class="accountPageOrders__total cartContentTotal__row cartContentTotal__row--total">
-                  <span class="cartContentTotal__rowTitle">Разом:</span>
-                  <span class="cartContentTotal__rowValue">828,54 грн</span>
-                </div>
-              </div>
-              
-            </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/1.jpg" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ТРЕНДИ РЕСТОРАННОГО БІЗНЕСУ В 2021 РОЦІ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
           </div>
-        </div>
+        </article>
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">РЕЦЕПТИ</a>
+            <a href="#">СОУСИ</a>
+          </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/2.png" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ЯК ЗРОБИТИ СОУС АЙОЛІ ТА З ЧИМ ЙОГО ПОДАТИ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
+          </div>
+        </article>
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">КОРИСНІ ПОРАДИ</a>
+            <a href="#">HoReCa</a>
+          </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/1.jpg" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ТРЕНДИ РЕСТОРАННОГО БІЗНЕСУ В 2021 РОЦІ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
+          </div>
+        </article>
+        <article class="blogPageArticles__article recipes__item">
+          <div class="recipes__categories">
+            <a href="#">РЕЦЕПТИ</a>
+            <a href="#">СОУСИ</a>
+          </div>
+          <a href="./article.html" class="recipes__thumb">
+            <img src="./img/recipes/2.png" alt="">
+            <div class="recipes__rate ic-star">4.5</div>
+          </a>
+          <div class="recipes__caption">
+            <div class="recipes__date">05.02.2021</div>
+            <a href="./article.html" class="recipes__title">ЯК ЗРОБИТИ СОУС АЙОЛІ ТА З ЧИМ ЙОГО ПОДАТИ</a>
+            <div class="recipes__desc">Ресторанна сфера постійно змінюється залежно від світових подій та попиту.
+              Але глобальна...</div>
+          </div>
+        </article>
       </section>
 
       <section class="section more">
@@ -904,8 +555,6 @@
           </li>
         </ul>
       </section>
-
-      
 
     </main>
   </div>

@@ -1,0 +1,158 @@
+@import "../var.sass"
+
+
+
+.blogPage
+  .title
+    margin-bottom: 36px
+  .accountPageSidebar__head
+    +sm
+      display: none
+  .accountPageSidebar__link
+    &:not(:last-child)
+      margin-bottom: 16px
+
+  &__inner
+    
+  
+  &Articles
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    grid-gap: 16px
+    +xs
+      grid-template-columns: repeat(1,1fr)
+    &__article
+      max-width: 592px
+      +xs
+        max-width: 100%
+      &:nth-child(1n + 2)
+        +xs
+          display: block
+      &:not(:last-child)
+        margin-bottom: 0
+      .recipes__thumb
+        height: 292px
+        +xs
+          height: 190px
+      .recipes__caption
+        padding: 24px
+        +xs
+          padding: 16px
+      .recipes__date
+        margin-bottom: 4px
+        +xs
+          margin-top: 0
+      .recipes__title
+        margin-bottom: 8px
+        +text(24,700,32,0)
+        +md
+          max-height: 64px
+
+
+
+.articlePage
+  padding-bottom: 80px
+  &__heading
+    +flex(0,0,flex-start,center)
+    h1
+      margin-right: 20px
+    .recipes__categories, .recipes__rate
+      position: static
+    .recipes__categories
+      a
+        background: #f1f1f1
+    .recipes__rate
+      margin-left: 16px
+      background: #f1f1f1
+  &__wrap
+    +flex(0,0,space-between,0)
+  &__main
+    padding-top: 37px
+    max-width: 975px
+  &__sidebar
+    width: 416px
+    background: $color-primary
+  &__thumb
+    margin-bottom: 48px
+  &__content
+    letter-spacing: 0.01em
+    padding-bottom: 16px
+    border-bottom: 1px solid #BEBEBE
+    margin-bottom: 32px
+    +text(16,400,24,0)
+    p
+      margin-bottom: 16px
+  &__title
+    margin: 32px 0 16px 0
+    +text(24,700,32,0)
+  &__tags
+    +flex(0,0,flex-start,center)
+    .recipes__categories
+      position: static
+      a
+        background: #f1f1f1
+  &__label
+    margin-right: 10px
+    +text(14,700,20,#000)
+  &__stars
+    margin: 40px 0
+    +flex(0,0,flex-start,center)
+    .articlePage__label
+      min-width: 140px
+    &--rated
+      .articlePage__starsWrap
+        pointer-events: none
+      .articlePage__label
+        color: $color-sup
+  &__star
+    position: relative
+    +after
+      position: absolute
+      top: 0
+      right: 0
+      width: 17px
+      height: 16px
+      background: url("../img/icons.svg") -414px -5px no-repeat
+      opacity: 0
+      +tran(all,.4s)
+  &__share
+    max-width: 280px
+    padding: 15px 0
+    +flex(0,0,center,center)
+    +before
+      margin-right: 16px
+  &__starsWrap
+    cursor: pointer
+  &__starsWrap[data-value='5']
+    .articlePage__star
+      +after
+        opacity: 1
+  &__starsWrap[data-value='4']
+    .articlePage__star
+      +after
+        opacity: 1
+      &:nth-child(1n + 5)
+        +after
+          opacity: 0
+  &__starsWrap[data-value='3']
+    .articlePage__star
+      +after
+        opacity: 1
+      &:nth-child(1n + 4)
+        +after
+          opacity: 0
+  &__starsWrap[data-value='2']
+    .articlePage__star
+      +after
+        opacity: 1
+      &:nth-child(1n + 3)
+        +after
+          opacity: 0
+  &__starsWrap[data-value='1']
+    .articlePage__star
+      +after
+        opacity: 1
+      &:nth-child(1n + 2)
+        +after
+          opacity: 0
+      

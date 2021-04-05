@@ -280,14 +280,12 @@
 
 .ic-close::before {
   content: '';
-  content: '';
   display: block;
   width: 15px;
   height: 15px;
   background: url("../img/icons.svg") -1225px -13px no-repeat; }
 
 .ic-close-black::before {
-  content: '';
   content: '';
   display: block;
   width: 15px;
@@ -296,14 +294,12 @@
 
 .ic-search-big::before {
   content: '';
-  content: '';
   display: block;
   width: 26px;
   height: 26px;
   background: url("../img/icons.svg") -1130px -8px no-repeat; }
 
 .ic-catalog-orange::before {
-  content: '';
   content: '';
   display: block;
   width: 20px;
@@ -312,7 +308,6 @@
 
 .ic-arrow-orange::before {
   content: '';
-  content: '';
   display: block;
   width: 7px;
   height: 15px;
@@ -320,8 +315,56 @@
 
 .ic-box-black::before {
   content: '';
-  content: '';
   display: block;
   width: 25px;
   height: 25px;
   background: url("../img/icons.svg") -1281px -8px no-repeat; }
+
+.ic-share::before {
+  content: '';
+  display: block;
+  width: 19px;
+  height: 19px;
+  background: url("../img/icons.svg") -1385px -11px no-repeat; }
+
+.ic-star-grey::before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 16px;
+  background: url("../img/icons.svg") -1418px -11px no-repeat; }
+
+.ic-facebook-big::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 32px;
+  background: url("../img/icons.svg") -1573px -6px no-repeat; }
+
+.ic-twitter::before {
+  content: '';
+  display: block;
+  width: 23px;
+  height: 19px;
+  background: url("../img/icons.svg") -1451px -10px no-repeat; }
+
+.ic-telegram-big::before {
+  content: '';
+  display: block;
+  width: 26px;
+  height: 24px;
+  background: url("../img/icons.svg") -1489px -7px no-repeat; }
+
+.ic-copy::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 23px;
+  background: url("../img/icons.svg") -1536px -9px no-repeat; }
+
+.ic-copy-green::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 23px;
+  background: url("../img/icons.svg") -1613px -9px no-repeat; }

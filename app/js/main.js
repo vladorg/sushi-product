@@ -65,6 +65,10 @@ window.onload = () => {
       add_address: {
         opener: getElem('.open_add_address', false),
         item: getElem('.modalAddAddress')
+      },
+      share_article: {
+        opener: getElem('.open_share', false),
+        item: getElem('.modalShare')
       }
     },
     top_btn = getElem('.toTop'),
@@ -99,6 +103,7 @@ window.onload = () => {
   openModals(modals.user_info.opener, modals.user_info.item, 'user_info'); // change user info
   openModals(modals.user_address.opener, modals.user_address.item, 'user_address'); // change user addresses
   openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // change user addresses
+  openModals(modals.share_article.opener, modals.share_article.item, 'share_article'); // share article
 
   function openModals(elem, modal, name) {
     if (modal) {
@@ -1236,7 +1241,6 @@ window.onload = () => {
 
 
   // ACCOUNT PAGE
-
   const order_info_opener = getElem('.order_info_opener', false);
 
   if (order_info_opener) {
@@ -1244,12 +1248,12 @@ window.onload = () => {
     order_info_opener.forEach(el => {
       let order_info_sliding_binded = order_info_sliding.bind(el);
 
-      el.addEventListener('click', e => {        
+      el.addEventListener('click', e => {
         clearTimeout(order_info_opener_timer);
         order_info_opener_timer = setTimeout(order_info_sliding_binded, 300);
       });
     });
-    
+
     function order_info_sliding() {
       let parent = this.closest('.accountPageOrders__item');
       let item_inner = parent.querySelector('.accountPageOrders__inner');
@@ -1268,6 +1272,106 @@ window.onload = () => {
       }
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  ARTICLE PAGE
+
+  const article_rate_setter = getElem('.articlePage__star', false),
+    article_open_share = getElem('.open_share', false),
+    article_share_items_wrap = getElem('.modalShare__item', false),
+    article_share_link = getElem('#article_share_link'),
+    article_share_copy = getElem('.modalShare__copy');
+
+  // set article rate
+  if (article_rate_setter) {
+    article_rate_setter.forEach(el => {
+      el.addEventListener('click', e => {
+        let rate = el.dataset.rate;
+        let wrapper = el.parentNode;
+        let parent = el.closest('.articlePage__stars');
+        let label = parent.querySelector('.articlePage__label');
+        if (wrapper.classList.contains('articlePage__starsWrap')) {
+          wrapper.dataset.value = rate;
+          label.innerText = label.dataset.rated;
+          parent.classList.add('articlePage__stars--rated');
+          // ajax for add rate begin .......
+        }
+      });
+    });
+  }
+
+  // when open share modal - genetate social share links
+  if (article_open_share) {
+    article_open_share.forEach(el => {
+      el.addEventListener('click', e => {
+        if (article_share_items_wrap) {
+          article_share_items_wrap.forEach(elem => {
+            let share_data = elem.dataset.share;
+            let link = window.location.href;
+            let title = getElem('h1').innerText;
+            console.log(link);
+            console.log(title);
+            switch (share_data) {
+              case "facebook":
+                elem.setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${link}`);
+                break;
+              case "twitter":
+                elem.setAttribute('href', `https://twitter.com/intent/tweet?text=${title}&url=${link}`);
+                break;
+              case "telegram":
+                elem.setAttribute('href', `https://t.me/share/url?url=${link}&text=${title}`);
+                break;
+              default:
+                console.log('no mush cases');
+            }
+          });
+        }
+        if (article_share_link) {
+          article_share_link.value = window.location.href;
+        }
+      });
+    });
+  }
+
+  // copy share link on click
+  article_share_copy.addEventListener('click', function() {
+    copyToClipboard(article_share_link.value);
+    this.classList.add('modalShare__copy--copied');
+    this.innerText = this.dataset.copied;
+  });
+
+  function copyToClipboard(text) {
+    var selected = false;
+    var el = document.createElement('textarea');
+    el.value = text;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    if (document.getSelection().rangeCount > 0) {
+        selected = document.getSelection().getRangeAt(0);
+    }
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    if (selected) {
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(selected);
+    }
+};
 
 
 

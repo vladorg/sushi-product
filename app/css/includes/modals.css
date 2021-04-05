@@ -191,6 +191,94 @@
     position: absolute;
     top: 0;
     right: 0; }
+  .modalShare__items {
+    padding: 0 43px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .modalShare__item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+    margin: 0 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .modalShare__item--facebook {
+      background: #3b5998; }
+    .modalShare__item--twitter {
+      background: #1da1f2; }
+    .modalShare__item--telegram {
+      background: #4680c2; }
+  .modalShare__link {
+    padding: 32px 43px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .modalShare__link input {
+      margin-right: 24px;
+      padding: 0;
+      cursor: default; }
+  .modalShare__copy {
+    margin-left: 44px;
+    position: relative; }
+    .modalShare__copy::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -25px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+    .modalShare__copy::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -25px;
+      width: 18px;
+      height: 23px;
+      background: url(../img/icons.svg) -1613px -9px no-repeat;
+      opacity: 0;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+    .modalShare__copy--copied {
+      color: #52B44E;
+      border-color: #52B44E; }
+      .modalShare__copy--copied::before {
+        content: '';
+        opacity: 0; }
+      .modalShare__copy--copied::after {
+        content: '';
+        opacity: 1; }
   .modal--open {
     opacity: 1;
     pointer-events: auto; }

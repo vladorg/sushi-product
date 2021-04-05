@@ -193,10 +193,15 @@
     &__col
       width: 20%
       text-align: center
+      +xs
+        width: 38%
+        text-align: left
     &__titles
       padding: 0 24px
       margin-bottom: 24px
       +flex(0,0,space-between,flex-start)
+      +xs
+        display: none
       .accountPageOrders__col
         +text(14,400,24,0)
     &__items
@@ -215,6 +220,11 @@
         background: $color-order-status_default
         border-radius: 16px
         text-transform: uppercase
+        +xs
+          order: 7
+          width: auto
+          min-width: 38%
+          text-align: center
         &--sended
           background: $color-order-status_sended
         &--inWork
@@ -222,13 +232,42 @@
     &__heading
       padding: 24px
       +flex(0,0,space-between,center)
+      +xs
+        flex-wrap: wrap
+        padding: 16px 40px 16px 16px
+        position: relative
     &__number
       text-align: left
+      +xs
+        order: 3
+        margin-bottom: 20px
+    &__date
+      +xs
+        order: 5
+        margin-bottom: 20px
+    div
+      &.accountPageOrders__sum
+        +xs
+          order: 9
+          white-space: nowrap
+          max-width: 100%
+          overflow: hidden
+          text-overflow: ellipsis
+          +text(20,700,24,0)
     &__opener
       position: relative
+      cursor: pointer
+      +xs
+        width: 36px
+        position: absolute
+        top: 10px
+        right: 0
       button
         letter-spacing: 0.02em
         +text(12,600,24,#000)
+        +xs
+          font-size: 0
+          line-height: 0
       .arrow
         +before
           top: 14px
@@ -259,6 +298,9 @@
       &--open
         max-height: 500px
         border-width: 1px
+        +xs
+          max-height: 700px
+          border-width: 0
         +before
           opacity: 0
           pointer-events: none
@@ -268,16 +310,43 @@
     &__about
       padding: 24px
       +flex(0,0,0,flex-start)
+      +break(1600)
+        justify-content: space-between
+      +xs
+        flex-wrap: wrap
+        padding: 0 16px 16px 16px
     &__part
+      max-width: 40%
       +text(14,400,24,0)
+      +xs
+        max-width: 68%
       &:not(:last-child)
-        margin-right: 86px
+        margin-right: 7%
+        +break(1600)
+          margin-right: 0
+      &--main
+        +xs
+          width: 100%
+          margin-bottom: 8px
+          max-width: 100%
+      &--count
+        +md
+          display: none
       &--sale
         margin-right: 64px!important
+        +break(1600)
+          margin-right: 0 !important
+        +md
+          display: none
       &--total
+        +xs
+          width: 30%
+          text-align: right
         .accountPageOrders__info
           li
             font-weight: 600
+            +xs
+              white-space: nowrap
     &__title
       color: #949494
       margin-bottom: 18px
@@ -285,21 +354,80 @@
       li
         &:not(:last-child)
           margin-bottom: 8px
+    &__count
+      display: none
+      +md
+        display: block
     &__tools
       padding: 24px
       border-top: 1px solid #EDEDED
       +flex(0,0,flex-end,center)
+      +xs
+        padding: 0 16px 24px 16px
+        border-top: none
+        +flex(column,0,0,flex-start)
       .cartContentTotal__rowTitle
         margin-right: 34px
+        +md
+          margin-right: 16px
+      .cartContentTotal__row
+        &--total
+          .cartContentTotal__rowValue
+            +xs
+              +text(24,700,32,0)
+        &--sale
+          display: none
+          +md
+            display: flex
+            margin-right: 16px
+          +xs
+            margin-right: 0
+          .cartContentTotal__rowTitle
+            max-width: 100%
+          .cartContentTotal__rowValue
+            +text(14,600,24,0)
     &__total
       margin: 0
+      +xs
+        width: 100%
+        margin-bottom: 6px
     &__download
       margin-right: auto
       letter-spacing: 0.02em
       +text(12,600,24,#000)
+      +xs
+        order: 7
+        margin-bottom: 12px
     &__repeat
       margin-right: 56px
       letter-spacing: 0.02em
       border-color: $color-primary
       +text(12,600,24,$color-primary)
+      +md
+        margin-right: 16px
+      +xs
+        order: 9
+
+  &Bonus
+    min-height: 100vh
+    +xs
+      min-height: 1px
+    &__content
+      p
+        margin-bottom: 16px
+        a
+          font-weight: 600
+          color: $color-primary
+    &__bonus
+      background: #fff
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+      border-radius: 16px
+      padding: 32px 24px
+      width: auto
+      margin-bottom: 16px
+      +flex(0,0,space-between,center,inline-flex)
+    &__title
+      margin-right: 16px
+    &__value
+      color: $color-sup
       

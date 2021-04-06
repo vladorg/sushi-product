@@ -1,0 +1,91 @@
+@import "../var.sass"
+
+
+
+
+.about
+  &__title
+    margin-bottom: 32px
+    text-transform: uppercase
+    +text(48,700,63,0)
+    +xs
+      margin-bottom: 8px
+      +text(30,0,40,0)
+  p
+    letter-spacing: 0.02em
+    +text(18,300,24,#000)
+    &:not(:last-child)
+      margin-bottom: 24px
+  &Content
+    padding: 30px 0 0 0
+    
+    
+  &Partners
+    padding: 80px 0 19px 0
+    +before
+      top: -87px
+      z-index: -1
+      +sm
+        top: -355px
+    +after
+      display: none
+    .container
+      +flex(0,0,space-between,center)
+      +sm
+        flex-wrap: wrap
+    &__info
+      margin-right: 12%
+      max-width: 50%
+      +md
+        max-width: 49%
+        margin-right: 24px
+      +sm
+        max-width: 100%
+        width: 100%
+        margin-right: 0
+    &Contacts
+      padding-top: 64px
+      +sm
+        padding-top: 16px
+      &__items
+        margin-top: 24px
+        +flex(0,0,space-between,center)
+        +md
+          flex-wrap: wrap
+        +sm
+          flex-wrap: nowrap
+        +xs
+          flex-wrap: wrap
+      &__item
+        width: 100%
+        margin-bottom: 20px
+      &__label
+        margin-bottom: 4px
+        +text(14,400,24,#909090)
+      &__val
+        +text(20,400,24,#000)
+    .modal
+      +sm
+        margin: 14px auto 0 auto
+      .modal__win
+        +xs
+          max-width: 200%
+          width: auto
+          margin: 0 -4%
+          border-radius: 0
+      .modal__close
+        display: none
+      .modal__title
+        +xs
+          padding: 20px 4%
+      .modal__subtitle
+        +xs
+          padding: 10px 4%
+      .modal__form
+        +xs
+          padding: 10px 4% 0 4%
+
+
+
+  .clients
+    padding-top: 80px

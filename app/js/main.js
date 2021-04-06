@@ -1,7 +1,7 @@
 window.onload = () => {
 
   const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector),
-    isMobile = window.innerWidth < 768 ? true : false,
+    isMobile = window.innerWidth <= 768 ? true : false,
     isTablet = window.innerWidth > 768 && window.innerWidth < 992 ? true : false,
     getCoords = elem => elem.getBoundingClientRect().top + pageYOffset;
 
@@ -77,7 +77,8 @@ window.onload = () => {
     open_acordion = getElem('.accordion__title', false),
     prod_btns_wrap = getElem('.productsSlider__buttons'),
     wish_add = getElem('.wish_add', false),
-    select_item = getElem('.select__item', false);
+    select_item = getElem('.select__item', false),
+    download = getElem('.download', false);
 
   // scroll top button show and scrolled
   window.addEventListener('scroll', e => {
@@ -163,7 +164,7 @@ window.onload = () => {
       loop: true,
       effect: 'slide',
       autoplay: {
-        delay: 4000,
+        delay: 400110,
         disableOnInteraction: false
       },
       autoHeight: false,
@@ -179,7 +180,7 @@ window.onload = () => {
 
     // function on customize slides change effect
     swiper_main.on('slideChangeTransitionStart', function () {
-      let slide_text = getElem('.banner .swiper-slide-active .banner__title').innerText;
+      let slide_text = getElem('.banner .swiper-slide-active .banner__title').innerHTML;
       let slide_btn_text = getElem('.banner .swiper-slide-active .banner__link').innerText;
       let slide_btn_href = getElem('.banner .swiper-slide-active .banner__link').getAttribute('href');
       let caption = getElem('.banner__captions .banner__caption');
@@ -261,8 +262,8 @@ window.onload = () => {
       }
     }
   }
-
-  function sliderRender(elem, slider, id, root, params, device_mode = 'all') {
+  //sliderRender(article_posts, 'article_posts_slider', 'article_posts', '.articlePageSidebar__slider', slider_params, 'mobile');
+  function sliderRender(elem, slider, id, root, params, device_mode = 'all') {    
     if (elem) {
       params.navigation.nextEl = `${root} .sliderArrows__next--${id}`;
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
@@ -424,7 +425,20 @@ window.onload = () => {
         parent.querySelector('.dropdown__title').innerText = select_val;
       });
     }
+  }
 
+  if (download) {
+    download.forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        let target = el.parentNode.querySelector('input[type=file]');
+        let info = el.parentNode.querySelector('.uploaded');
+        target.addEventListener('change', function() {
+          info.innerText = this.value;
+        });
+        target.click();
+      });
+    });
   }
 
 
@@ -689,8 +703,7 @@ window.onload = () => {
     sliderRender(home_special, 'home_special_slider', 'special', '.productsSlider', slider_params, 'desktop');
     sliderRender(home_bestseller, 'home_bestseller_slider', 'bestseller', '.productsSlider', slider_params, 'desktop');
     sliderRender(home_new, 'home_new_slider', 'new', '.productsSlider', slider_params, 'desktop');
-    sliderRender(home_partners, 'home_partners_slider', 'partners', '.partners', partners_params);
-    sliderRender(home_clients, 'home_clients_slider', 'clients', '.clients', partners_params);
+    
 
     // main feedback managers random show
     showManager();
@@ -726,6 +739,9 @@ window.onload = () => {
     window.addEventListener('scroll', e => elems.forEach((item, index) => showBlocks(cords[index], item)));
 
   }
+
+  sliderRender(home_clients, 'home_clients_slider', 'clients', '.clients', partners_params);
+  sliderRender(home_partners, 'home_partners_slider', 'partners', '.partners', partners_params);
 
 
 
@@ -1288,12 +1304,13 @@ window.onload = () => {
 
 
   //  ARTICLE PAGE
-
   const article_rate_setter = getElem('.articlePage__star', false),
     article_open_share = getElem('.open_share', false),
     article_share_items_wrap = getElem('.modalShare__item', false),
     article_share_link = getElem('#article_share_link'),
-    article_share_copy = getElem('.modalShare__copy');
+    article_share_copy = getElem('.modalShare__copy'),
+    article_posts = getElem('.articlePageSidebar__slider .swiper-container'),
+    latest_posts = getElem('.articlePageSidebar__latestSlider .swiper-container');
 
   // set article rate
   if (article_rate_setter) {
@@ -1347,11 +1364,14 @@ window.onload = () => {
   }
 
   // copy share link on click
-  article_share_copy.addEventListener('click', function() {
-    copyToClipboard(article_share_link.value);
-    this.classList.add('modalShare__copy--copied');
-    this.innerText = this.dataset.copied;
-  });
+  if (article_share_copy) {
+    article_share_copy.addEventListener('click', function() {
+      copyToClipboard(article_share_link.value);
+      this.classList.add('modalShare__copy--copied');
+      this.innerText = this.dataset.copied;
+    });
+  }
+  
 
   function copyToClipboard(text) {
     var selected = false;
@@ -1371,7 +1391,10 @@ window.onload = () => {
         document.getSelection().removeAllRanges();
         document.getSelection().addRange(selected);
     }
-};
+  }
+
+  sliderRender(article_posts, 'article_posts_slider', 'article_posts', '.articlePageSidebar__slider', slider_params, 'mobile');
+  sliderRender(latest_posts, 'latest_posts_slider', 'latest_posts', '.articlePageSidebar__latestSlider', slider_params, 'mobile');
 
 
 

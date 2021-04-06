@@ -285,11 +285,14 @@ a
       border-right-color: $transparent
       border-left-color: $transparent
       border-bottom-color: $color-sup
+  &--file
+    opacity: 0
+    position: absolute
+    left: 0
 
 .textarea
   resize: none
   height: 96px
-  border-radius: 16px
   font-family: $ff
 
 .checkbox
@@ -575,6 +578,16 @@ a
     &--end
       +before
         display: none
+  &--banner
+    position: absolute
+    top: 220px
+    left: 0
+    right: 0
+    z-index: 10
+    +break(1366)
+      top: 200px
+    +xs
+      top: 68px
 
 .primary-bg
   position: relative
@@ -1206,3 +1219,12 @@ a
   &--ok
     .dropdown__title
       border-color: $color-sup
+    
+  
+.uploaded
+  display: block
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  +text(14,400,24,#909090)

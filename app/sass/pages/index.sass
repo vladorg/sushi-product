@@ -520,12 +520,12 @@
       background: rgba(255, 255, 255, 0.55)
       backdrop-filter: blur(4px)
       border-radius: 13.5px
+      margin: 0 8px 8px 0
       +text(12,400,20,#303030)
       +tran(all,.4s)
-      &:not(:last-child)
-        margin-right: 8px
-        +md
-          margin-right: 0
+      &:nth-child(1n + 4)
+        +xs
+          display: none
       +hover
         text-decoration: none
         background: #fff

@@ -764,6 +764,7 @@
       -webkit-backdrop-filter: blur(4px);
               backdrop-filter: blur(4px);
       border-radius: 13.5px;
+      margin: 0 8px 8px 0;
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;
@@ -771,11 +772,9 @@
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       transition: all 0.4s; }
-      .recipes__categories a:not(:last-child) {
-        margin-right: 8px; }
-        @media (max-width: 1199px) {
-          .recipes__categories a:not(:last-child) {
-            margin-right: 0; } }
+      @media (max-width: 768px) {
+        .recipes__categories a:nth-child(1n + 4) {
+          display: none; } }
       .recipes__categories a:hover {
         text-decoration: none;
         background: #fff; }

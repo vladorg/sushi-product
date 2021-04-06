@@ -59,7 +59,7 @@
       min-height: 540px
   &__caption
     position: absolute
-    top: 50%
+    top: 40%
     left: calc((100% - 1540px) / 2)
     background: rgba(255, 255, 255, 0.8)
     border-radius: 48px 8px
@@ -67,15 +67,15 @@
     z-index: 10
     width: 100%
     max-width: 712px
-    transform: translateY(-50%)
+    //transform: translateY(-50%)
     display: none
     +break(1600)
       left: 4%
       top: unset
       bottom: 15%
       transform: none
+      padding: 24px
     +md
-      padding: 30px
       bottom: 25px
     +sm
       max-width: 55%
@@ -98,6 +98,7 @@
     +tran(all,.2s)
     +text(48,700,64,0)
     +break(1600)
+      margin-bottom: 16px
       +text(36,0,46,0)
     +md
       margin-bottom: 20px
@@ -107,6 +108,21 @@
       +text(24,0,32,0)
     &--anim
       opacity: 1
+    span
+      display: inline-block
+      text-transform: none
+      max-height: 112px
+      overflow: hidden
+      text-overflow: ellipsis
+      margin-top: 8px
+      +text(36,400,56,0)
+      +break(1600)
+        +text(24,0,30,0)
+      +md
+        letter-spacing: 0.01em
+        +text(16,0,24,0)
+      +sm
+        max-height: 48px
   &__link
     max-width: 320px
     color: $color-primary

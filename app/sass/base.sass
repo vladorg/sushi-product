@@ -600,6 +600,7 @@ a
     background-image: url('../img/layout/background-primary-top.svg')
     background-repeat: no-repeat
     background-size: 100%
+    z-index: -1
     +xs
       background-size: cover
       background-image: url('../img/layout/background-primary-top-mobile.svg')
@@ -613,6 +614,7 @@ a
     background-repeat: no-repeat
     background-size: 100%
     background-position: bottom
+    z-index: -1
     +xs
       background-image: url('../img/layout/background-primary-bottom-mobile.svg')
       background-size: cover
@@ -1183,8 +1185,9 @@ a
     background: $color-input
     border: none
     border-radius: 32px
-    padding: 10px 0 10px 14px
+    padding: 10px 40px 10px 14px
     border: 1px solid $transparent
+    text-align: left
     +tran(all,.4s)
     +text(14,400,24,$color-placeholder)
     +before

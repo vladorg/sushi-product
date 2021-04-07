@@ -69,6 +69,10 @@ window.onload = () => {
       share_article: {
         opener: getElem('.open_share', false),
         item: getElem('.modalShare')
+      },
+      open_tender: {
+        opener: getElem('.open_tender', false),
+        item: getElem('.modalTender')
       }
     },
     top_btn = getElem('.toTop'),
@@ -105,6 +109,7 @@ window.onload = () => {
   openModals(modals.user_address.opener, modals.user_address.item, 'user_address'); // change user addresses
   openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // change user addresses
   openModals(modals.share_article.opener, modals.share_article.item, 'share_article'); // share article
+  openModals(modals.open_tender.opener, modals.open_tender.item, 'open_tender'); // open tender
 
   function openModals(elem, modal, name) {
     if (modal) {
@@ -148,7 +153,6 @@ window.onload = () => {
             modals.root[i].classList.remove('modal--open');
             document.body.classList.remove('no-scroll');
             document.body.classList.remove('hasActiveModal');
-            console.log(1);
           }
         }
       }
@@ -264,6 +268,11 @@ window.onload = () => {
   }
   //sliderRender(article_posts, 'article_posts_slider', 'article_posts', '.articlePageSidebar__slider', slider_params, 'mobile');
   function sliderRender(elem, slider, id, root, params, device_mode = 'all') {    
+    // console.log(elem);
+    // console.log(slider);
+    // console.log(id);
+    // console.log(root);
+    // console.log(params);
     if (elem) {
       params.navigation.nextEl = `${root} .sliderArrows__next--${id}`;
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
@@ -1303,7 +1312,7 @@ window.onload = () => {
 
 
 
-  //  ARTICLE PAGE
+  // ARTICLE PAGE
   const article_rate_setter = getElem('.articlePage__star', false),
     article_open_share = getElem('.open_share', false),
     article_share_items_wrap = getElem('.modalShare__item', false),
@@ -1395,6 +1404,30 @@ window.onload = () => {
 
   sliderRender(article_posts, 'article_posts_slider', 'article_posts', '.articlePageSidebar__slider', slider_params, 'mobile');
   sliderRender(latest_posts, 'latest_posts_slider', 'latest_posts', '.articlePageSidebar__latestSlider', slider_params, 'mobile');
+
+
+
+
+
+  // PARTNERS PAGE
+
+  const partners_tenders = getElem('.partnersPageTenders__wrap');
+
+  let partners_tenders_params = partners_params;
+
+  partners_tenders_params.slidesPerView = 2;
+  partners_tenders_params.breakpoints = {
+    1200: {
+      slidesPerView: 2
+    },
+    320: {
+      slidesPerView: 1
+    }
+    
+  }
+
+
+  sliderRender(partners_tenders, 'partners_tenders_slider', 'tenders', '.partnersPageTenders', partners_tenders_params);
 
 
 

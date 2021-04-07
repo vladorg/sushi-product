@@ -856,7 +856,8 @@ a {
     height: 638px;
     background-image: url("../img/layout/background-primary-top.svg");
     background-repeat: no-repeat;
-    background-size: 100%; }
+    background-size: 100%;
+    z-index: -1; }
     @media (max-width: 768px) {
       .primary-bg::before {
         background-size: cover;
@@ -871,7 +872,8 @@ a {
     background-image: url("../img/layout/background-primary-bottom.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: bottom; }
+    background-position: bottom;
+    z-index: -1; }
     @media (max-width: 768px) {
       .primary-bg::after {
         background-image: url("../img/layout/background-primary-bottom-mobile.svg");
@@ -1755,8 +1757,9 @@ a {
     background: #F0F0F0;
     border: none;
     border-radius: 32px;
-    padding: 10px 0 10px 14px;
+    padding: 10px 40px 10px 14px;
     border: 1px solid rgba(0, 0, 0, 0);
+    text-align: left;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;

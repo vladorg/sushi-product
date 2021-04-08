@@ -2593,17 +2593,16 @@ a {
             -ms-flex-pack: center;
                 justify-content: center;
         margin: 16px 0 0 0; } }
-    .modal__accept span {
-      margin-left: 16px;
+    .modal__accept label {
       text-align: left;
       font-size: 14px;
       font-weight: 400;
       line-height: 24px; }
       @media (max-width: 500px) {
-        .modal__accept span {
+        .modal__accept label {
           font-size: 12px;
           line-height: 16px; } }
-      .modal__accept span a {
+      .modal__accept label a {
         color: #FA4616; }
   .modal--static {
     position: static;

@@ -103,11 +103,12 @@ window.onload = () => {
   openModals(modals.check.opener, modals.check.item, 'check'); // check
   openModals(modals.reset.opener, modals.reset.item, 'reset'); // reset
   openModals(modals.change_success.opener, modals.change_success.item, 'change success'); // change success
+  openModals(modals.callback.opener, modals.callback.item, 'callback'); // callback
   openModals(modals.ask.opener, modals.ask.item, 'ask'); // ask
   openModals(modals.review.opener, modals.review.item, 'review'); // review
   openModals(modals.user_info.opener, modals.user_info.item, 'user_info'); // change user info
   openModals(modals.user_address.opener, modals.user_address.item, 'user_address'); // change user addresses
-  openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // change user addresses
+  openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // add user address
   openModals(modals.share_article.opener, modals.share_article.item, 'share_article'); // share article
   openModals(modals.open_tender.opener, modals.open_tender.item, 'open_tender'); // open tender
 

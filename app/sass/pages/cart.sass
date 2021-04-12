@@ -202,6 +202,7 @@
           border: none
           width: 100%
           margin: 0
+          padding: 0
           +text(14,400,17,0)
     &__price
       margin: 0 10px
@@ -260,8 +261,40 @@
       +text(24,700,29,$color-primary)
       +break(1600)
         +text(20,600,24,0)
-
-
+    &__noCommerce
+      width: 280px
+      +md
+        font-size: 14px
+        width: 225px
+      +xs
+        width: 20%
+    &--noCommerce
+      .cartContentProducts__item
+        align-items: center
+      .cartContentProducts__priceDesc
+        +xs
+          display: none
+      .cartContentProducts__priceHide
+        display: none
+        +xs
+          display: inline-block
+      .cartContentProducts__title
+        +xs
+          display: none
+      .quantly__inner
+        +xs
+          margin-top: 0
+      .cartContentProducts__info
+        +xs
+          width: 45%
+      .preview__infoTitle
+        +xxs
+          position: static
+      .tooltip__wrap
+        +xxs
+          top: unset
+      .cartContentProducts__wish
+        margin-top: 16px
   &Total
     width: 416px
     position: sticky
@@ -374,3 +407,12 @@
         +text(16,400,24,0)
         &:not(:last-child)
           margin-bottom: 16px
+
+    &--noCommerce
+      .cartContentTotal__inner
+        border-top: none
+        margin-top: 0
+        padding: 0 24px 24px 24px
+      .cartContentTotal__rowTitle
+        +xxs
+          max-width: 60%

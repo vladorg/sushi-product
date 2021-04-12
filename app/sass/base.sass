@@ -472,6 +472,10 @@ a
     position: absolute
     top: 20px
     right: 20px
+    &--added
+      cursor: no-drop
+      +before
+        background: url(../img/icons.svg) -1344px -7px no-repeat!important
   &__thumb
     display: block
     width: 204px
@@ -527,6 +531,11 @@ a
       font-size: 14px
     +before
       margin-right: 17px
+    &--added
+      background: $color-sup
+      cursor: no-drop
+      +hover
+        background: $color-sup
 
 .toTop
   position: fixed
@@ -1153,7 +1162,20 @@ a
       +before
         +xs
           background: url("../img/icons.svg") -441px -5px no-repeat!important
-
+    
+    &--noCommerce
+      .itemsWishlist__set
+        overflow: visible
+        +xs
+          padding: 0
+        .quantly
+          +xs
+            position: static
+      .cartContentProducts__priceDesc
+        +text(16,400,21,0)
+      .preview__infoTitle
+        +xs
+          display: none
 
 .list-check
   li

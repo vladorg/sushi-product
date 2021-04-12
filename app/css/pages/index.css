@@ -1106,3 +1106,16 @@
     right: 17px; }
   .seo--scroll .seo__text {
     overflow-y: auto; }
+  .seo--productNc {
+    background: rgba(0, 0, 0, 0);
+    padding: 0; }
+    .seo--productNc .seo__text {
+      max-height: 96px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000; }
+    .seo--productNc.seo--full .seo__text {
+      max-height: 320px; }
+    .seo--productNc.seo--full .seo__more {
+      margin-top: 16px; }

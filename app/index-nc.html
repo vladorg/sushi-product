@@ -23,7 +23,7 @@
         <ul class="header__links">
           <li><a href="/delivery.html">Оплата і доставка</a></li>
           <li><a href="#" class="open_callback">Передзвоніть мені</a></li>
-          <li><a href="/reviews.html">Відгуки</a></li>
+          <li><a href="#" class="open_review_manager">Відгук</a></li>
         </ul>
         <div class="header__languages">
           <a href="#" class="header__lang header__lang--active">УКР</a>
@@ -54,8 +54,6 @@
 
             <div class="header__tool header__tool--auth header__tool--logged ic-user open_logged">
               <a href="#" class="arrow">Особистий кабінет</a>
-              <!-- <div class="header__tool header__tool--auth ic-user open_auth">
-              <a href="#">Особистий кабінет</a> -->
               <div class="headerDropdown logged">
                 <ul>
                   <li><a href="/account.html">Личная информация</a></li>
@@ -2463,6 +2461,39 @@
         <div class="modal__accept">
           <input class="checkbox" type="checkbox" name="accept" id="review_accept" required>
           <label for="review_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add review for director -->
+  <div class="modal modalReviewManager">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+      <div class="modal__subtitle">Оставте ваш отзыв или пожелание о работе компании и мы обязательно рассмотрим его</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Надіслати</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="review_manager_accept" required>
+          <label for="review_manager_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>

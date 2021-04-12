@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrier</title>
+  <title>Cart</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/libs/jquery.fancybox.min.css" />
   <!-- build:css -->
   <link rel="stylesheet" href="css/main.css">
   <!-- endbuild -->
 </head>
 
 <body class="column">
-  <header class="header header--banner header--opacity">
+  <header class="header">
     <div class="header__top">
       <div class="container header__toolbar">
         <div class="header__contacts">
@@ -72,7 +73,7 @@
             <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
               <div class="header__toolCount"><span>5</span> товаров</div>
-              <div class="headerDropdown wishlist wishlist--noCommerce1">
+              <div class="headerDropdown wishlist wishlist--noCommerce">
                 <div class="headerDropdown__items scroll scroll--radius">
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
@@ -141,7 +142,7 @@
               <div class="header__toolName">В кошику</div>
               <div class="header__toolCount"><span>0</span> товаров</div>
               <!-- if no commerce ? addclass cart--noCommerce -->
-              <div class="headerDropdown cart cart--noCommerce1">
+              <div class="headerDropdown cart cart--noCommerce">
                 <div class="headerDropdown__items scroll scroll--radius">
                   <div class="headerDropdown__item">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
@@ -200,7 +201,7 @@
                 </div>
                 <div class="headerDropdown__bottom">
                   <!-- if no-commerce -->
-                  <!-- <div class="headerDropdown__total headerDropdown__total--noCommerce">
+                  <div class="headerDropdown__total headerDropdown__total--noCommerce">
                     Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
                     <div class="tooltip tooltip--dropBottom">
                       <div class="tooltip__pick">?</div>
@@ -212,12 +213,12 @@
                           вiдповiсть на усi запитання.</div>
                       </div>
                     </div>
-                  </div> -->
+                  </div>
                   <!-- else -->
-                  <div class="headerDropdown__total headerDropdown__total--commerce">
+                  <!-- <div class="headerDropdown__total headerDropdown__total--commerce">
                     <div class="cart__total">Разом:</div>
                     <div class="cart__price">838,54 грн</div>
-                  </div>
+                  </div> -->
                   <!-- endif -->
                   <a href="/checkout.html" class="btn btn--primary">Оформити замовлення</a>
                   <a href="./cart.html" class="btn btn--dashed">Перейти до кошика</a>
@@ -393,193 +394,779 @@
       </div>
     </div>
   </header>
-  
 
-  <main class="main info carriersPage">
+  <div class="layout">
+    <main class="main cartPage">
 
-    <section class="breadcrumbs breadcrumbs--banner">
-      <div class="container">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item breadcrumbs__item--start">
-            <a href="./index.html" class="ic-home">Главная</a>
-          </li>
-          <li class="breadcrumbs__item breadcrumbs__item--end">Кар'єра</li>
-        </ul>
-      </div>
-    </section>
+      <section class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item breadcrumbs__item--start">
+              <a href="./index.html" class="ic-home">Главная</a>
+            </li>
+            <li class="breadcrumbs__item breadcrumbs__item--end">Кошик</li>
+          </ul>
+        </div>
+      </section>
 
-    <section class="banner">
-      <div class="banner__slider">
-        <div class="banner__slides swiper-wrapper">
-          <div class="banner__slide swiper-slide">
-            <img src="img/banners/carrier.jpg" alt="">
-            <div class="banner__caption">
-              <div class="banner__title">Хочеш стати частиною КОМАНДИ СУШІ ПРОДУКТ?</div>
-              <a href="/link1" class="btn btn--primary banner__link">В каталог</a>
+      <section class="section">
+        <div class="container">
+          <h1 class="heading">Кошик</h1>
+        </div>
+      </section>
+
+      <!-- data-empty value is required for js delete item function -->
+      <!-- if empty ? cartContent--empty -->
+      <section class="section cartContent primary-bg">
+        <div class="container">
+          <div class="cartContentEmpty" data-empty="Ваша корзина пустая!">
+            <!-- if empty -->
+            <!-- text empty here -->
+            <!-- endif -->
+          </div>
+
+          <!-- !if empty -->
+          <div class="cartContentMobile">
+            <div class="cartContentMobile__content">
+              11 товаров
+            </div>
+            <button class="btn ic-trash cartContent__removeAll"></button>
+          </div>
+          <div class="cartContentProducts cartContentProducts--noCommerce">
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/3.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add cartContentProducts__wish">
+                  <span class="btn--dashed">Додати до обранного</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cartContentProducts__item">
+              <div class="cartContentProducts__thumb">
+                <a href="./product.html">
+                  <img src="./img/products/1.png" alt="" class="headerDropdown__thumb" alt="">
+                </a>
+                <button class="btn ic-trash cartContentProducts__del"></button>
+              </div>
+              <div class="cartContentProducts__info">
+                <a href="./product.html" class="cartContentProducts__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                <div class="cartContentProducts__min preview__info">
+                  <div class="preview__infoTitle">
+                    Мін. Замовлення:
+                    <span class="preview__infoValue">10 уп</span>
+                    <div class="tooltip tooltip--preview tooltip--short">
+                      <div class="tooltip__pick">?</div>
+                      <div class="tooltip__wrap">
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
+                          commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button data-added="У обраному" class="btn ic-heart-grey wish_add wish_add--added cartContentProducts__wish">
+                  <span class="btn--dashed">У обраному</span>
+                </button>
+              </div>
+              <div class="cartContentProducts__quantly quantly">
+                <span class="quantly__label cartContentProducts__title">Кол-во:</span>
+                <div class="quantly__inner">
+                  <button class="btn quantly__button quantly__plus"></button>
+                  <input type="text" name="quantly" class="quantly__input" value="1">
+                  <button class="btn quantly__button quantly__minus"></button>
+                </div>
+              </div>
+              <div class="cartContentProducts__noCommerce">
+                <div class="preview__infoTitle">
+                  <span class="cartContentProducts__priceDesc">Для отримання індивідуальної цінової пропозиції оформите ваше замовлення </span>
+                  <span class="cartContentProducts__priceHide">Цiна</span>
+                  <div class="tooltip tooltip--preview tooltip--short">
+                    <div class="tooltip__pick">?</div>
+                    <div class="tooltip__wrap">
+                      <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="banner__slide swiper-slide">
-            <img src="img/banners/carrier.jpg" alt="">
-            <div class="banner__caption">
-              <div class="banner__title">Хочеш стати частиною КОМАНДИ СУШІ ПРОДУКТ?</div>
-              <a href="/link1" class="btn btn--primary banner__link">В каталог</a>
+          <div class="cartContentTotal cartContentTotal--noCommerce" id="cart_total">
+            <div class="cartContentTotal__inner">
+              <div class="cartContentTotal__row cartContentTotal__row--total cartContentTotal__row--totalNoCommerce">
+                <span class="cartContentTotal__rowTitle">Номер замовлення:</span>
+                <span class="cartContentTotal__rowValue">1234858746</span>
+              </div>
+              <div class="cartContentTotal__info">
+                <p>Оформіть товари з кошика, слідуючи простим крокам.</p>
+                <p>Після успішного оформлення з вами зв'яжеться менеджер і повідомить вартість вашого замовлення і умови доставки і оплати, і відповість на всі ваші запитання.</p>
+              </div>              
+            </div>
+            <div class="cartContentTotal__checkout">
+              <a href="./checkout.html" class="btn btn--primary">Довідатися про ціни</a>
             </div>
           </div>
-          <div class="banner__slide swiper-slide">
-            <img src="img/banners/carrier.jpg" alt="">
-            <div class="banner__caption">
-              <div class="banner__title">Хочеш стати частиною КОМАНДИ СУШІ ПРОДУКТ?</div>
-              <a href="/link1" class="btn btn--primary banner__link">В каталог</a>
+          <!-- endif -->
+        </div>
+      </section>
+
+      <section class="section cartPage__related productsSlider related">
+        <div class="container">
+
+          <div class="section__heading">
+            <div class="section__titles">
+              <div class="section__title heading">Також рекомендуємо</div>
             </div>
           </div>
-          <div class="banner__slide swiper-slide">
-            <img src="img/banners/carrier.jpg" alt="">
-            <div class="banner__caption">
-              <div class="banner__title">Хочеш стати частиною КОМАНДИ СУШІ ПРОДУКТ?</div>
-              <a href="/link1" class="btn btn--primary banner__link">В каталог</a>
+
+          <div class="related__wrap">
+            <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--related"></button>
+            <div class="related__slider swiper-container">
+              <div class="products swiper-wrapper">
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/1.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">1Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/2.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Водорості Katana Норі 5 листів</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/3.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--spec">Акция</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/4.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Сьомга (лосось) філе охолоджене, 1кг</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <!-- if logged -->
+                  <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
+                  <!-- else -->
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <!-- endif -->
+                  <a href="./product.html">
+                    <img src="./img/products/1.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Борошно Хуторок пшеничне, фасоване, 1 кг</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/2.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Водорості Katana Норі 5 листів</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/3.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Сир-крем Hochland вершковий 60% жиру, 200г</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+                <div class="preview swiper-slide">
+                  <div class="preview__stickers">
+                    <div class="preview__sticker preview__sticker--new">Новинка</div>
+                    <div class="preview__sticker preview__sticker--spec">Акция</div>
+                  </div>
+                  <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                  <a href="./product.html">
+                    <img src="./img/products/4.png" alt="" class="preview__thumb">
+                  </a>
+                  <div class="preview__art">Код: 12213354</div>
+                  <a href="./product.html" class="preview__name">Сьомга (лосось) філе охолоджене, 1кг</a>
+                  <div class="preview__info">
+                    <div class="preview__infoTitle">
+                      Для отримання індивідуальної цінової пропозиції оформите ваше замовлення 
+                      <div class="tooltip tooltip--preview tooltip--short">
+                        <div class="tooltip__pick">?</div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__bottom">
+                    <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  </div>
+                </div>
+              </div>
             </div>
+            <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--related sliderArrows__arrow--active"></button>
           </div>
         </div>
-        <div class="banner__dots swiper-pagination"></div>
-      </div>
+      </section>
 
-      <!-- static window for contain slides info -->
-      <div class="banner__captions">
-        <div class="banner__caption">
-          <div class="banner__title banner__title--anim">Хочеш стати частиною КОМАНДИ СУШІ ПРОДУКТ?</div>
-          <a href="/link1" class="btn btn--primary banner__link banner__link--anim">В каталог</a>
-        </div>
-        <!-- <div class="banner__caption">
-          <div class="banner__title banner__title--anim">Лучший ассортимент продуктов для HoReCa</div>
-          <a href="#" class="btn btn--primary banner__link banner__link--anim">В каталог</a>
-        </div> -->
-      </div>
-
-    </section>
-
-    <section class="carriersPageVacancies">
-      <div class="container">
-        <div class="heading">Відкриті вакансії</div>
-        <div class="carriersPageVacancies__list items">
-          <div class="items__item">
-            <div class="items__col items__colFirst">
-              <div class="carriersPageVacancies__label">Посада</div>
-              <div class="carriersPageVacancies__value">Комірник</div>
-            </div>
-            <div class="items__col items__colSecond">
-              <div class="carriersPageVacancies__label">Мiсто</div>
-              <div class="carriersPageVacancies__value">Харкiв</div>
-            </div>
-            <div class="items__col items__colThird">
-              <div class="carriersPageVacancies__label">Зайнятість</div>
-              <div class="carriersPageVacancies__value">Повна</div>
-            </div>
-            <div class="items__col items__colFourth">
-              <a href="./vacancy.html" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-            </div>
-          </div>
-          <div class="items__item">
-            <div class="items__col items__colFirst">
-              <div class="carriersPageVacancies__label">Посада</div>
-              <div class="carriersPageVacancies__value">Комірник</div>
-            </div>
-            <div class="items__col items__colSecond">
-              <div class="carriersPageVacancies__label">Мiсто</div>
-              <div class="carriersPageVacancies__value">Харкiв</div>
-            </div>
-            <div class="items__col items__colThird">
-              <div class="carriersPageVacancies__label">Зайнятість</div>
-              <div class="carriersPageVacancies__value">Повна</div>
-            </div>
-            <div class="items__col items__colFourth">
-              <a href="./vacancy.html" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-            </div>
-          </div>
-          <div class="items__item">
-            <div class="items__col items__colFirst">
-              <div class="carriersPageVacancies__label">Посада</div>
-              <div class="carriersPageVacancies__value">Комірник</div>
-            </div>
-            <div class="items__col items__colSecond">
-              <div class="carriersPageVacancies__label">Мiсто</div>
-              <div class="carriersPageVacancies__value">Харкiв</div>
-            </div>
-            <div class="items__col items__colThird">
-              <div class="carriersPageVacancies__label">Зайнятість</div>
-              <div class="carriersPageVacancies__value">Повна</div>
-            </div>
-            <div class="items__col items__colFourth">
-              <a href="./vacancy.html" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-            </div>
-          </div>
-          <div class="items__item">
-            <div class="items__col items__colFirst">
-              <div class="carriersPageVacancies__label">Посада</div>
-              <div class="carriersPageVacancies__value">Комірник</div>
-            </div>
-            <div class="items__col items__colSecond">
-              <div class="carriersPageVacancies__label">Мiсто</div>
-              <div class="carriersPageVacancies__value">Харкiв</div>
-            </div>
-            <div class="items__col items__colThird">
-              <div class="carriersPageVacancies__label">Зайнятість</div>
-              <div class="carriersPageVacancies__value">Повна</div>
-            </div>
-            <div class="items__col items__colFourth">
-              <a href="./vacancy.html" class="offer__link">Подробнее <i class="ic-arrow"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section infoContent primary-bg">
-      <div class="container">
-        <div class="info__title">Компанія Суші Продукт</div>
-        <p>Давайте знайомитися. Ми - компанія «Суші-продукт» і наша спеціалізація, як ви зрозуміли з назви, продукти для суші. На сьогоднішній день ми вийшли на новий рівень. Але нашими пріоритетами, як і раніше, залишаються потреби наших клієнтів: якість і свіжість продукції плюс чесна ціна. Не секрет, що хороші продукти не можуть коштувати дешево. І ми готові запропонувати розумні ціни на якісні продукти.</p>
-        <p>Компанія «Суші-продукт» поставляє на український ринок HoReCa продукти для суші в ресторани і кафе, які спеціалізуються на японській і паназиатской кухні.
-          Товари, які ми продаємо, якісні та перевірені: рис для суші, водорості норі, соєвий соус, копчений вугор, м'ясо краба від відомих світових виробників. До того ж, у нас постійно поповнюється асортимент екзотики! Салат з восьминогів, креветки, молюски та інші спеціальні продукти для японської кухні. Вибирайте, замовляйте, доставимоНаші представники працюють у всіх великих містах України. Мережа доставки розвинена в Харкові, Києві, по Донецькому регіону, Дніпропетровську і Криму. Ми здійснюємо доставку або відправку товару в будь-яке місто, швидко або дуже швидко!</p>
-      </div>
-    </section>
-
-    <section class="carriersPagePhotos">
-      <div class="container">
-        <div class="carriersPagePhotos__wrap">
-          <div class="carriersPagePhotos__photo carriersPagePhotos__photo--empty">
-            <div class="carriersPagePhotos__empty">тВОЕ <br> ФОТО</div>
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/7.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/6.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/8.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/9.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/1.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/2.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/3.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/4.jpg" alt="">
-          </div>
-          <div class="carriersPagePhotos__photo">
-            <img src="./img/photos/5.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    </main>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -1295,12 +1882,11 @@
 
 
 
-
   <!-- jquery required for only pages: MAIN, PRODUCT -->
   <script src="./libs/jquery/jquery.min.js"></script>
   <!-- end jquery -->
 
-  <!-- parallax required for MAIN page only -->  
+  <!-- parallax required for MAIN page only -->
   <script src="./libs/parallax/TweenLite.js"></script>
   <script src="./libs/parallax/CSSPlugin.js"></script>
   <script src="./libs/parallax/parallax_background.js"></script>
@@ -1311,11 +1897,11 @@
   <!-- end fancybox -->
 
   <script src="./libs/swiper/swiper-bundle.min.js"></script>
-  
+
   <!-- build:js -->
   <script src="js/main.js"></script>
   <!-- endbuild -->
-  
+
 </body>
 
 </html>

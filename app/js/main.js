@@ -50,6 +50,10 @@ window.onload = () => {
         opener: getElem('.open_review', false),
         item: getElem('.modalReview')
       },
+      review_manager: {
+        opener: getElem('.open_review_manager', false),
+        item: getElem('.modalReviewManager')
+      },
       callback: {
         opener: getElem('.open_callback', false),
         item: getElem('.modalCallback')
@@ -82,7 +86,22 @@ window.onload = () => {
     prod_btns_wrap = getElem('.productsSlider__buttons'),
     wish_add = getElem('.wish_add', false),
     select_item = getElem('.select__item', false),
-    download = getElem('.download', false);
+    download = getElem('.download', false),
+    add_to_cart = getElem('.preview__buy', false);
+
+
+
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('preview__buy')) {
+      e.target.classList.add('preview__buy--added');
+      e.target.dataset.added ? e.target.innerText = e.target.dataset.added : null;
+      e.target.disabled = true;
+    }
+    if (e.target.classList.contains('preview__wish')) {
+      e.target.classList.add('preview__wish--added');
+      e.target.disabled = true;
+    }
+  });
 
   // scroll top button show and scrolled
   window.addEventListener('scroll', e => {
@@ -105,7 +124,8 @@ window.onload = () => {
   openModals(modals.change_success.opener, modals.change_success.item, 'change success'); // change success
   openModals(modals.callback.opener, modals.callback.item, 'callback'); // callback
   openModals(modals.ask.opener, modals.ask.item, 'ask'); // ask
-  openModals(modals.review.opener, modals.review.item, 'review'); // review
+  openModals(modals.review.opener, modals.review.item, 'review'); // review for director
+  openModals(modals.review_manager.opener, modals.review_manager.item, 'review_manager'); // review for manager
   openModals(modals.user_info.opener, modals.user_info.item, 'user_info'); // change user info
   openModals(modals.user_address.opener, modals.user_address.item, 'user_address'); // change user addresses
   openModals(modals.add_address.opener, modals.add_address.item, 'add_address'); // add user address
@@ -169,7 +189,7 @@ window.onload = () => {
       loop: true,
       effect: 'slide',
       autoplay: {
-        delay: 400110,
+        delay: 4000,
         disableOnInteraction: false
       },
       autoHeight: false,

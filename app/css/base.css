@@ -632,6 +632,11 @@ a {
     position: absolute;
     top: 20px;
     right: 20px; }
+    .preview__wish--added {
+      cursor: no-drop; }
+      .preview__wish--added::before {
+        content: '';
+        background: url(../img/icons.svg) -1344px -7px no-repeat !important; }
   .preview__thumb {
     display: block;
     width: 204px;
@@ -730,6 +735,11 @@ a {
     .preview__buy::before {
       content: '';
       margin-right: 17px; }
+    .preview__buy--added {
+      background: #52B44E;
+      cursor: no-drop; }
+      .preview__buy--added:hover {
+        background: #52B44E; }
 
 .toTop {
   position: fixed;
@@ -1721,6 +1731,21 @@ a {
       @media (max-width: 768px) {
         .itemsWishlist__del::before {
           background: url("../img/icons.svg") -441px -5px no-repeat !important; } }
+  .itemsWishlist--noCommerce .itemsWishlist__set {
+    overflow: visible; }
+    @media (max-width: 768px) {
+      .itemsWishlist--noCommerce .itemsWishlist__set {
+        padding: 0; } }
+    @media (max-width: 768px) {
+      .itemsWishlist--noCommerce .itemsWishlist__set .quantly {
+        position: static; } }
+  .itemsWishlist--noCommerce .cartContentProducts__priceDesc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px; }
+  @media (max-width: 768px) {
+    .itemsWishlist--noCommerce .preview__infoTitle {
+      display: none; } }
 
 .list-check li {
   padding-left: 32px;

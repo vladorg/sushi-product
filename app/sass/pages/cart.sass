@@ -71,6 +71,7 @@
       border-radius: 16px
       padding: 24px
       min-height: 96px
+      position: relative
       +flex(0,0,space-between,0)
       +break(1600)
         padding: 24px 10px
@@ -83,6 +84,9 @@
         +xs
           margin-bottom: 0
           border-bottom: 1px solid #979797
+      &.sad_face
+        &::after
+          border-radius: 16px
     &__thumb
       position: relative
       align-self: center

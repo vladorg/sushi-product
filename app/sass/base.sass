@@ -438,8 +438,6 @@ a
   position: relative
   padding: 11px 16px 24px 16px
   +tran(all,.4s)
-  +hover
-    box-shadow: 0px 2px 10px $color-preview-hover
   +xs
     max-width: 100%
     padding: 12px
@@ -471,11 +469,34 @@ a
   &__wish
     position: absolute
     top: 20px
-    right: 20px
+    right: 0
+    opacity: 0
+    pointer-events: none
+    +tran(all,.4s)
+    +before
+      +tran(all,.4s)
+    +after
+      width: 30px
+      height: 28px
+      background: url("../img/icons.svg") -715px -5px no-repeat
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+      +tran(all,.4s)
+    +hover
+      +before
+        opacity: 0
+      +after
+        opacity: 1
     &--added
       cursor: no-drop
       +before
         background: url(../img/icons.svg) -1344px -7px no-repeat!important
+        opacity: 1!important
+        transition: none!important
+      +after
+        opacity: 0!important
   &__thumb
     display: block
     width: 204px
@@ -536,6 +557,12 @@ a
       cursor: no-drop
       +hover
         background: $color-sup
+  +hover
+    box-shadow: 0px 2px 10px $color-preview-hover
+    .preview__wish
+      right: 20px
+      opacity: 1
+      pointer-events: auto
 
 .toTop
   position: fixed
@@ -1019,6 +1046,7 @@ a
   
   &Wishlist
     .items__item
+      position: relative
       +xs
         padding: 16px
         +flex(row,wrap,0,0)
@@ -1253,3 +1281,31 @@ a
   text-overflow: ellipsis
   white-space: nowrap
   +text(14,400,24,#909090)
+
+
+.sad_face
+  animation: fadeIn .1s linear
+  &::before
+    content: attr(data-deleted)
+    color: $color-text
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    opacity: 1
+    z-index: 11
+    padding-top: 50px
+    +flex(0,0,center,center)
+  +after
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background-image: url(../img/icons/sad_face.svg)
+    background-color: #fff
+    background-size: 30px
+    background-repeat: no-repeat
+    background-position: 50% 40%

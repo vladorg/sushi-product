@@ -76,8 +76,12 @@
       width: auto
       padding: 8px 10px
       margin-bottom: 26px
-    
-    
+    &--empty
+      .more, .pagination
+        display: none
+      .cartContentEmpty
+        display: block
+   
     &Contacts
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
@@ -205,6 +209,28 @@
       .accountPageOrders__col
         +text(14,400,24,0)
     &__items
+      &--noCommerce
+        .accountPageOrders__repeat
+          margin-right: 0
+        .accountPageOrders__date
+          +xs
+            margin-bottom: 0
+          + .accountPageOrders__date
+            +xs
+              order: 4
+              margin-bottom: 20px
+        .accountPageOrders__part--total
+          max-width: 260px
+          +break(1600)
+            max-width: 200px
+          +md
+            max-width: 170px
+          +sm
+            max-width: 20%
+          +xs
+            display: none
+          .accountPageOrders__title
+            font-size: 0
     &__item
       background: #fff
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
@@ -291,6 +317,7 @@
         right: 0
         bottom: 0
         left: 0
+        z-index: 1
         background: #fff
         opacity: 1
         border-radius: 16px
@@ -347,6 +374,16 @@
             font-weight: 600
             +xs
               white-space: nowrap
+      &--noCommerce
+        max-width: 260px
+        +break(1600)
+          max-width: 200px
+        +md
+          max-width: 170px
+        +sm
+          max-width: 20%
+        +xs
+          display: none
     &__title
       color: #949494
       margin-bottom: 18px

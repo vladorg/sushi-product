@@ -540,7 +540,7 @@
     position: absolute;
     width: 392px;
     top: calc(100% + 20px);
-    right: 0;
+    right: -100%;
     background: #fff;
     -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
@@ -550,6 +550,8 @@
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
+    .headerDropdown.cart {
+      right: 0; }
     .headerDropdown__items {
       max-height: 293px;
       overflow: auto;
@@ -598,8 +600,9 @@
       color: #242426; }
     .headerDropdown__del {
       position: absolute;
-      top: 16px;
-      right: 24px; }
+      top: 16px !important;
+      right: 24px !important;
+      border: none !important; }
     .headerDropdown__bottom {
       padding: 20px 24px 16px 24px;
       text-align: center; }
@@ -653,6 +656,11 @@
         .headerDropdown.logged ul li a:hover {
           text-decoration: none;
           color: #FA4616; }
+    .headerDropdown.empty_products_list {
+      padding: 24px;
+      text-align: center;
+      font-size: 18px;
+      color: #242426; }
   .header__bottom {
     padding: 24px 0 0 0;
     position: relative;
@@ -887,12 +895,20 @@
       margin: 0 32px; }
       .header .catalog__pages .catalog__link {
         width: 100%; }
-    @media (max-width: 992px) {
-      .header .catalog__bannerWrap {
-        display: none; } }
+    .header .catalog__bannerWrap {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0; }
+      @media (max-width: 992px) {
+        .header .catalog__bannerWrap {
+          display: none; } }
     .header .catalog__banner {
       max-width: 300px;
-      display: block; }
+      display: block;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: contain;
+         object-fit: contain; }
       @media (max-width: 1199px) {
         .header .catalog__banner {
           max-width: 210px; } }
@@ -912,8 +928,11 @@
       -webkit-transition-delay: .4s;
            -o-transition-delay: .4s;
               transition-delay: .4s;
-      max-height: 75vh;
+      max-height: calc(100vh - 229px - 50px);
       overflow: auto; }
+      @media (max-width: 992px) {
+        .header .catalog--open .catalog__wrap {
+          max-height: calc(100vh - 69px); } }
     .header .catalog--open .catalog__btn {
       background: #E44318; }
       .header .catalog--open .catalog__btn::before {

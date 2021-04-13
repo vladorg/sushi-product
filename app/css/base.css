@@ -594,9 +594,6 @@ a {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s; }
-  .preview:hover {
-    -webkit-box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32);
-            box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32); }
   @media (max-width: 768px) {
     .preview {
       max-width: 100%;
@@ -631,12 +628,47 @@ a {
   .preview__wish {
     position: absolute;
     top: 20px;
-    right: 20px; }
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+    .preview__wish::before {
+      content: '';
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+    .preview__wish::after {
+      content: '';
+      width: 30px;
+      height: 28px;
+      background: url("../img/icons.svg") -715px -5px no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+    .preview__wish:hover::before {
+      content: '';
+      opacity: 0; }
+    .preview__wish:hover::after {
+      content: '';
+      opacity: 1; }
     .preview__wish--added {
       cursor: no-drop; }
       .preview__wish--added::before {
         content: '';
-        background: url(../img/icons.svg) -1344px -7px no-repeat !important; }
+        background: url(../img/icons.svg) -1344px -7px no-repeat !important;
+        opacity: 1 !important;
+        -webkit-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important; }
+      .preview__wish--added::after {
+        content: '';
+        opacity: 0 !important; }
   .preview__thumb {
     display: block;
     width: 204px;
@@ -740,6 +772,13 @@ a {
       cursor: no-drop; }
       .preview__buy--added:hover {
         background: #52B44E; }
+  .preview:hover {
+    -webkit-box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32);
+            box-shadow: 0px 2px 10px rgba(250, 70, 22, 0.32); }
+    .preview:hover .preview__wish {
+      right: 20px;
+      opacity: 1;
+      pointer-events: auto; }
 
 .toTop {
   position: fixed;
@@ -1471,23 +1510,25 @@ a {
       .items__btn {
         font-size: 12px;
         padding: 8px 0; } }
-  @media (max-width: 768px) {
-    .itemsWishlist .items__item {
-      padding: 16px;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap; } }
-  .itemsWishlist .items__item:not(:last-child) {
-    margin-bottom: 16px; }
+  .itemsWishlist .items__item {
+    position: relative; }
+    @media (max-width: 768px) {
+      .itemsWishlist .items__item {
+        padding: 16px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap; } }
+    .itemsWishlist .items__item:not(:last-child) {
+      margin-bottom: 16px; }
   .itemsWishlist__stickers {
     width: 150px; }
     @media (max-width: 1199px) {
@@ -1842,3 +1883,43 @@ a {
   font-weight: 400;
   line-height: 24px;
   color: #909090; }
+
+.sad_face {
+  -webkit-animation: fadeIn .1s linear;
+          animation: fadeIn .1s linear; }
+  .sad_face::before {
+    content: attr(data-deleted);
+    color: #242426;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 11;
+    padding-top: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .sad_face::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-image: url(../img/icons/sad_face.svg);
+    background-color: #fff;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 40%; }

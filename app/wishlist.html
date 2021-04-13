@@ -442,10 +442,15 @@
 
       <button class="accountPageUser__navOpener categoryChild__catalog btn btn--primary open_category_catalog ic-lines">Обране</button>
 
-      <section class="section accountPageWishlist">
+      <section class="section accountPageWishlist" data-empty="Нет товаров!">
+        <!-- if empty -->
+        <div class="cartContentEmpty">
+          <!-- text empty -->
+        </div>
+        <!-- else -->
         <button type="button" class="btn btn--dashed ic-trash-black accountPageUser__change wishlist_delete_all accountPageWishlist__delAll">Видалити всі товари</button>
         <div class="items itemsWishlist">
-          <div class="items__item">
+          <div class="items__item" data-deleted="Товар удален!">
             <div class="items__col items__colFirst itemsWishlist__stickers">
               <div class="preview__stickers">
                 <div class="preview__sticker preview__sticker--new">Новинка</div>
@@ -480,7 +485,7 @@
               <button type="button" class="btn ic-trash-black itemsWishlist__del">Видалити</button>
             </div>
           </div>
-          <div class="items__item">
+          <div class="items__item" data-deleted="Товар удален!">
             <div class="items__col items__colFirst itemsWishlist__stickers">
               <div class="preview__stickers">
                 <div class="preview__sticker preview__sticker--new">Новинка</div>
@@ -514,7 +519,7 @@
               <button type="button" class="btn ic-trash-black itemsWishlist__del">Видалити</button>
             </div>
           </div>
-          <div class="items__item">
+          <div class="items__item" data-deleted="Товар удален!">
             <div class="items__col items__colFirst itemsWishlist__stickers">
               <div class="preview__stickers">
                 <div class="preview__sticker preview__sticker--new">Новинка</div>
@@ -549,7 +554,7 @@
               <button type="button" class="btn ic-trash-black itemsWishlist__del">Видалити</button>
             </div>
           </div>
-          <div class="items__item">
+          <div class="items__item" data-deleted="Товар удален!">
             <div class="items__col items__colFirst itemsWishlist__stickers">
               <div class="preview__stickers">
                 <div class="preview__sticker preview__sticker--new">Новинка</div>
@@ -584,6 +589,7 @@
             </div>
           </div>
         </div>
+        <!-- endif -->
       </section>
 
       <section class="section more">

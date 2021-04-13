@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Main</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.min.css">
@@ -12,7 +12,7 @@
 </head>
 
 <body class="column">
-  <header class="header header--opacity">
+  <header class="header header--banner header--opacity">
     <div class="header__top">
       <div class="container header__toolbar">
         <div class="header__contacts">
@@ -22,7 +22,7 @@
         <ul class="header__links">
           <li><a href="/delivery.html">Оплата і доставка</a></li>
           <li><a href="#" class="open_callback">Передзвоніть мені</a></li>
-          <li><a href="/reviews.html">Відгуки</a></li>
+          <li><a href="#" class="open_review_manager">Відгук</a></li>
         </ul>
         <div class="header__languages">
           <a href="#" class="header__lang header__lang--active">УКР</a>
@@ -71,61 +71,61 @@
             <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
               <div class="header__toolCount"><span>5</span> товаров</div>
-              <div class="headerDropdown wishlist wishlist--noCommerce">
+              <div class="headerDropdown wishlist" data-empty="Нет товаров!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/1.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/1.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
@@ -140,66 +140,66 @@
               <div class="header__toolName">В кошику</div>
               <div class="header__toolCount"><span>0</span> товаров</div>
               <!-- if no commerce ? addclass cart--noCommerce -->
-              <div class="headerDropdown cart cart--noCommerce">
+              <div class="headerDropdown cart cart--noCommerce1" data-empty="Ваша корзина пустая!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/1.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/1.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
-                    <img src="img/products/3.png" class="headerDropdown__thumb">
+                  <div class="headerDropdown__item" data-deleted="Товар удален!">
+                    <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="/product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
                   <!-- if no-commerce -->
-                  <div class="headerDropdown__total headerDropdown__total--noCommerce">
+                  <!-- <div class="headerDropdown__total headerDropdown__total--noCommerce">
                     Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
                     <div class="tooltip tooltip--dropBottom">
                       <div class="tooltip__pick">?</div>
@@ -211,15 +211,15 @@
                           вiдповiсть на усi запитання.</div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- else -->
-                  <!-- <div class="headerDropdown__total headerDropdown__total--commerce">
-          <div class="cart__total">Разом:</div>
-          <div class="cart__price">838,54 грн</div>
-        </div> -->
+                  <div class="headerDropdown__total headerDropdown__total--commerce">
+                    <div class="cart__total">Разом:</div>
+                    <div class="cart__price">838,54 грн</div>
+                  </div>
                   <!-- endif -->
                   <a href="/checkout.html" class="btn btn--primary">Оформити замовлення</a>
-                  <button class="btn btn--dashed">Перейти до кошика</button>
+                  <a href="./cart.html" class="btn btn--dashed">Перейти до кошика</a>
                 </div>
               </div>
             </div>
@@ -230,7 +230,7 @@
         <div class="header__bottom">
           <div class="catalog">
             <button class="btn btn--primary catalog__btn ic-catalog">Каталог</button>
-            <div class="catalog__wrap">
+            <div class="catalog__wrap scroll scroll--radius">
               <nav class="catalog__menu">
                 <ul class="catalog__products">
                   <li class="catalog__link">
@@ -240,13 +240,13 @@
                     <a href="/catalog.html">Мука и панировка</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Мука и панировка 1</a>
+                        <a href="/catalog2.html">Мука и панировка 1</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Мука и панировка 2</a>
+                        <a href="/catalog2.html">Мука и панировка 2</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Мука и панировка 3</a>
+                        <a href="/catalog2.html">Мука и панировка 3</a>
                       </li>
                     </ul>
                   </li>
@@ -254,13 +254,13 @@
                     <a href="/catalog.html">Водоросли и грибы</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Нори</a>
+                        <a href="/catalog2.html">Нори</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Водоросли разное</a>
+                        <a href="/catalog2.html">Водоросли разное</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Грибы</a>
+                        <a href="/catalog2.html">Грибы</a>
                       </li>
                     </ul>
                   </li>
@@ -277,13 +277,13 @@
                     <a href="/catalog.html">Икра</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Икра 1</a>
+                        <a href="/catalog2.html">Икра 1</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Икра 2</a>
+                        <a href="/catalog2.html">Икра 2</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Икра 3</a>
+                        <a href="/catalog2.html">Икра 3</a>
                       </li>
                     </ul>
                   </li>
@@ -291,13 +291,13 @@
                     <a href="/catalog.html">Лапша</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Лапша 1</a>
+                        <a href="/catalog2.html">Лапша 1</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Лапша 2</a>
+                        <a href="/catalog2.html">Лапша 2</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Лапша 3</a>
+                        <a href="/catalog2.html">Лапша 3</a>
                       </li>
                     </ul>
                   </li>
@@ -311,13 +311,13 @@
                     <a href="/catalog.html">Рыба</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Рыба 1</a>
+                        <a href="/catalog2.html">Рыба 1</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Рыба 2</a>
+                        <a href="/catalog2.html">Рыба 2</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Рыба 3</a>
+                        <a href="/catalog2.html">Рыба 3</a>
                       </li>
                     </ul>
                   </li>
@@ -354,13 +354,13 @@
                     <a href="#">Подборки</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="/category2.html">Подборки 1</a>
+                        <a href="/catalog2.html">Подборки 1</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Подборки 2</a>
+                        <a href="/catalog2.html">Подборки 2</a>
                       </li>
                       <li>
-                        <a href="/category2.html">Подборки 3</a>
+                        <a href="/catalog2.html">Подборки 3</a>
                       </li>
                     </ul>
                   </li>
@@ -450,64 +450,67 @@
             <a href="./catalog.html" class="section__link">Показати всі</a>
           </div>
           <div class="sliderArrows">
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--categories"></button>
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--categories sliderArrows__arrow--active"></button>
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--categories"></button> -->
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--categories sliderArrows__arrow--active"></button> -->
           </div>
         </div>
-
-        <div class="categories__slider swiper-container">
-          <div class="categories__items swiper-wrapper">
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/bakaleya.png" alt="">
-              </div>
-              <span>Бакалея</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/muka.png" alt="">
-              </div>
-              <span>Мука и панировка</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/more.png" alt="">
-              </div>
-              <span>Васаби</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/ryba.png" alt="">
-              </div>
-              <span>Имбирь</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/bakaleya.png" alt="">
-              </div>
-              <span>Бакалея</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/muka.png" alt="">
-              </div>
-              <span>Мука и панировка</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/more.png" alt="">
-              </div>
-              <span>Васаби</span>
-            </a>
-            <a href="./catalog.html" class="categories__item swiper-slide">
-              <div class="categories__thumb">
-                <img src="./img/category/ryba.png" alt="">
-              </div>
-              <span>Имбирь</span>
-            </a>
+        <div class="section__sliderWrap">
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--categories"></button>
+          <div class="categories__slider swiper-container">
+            <div class="categories__items swiper-wrapper">
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/bakaleya.png" alt="">
+                </div>
+                <span>Бакалея</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/muka.png" alt="">
+                </div>
+                <span>Мука и панировка</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/vasabi.png" alt="">
+                </div>
+                <span>Васаби</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/imbir.png" alt="">
+                </div>
+                <span>Имбирь</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/uksus.png" alt="">
+                </div>
+                <span>Уксус</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/vodorosli.png" alt="">
+                </div>
+                <span>Водоросли и грибы</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/ikra.png" alt="">
+                </div>
+                <span>Икра</span>
+              </a>
+              <a href="./catalog.html" class="categories__item swiper-slide">
+                <div class="categories__thumb">
+                  <img src="./img/category/lapsha.png" alt="">
+                </div>
+                <span>Лапша</span>
+              </a>
+            </div>
           </div>
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--categories sliderArrows__arrow--active"></button>
         </div>
 
       </div>
@@ -522,25 +525,26 @@
             <a href="./catalog.html" class="section__link">Переглянути все</a>
           </div>
           <div class="productsSlider__buttons">
-            <button class="btn productsSlider__btn productsSlider__btn--active" data-slider="special">Акции</button>
-            <button class="btn productsSlider__btn" data-slider="bestseller">Хит продаж</button>
-            <button class="btn productsSlider__btn" data-slider="new">Новинки</button>
+            <button class="btn productsSlider__btn productsSlider__btn--active" data-tab="special">Акции</button>
+            <button class="btn productsSlider__btn" data-tab="bestseller">Хит продаж</button>
+            <button class="btn productsSlider__btn" data-tab="new">Новинки</button>
           </div>
 
           <!-- nav arrows for sliders, all required -->
-          <div class="sliderArrows productsSlider__arrows productsSlider__arrows--active" data-slider="special">
+          <div class="sliderArrows sliderArrows--static productsSlider__arrows productsSlider__arrows--active"
+            data-tab="special">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--special"></button>
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--special sliderArrows__arrow--active"></button>
           </div>
-          <div class="sliderArrows productsSlider__arrows" data-slider="bestseller">
+          <div class="sliderArrows productsSlider__arrows" data-tab="bestseller">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--bestseller"></button>
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--bestseller sliderArrows__arrow--active"></button>
           </div>
-          <div class="sliderArrows productsSlider__arrows" data-slider="new">
+          <div class="sliderArrows productsSlider__arrows" data-tab="new">
             <button
               class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--new"></button>
             <button
@@ -551,7 +555,7 @@
         <div class="productsSlider__tabs">
 
           <div class="productsSlider__tabWrap productsSlider__tabWrap--active productsSlider__special swiper-container"
-            data-slider="special">
+            data-tab="special">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -561,7 +565,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -576,7 +580,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -604,7 +609,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="В кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -612,7 +617,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish preview__wish--added" disabled></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -625,15 +630,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy preview__buy--added" data-added="В кошику" disabled>В кошику</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -641,7 +649,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -654,7 +662,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -665,7 +674,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -673,7 +682,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -686,7 +695,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -694,9 +704,9 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -707,7 +717,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -722,7 +732,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -750,7 +761,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -758,7 +769,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -771,15 +782,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -787,7 +801,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -800,7 +814,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -811,7 +826,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -819,7 +834,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -832,7 +847,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -840,15 +856,15 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="productsSlider__tabWrap productsSlider__bestseller swiper-container" data-slider="bestseller">
+          <div class="productsSlider__tabWrap productsSlider__bestseller swiper-container" data-tab="bestseller">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -858,7 +874,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -873,7 +889,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -901,7 +918,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -909,7 +926,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -922,15 +939,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -938,7 +958,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -951,7 +971,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -962,7 +983,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -970,7 +991,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -983,7 +1004,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -991,9 +1013,9 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1004,7 +1026,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -1019,7 +1041,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1047,7 +1070,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1055,7 +1078,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -1068,15 +1091,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1084,7 +1110,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -1097,7 +1123,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1108,7 +1135,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1116,7 +1143,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -1129,7 +1156,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1137,15 +1165,15 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="productsSlider__tabWrap productsSlider__new swiper-container" data-slider="new">
+          <div class="productsSlider__tabWrap productsSlider__new swiper-container" data-tab="new">
             <div class="productsSlider__tab products swiper-wrapper">
               <div class="preview swiper-slide">
                 <div class="preview__stickers">
@@ -1155,7 +1183,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -1170,7 +1198,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1198,7 +1227,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1206,7 +1235,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -1219,15 +1248,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1235,7 +1267,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -1248,7 +1280,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1259,7 +1292,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1267,7 +1300,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -1280,7 +1313,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1288,9 +1322,9 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1301,7 +1335,7 @@
                 <!-- if logged -->
                 <!-- <button class="btn ic-heart-grey preview__wish"></button> -->
                 <!-- else -->
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <!-- endif -->
                 <a href="./product.html">
                   <img src="./img/products/1.png" alt="" class="preview__thumb">
@@ -1316,7 +1350,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1344,7 +1379,7 @@
                     <!-- endif -->
                   </div>
                   <!-- endif -->
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1352,7 +1387,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/2.png" alt="" class="preview__thumb">
                 </a>
@@ -1365,15 +1400,18 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="preview__bottom">
-                  <div class="preview__price">48,49 грн</div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <div class="preview__price">
+                    <span>48,49 грн</span>
+                  </div>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1381,7 +1419,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--exc">Эксклюзив</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/3.png" alt="" class="preview__thumb">
                 </a>
@@ -1394,7 +1432,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1405,7 +1444,7 @@
                     <span>54,49 грн</span>
                     <span class="preview__special">59,15 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
               <div class="preview swiper-slide">
@@ -1413,7 +1452,7 @@
                   <div class="preview__sticker preview__sticker--new">Новинка</div>
                   <div class="preview__sticker preview__sticker--spec">Акция</div>
                 </div>
-                <button class="btn ic-heart-grey preview__wish open_auth"></button>
+                <button class="btn ic-heart-grey preview__wish"></button>
                 <a href="./product.html">
                   <img src="./img/products/4.png" alt="" class="preview__thumb">
                 </a>
@@ -1426,7 +1465,8 @@
                     <div class="tooltip tooltip--preview tooltip--short">
                       <div class="tooltip__pick">?</div>
                       <div class="tooltip__wrap">
-                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a
+                        <div class="tooltip__content scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Sequi a
                           commodi fuga quaerat qui suscipit nam quae soluta laborum quam!</div>
                       </div>
                     </div>
@@ -1434,9 +1474,9 @@
                 </div>
                 <div class="preview__bottom">
                   <div class="preview__price">
-                    529,00 грн
+                    <span>529,00 грн</span>
                   </div>
-                  <button class="btn btn--primary ic-cart-white preview__buy">В кошик</button>
+                  <button class="btn btn--primary ic-cart-white preview__buy" data-added="У кошику">В кошик</button>
                 </div>
               </div>
             </div>
@@ -1463,46 +1503,50 @@
               href="./partners.html">Співробітництво</a></div>
 
           <div class="sliderArrows">
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--partners"></button>
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--partners sliderArrows__arrow--active"></button>
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--partners"></button> -->
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--partners sliderArrows__arrow--active"></button> -->
           </div>
         </div>
 
-        <div class="partners__slider swiper-container">
-          <div class="partners__items swiper-wrapper">
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/1.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/2.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/3.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/4.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/5.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/1.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/2.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/3.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/4.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/partners/5.png" alt="">
+        <div class="section__sliderWrap">
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--partners"></button>
+          <div class="partners__slider swiper-container">
+            <div class="partners__items swiper-wrapper">
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/1.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/2.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/3.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/4.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/5.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/1.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/2.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/3.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/4.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/partners/5.png" alt="">
+              </div>
             </div>
           </div>
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--partners sliderArrows__arrow--active"></button>
         </div>
 
         <a href="./partners.html" class="btn btn--primary partners__btn">Співробітництво</a>
@@ -1511,12 +1555,16 @@
     </section>
 
     <section class="section section--hide aboutBlock">
-      <div class="aboutBlock__wrap">
-        <!-- <div class="parallax" data-velocity="-1" data-fit="1" style="position: fixed">
-          <img alt="" src="./img/banners/fly-fish.png">
-        </div> -->
-        <!--<div class="img-holder aboutBlock__img" data-image="./img/banners/fly-fish.png"></div> -->
-        <div class="parallax aboutBlock__img" style="background-image: url('./img/banners/fly-fish.png')"></div>
+      <div class="aboutBlock__wrap swiper-container">
+        <!-- <div class="js-parallax aboutBlock__img" data-img="./img/banners/fly-fish2.png" style="background-image: url('./imgs/banners/fly-fish2.png')"></div> -->
+        <!-- <div class="aboutBlock__img" style="background-image: url('./img/banners/fly-fish2.png')"></div> -->
+
+        <div class="parallax-background aboutBlock__imgWrap">
+          <div class="parallax-inner aboutBlock__img"
+            style="background-image: url('./img/banners/fly-fish2.png');background-repeat: no-repeat;">
+          </div>
+        </div>
+
         <div class="aboutBlock__content">
           <div class="aboutBlock__title">Лідер ринку постачання продуктів харчування для HoReCa</div>
           <div class="aboutBlock__subtitle">Компанія Суші Продукт постачає продукти для суші по Україні, починаючи з
@@ -1564,46 +1612,50 @@
               href="./partners.html">Співробітництво</a></div>
 
           <div class="sliderArrows">
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--clients"></button>
-            <button
-              class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--clients sliderArrows__arrow--active"></button>
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--clients"></button> -->
+            <!-- <button class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--clients sliderArrows__arrow--active"></button> -->
           </div>
         </div>
 
-        <div class="clients__slider swiper-container">
-          <div class="partners__items swiper-wrapper">
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/1.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/2.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/3.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/4.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/5.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/1.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/2.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/3.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/4.png" alt="">
-            </div>
-            <div class="partners__item swiper-slide">
-              <img src="./img/clients/5.png" alt="">
+        <div class="section__sliderWrap">
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__prev sliderArrows__prev--clients"></button>
+          <div class="clients__slider swiper-container">
+            <div class="partners__items swiper-wrapper">
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/1.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/2.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/3.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/4.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/5.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/1.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/2.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/3.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/4.png" alt="">
+              </div>
+              <div class="partners__item swiper-slide">
+                <img src="./img/clients/5.png" alt="">
+              </div>
             </div>
           </div>
+          <button
+            class="btn ic-arrow-disable sliderArrows__arrow sliderArrows__next sliderArrows__next--clients sliderArrows__arrow--active"></button>
         </div>
 
         <a href="./partners.html" class="btn btn--primary partners__btn">Співробітництво</a>
@@ -1681,7 +1733,12 @@
           <a href="./blogt.html" class="btn btn--primary aboutBlock__link">Блог</a>
         </div>
 
-        <div class="parallax aboutBlock__img" style="background-image: url('./img/banners/fly-shrimp.png')"></div>
+        <!-- <div class="parallax aboutBlock__img" style="background-image: url('./img/banners/fly-shrimp.png')"></div> -->
+        <div class="parallax-background aboutBlock__imgWrap">
+          <div class="parallax-inner aboutBlock__img"
+            style="background-image: url('./img/banners/fly-shrimp.png');background-repeat: no-repeat;">
+          </div>
+        </div>
 
       </div>
     </section>
@@ -1729,17 +1786,60 @@
       <div class="container">
         <div class="seo__title">Компанія Суші Продукт постачає продукти</div>
         <div class="seo__text scroll">
-          <p>Компания Суши Продукт поставляет продукты для суши по Украине, начиная с 2004 года. В нашем ассортименте есть все необходимое для Японской, Паназиатской и Европейской кухни. У нас вы можете приобрести рис, водоросли, соусы, имбирь, рыбу и морепродукты самого высокого качества, мучные и макаронные изделия, соусы, грибы, а так же посуду и многое другое. Купить продукты для суши самого высокого качества можно просто позвонив по нашему корпоративному телефону и пообщавшись с нашими менеджерами.</p>
-          <p>Служба доставки работает по всей Украине, мы являемся поставщиками, как крупных сетей ресторанов, так и отдельных предприятий HoReCa. Работать с нами удобно, так как наши менеджеры профессионально предоставляют сервис высокого уровня клиентам, и вы обязательно будете довольны, а ваша организация получит необходимое сырье для отличных блюд.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veniam culpa minima rem voluptatem quae ab quaerat dolorem repudiandae tenetur dolores nulla odit laborum in ut obcaecati asperiores sunt numquam, magni voluptates repellendus veritatis impedit voluptatibus debitis. Quam modi consectetur culpa! Odit quae error porro adipisci maiores nihil! Necessitatibus, omnis fugit nulla minima quasi voluptas assumenda dolor facilis corporis eum ut fuga similique quidem! Eaque accusantium quos numquam quaerat quia ut repellendus, earum magni eos, quis accusamus asperiores modi amet minima ea quo illum harum. Iure doloremque deserunt placeat itaque dolor officia fugiat laudantium quidem libero. Ad dolor libero molestias quisquam, possimus soluta enim tempore, est eveniet voluptatem inventore facere natus error delectus molestiae porro aperiam repellat, aspernatur tempora rerum necessitatibus dolorum. Officiis, exercitationem sed accusamus quod aut iusto vitae neque ut aliquam ipsa ex nostrum libero aspernatur error, ducimus, voluptates hic rerum consequuntur cupiditate. Ad illo sequi at neque ullam assumenda, nisi ipsum accusantium voluptatem autem tempora ratione dolores natus id odio dolorem totam laboriosam quae modi vero vel quis sint? Beatae, commodi. Laboriosam, nihil? Pariatur inventore tempore culpa facilis voluptate ad ipsum esse asperiores quo ab error suscipit, corrupti quod. Laboriosam eveniet magnam, soluta, voluptate, sint itaque reprehenderit impedit nulla provident error optio ut ullam? Placeat exercitationem eum recusandae reiciendis, maxime ad reprehenderit eligendi animi nesciunt similique, voluptas tempora necessitatibus quam? Ad soluta enim saepe, pariatur dolor quisquam est expedita sequi placeat impedit, aliquid magnam itaque sint recusandae repudiandae facilis doloribus consectetur quo voluptates commodi. Blanditiis illum perspiciatis eaque veniam, earum sint deserunt natus debitis animi necessitatibus commodi reiciendis perferendis quo eius itaque obcaecati ipsa iste doloribus unde provident? Quaerat debitis, nesciunt aperiam aliquam qui assumenda culpa, vero obcaecati, harum porro delectus temporibus tempora voluptas ad sint repudiandae dolor molestias est. Necessitatibus odit possimus deleniti recusandae officia nam magnam cum mollitia temporibus consequuntur fuga fugiat, labore quas provident deserunt qui ab impedit tempora illum maxime nostrum aliquam eligendi. Pariatur dolorem vitae amet placeat ipsum ullam eligendi voluptatum maxime laboriosam. Magnam, rem dicta laudantium recusandae impedit aliquam sunt voluptatibus accusamus sit asperiores, ex, quos porro amet quia ea quasi laborum. Consequuntur quam magni inventore tempore ad fugiat illum, temporibus ratione. Repellendus magni animi, reprehenderit iusto quibusdam pariatur accusantium totam architecto iste ipsa beatae at quidem reiciendis, quisquam ad cum, accusamus neque quo asperiores exercitationem. Accusantium perferendis voluptas numquam laboriosam, corrupti consequuntur, adipisci inventore quaerat porro blanditiis labore dolorum dolorem fugiat cupiditate eaque quia sequi animi! Neque veritatis id ratione molestiae, quisquam vero ut placeat ullam debitis quia esse officia tenetur laborum? Voluptas nostrum libero aliquam corrupti ut culpa, dolorum omnis perspiciatis non porro explicabo. Vitae similique temporibus voluptas fugit labore. Perferendis dolorum qui consectetur vitae molestiae temporibus dolorem ipsam beatae aut molestias nihil fugit adipisci aliquid maxime quae magnam autem veniam soluta nulla, quis necessitatibus modi aperiam, totam quo. Earum iusto neque eaque nam dignissimos quaerat alias, aspernatur atque at delectus nobis tempore molestias veniam similique recusandae optio accusamus ullam culpa ipsam sit reprehenderit quisquam ad? Ipsam, eaque blanditiis.</p>
+          <p>Компания Суши Продукт поставляет продукты для суши по Украине, начиная с 2004 года. В нашем ассортименте
+            есть все необходимое для Японской, Паназиатской и Европейской кухни. У нас вы можете приобрести рис,
+            водоросли, соусы, имбирь, рыбу и морепродукты самого высокого качества, мучные и макаронные изделия, соусы,
+            грибы, а так же посуду и многое другое. Купить продукты для суши самого высокого качества можно просто
+            позвонив по нашему корпоративному телефону и пообщавшись с нашими менеджерами.</p>
+          <p>Служба доставки работает по всей Украине, мы являемся поставщиками, как крупных сетей ресторанов, так и
+            отдельных предприятий HoReCa. Работать с нами удобно, так как наши менеджеры профессионально предоставляют
+            сервис высокого уровня клиентам, и вы обязательно будете довольны, а ваша организация получит необходимое
+            сырье для отличных блюд.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veniam culpa minima rem voluptatem quae ab
+            quaerat dolorem repudiandae tenetur dolores nulla odit laborum in ut obcaecati asperiores sunt numquam,
+            magni voluptates repellendus veritatis impedit voluptatibus debitis. Quam modi consectetur culpa! Odit quae
+            error porro adipisci maiores nihil! Necessitatibus, omnis fugit nulla minima quasi voluptas assumenda dolor
+            facilis corporis eum ut fuga similique quidem! Eaque accusantium quos numquam quaerat quia ut repellendus,
+            earum magni eos, quis accusamus asperiores modi amet minima ea quo illum harum. Iure doloremque deserunt
+            placeat itaque dolor officia fugiat laudantium quidem libero. Ad dolor libero molestias quisquam, possimus
+            soluta enim tempore, est eveniet voluptatem inventore facere natus error delectus molestiae porro aperiam
+            repellat, aspernatur tempora rerum necessitatibus dolorum. Officiis, exercitationem sed accusamus quod aut
+            iusto vitae neque ut aliquam ipsa ex nostrum libero aspernatur error, ducimus, voluptates hic rerum
+            consequuntur cupiditate. Ad illo sequi at neque ullam assumenda, nisi ipsum accusantium voluptatem autem
+            tempora ratione dolores natus id odio dolorem totam laboriosam quae modi vero vel quis sint? Beatae,
+            commodi. Laboriosam, nihil? Pariatur inventore tempore culpa facilis voluptate ad ipsum esse asperiores quo
+            ab error suscipit, corrupti quod. Laboriosam eveniet magnam, soluta, voluptate, sint itaque reprehenderit
+            impedit nulla provident error optio ut ullam? Placeat exercitationem eum recusandae reiciendis, maxime ad
+            reprehenderit eligendi animi nesciunt similique, voluptas tempora necessitatibus quam? Ad soluta enim saepe,
+            pariatur dolor quisquam est expedita sequi placeat impedit, aliquid magnam itaque sint recusandae
+            repudiandae facilis doloribus consectetur quo voluptates commodi. Blanditiis illum perspiciatis eaque
+            veniam, earum sint deserunt natus debitis animi necessitatibus commodi reiciendis perferendis quo eius
+            itaque obcaecati ipsa iste doloribus unde provident? Quaerat debitis, nesciunt aperiam aliquam qui assumenda
+            culpa, vero obcaecati, harum porro delectus temporibus tempora voluptas ad sint repudiandae dolor molestias
+            est. Necessitatibus odit possimus deleniti recusandae officia nam magnam cum mollitia temporibus
+            consequuntur fuga fugiat, labore quas provident deserunt qui ab impedit tempora illum maxime nostrum aliquam
+            eligendi. Pariatur dolorem vitae amet placeat ipsum ullam eligendi voluptatum maxime laboriosam. Magnam, rem
+            dicta laudantium recusandae impedit aliquam sunt voluptatibus accusamus sit asperiores, ex, quos porro amet
+            quia ea quasi laborum. Consequuntur quam magni inventore tempore ad fugiat illum, temporibus ratione.
+            Repellendus magni animi, reprehenderit iusto quibusdam pariatur accusantium totam architecto iste ipsa
+            beatae at quidem reiciendis, quisquam ad cum, accusamus neque quo asperiores exercitationem. Accusantium
+            perferendis voluptas numquam laboriosam, corrupti consequuntur, adipisci inventore quaerat porro blanditiis
+            labore dolorum dolorem fugiat cupiditate eaque quia sequi animi! Neque veritatis id ratione molestiae,
+            quisquam vero ut placeat ullam debitis quia esse officia tenetur laborum? Voluptas nostrum libero aliquam
+            corrupti ut culpa, dolorum omnis perspiciatis non porro explicabo. Vitae similique temporibus voluptas fugit
+            labore. Perferendis dolorum qui consectetur vitae molestiae temporibus dolorem ipsam beatae aut molestias
+            nihil fugit adipisci aliquid maxime quae magnam autem veniam soluta nulla, quis necessitatibus modi aperiam,
+            totam quo. Earum iusto neque eaque nam dignissimos quaerat alias, aspernatur atque at delectus nobis tempore
+            molestias veniam similique recusandae optio accusamus ullam culpa ipsam sit reprehenderit quisquam ad?
+            Ipsam, eaque blanditiis.</p>
         </div>
-        <button class="btn seo__more arrow">Читати ще</div>
+        <button class="btn seo__more arrow">Читати ще</button>
       </div>
     </section>
 
   </main>
 
-  <div class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer__wrap">
         <div class="footer__main">
@@ -1797,7 +1897,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 
 
 
@@ -1829,22 +1929,16 @@
         </div>
         <div class="modalAuth__row">
           <div class="modalAuth__remember">
-            <div class="checkbox">
-              <input type="checkbox" name="remember" id="auth_remember">
-              <label for="auth_remember"></label>
-            </div>
-            <span>Запам'ятати мене</span>
+            <input class="checkbox" type="checkbox" name="remember" id="auth_remember">
+             <label for="auth_remember">Запам'ятати мене</label>
           </div>
-          <button type="button" class="btn btn--dashed open_forgot">Забули пароль?</a>
+          <button type="button" class="btn btn--dashed open_forgot">Забули пароль?</button>
         </div>
         <button class="btn btn--primary">Увiйти</button>
         <button type="button" class="btn btn--dashed open_register modalAuth__register">Реєстрація</button>
         <div class="modal__accept">
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="auth_accept" required>
-            <label for="auth_accept"></label>
-          </div>
-          <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+          <input class="checkbox" type="checkbox" name="accept" id="auth_accept" required>
+          <label for="auth_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>
@@ -1931,11 +2025,8 @@
         </div>
         <button class="btn btn--primary">Реєстрація</button>
         <div class="modal__accept">
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="register_accept" required>
-            <label for="register_accept"></label>
-          </div>
-          <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+          <input class="checkbox" type="checkbox" name="accept" id="register_accept" required>
+          <label for="register_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>
@@ -1943,7 +2034,7 @@
 
   <!-- ask question -->
   <div class="modal modalAsk">
-    <div class="modal__win">
+    <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
       <div class="modal__title modal__title--left heading">Залиште питання</div>
       <div class="modal__subtitle">Залиште ваші контактні дані і питання. Наш менеджер зв'яжеться з вами в найкоротші
@@ -1968,11 +2059,8 @@
         </div>
         <button class="btn btn--primary">Надіслати</button>
         <div class="modal__accept">
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="ask_accept" required>
-            <label for="ask_accept"></label>
-          </div>
-          <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+          <input class="checkbox" type="checkbox" name="accept" id="ask_accept" required>
+          <label for="ask_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>
@@ -1980,7 +2068,7 @@
 
   <!-- add review -->
   <div class="modal modalReview">
-    <div class="modal__win">
+    <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
       <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
       <div class="modal__subtitle">є питання по обслуговуванню або є запитання? Залишіть свій відгук! Ваше помiдомлення
@@ -2005,11 +2093,41 @@
         </div>
         <button class="btn btn--primary">Надіслати</button>
         <div class="modal__accept">
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="review_accept" required>
-            <label for="review_accept"></label>
+          <input class="checkbox" type="checkbox" name="accept" id="review_accept" required>
+          <label for="review_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add review for director -->
+  <div class="modal modalReviewManager">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+      <div class="modal__subtitle">Оставте ваш отзыв или пожелание о работе компании и мы обязательно рассмотрим его</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
           </div>
-          <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <button class="btn btn--primary">Надіслати</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="review_manager_accept" required>
+          <label for="review_manager_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>
@@ -2034,11 +2152,207 @@
         </div>
         <button class="btn btn--primary">Надiслати</button>
         <div class="modal__accept">
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="callback_accept" required>
-            <label for="callback_accept"></label>
+          <input class="checkbox" type="checkbox" name="accept" id="callback_accept" required>
+          <label for="callback_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- change user profile info -->
+  <div class="modal modalUserInfo">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Контактні дані</div>
+      <form action="#" class="modal__form">
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_first" placeholder="Iм'я" value="Iван">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_last" placeholder="Прiзвище" value="Петров">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_middle" placeholder="По-батькові" value="Не вказано">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_number" placeholder="+38(050)___ -__-__" value="+38(050) 123-12-12">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="user_change_email" placeholder="E-mail" value="E-mail@email.com">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_name_birth" placeholder="День народження" value="25.12.1986">
+        </div>    
+        <div class="field">
+          <input type="text" class="input" name="user_change_organization" placeholder="Організація" value="ООО ”Суши Продукт”">
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="user_change_organization_id" placeholder="ID організації" value="365488749">
+        </div>
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="user_change_accept" required checked>
+          <label for="user_change_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- change user profile addresses -->
+  <div class="modal modalUserAddress">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Адреси доставки
+      </div>
+      <form action="#" class="modal__form">
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 1</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_1" placeholder="Мiсто" value="Харкiв">
           </div>
-          <span>Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></span>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_1" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_1" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 2</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_2" placeholder="Мiсто" value="Харкiв">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_2" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_2" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+        <div class="modalUserAddress__address">
+          <div class="modalUserAddress__title">Адреса 3</div>
+          <button type="button" class="btn ic-trash modalUserAddress__del"></button>
+          <div class="field">
+            <input type="text" class="input" name="change_address_city_3" placeholder="Мiсто" value="Харкiв">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_street_3" placeholder="Вулиця" value="вулиця 23-го Августа">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="change_address_house_3" placeholder="Дiм" value="будинок 5">
+          </div>
+        </div>
+
+
+
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="address_change_accept" required checked>
+          <label for="address_change_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- add user profile address -->
+  <div class="modal modalAddAddress">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title heading">Додати адресу</div>
+      <form action="#" class="modal__form">
+
+        <div class="modalUserAddress__address">
+          <div class="field">
+            <input type="text" class="input" name="add_address_city" placeholder="Мiсто">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="add_address_street" placeholder="Вулиця">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="add_address_house" placeholder="Дiм">
+          </div>
+        </div>
+
+        <button class="btn btn--primary">Зберегти</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="address_add_accept" required checked>
+          <label for="address_add_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- share -->
+  <div class="modal modalShare">
+    <div class="modal__win">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Подiлитися статтею</div>
+      <div class="modalShare__items">
+        <a href="#" target="_blank" data-share="facebook" title="facebook" class="ic-facebook-big modalShare__item modalShare__item--facebook"></a>
+        <a href="#" target="_blank" data-share="twitter" title="twitter" class="ic-twitter modalShare__item modalShare__item--twitter"></a>
+        <a href="#" target="_blank" data-share="telegram" title="telegram" class="ic-telegram-big modalShare__item modalShare__item--telegram"></a>
+      </div>
+      <div class="modalShare__link">
+        <input type="text" value="" id="article_share_link" class="input input--line" readonly>
+        <button class="btn btn--dashed ic-copy modalShare__copy" data-copied="Скопировано!">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- tender -->
+  <div class="modal modalTender">
+    <div class="modal__win scroll scroll--radius">
+      <button class="btn modal__close ic-close-black"></button>
+      <div class="modal__title modal__title--left heading">Залиште заявку</div>
+      <div class="modal__subtitle">Залиште ваші контактні дані і короткий опис вашої діяльності. Наш менеджер зв'яжеться з вами в найкоротші терміни!</div>
+      <form action="#" class="modal__form">
+        <div class="fields fields--two">
+          <div class="field">
+            <input type="text" class="input" name="name_first" placeholder="Iм'я*">
+          </div>
+          <div class="field">
+            <input type="text" class="input" name="name_last" placeholder="Прiзвище*">
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="+38(050)___ -__-__*">
+        </div>
+        <div class="field">
+          <input type="email" class="input" name="email" placeholder="E-mail*">
+        </div>
+        <div class="field">
+          <div class="select">
+            <input type="hidden" class="select__value" name="tender" id="partners_tender">
+            <div class="dropdown select__wrap">
+              <div class="dropdown__title arrow">Оберiть тендер</div>
+              <ul class="dropdown__list scroll">
+                <li>
+                  <button type="button" class="btn select__item" data-value="Виробництво м'ясних напiвфабрикатiв">Виробництво м'ясних напiвфабрикатiв</button>
+                </li>
+                <li>
+                  <button type="button" class="btn select__item" data-value="Виробництво напівтвердих сирiв">Виробництво напівтвердих сирiв</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="Текст повідомлення*"></textarea>
+        </div>
+        <div class="field">
+          <input type="file" name="file" class="input--file">
+          <span class="uploaded"></span>
+          <button class="btn btn--primary download">Завантажити файл</button>
+        </div>
+        <button class="btn btn--primary">Надіслати</button>
+        <div class="modal__accept">
+          <input class="checkbox" type="checkbox" name="accept" id="tender_accept" required>
+          <label for="tender_accept">Я згоден з умовами <a href="#" target="_blank">угоди і правилами обробки персональних даних</a></label>
         </div>
       </form>
     </div>
@@ -2240,12 +2554,25 @@
 
 
 
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./libs/scrolly.js"></script> -->
+  <!-- jquery required for only pages: MAIN, PRODUCT -->
+  <script src="./libs/jquery/jquery.min.js"></script>
+  <!-- end jquery -->
 
-  <script src="./libs/swiper-bundle.min.js"></script>
+  <!-- parallax required for MAIN page only -->  
+  <script src="./libs/parallax/TweenLite.js"></script>
+  <script src="./libs/parallax/CSSPlugin.js"></script>
+  <script src="./libs/parallax/parallax_background.js"></script>
+  <!-- end parallax -->
+
+  <!-- fancybox required for PRODUCT page only -->
+  <script src="./libs/lightbox/jquery.fancybox.min.js"></script>
+  <!-- end fancybox -->
+
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  
   <script src="js/main.min.js"></script>
 
+  
 </body>
 
 </html>

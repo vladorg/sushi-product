@@ -47,6 +47,9 @@
         +text(24,700,32,0)
         +md
           max-height: 64px
+        +xs
+          max-height: 48px
+          +text(18,600,24,0)
 
 
 
@@ -55,9 +58,7 @@
   +xs
     padding-bottom: 40px
   &__heading
-    +flex(0,0,flex-start,center)
-    +md
-      flex-wrap: wrap
+    +flex(0,wrap,flex-start,center)
     h1
       margin-right: 20px
       +md
@@ -68,11 +69,11 @@
     .recipes__categories
       a
         background: #f1f1f1
-        margin: 0 8px 8px 0
+        margin: 4px 8px 4px 0
         +md
           padding: 6px 17px
     .recipes__rate
-      //margin-left: 16px
+      margin: 8px 0
       background: #f1f1f1
   &__wrap
     +flex(0,0,space-between,0)

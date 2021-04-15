@@ -175,12 +175,24 @@
       p
         letter-spacing: 0.01em
         margin-top: 16px
+        max-height: 48px
+        overflow: hidden
+        text-overflow: ellipsis
         +text(16,400,24,#000)
+        +xs
+          max-height: 999px
+          overflow: visible
     &__header
       padding: 0 48px
-      min-height: 96px
+      height: 128px
+      +sm
+        height: auto
       +xs
         padding: 0 8px
+      .heading
+        max-height: 64px
+        overflow: hidden
+        text-overflow: ellipsis
     &__list
       margin-top: 16px
       padding: 24px 48px 0 48px

@@ -67,8 +67,8 @@ gulp.task('clean', function() {
 gulp.task('buildHtml', function() {
 	return gulp.src('app/*.html')
 	.pipe(htmlreplace({
-		'css': 'css/style.min.css',
-		'js': 'js/main.min.js'
+		'css': 'css/style.css',
+		'js': 'js/main.js'
 	}))
 	.pipe(gulp.dest('dist'))
 });
@@ -91,9 +91,10 @@ gulp.task('buildCss', function() {
 });
 
 gulp.task('buildJs', function() {
-	return gulp.src('app/js/**/*.js', '!app/js/**/*.min.js')
-	.pipe(concat('main.js'))
+	return gulp.src('app/js/main.js')
+	.pipe(gulp.dest('dist/js'))
 	.pipe(babel({ "presets": ["@babel/preset-env"] }))
+	.pipe(rename('es5.js'))
 	.pipe(gulp.dest('dist/js'))
 	.pipe(uglifyjs())
 	.pipe(rename({suffix: '.min'}))

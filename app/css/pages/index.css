@@ -55,7 +55,7 @@
     left: 0;
     width: 80px;
     height: 68px;
-    background: url("/img/layout/green.svg");
+    background: url("../img/layout/green.svg");
     -webkit-transform: rotate(27deg);
         -ms-transform: rotate(27deg);
             transform: rotate(27deg); }

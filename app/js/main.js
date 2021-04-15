@@ -1,18 +1,9 @@
 window.onload = () => {
 
-  
-
   const getElem = (selector, single = true) => single ? document.querySelector(selector) : document.querySelectorAll(selector),
     isMobile = window.innerWidth <= 768 ? true : false,
     isTablet = window.innerWidth > 768 && window.innerWidth < 992 ? true : false,
     getCoords = elem => elem.getBoundingClientRect().top + pageYOffset;
-
-
-
-
-
-
-
 
 
   // BASE ================================================
@@ -89,7 +80,10 @@ window.onload = () => {
     wish_add = getElem('.wish_add', false),
     select_item = getElem('.select__item', false),
     download = getElem('.download', false),
-    add_to_cart = getElem('.preview__buy', false);
+    add_to_cart = getElem('.preview__buy', false)
+  quantity_plus = getElem('.quantly .quantly__plus', false),
+    quantity_minus = getElem('.quantly .quantly__minus', false),
+    quantity_input = getElem('.quantly .quantly__input', false);
 
 
 
@@ -100,12 +94,16 @@ window.onload = () => {
       e.target.disabled = true;
     }
     if (e.target.classList.contains('preview__wish')) {
-      e.target.classList.add('preview__wish--added');
-      e.target.disabled = true;
+      if (!e.target.classList.contains('open_auth')) {
+        e.target.classList.add('preview__wish--added');
+        e.target.disabled = true;
+      }
     }
     if (e.target.classList.contains('productPageCheckout__wish')) {
-      e.target.classList.add('productPageCheckout__wish--added');
-      e.target.disabled = true;
+      if (!e.target.classList.contains('open_auth')) {
+        e.target.classList.add('productPageCheckout__wish--added');
+        e.target.disabled = true;
+      }
     }
   });
 
@@ -118,7 +116,8 @@ window.onload = () => {
     }
   });
   top_btn.addEventListener('click', e => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    //window.scrollTo({ top: 0, behavior: 'smooth' });
+    $("html, body").animate({ scrollTop: 0 });
   });
 
   // open modals
@@ -294,12 +293,7 @@ window.onload = () => {
     }
   }
   //sliderRender(article_posts, 'article_posts_slider', 'article_posts', '.articlePageSidebar__slider', slider_params, 'mobile');
-  function sliderRender(elem, slider, id, root, params, device_mode = 'all') {    
-    // console.log(elem);
-    // console.log(slider);
-    // console.log(id);
-    // console.log(root);
-    // console.log(params);
+  function sliderRender(elem, slider, id, root, params, device_mode = 'all') {
     if (elem) {
       params.navigation.nextEl = `${root} .sliderArrows__next--${id}`;
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
@@ -461,19 +455,76 @@ window.onload = () => {
     }
   }
 
+  // oploading files
   if (download) {
     download.forEach(el => {
       el.addEventListener('click', e => {
         e.preventDefault();
         let target = el.parentNode.querySelector('input[type=file]');
         let info = el.parentNode.querySelector('.uploaded');
-        target.addEventListener('change', function() {
+        target.addEventListener('change', function () {
           info.innerText = this.value;
         });
         target.click();
       });
     });
   }
+
+
+  // quantity
+  if (quantity_plus) {
+
+    let quantity_plus_time,
+      quantity_minus_time;
+
+    quantity_plus.forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        clearTimeout(quantity_plus_time);
+        quantity_plus_time = setTimeout(() => {
+          let input = el.parentNode.querySelector('input[name="quantly"]');
+          if (input.value.length > 3 || input.value == 999) {
+            input.value = 999;
+          } else {
+            input.value = parseInt(input.value) + 1;
+          }
+        }, 200);
+      });
+    });
+
+    quantity_minus.forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        clearTimeout(quantity_minus_time);
+        quantity_minus_time = setTimeout(() => {
+          let input = el.parentNode.querySelector('input[name="quantly"]');
+          input.value != 1 ? input.value = parseInt(input.value) - 1 : null;
+        }, 200);
+      });
+    });
+
+    quantity_input.forEach(el => {
+      el.addEventListener('change', e => {
+        let quantity = el.value;
+
+        if (isNaN(+quantity)) {
+          el.value = 1
+        } else {
+          if (quantity == "" || quantity == 0) {
+            el.value = 1;
+          }
+          if (quantity.length > 3) {
+            el.value = quantity.slice(0, 3);
+          }
+        }       
+
+      });
+    });
+
+  }
+
+
+
 
 
 
@@ -736,7 +787,7 @@ window.onload = () => {
     sliderRender(home_special, 'home_special_slider', 'special', '.productsSlider', slider_params, 'desktop');
     sliderRender(home_bestseller, 'home_bestseller_slider', 'bestseller', '.productsSlider', slider_params, 'desktop');
     sliderRender(home_new, 'home_new_slider', 'new', '.productsSlider', slider_params, 'desktop');
-    
+
 
     // main feedback managers random show
     showManager();
@@ -935,7 +986,7 @@ window.onload = () => {
       promo_btn.classList.add('btn--disabled');
     }
   }
-  
+
 
 
 
@@ -950,11 +1001,11 @@ window.onload = () => {
 
   // CHECKOUT PAGE
 
-  const checkout_page = getElem('.checkoutPage');
+  const checkout_page = getElem('.checkoutPage'),
     checkout_tab_btn = getElem('.checkoutOrderCustomer__btn', false),
     checkout_tab = getElem('.checkoutOrderCustomer__form', false),
     customer_accept = getElem('#customer_accept'),
-    customer_log = getElem('#customer_log')
+    customer_log = getElem('#customer_log'),
     checkout_order = getElem('#checkout_order'),
     checkout_customer = getElem('.checkoutOrderCustomer'),
     checkout_customer_inner = getElem('.checkoutOrderCustomer__inner'),
@@ -967,7 +1018,7 @@ window.onload = () => {
     checkout_city_pick = getElem('.checkoutOrderDelivery__cityAcc', false),
     checkout_new_address = getElem('.new_address', false);
 
-  
+
   if (checkout_page) {
 
     if (checkout_tab_btn) {
@@ -1086,7 +1137,7 @@ window.onload = () => {
         e.preventDefault();
         let inputs = [];
         if (checkout_info) {
-          inputs_temp = checkout_info.querySelectorAll('input.required, textarea.required');
+          let inputs_temp = checkout_info.querySelectorAll('input.required, textarea.required');
           inputs_temp.forEach(el => {
             !el.disabled ? inputs.push(el) : null;
           });
@@ -1361,13 +1412,13 @@ window.onload = () => {
 
   // copy share link on click
   if (article_share_copy) {
-    article_share_copy.addEventListener('click', function() {
+    article_share_copy.addEventListener('click', function () {
       copyToClipboard(article_share_link.value);
       this.classList.add('modalShare__copy--copied');
       this.innerText = this.dataset.copied;
     });
   }
-  
+
 
   function copyToClipboard(text) {
     var selected = false;
@@ -1378,14 +1429,14 @@ window.onload = () => {
     el.style.left = '-9999px';
     document.body.appendChild(el);
     if (document.getSelection().rangeCount > 0) {
-        selected = document.getSelection().getRangeAt(0);
+      selected = document.getSelection().getRangeAt(0);
     }
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
     if (selected) {
-        document.getSelection().removeAllRanges();
-        document.getSelection().addRange(selected);
+      document.getSelection().removeAllRanges();
+      document.getSelection().addRange(selected);
     }
   }
 
@@ -1410,7 +1461,7 @@ window.onload = () => {
     320: {
       slidesPerView: 1
     }
-    
+
   }
   sliderRender(partners_tenders, 'partners_tenders_slider', 'tenders', '.partnersPageTenders', partners_tenders_params);
 
@@ -1422,7 +1473,7 @@ window.onload = () => {
 
 
   // REMOVE PRODUCTS
-  
+
   const cart_remove_item = getElem('.cart .headerDropdown__del', false),
     wish_remove_item = getElem('.wishlist .headerDropdown__del', false),
     wish_remove_item_all = getElem('.accountPageWishlist .wishlist_delete_all'),
@@ -1431,8 +1482,8 @@ window.onload = () => {
     wish_page_remove_item = getElem('.itemsWishlist .itemsWishlist__del', false),
     cart_item_del = getElem('.cartPage .cartContentProducts__del', false),
     cart_item_del_all = getElem('.cartPage .cartContent__removeAll');
-  
-    
+
+
   // delete header cart dropdown product
   if (cart_remove_item) {
     let args = {
@@ -1442,7 +1493,7 @@ window.onload = () => {
       parent: '.headerDropdown__items',
       callback: null // need to set fn for delete product from server
     }
-    cart_remove_item.forEach(el => {      
+    cart_remove_item.forEach(el => {
       let del_fn = removeProduct.bind(el, args);
       el.addEventListener('click', del_fn);
     });
@@ -1457,7 +1508,7 @@ window.onload = () => {
       parent: '.headerDropdown__items',
       callback: null // need to set fn for delete product from server
     }
-    wish_remove_item.forEach(el => {      
+    wish_remove_item.forEach(el => {
       let del_fn = removeProduct.bind(el, args);
       el.addEventListener('click', del_fn);
     });
@@ -1472,7 +1523,7 @@ window.onload = () => {
       parent: '.itemsWishlist',
       callback: null // need to set fn for delete product from server
     }
-    wish_page_remove_item.forEach(el => {      
+    wish_page_remove_item.forEach(el => {
       let del_fn = removeProduct.bind(el, args);
       el.addEventListener('click', del_fn);
     });
@@ -1510,7 +1561,7 @@ window.onload = () => {
           cart_page_wrap.classList.add('cartContent--empty');
         });
       }
-      
+
     });
   }
 
@@ -1531,7 +1582,7 @@ window.onload = () => {
           getElem('.accountPageUser').classList.add('accountPageUser--empty');
         });
       }
-      
+
     });
   }
 
@@ -1542,19 +1593,19 @@ window.onload = () => {
   - header dropdown wishlist products
   - cart page products
   - account wishlist page products
-
+  
   after delete product, need to set callback function
   include ajax request for delete from server.
-
+  
   for delete all products on one click has another functions
   */
-  function removeProduct(args){
-    let {mode, root, elem, parent, callback} = args,
-      item = this.closest(elem);
-      par = item.closest(parent);
-      root_el = getElem(root);
-      empty = root_el.dataset.empty;
-      ajax = callback || function(){console.log('callback is not defined')};
+  function removeProduct(args) {
+    let { mode, root, elem, parent, callback } = args,
+      item = this.closest(elem),
+      par = item.closest(parent),
+      root_el = getElem(root),
+      empty = root_el.dataset.empty,
+      ajax = callback || function () { console.log('callback is not defined') };
 
     item.classList.add('sad_face');
     setTimeout(() => { // need for waiting css fade in animation
@@ -1572,7 +1623,7 @@ window.onload = () => {
             }
             cart_page_wrap.innerHTML = '';
             cart_page_wrap.appendChild(cart_page_empty);
-            cart_page_wrap.classList.add('cartContent--empty');         
+            cart_page_wrap.classList.add('cartContent--empty');
           } else if (mode == 'wish-page') {
             if (wish_page_empty) {
               wish_page_empty.innerText = getElem('.accountPageWishlist').dataset.empty;
@@ -1583,12 +1634,12 @@ window.onload = () => {
           } else {
             root_el.innerHTML = empty;
             root_el.classList.add('empty_products_list');
-          }           
+          }
         }
         ajax();
       });
-     
-    }, 500);    
+
+    }, 500);
   }
 
 

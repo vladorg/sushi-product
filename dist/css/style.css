@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -233,20 +234,25 @@ a {
 
 .no-scroll {
   overflow-y: hidden;
-  padding-right: 3px; }
+  padding-right: 3px;
+  @-moz-document url-prefix() {}  padding-right: 16px; }
   @media (max-width: 768px) {
     .no-scroll {
       padding-right: 0; } }
   .no-scroll .header--fix {
-    margin-right: 3px; }
+    margin-right: 3px;
+    @-moz-document url-prefix() {}    margin-right: 16px; }
     @media (max-width: 768px) {
       .no-scroll .header--fix {
         margin-right: 0; } }
   .no-scroll .header--opacity {
-    margin-right: 3px; }
+    margin-right: 3px;
+    @-moz-document url-prefix() {}    margin-right: 16px; }
     @media (max-width: 768px) {
       .no-scroll .header--opacity {
         margin-right: 0; } }
+  .no-scroll .toTop {
+    opacity: 0; }
 
 .scroll::-webkit-scrollbar {
   display: block;
@@ -259,6 +265,10 @@ a {
 .scroll--radius::-webkit-scrollbar-track {
   margin-top: 20px;
   margin-bottom: 20px; }
+
+@-moz-document url-prefix() {}.scroll {
+  scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
+  scrollbar-width: thin; }
 
 .fields {
   display: -webkit-box;
@@ -397,7 +407,8 @@ a {
 
 .checkbox {
   opacity: 0;
-  position: absolute; }
+  position: absolute;
+  left: 0; }
   .checkbox + label {
     position: relative;
     cursor: pointer;
@@ -634,6 +645,11 @@ a {
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s; }
+    @media (max-width: 992px) {
+      .preview__wish {
+        right: 20px;
+        opacity: 1;
+        pointer-events: auto; } }
     .preview__wish::before {
       content: '';
       -webkit-transition: all 0.4s;
@@ -778,12 +794,15 @@ a {
     .preview:hover .preview__wish {
       right: 20px;
       opacity: 1;
-      pointer-events: auto; }
+      pointer-events: auto;
+      -webkit-transition-delay: .3s;
+           -o-transition-delay: .3s;
+              transition-delay: .3s; }
 
 .toTop {
   position: fixed;
   bottom: 25px;
-  right: 15px;
+  right: -55px;
   z-index: 10;
   background: #FA4616;
   border-radius: 50%;
@@ -815,7 +834,8 @@ a {
             transform: rotate(-90deg); }
   .toTop--active {
     opacity: 1;
-    pointer-events: auto; }
+    pointer-events: auto;
+    right: 15px; }
 
 .breadcrumbs {
   padding: 24px 0 42px 0; }
@@ -1236,7 +1256,7 @@ a {
     padding: 15px 0;
     border-radius: 8px 0 0 8px;
     border: 1px solid #D6D6D6;
-    background-repeat: 0;
+    background-repeat: no-repeat;
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -1641,7 +1661,7 @@ a {
           height: 32px; } }
       @media (max-width: 500px) {
         .itemsWishlist__set .quantly .quantly__input {
-          width: 32px;
+          width: 40px;
           height: 32px; } }
     .itemsWishlist__set .preview__price {
       max-width: 100%;
@@ -1924,6 +1944,21 @@ a {
     background-repeat: no-repeat;
     background-position: 50% 40%; }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body {
+    overflow: hidden; }
+    body::before {
+      content: 'К сожалению сайт не может открыться в вашем браузере, так как он устарел. Пожалуйста обновите ваш браузер и попробуйте еще раз.';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 50px; } }
+
 /* open-sans-regular - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
@@ -1964,6 +1999,7 @@ a {
   src: url("../fonts/open-sans-v18-latin_cyrillic-800.eot");
   src: local(""), url("../fonts/open-sans-v18-latin_cyrillic-800.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v18-latin_cyrillic-800.woff2") format("woff2"), url("../fonts/open-sans-v18-latin_cyrillic-800.woff") format("woff"), url("../fonts/open-sans-v18-latin_cyrillic-800.ttf") format("truetype"), url("../fonts/open-sans-v18-latin_cyrillic-800.svg#OpenSans") format("svg"); }
 
+@charset "UTF-8";
 /* open-sans-regular - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
@@ -2239,20 +2275,25 @@ a {
 
 .no-scroll {
   overflow-y: hidden;
-  padding-right: 3px; }
+  padding-right: 3px;
+  @-moz-document url-prefix() {}  padding-right: 16px; }
   @media (max-width: 768px) {
     .no-scroll {
       padding-right: 0; } }
   .no-scroll .header--fix {
-    margin-right: 3px; }
+    margin-right: 3px;
+    @-moz-document url-prefix() {}    margin-right: 16px; }
     @media (max-width: 768px) {
       .no-scroll .header--fix {
         margin-right: 0; } }
   .no-scroll .header--opacity {
-    margin-right: 3px; }
+    margin-right: 3px;
+    @-moz-document url-prefix() {}    margin-right: 16px; }
     @media (max-width: 768px) {
       .no-scroll .header--opacity {
         margin-right: 0; } }
+  .no-scroll .toTop {
+    opacity: 0; }
 
 .scroll::-webkit-scrollbar {
   display: block;
@@ -2265,6 +2306,10 @@ a {
 .scroll--radius::-webkit-scrollbar-track {
   margin-top: 20px;
   margin-bottom: 20px; }
+
+@-moz-document url-prefix() {}.scroll {
+  scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
+  scrollbar-width: thin; }
 
 .fields {
   display: -webkit-box;
@@ -2403,7 +2448,8 @@ a {
 
 .checkbox {
   opacity: 0;
-  position: absolute; }
+  position: absolute;
+  left: 0; }
   .checkbox + label {
     position: relative;
     cursor: pointer;
@@ -2640,6 +2686,11 @@ a {
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s; }
+    @media (max-width: 992px) {
+      .preview__wish {
+        right: 20px;
+        opacity: 1;
+        pointer-events: auto; } }
     .preview__wish::before {
       content: '';
       -webkit-transition: all 0.4s;
@@ -2784,12 +2835,15 @@ a {
     .preview:hover .preview__wish {
       right: 20px;
       opacity: 1;
-      pointer-events: auto; }
+      pointer-events: auto;
+      -webkit-transition-delay: .3s;
+           -o-transition-delay: .3s;
+              transition-delay: .3s; }
 
 .toTop {
   position: fixed;
   bottom: 25px;
-  right: 15px;
+  right: -55px;
   z-index: 10;
   background: #FA4616;
   border-radius: 50%;
@@ -2821,7 +2875,8 @@ a {
             transform: rotate(-90deg); }
   .toTop--active {
     opacity: 1;
-    pointer-events: auto; }
+    pointer-events: auto;
+    right: 15px; }
 
 .breadcrumbs {
   padding: 24px 0 42px 0; }
@@ -3242,7 +3297,7 @@ a {
     padding: 15px 0;
     border-radius: 8px 0 0 8px;
     border: 1px solid #D6D6D6;
-    background-repeat: 0;
+    background-repeat: no-repeat;
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -3647,7 +3702,7 @@ a {
           height: 32px; } }
       @media (max-width: 500px) {
         .itemsWishlist__set .quantly .quantly__input {
-          width: 32px;
+          width: 40px;
           height: 32px; } }
     .itemsWishlist__set .preview__price {
       max-width: 100%;
@@ -3929,6 +3984,21 @@ a {
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: 50% 40%; }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body {
+    overflow: hidden; }
+    body::before {
+      content: 'К сожалению сайт не может открыться в вашем браузере, так как он устарел. Пожалуйста обновите ваш браузер и попробуйте еще раз.';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 50px; } }
 
 .ic-arrow::before {
   content: '';
@@ -4367,7 +4437,7 @@ a {
     .banner__slide img {
       display: block;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       -o-object-fit: cover;
          object-fit: cover;
       min-height: 540px; }
@@ -4646,6 +4716,7 @@ a {
         padding: 0 20px; } }
   .modal__accept {
     margin: 16px -16px 0 -16px;
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6375,7 +6446,7 @@ a {
     left: 0;
     width: 80px;
     height: 68px;
-    background: url("/img/layout/green.svg");
+    background: url("../img/layout/green.svg");
     -webkit-transform: rotate(27deg);
         -ms-transform: rotate(27deg);
             transform: rotate(27deg); }
@@ -10322,6 +10393,12 @@ a {
       @media (max-width: 1199px) {
         .blogPageArticles__article .recipes__title {
           max-height: 64px; } }
+      @media (max-width: 768px) {
+        .blogPageArticles__article .recipes__title {
+          max-height: 48px;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 24px; } }
 
 .articlePage {
   padding-bottom: 80px; }
@@ -10333,6 +10410,9 @@ a {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
@@ -10341,11 +10421,6 @@ a {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    @media (max-width: 1199px) {
-      .articlePage__heading {
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap; } }
     .articlePage__heading h1 {
       margin-right: 20px; }
       @media (max-width: 1199px) {
@@ -10356,11 +10431,12 @@ a {
       position: static; }
     .articlePage__heading .recipes__categories a {
       background: #f1f1f1;
-      margin: 0 8px 8px 0; }
+      margin: 4px 8px 4px 0; }
       @media (max-width: 1199px) {
         .articlePage__heading .recipes__categories a {
           padding: 6px 17px; } }
     .articlePage__heading .recipes__rate {
+      margin: 8px 0;
       background: #f1f1f1; }
   .articlePage__wrap {
     display: -webkit-box;
@@ -10974,16 +11050,32 @@ a {
     .partnersPageTenders__item p {
       letter-spacing: 0.01em;
       margin-top: 16px;
+      max-height: 48px;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
       color: #000; }
+      @media (max-width: 768px) {
+        .partnersPageTenders__item p {
+          max-height: 999px;
+          overflow: visible; } }
   .partnersPageTenders__header {
     padding: 0 48px;
-    min-height: 96px; }
+    height: 128px; }
+    @media (max-width: 992px) {
+      .partnersPageTenders__header {
+        height: auto; } }
     @media (max-width: 768px) {
       .partnersPageTenders__header {
         padding: 0 8px; } }
+    .partnersPageTenders__header .heading {
+      max-height: 64px;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis; }
   .partnersPageTenders__list {
     margin-top: 16px;
     padding: 24px 48px 0 48px;

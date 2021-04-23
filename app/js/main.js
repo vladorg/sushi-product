@@ -80,10 +80,11 @@ window.onload = () => {
     wish_add = getElem('.wish_add', false),
     select_item = getElem('.select__item', false),
     download = getElem('.download', false),
-    add_to_cart = getElem('.preview__buy', false)
-  quantity_plus = getElem('.quantly .quantly__plus', false),
+    add_to_cart = getElem('.preview__buy', false),
+  	quantity_plus = getElem('.quantly .quantly__plus', false),
     quantity_minus = getElem('.quantly .quantly__minus', false),
-    quantity_input = getElem('.quantly .quantly__input', false);
+    quantity_input = getElem('.quantly .quantly__input', false),
+    hide_text_opener = getElem('.texthide__opener', false);
 
 
 
@@ -298,11 +299,24 @@ window.onload = () => {
       params.navigation.nextEl = `${root} .sliderArrows__next--${id}`;
       params.navigation.prevEl = `${root} .sliderArrows__prev--${id}`;
       let slider = new Swiper(elem, params);
+      let controls = document.querySelectorAll(`${root} .sliderArrows__arrow`);
       sliderArrows(slider);
       if (device_mode == 'desktop') {
-        isMobile ? null : slider.init();
+        if (!isMobile) {
+          slider.init();
+        } else {
+          controls.forEach(el => {
+            el.remove();
+          }); 
+        }
       } else if (device_mode == 'mobile') {
-        isMobile ? slider.init() : null;
+        if (isMobile) {
+          slider.init();                   
+        } else {
+          controls.forEach(el => {
+            el.remove();
+          }); 
+        }
       } else {
         slider.init();
       }
@@ -387,6 +401,7 @@ window.onload = () => {
 
         // get target tab
         let tab = e.target.dataset.tab;
+
 
         // update tabs
         for (let i = 0; i < tabs_prod.length; i++) {
@@ -521,6 +536,23 @@ window.onload = () => {
       });
     });
 
+  }
+
+  // show hidden text
+  if (hide_text_opener) {
+    hide_text_opener.forEach(el => {
+      el.addEventListener('click', e => {
+        if (el.closest('.texthide').classList.contains('texthide--open')) {
+          el.closest('.texthide').classList.remove('texthide--open', 'texthide--ova');
+          el.closest('.texthide').querySelector('.texthide__text').scrollTop = 0;
+        } else {
+          el.closest('.texthide').classList.add('texthide--open');
+          setTimeout(() => {
+            el.closest('.texthide').classList.add('texthide--ova');
+          }, 600);
+        }
+      });
+    });
   }
 
 
@@ -1323,6 +1355,7 @@ window.onload = () => {
       let item_arrow = this.closest('.accountPageOrders__opener');
 
       item_inner.classList.toggle('accountPageOrders__inner--open');
+      isMobile ? parent.classList.toggle('accountPageOrders__item--open') : null;
       setTimeout(() => {
         item_arrow.classList.toggle('accountPageOrders__opener--open');
       }, 400);

@@ -19,6 +19,10 @@
   font-weight: 300;
   line-height: 24px;
   color: #000; }
+  @media (max-width: 768px) {
+    .info p {
+      font-size: 16px;
+      font-weight: 400; } }
   .info p:not(:last-child) {
     margin-bottom: 24px; }
 
@@ -263,7 +267,8 @@
     transition: opacity 0.2s; }
     @media (max-width: 768px) {
       .partnersPageTenders__item {
-        padding: 16px 0; } }
+        padding: 16px 8px;
+        border-radius: 0; } }
     .partnersPageTenders__item.swiper-slide-visible {
       opacity: 1; }
     .partnersPageTenders__item:not(:last-child) {
@@ -271,7 +276,7 @@
     .partnersPageTenders__item p {
       letter-spacing: 0.01em;
       margin-top: 16px;
-      max-height: 48px;
+      height: 48px;
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
@@ -279,13 +284,12 @@
       font-weight: 400;
       line-height: 24px;
       color: #000; }
-      @media (max-width: 768px) {
+      @media (max-width: 1199px) {
         .partnersPageTenders__item p {
-          max-height: 999px;
+          height: auto;
           overflow: visible; } }
   .partnersPageTenders__header {
-    padding: 0 48px;
-    height: 128px; }
+    padding: 0 48px; }
     @media (max-width: 992px) {
       .partnersPageTenders__header {
         height: auto; } }
@@ -293,10 +297,14 @@
       .partnersPageTenders__header {
         padding: 0 8px; } }
     .partnersPageTenders__header .heading {
-      max-height: 64px;
+      height: 64px;
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis; }
+      @media (max-width: 1199px) {
+        .partnersPageTenders__header .heading {
+          height: auto;
+          overflow: visible; } }
   .partnersPageTenders__list {
     margin-top: 16px;
     padding: 24px 48px 0 48px;
@@ -306,8 +314,7 @@
     @media (max-width: 768px) {
       .partnersPageTenders__list {
         padding: 14px 8px;
-        height: auto;
-        margin-top: 0; } }
+        height: auto; } }
     .partnersPageTenders__list li:not(:last-child) {
       margin-bottom: 16px; }
   .partnersPageTenders__end {
@@ -316,6 +323,8 @@
     @media (max-width: 768px) {
       .partnersPageTenders__end {
         text-align: left; } }
+    .partnersPageTenders__end a {
+      color: #FA4616; }
   .partnersPageTenders__btn {
     max-width: 480px;
     margin: 40px auto 0 auto; }
@@ -499,6 +508,9 @@
     @media (max-width: 768px) {
       .vacancyInfo .partnersPageTenders__item:not(:last-child) {
         margin-bottom: 16px; } }
+  .vacancyInfo .partnersPageTenders__item p {
+    height: auto;
+    overflow: visible; }
 
 .vacancyInfo .partnersPageTenders__list {
   height: auto; }
@@ -509,11 +521,13 @@
   .vacancyInfo .partnersPageTenders__list li {
     font-size: 16px; }
 
-.vacancyInfo .partnersPageTenders__header {
-  min-height: 1px; }
-  @media (max-width: 768px) {
-    .vacancyInfo .partnersPageTenders__header {
-      padding: 0 4%; } }
+@media (max-width: 768px) {
+  .vacancyInfo .partnersPageTenders__header {
+    padding: 0 4%; } }
+
+.vacancyInfo .partnersPageTenders__header .heading {
+  height: auto;
+  overflow: visible; }
 
 .vacancy .aboutPartners::before {
   content: '';

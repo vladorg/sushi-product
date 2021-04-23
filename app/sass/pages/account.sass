@@ -60,6 +60,13 @@
 
   
   &User
+    +before
+      display: none
+      +xs
+        display: block
+        top: 25%
+    +after
+      display: none
     &__header
       margin-bottom: 40px
       +flex(0,0,space-between,center)
@@ -255,6 +262,10 @@
           background: $color-order-status_sended
         &--inWork
           background: $color-order-status_inwork
+      &--open
+        .accountPageOrders__sum
+          opacity: 0!important
+          pointer-events: none!important
     &__heading
       padding: 24px
       +flex(0,0,space-between,center)
@@ -273,6 +284,9 @@
         margin-bottom: 20px
     div
       &.accountPageOrders__sum
+        opacity: 1
+        pointer-events: auto
+        +tran(opacity, .4s)
         +xs
           order: 9
           white-space: nowrap
@@ -447,6 +461,13 @@
 
   &Bonus
     min-height: 100vh
+    +before
+      display: none
+      +xs
+        display: block
+        top: 75%
+    +after
+      display: none
     +xs
       min-height: 1px
     &__content

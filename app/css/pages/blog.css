@@ -8,6 +8,18 @@
 .blogPage .accountPageSidebar__link:not(:last-child) {
   margin-bottom: 16px; }
 
+.blogPage__inner::before {
+  content: '';
+  display: none; }
+  @media (max-width: 768px) {
+    .blogPage__inner::before {
+      display: block;
+      top: 25%; } }
+
+.blogPage__inner::after {
+  content: '';
+  display: none; }
+
 .blogPageArticles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

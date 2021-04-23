@@ -29,6 +29,13 @@
     margin-top: auto
     padding-bottom: 24px
     background: $transparent
+    +before
+      top: -230px
+      height: 270px
+      +xs
+        display: none
+    +after
+      display: none
     .footer__copy
       text-align: left
       margin-top: 0
@@ -79,7 +86,6 @@
         flex-wrap: wrap
       .select
         width: 100%
-        max-width: 75%
         +xs
           max-width: 100%
           margin-bottom: 12px
@@ -145,7 +151,7 @@
           border-color: $color-primary
       &__forms
         padding: 48px
-        max-width: 555px
+        max-width: 480px
         box-sizing: content-box
         +xs
           max-width: 100%
@@ -197,8 +203,8 @@
         +xs
           margin-bottom: 24px
       &__stage
-        padding: 24px 81px
-        max-width: 555px
+        padding: 24px 260px 24px 81px
+        //max-width: 555px
         box-sizing: content-box
         +md
           padding: 24px 4%

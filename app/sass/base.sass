@@ -107,6 +107,7 @@ a
 .tooltip
   display: inline-block
   position: relative
+  cursor: pointer
   &__wrap
     opacity: 0
     pointer-events: none
@@ -172,6 +173,45 @@ a
     .tooltip__wrap
       opacity: 1
       pointer-events: auto
+  &--cart
+    position: relative
+    .tooltip__wrap
+      top: 50%
+      left: 0
+      padding-left: 200%
+      right: unset
+      padding-top: 0
+      transform: translateY(-50%)
+      z-index: 1
+      box-sizing: content-box
+      +break(1400)
+        top: 200%
+        left: 50%
+        transform: translateX(-50%)
+      +sm
+        right: -15px
+        left: unset
+        transform: none
+      +xxs
+        width: 250px
+      +before
+        top: 50%
+        left: 28px
+        right: unset
+        transform: translateY(-50%) rotate(-90deg)
+        +break(1400)
+          top: -18px
+          left: 50%
+          transform: translateX(-50%) rotate(0)
+        +sm
+          left: unset
+          right: 18px
+          transform: none
+    .tooltip__content
+      +sm
+        padding: 16px
+        +text(12,0,18,0)
+
 
 .no-scroll
   overflow-y: hidden
@@ -1327,6 +1367,42 @@ a
     background-repeat: no-repeat
     background-position: 50% 40%
 
+
+.texthide
+  &__opener
+    margin-top: 8px
+    +text(14,400,24,$color-primary)
+    +hover
+      text-decoration: underline
+  &__text
+    max-height: 48px
+    overflow: hidden
+    text-overflow: ellipsis
+    +tran(all,.6s)
+    +text(16,400,24,0)
+    +sm
+      max-height: 24px
+  &--open
+    .texthide__text
+      max-height: 500px
+  &--ova
+    .texthide__text
+      overflow: auto
+  
+  &--about
+    .texthide__text
+      max-height: 100%
+      +xs
+        max-height: 266px
+    .texthide__opener
+      display: none
+      +xs
+        display: block
+        font-weight: 700
+    &.texthide--open
+      .texthide__text
+        max-height: 800px
+    
 
 
 

@@ -85,8 +85,11 @@ window.onload = function () {
       wish_add = getElem('.wish_add', false),
       select_item = getElem('.select__item', false),
       download = getElem('.download', false),
-      add_to_cart = getElem('.preview__buy', false);
-  quantity_plus = getElem('.quantly .quantly__plus', false), quantity_minus = getElem('.quantly .quantly__minus', false), quantity_input = getElem('.quantly .quantly__input', false);
+      add_to_cart = getElem('.preview__buy', false),
+      quantity_plus = getElem('.quantly .quantly__plus', false),
+      quantity_minus = getElem('.quantly .quantly__minus', false),
+      quantity_input = getElem('.quantly .quantly__input', false),
+      hide_text_opener = getElem('.texthide__opener', false);
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains('preview__buy')) {
       e.target.classList.add('preview__buy--added');
@@ -318,12 +321,25 @@ window.onload = function () {
 
       var _slider = new Swiper(elem, params);
 
+      var controls = document.querySelectorAll("".concat(root, " .sliderArrows__arrow"));
       sliderArrows(_slider);
 
       if (device_mode == 'desktop') {
-        isMobile ? null : _slider.init();
+        if (!isMobile) {
+          _slider.init();
+        } else {
+          controls.forEach(function (el) {
+            el.remove();
+          });
+        }
       } else if (device_mode == 'mobile') {
-        isMobile ? _slider.init() : null;
+        if (isMobile) {
+          _slider.init();
+        } else {
+          controls.forEach(function (el) {
+            el.remove();
+          });
+        }
       } else {
         _slider.init();
       }
@@ -553,6 +569,23 @@ window.onload = function () {
           if (quantity.length > 3) {
             el.value = quantity.slice(0, 3);
           }
+        }
+      });
+    });
+  } // show hidden text
+
+
+  if (hide_text_opener) {
+    hide_text_opener.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        if (el.closest('.texthide').classList.contains('texthide--open')) {
+          el.closest('.texthide').classList.remove('texthide--open', 'texthide--ova');
+          el.closest('.texthide').querySelector('.texthide__text').scrollTop = 0;
+        } else {
+          el.closest('.texthide').classList.add('texthide--open');
+          setTimeout(function () {
+            el.closest('.texthide').classList.add('texthide--ova');
+          }, 600);
         }
       });
     });
@@ -1282,6 +1315,7 @@ window.onload = function () {
       var item_inner = parent.querySelector('.accountPageOrders__inner');
       var item_arrow = this.closest('.accountPageOrders__opener');
       item_inner.classList.toggle('accountPageOrders__inner--open');
+      isMobile ? parent.classList.toggle('accountPageOrders__item--open') : null;
       setTimeout(function () {
         item_arrow.classList.toggle('accountPageOrders__opener--open');
       }, 400);

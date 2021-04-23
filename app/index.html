@@ -1762,21 +1762,21 @@
             </div>
           </div>
           <div class="feedback__manager">
-            <img src="./img/managers/manager2.png" alt="">
+            <img src="./img/managers/manager.png" alt="">
             <div class="feedback__caption">
               <div class="feedback__name">Иван Петров</div>
               <div class="feedback__worker">Менеджер 2</div>
             </div>
           </div>
           <div class="feedback__manager">
-            <img src="./img/managers/manager3.png" alt="">
+            <img src="./img/managers/manager.png" alt="">
             <div class="feedback__caption">
               <div class="feedback__name">Иван Петров</div>
               <div class="feedback__worker">Менеджер 3</div>
             </div>
           </div>
           <div class="feedback__manager">
-            <img src="./img/managers/manager4.png" alt="">
+            <img src="./img/managers/manager.png" alt="">
             <div class="feedback__caption">
               <div class="feedback__name">Иван Петров</div>
               <div class="feedback__worker">Менеджер 4</div>
@@ -1923,7 +1923,9 @@
   <div class="modal modalAuth">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title heading">Вхiд в особистий кабiнет</div>
+      <div class="modal__header">
+        <div class="modal__title heading">Вхiд в особистий кабiнет</div>
+      </div>      
       <form action="#" class="modal__form">
         <div class="field">
           <input type="email" class="input input" name="email" placeholder="E-mail*">
@@ -1952,8 +1954,10 @@
   <div class="modal modalForgot">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Забули пароль?</div>
-      <div class="modal__subtitle">Вкажіть ваш email для відправки посилання на скидання пароля</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Забули пароль?</div>
+        <div class="modal__subtitle">Вкажіть ваш email для відправки посилання на скидання пароля</div>
+      </div>      
       <form action="#" class="modal__form">
         <div class="field">
           <input type="email" class="input" name="email" placeholder="E-mail*" required>
@@ -1967,9 +1971,11 @@
   <div class="modal modalCheck">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Скидання паролю</div>
-      <div class="modal__subtitle">На ваш email було вiдправлене посилання на скидання паролю. Якщо посилання не прийшло
+      <div class="modal__header modal__header--single">
+        <div class="modal__title modal__title--left heading">Скидання паролю</div>
+        <div class="modal__subtitle">На ваш email було вiдправлене посилання на скидання паролю. Якщо посилання не прийшло
         - перевiрте спам або спробуйте <button class="btn btn--dashed open_reset">вiдправити ще раз</button>.</div>
+      </div>      
     </div>
   </div>
 
@@ -1977,8 +1983,11 @@
   <div class="modal modalReset">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Новий пароль</div>
-      <div class="modal__subtitle">Вкажіть новий пароль</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Новий пароль</div>
+        <div class="modal__subtitle">Вкажіть новий пароль</div>
+      </div>
+      
       <form action="#" class="modal__form">
         <div class="field">
           <input type="password" class="input" name="password" placeholder="Пароль*" required>
@@ -1995,8 +2004,10 @@
   <div class="modal modalSuccessPass">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Змiна паролю</div>
-      <div class="modal__subtitle">Пароль успiшно змiнено!</div>
+      <div class="modal__header modal__header--single">
+        <div class="modal__title modal__title--left heading">Змiна паролю</div>
+        <div class="modal__subtitle">Пароль успiшно змiнено!</div>
+      </div>      
     </div>
   </div>
 
@@ -2004,7 +2015,9 @@
   <div class="modal modalRegister">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title heading">Реєстрація </div>
+      <div class="modal__header">
+        <div class="modal__title heading">Реєстрація</div>
+      </div>      
       <form action="#" class="modal__form">
         <div class="field">
           <input type="text" class="input" name="name_first" placeholder="Iм'я*">
@@ -2040,9 +2053,11 @@
   <div class="modal modalAsk">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Залиште питання</div>
-      <div class="modal__subtitle">Залиште ваші контактні дані і питання. Наш менеджер зв'яжеться з вами в найкоротші
-        терміни!</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Залиште питання</div>
+        <div class="modal__subtitle">Залиште ваші контактні дані і питання. Наш менеджер зв'яжеться з вами в найкоротші
+          терміни!</div>
+      </div>      
       <form action="#" class="modal__form">
         <div class="fields fields--two">
           <div class="field">
@@ -2070,13 +2085,15 @@
     </div>
   </div>
 
-  <!-- add review -->
+  <!-- add review for director -->
   <div class="modal modalReview">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
-      <div class="modal__subtitle">є питання по обслуговуванню або є запитання? Залишіть свій відгук! Ваше помiдомлення
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+        <div class="modal__subtitle">є питання по обслуговуванню або є запитання? Залишіть свій відгук! Ваше помiдомлення
         потрапить вiдразу до дирекотра “Сушi Продукт” !</div>
+      </div>
       <form action="#" class="modal__form">
         <div class="fields fields--two">
           <div class="field">
@@ -2104,12 +2121,14 @@
     </div>
   </div>
 
-  <!-- add review for director -->
+  <!-- add review for manager -->
   <div class="modal modalReviewManager">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
-      <div class="modal__subtitle">Оставте ваш отзыв или пожелание о работе компании и мы обязательно рассмотрим его</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Залиште вiдгук</div>
+        <div class="modal__subtitle">Оставте ваш отзыв или пожелание о работе компании и мы обязательно рассмотрим его</div>
+      </div>
       <form action="#" class="modal__form">
         <div class="fields fields--two">
           <div class="field">
@@ -2141,9 +2160,11 @@
   <div class="modal modalCallback">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Замовити дзвiнок</div>
-      <div class="modal__subtitle">Є питання по обслуговуванню або є запитання? Залишіть свій номер телефону, i ми
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Замовити дзвiнок</div>
+        <div class="modal__subtitle">Є питання по обслуговуванню або є запитання? Залишіть свій номер телефону, i ми
         обов'язково вам зателефонуємо!</div>
+      </div>
       <form action="#" class="modal__form">
         <div class="field">
           <input type="text" class="input" name="name_first" placeholder="Iм'я*">
@@ -2167,7 +2188,9 @@
   <div class="modal modalUserInfo">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title heading">Контактні дані</div>
+      <div class="modal__header">
+        <div class="modal__title heading">Контактні дані</div>
+      </div>      
       <form action="#" class="modal__form">
         <div class="field">
           <input type="text" class="input" name="user_change_name_first" placeholder="Iм'я" value="Iван">
@@ -2206,8 +2229,9 @@
   <div class="modal modalUserAddress">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title heading">Адреси доставки
-      </div>
+      <div class="modal__header">
+        <div class="modal__title heading">Адреси доставки</div>
+      </div>      
       <form action="#" class="modal__form">
 
         <div class="modalUserAddress__address">
@@ -2267,7 +2291,9 @@
   <div class="modal modalAddAddress">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title heading">Додати адресу</div>
+      <div class="modal__header">
+        <div class="modal__title heading">Додати адресу</div>
+      </div>
       <form action="#" class="modal__form">
 
         <div class="modalUserAddress__address">
@@ -2295,7 +2321,9 @@
   <div class="modal modalShare">
     <div class="modal__win">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Подiлитися статтею</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Подiлитися статтею</div>
+      </div>      
       <div class="modalShare__items">
         <a href="#" target="_blank" data-share="facebook" title="facebook" class="ic-facebook-big modalShare__item modalShare__item--facebook"></a>
         <a href="#" target="_blank" data-share="twitter" title="twitter" class="ic-twitter modalShare__item modalShare__item--twitter"></a>
@@ -2312,8 +2340,10 @@
   <div class="modal modalTender">
     <div class="modal__win scroll scroll--radius">
       <button class="btn modal__close ic-close-black"></button>
-      <div class="modal__title modal__title--left heading">Залиште заявку</div>
-      <div class="modal__subtitle">Залиште ваші контактні дані і короткий опис вашої діяльності. Наш менеджер зв'яжеться з вами в найкоротші терміни!</div>
+      <div class="modal__header">
+        <div class="modal__title modal__title--left heading">Залиште заявку</div>
+        <div class="modal__subtitle">Залиште ваші контактні дані і короткий опис вашої діяльності. Наш менеджер зв'яжеться з вами в найкоротші терміни!</div>
+      </div>
       <form action="#" class="modal__form">
         <div class="fields fields--two">
           <div class="field">
@@ -2361,7 +2391,6 @@
       </form>
     </div>
   </div>
-
 
 
   <!-- MOBILE BURGER MENU -->

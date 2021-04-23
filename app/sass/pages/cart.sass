@@ -294,9 +294,6 @@
       .preview__infoTitle
         +xxs
           position: static
-      .tooltip__wrap
-        +xxs
-          top: unset
       .cartContentProducts__wish
         margin-top: 16px
   &Total
@@ -314,10 +311,20 @@
     +sm
       width: 100%
       margin-top: 24px
+      padding: 24px 0
     +xs
       position: static
       border-radius: 0
       padding: 24px 0
+    &__mobileTitle
+      display: none
+      +sm
+        display: block
+        padding: 0 10px
+        margin-bottom: 24px
+        +text(18,600,24,#000)
+      +xs
+        padding: 0 4%
     &__promo
       padding: 0 24px
       margin: 0
@@ -335,6 +342,16 @@
         padding: 0 4%
       input
         padding-left: 15px
+        +sm
+          padding: 10px 0 10px 15px
+        &::-webkit-input-placeholder
+          color: #949494
+        &::-moz-placeholder
+          color: #949494
+        &:-moz-placeholder
+          color: #949494
+        &:-ms-input-placeholder
+          color: #949494
       button
         right: 24px
         width: auto

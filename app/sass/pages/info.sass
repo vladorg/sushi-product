@@ -9,10 +9,12 @@
       margin-bottom: 8px
       +text(30,0,40,0)
   &Content
-    padding: 30px 0 0 0 
+    padding: 30px 0 0 0
   p
     letter-spacing: 0.02em
     +text(18,300,24,#000)
+    +xs
+      +text(16,400,0,0)
     &:not(:last-child)
       margin-bottom: 24px
 
@@ -167,7 +169,8 @@
       opacity: 0
       +tran(opacity,.2s)
       +xs
-        padding: 16px 0
+        padding: 16px 8px
+        border-radius: 0
       &.swiper-slide-visible
         opacity: 1
       &:not(:last-child)
@@ -175,24 +178,26 @@
       p
         letter-spacing: 0.01em
         margin-top: 16px
-        max-height: 48px
+        height: 48px
         overflow: hidden
         text-overflow: ellipsis
         +text(16,400,24,#000)
-        +xs
-          max-height: 999px
+        +md
+          height: auto
           overflow: visible
     &__header
       padding: 0 48px
-      height: 128px
       +sm
         height: auto
       +xs
         padding: 0 8px
       .heading
-        max-height: 64px
+        height: 64px
         overflow: hidden
         text-overflow: ellipsis
+        +md
+          height: auto
+          overflow: visible
     &__list
       margin-top: 16px
       padding: 24px 48px 0 48px
@@ -202,7 +207,6 @@
       +xs
         padding: 14px 8px
         height: auto
-        margin-top: 0
       li
         &:not(:last-child)
           margin-bottom: 16px
@@ -211,6 +215,8 @@
       text-align: center
       +xs
         text-align: left
+      a
+        color: $color-primary
     &__btn
       max-width: 480px
       margin: 40px auto 0 auto
@@ -323,6 +329,9 @@
         margin-bottom: 39px
         +xs
           margin-bottom: 16px
+      p
+        height: auto
+        overflow: visible
     .partnersPageTenders__list
       height: auto
       +xs
@@ -331,9 +340,11 @@
       li
         font-size: 16px
     .partnersPageTenders__header
-      min-height: 1px
       +xs
         padding: 0 4%
+      .heading
+        height: auto
+        overflow: visible
   .aboutPartners
     +before
       top: -222px

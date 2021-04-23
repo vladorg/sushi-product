@@ -73,6 +73,11 @@
       flex-direction: row-reverse
   &__title
     +text(18,700,24,0)
+    +xs
+      max-width: 55%
+      max-height: 104px
+      overflow: hidden
+      text-overflow: ellipsis
     span
       display: block
       +text(48,700,56,0)
@@ -277,3 +282,26 @@
     +text(18,600,24,$color-primary)
     +hover
       text-decoration: underline
+
+
+.compilations
+  padding-bottom: 77px
+  .offer__title
+    +text(24,0,30,0)
+    +xs
+      margin-top: 16px
+      max-width: 100%
+      max-height: 60px
+      overflow: hidden
+      text-overflow: ellipsis
+  .offers
+    +before
+      top: 210px
+    +after
+      display: none
+  .offer .preview__sticker
+    +xs
+      position: static
+  .offer__info
+    +xs
+      flex-direction: column

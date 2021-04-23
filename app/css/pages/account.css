@@ -83,6 +83,18 @@
         .accountPageSidebar__link--active a:hover {
           text-decoration: none; }
 
+.accountPageUser::before {
+  content: '';
+  display: none; }
+  @media (max-width: 768px) {
+    .accountPageUser::before {
+      display: block;
+      top: 25%; } }
+
+.accountPageUser::after {
+  content: '';
+  display: none; }
+
 .accountPageUser__header {
   margin-bottom: 40px;
   display: -webkit-box;
@@ -394,6 +406,9 @@
       background: #60c36e; }
     .accountPageOrders__item .accountPageOrders__status--inWork {
       background: #fa6a44; }
+  .accountPageOrders__item--open .accountPageOrders__sum {
+    opacity: 0 !important;
+    pointer-events: none !important; }
 
 .accountPageOrders__heading {
   padding: 24px;
@@ -435,20 +450,26 @@
             order: 5;
     margin-bottom: 20px; } }
 
-@media (max-width: 768px) {
-  .accountPageOrders div.accountPageOrders__sum {
-    -webkit-box-ordinal-group: 10;
-    -webkit-order: 9;
-        -ms-flex-order: 9;
-            order: 9;
-    white-space: nowrap;
-    max-width: 100%;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px; } }
+.accountPageOrders div.accountPageOrders__sum {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s; }
+  @media (max-width: 768px) {
+    .accountPageOrders div.accountPageOrders__sum {
+      -webkit-box-ordinal-group: 10;
+      -webkit-order: 9;
+          -ms-flex-order: 9;
+              order: 9;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px; } }
 
 .accountPageOrders__opener {
   position: relative;
@@ -717,6 +738,16 @@
 
 .accountPageBonus {
   min-height: 100vh; }
+  .accountPageBonus::before {
+    content: '';
+    display: none; }
+    @media (max-width: 768px) {
+      .accountPageBonus::before {
+        display: block;
+        top: 75%; } }
+  .accountPageBonus::after {
+    content: '';
+    display: none; }
   @media (max-width: 768px) {
     .accountPageBonus {
       min-height: 1px; } }

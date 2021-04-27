@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="./css/libs/ie.css" />
   <![endif]-->
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css" />
+  
   <!-- build:css -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css" data-style="main">
   <!-- endbuild -->
 </head>
 
@@ -2583,7 +2583,7 @@
     </div>
   </div>
 
-
+  
 
 
 
@@ -2606,6 +2606,18 @@
   <!-- build:js -->
   <script src="js/main.js"></script>
   <!-- endbuild -->
+
+  <!-- async load swiper styles and inserting before main styles -->
+  <script>
+    let sw_css = document.createElement('link');
+    let hd = document.head;
+    let main_css = document.querySelector('link[data-style=main]');
+    
+    sw_css.rel = 'stylesheet';
+    sw_css.href = './css/libs/swiper-bundle.min.css';
+    hd.appendChild(sw_css);
+    hd.appendChild(main_css);
+  </script>
   
 </body>
 

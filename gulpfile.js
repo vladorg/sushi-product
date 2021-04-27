@@ -67,7 +67,10 @@ gulp.task('clean', function() {
 gulp.task('buildHtml', function() {
 	return gulp.src('app/*.html')
 	.pipe(htmlreplace({
-		'css': 'css/style.css',
+		'css': {
+	    src: 'css/style.min.css',
+	    tpl: '<link rel="stylesheet" href="%s" data-style="main">'
+	  },
 		'js': 'js/main.js'
 	}))
 	.pipe(gulp.dest('dist'))

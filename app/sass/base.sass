@@ -216,20 +216,14 @@ a
 .no-scroll
   overflow-y: hidden
   padding-right: 3px
-  @-moz-document url-prefix()
-  padding-right: 16px
   +xs
     padding-right: 0
   .header--fix
     margin-right: 3px
-    @-moz-document url-prefix()
-    margin-right: 16px
     +xs
       margin-right: 0
   .header--opacity
     margin-right: 3px
-    @-moz-document url-prefix()
-    margin-right: 16px
     +xs
       margin-right: 0
   .toTop
@@ -246,11 +240,18 @@ a
     &::-webkit-scrollbar-track
       margin-top: 20px
       margin-bottom: 20px
+
 @-moz-document url-prefix()
-.scroll
-  scrollbar-color: $color-primary $transparent
-  scrollbar-width: thin
-  &--radius
+  .scroll
+    scrollbar-color: $color-primary $transparent
+    scrollbar-width: thin
+    &--radius
+  .no-scroll
+    padding-right: 16px
+    .header--fix
+      margin-right: 16px
+    .header--opacity
+      margin-right: 16px
 
 .fields
   +flex(0,0,space-between,flex-start)

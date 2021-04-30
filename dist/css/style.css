@@ -293,20 +293,17 @@ a {
 
 .no-scroll {
   overflow-y: hidden;
-  padding-right: 3px;
-  @-moz-document url-prefix() {}  padding-right: 16px; }
+  padding-right: 3px; }
   @media (max-width: 768px) {
     .no-scroll {
       padding-right: 0; } }
   .no-scroll .header--fix {
-    margin-right: 3px;
-    @-moz-document url-prefix() {}    margin-right: 16px; }
+    margin-right: 3px; }
     @media (max-width: 768px) {
       .no-scroll .header--fix {
         margin-right: 0; } }
   .no-scroll .header--opacity {
-    margin-right: 3px;
-    @-moz-document url-prefix() {}    margin-right: 16px; }
+    margin-right: 3px; }
     @media (max-width: 768px) {
       .no-scroll .header--opacity {
         margin-right: 0; } }
@@ -325,9 +322,16 @@ a {
   margin-top: 20px;
   margin-bottom: 20px; }
 
-@-moz-document url-prefix() {}.scroll {
-  scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
-  scrollbar-width: thin; }
+@-moz-document url-prefix() {
+  .scroll {
+    scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
+    scrollbar-width: thin; }
+  .no-scroll {
+    padding-right: 16px; }
+    .no-scroll .header--fix {
+      margin-right: 16px; }
+    .no-scroll .header--opacity {
+      margin-right: 16px; } }
 
 .fields {
   display: -webkit-box;
@@ -2439,20 +2443,17 @@ a {
 
 .no-scroll {
   overflow-y: hidden;
-  padding-right: 3px;
-  @-moz-document url-prefix() {}  padding-right: 16px; }
+  padding-right: 3px; }
   @media (max-width: 768px) {
     .no-scroll {
       padding-right: 0; } }
   .no-scroll .header--fix {
-    margin-right: 3px;
-    @-moz-document url-prefix() {}    margin-right: 16px; }
+    margin-right: 3px; }
     @media (max-width: 768px) {
       .no-scroll .header--fix {
         margin-right: 0; } }
   .no-scroll .header--opacity {
-    margin-right: 3px;
-    @-moz-document url-prefix() {}    margin-right: 16px; }
+    margin-right: 3px; }
     @media (max-width: 768px) {
       .no-scroll .header--opacity {
         margin-right: 0; } }
@@ -2471,9 +2472,16 @@ a {
   margin-top: 20px;
   margin-bottom: 20px; }
 
-@-moz-document url-prefix() {}.scroll {
-  scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
-  scrollbar-width: thin; }
+@-moz-document url-prefix() {
+  .scroll {
+    scrollbar-color: #FA4616 rgba(0, 0, 0, 0);
+    scrollbar-width: thin; }
+  .no-scroll {
+    padding-right: 16px; }
+    .no-scroll .header--fix {
+      margin-right: 16px; }
+    .no-scroll .header--opacity {
+      margin-right: 16px; } }
 
 .fields {
   display: -webkit-box;

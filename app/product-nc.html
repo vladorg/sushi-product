@@ -41,41 +41,39 @@
     <div class="header__inner">
       <div class="container">
         <div class="header__center">
-          <a href="./index.html" class="header__logo">
+          <a href="./index-nc.html" class="header__logo">
             <img src="img/logo.svg" class="header__logoDefault" alt="Logo">
             <img src="img/logo-white.svg" class="header__logoWhite" alt="Logo">
           </a>
           <form action="#" class="header__search">
             <label class="ic-search" for="header_search"></label>
             <input class="placeholder" name="search" type="text" id="header_search"
-              placeholder="Более 1 000 товаров....">
-            <button class="btn">Поиск</button>
+              placeholder="Бiльш 1 000 товарiв....">
+            <button class="btn">Пошук</button>
           </form>
           <div class="header__tools">
-
+  
             <div class="header__tool header__tool--auth header__tool--logged ic-user open_logged">
               <a href="#" class="arrow">Особистий кабінет</a>
-              <!-- <div class="header__tool header__tool--auth ic-user open_auth">
-              <a href="#">Особистий кабінет</a> -->
               <div class="headerDropdown logged">
                 <ul>
                   <li><a href="./account.html">Личная информация</a></li>
                   <li><a href="./wishlist.html">Список избранного</a></li>
                   <li><a href="./orders.html">История заказов</a></li>
                   <li><a href="./bonus.html">Мій бонусний рахунок</a></li>
-                  <li><a href="#">Выйти из аккаунта</a></li>
+                  <li><a href="#">Вийти iз аккаунта</a></li>
                 </ul>
               </div>
             </div>
-
+  
             <button class="btn ic-search-big header__searchMobile open_search"></button>
-
+  
             <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
               <div class="header__toolCount"><span>5</span> товаров</div>
-              <div class="headerDropdown wishlist wishlist--noCommerce">
+              <div class="headerDropdown wishlist wishlist--noCommerce" data-empty="Нет товаров!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -84,7 +82,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
@@ -93,7 +91,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -102,7 +100,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -111,7 +109,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
@@ -120,7 +118,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -135,16 +133,15 @@
                 </div>
               </div>
             </div>
-
+  
             <div class="header__tool header__tool--cart open_cart ic-cart" data-link="./cart.html">
               <!-- data-link value is required for redirecting to cart page on mobile devices -->
-
+  
               <div class="header__toolName">В кошику</div>
               <div class="header__toolCount"><span>0</span> товаров</div>
-              <!-- if no commerce ? addclass cart--noCommerce -->
-              <div class="headerDropdown cart cart--noCommerce">
+              <div class="headerDropdown cart cart--noCommerce" data-empty="Ваша корзина пустая!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -153,7 +150,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
@@ -162,7 +159,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -171,7 +168,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -180,7 +177,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
@@ -189,7 +186,7 @@
                     </div>
                     <button class="btn ic-trash headerDropdown__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
@@ -200,7 +197,6 @@
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
-                  <!-- if no-commerce -->
                   <div class="headerDropdown__total headerDropdown__total--noCommerce">
                     Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
                     <div class="tooltip tooltip--dropBottom">
@@ -214,18 +210,12 @@
                       </div>
                     </div>
                   </div>
-                  <!-- else -->
-                  <!-- <div class="headerDropdown__total headerDropdown__total--commerce">
-                    <div class="cart__total">Разом:</div>
-                    <div class="cart__price">838,54 грн</div>
-                  </div> -->
-                  <!-- endif -->
                   <a href="./checkout.html" class="btn btn--primary">Оформити замовлення</a>
                   <a href="./cart.html" class="btn btn--dashed">Перейти до кошика</a>
                 </div>
               </div>
             </div>
-
+  
           </div>
           <button class="btn ic-burger header__burger open_mobile"></button>
         </div>
@@ -239,53 +229,53 @@
                     <a href="./catalog.html">Бакалея</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Мука и панировка</a>
+                    <a href="./catalog.html">Мука i панiровка</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 1</a>
+                        <a href="./catalog2.html">Мука i панiровка 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 2</a>
+                        <a href="./catalog2.html">Мука i панiровка 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 3</a>
+                        <a href="./catalog2.html">Мука i панiровка 3</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Водоросли и грибы</a>
+                    <a href="./catalog.html">Водорослi та гриби</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Нори</a>
+                        <a href="./catalog2.html">Норi</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Водоросли разное</a>
+                        <a href="./catalog2.html">Водорослi</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Грибы</a>
+                        <a href="./catalog2.html">Гриби</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Васаби</a>
+                    <a href="./catalog.html">Васабi</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Имбирь</a>
+                    <a href="./catalog.html">iмбир</a>
                   </li>
                   <li class="catalog__link">
                     <a href="./catalog.html">Уксус</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Икра</a>
+                    <a href="./catalog.html">iкра</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Икра 1</a>
+                        <a href="./catalog2.html">iкра 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Икра 2</a>
+                        <a href="./catalog2.html">iкра 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Икра 3</a>
+                        <a href="./catalog2.html">iкра 3</a>
                       </li>
                     </ul>
                   </li>
@@ -304,53 +294,53 @@
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Морепродукты</a>
+                    <a href="./catalog.html">Морепродукти</a>
                   </li>
                   <li class="catalog__link">
                     <a href="./catalog.html">Рис</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Рыба</a>
+                    <a href="./catalog.html">Риба</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Рыба 1</a>
+                        <a href="./catalog2.html">Риба 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Рыба 2</a>
+                        <a href="./catalog2.html">Риба 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Рыба 3</a>
+                        <a href="./catalog2.html">Риба 3</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Сопутствующие товары</a>
+                    <a href="./catalog.html">Сопутнi товари</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Соусы</a>
+                    <a href="./catalog.html">Соуси</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Сыры и сливки</a>
+                    <a href="./catalog.html">Сири та вершки</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Фасованная продукция</a>
+                    <a href="./catalog.html">Фасована продукцiя</a>
                   </li>
                 </ul>
                 <ul class="catalog__pages">
                   <li class="catalog__link">
-                    <a href="#">Акция</a>
+                    <a href="#">Акцiя</a>
                   </li>
                   <li class="catalog__link">
                     <a href="#">Новинки</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="#">Собственное производство</a>
+                    <a href="#">Власне виробництво</a>
                   </li>
                   <li class="catalog__link">
                     <a href="#">Эксклюзив</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="#">Актуальное</a>
+                    <a href="#">Актуальне</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
                     <a href="#">Подборки</a>
@@ -402,18 +392,18 @@
         <div class="container">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item breadcrumbs__item--start">
-              <a href="./index.html" class="ic-home">Главная</a>
+              <a href="./index.html" class="ic-home">Головна</a>
             </li>
             <li class="breadcrumbs__item">
               <a href="./catalog.html">Каталог товарiв</a>
             </li>
             <li class="breadcrumbs__item">
-              <a href="./catalog.html">Водоросли и грибы</a>
+              <a href="./catalog.html">Водорослi та гриби</a>
             </li>
             <li class="breadcrumbs__item">
-              <a href="./catalog2.html">Воросли</a>
+              <a href="./catalog2.html">Ворослi</a>
             </li>
-            <li class="breadcrumbs__item breadcrumbs__item--end">Воросли Нори “SUSHI NORI”</li>
+            <li class="breadcrumbs__item breadcrumbs__item--end">Ворослi Норi “SUSHI NORI”</li>
           </ul>
         </div>
       </section>
@@ -458,12 +448,12 @@
 
           </div>
           <div class="productPageInfo">
-            <h1 class="productPageInfo__title">Бульон “Хондаши” рыбный 1,0 л (Китай)</h1>
+            <h1 class="productPageInfo__title">Бульйон “Хондашi” рибний 1,0 л (Китай)</h1>
             <div class="productPageInfo__info">
               <span class="productPageInfo__code">Код: 3355</span>
               <div class="productPageInfo__rows scroll">
                 <div class="productPageInfo__row">
-                  <span>Страна происхождения</span>
+                  <span>Країна походження</span>
                   <span>Китай</span>
                 </div>
                 <div class="productPageInfo__row">
@@ -471,23 +461,23 @@
                   <span>Коробка, 2 пакети по 0,5 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Вес 1 уп</span>
+                  <span>Вага 1 уп</span>
                   <span>1 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Кол-во в групповой упаковке</span>
+                  <span>Кількість в груповій упаковці</span>
                   <span>10 шт(10 кг)</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Готовность продукции</span>
+                  <span>Готовність продукції</span>
                   <span>Концентрат</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Срок годности</span>
-                  <span>18 месяцев</span>
+                  <span>Термін придатності</span>
+                  <span>18 мiсяцiв</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Страна происхождения</span>
+                  <span>Країна походження</span>
                   <span>Китай</span>
                 </div>
                 <div class="productPageInfo__row">
@@ -495,23 +485,23 @@
                   <span>Коробка, 2 пакети по 0,5 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Вес 1 уп</span>
+                  <span>Вага 1 уп</span>
                   <span>1 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Кол-во в групповой упаковке</span>
+                  <span>Кількість в груповій упаковці</span>
                   <span>10 шт(10 кг)</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Готовность продукции</span>
+                  <span>Готовність продукції</span>
                   <span>Концентрат</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Срок годности</span>
-                  <span>18 месяцев</span>
+                  <span>Термін придатності</span>
+                  <span>18 мiсяцiв</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Страна происхождения</span>
+                  <span>Країна походження</span>
                   <span>Китай</span>
                 </div>
                 <div class="productPageInfo__row">
@@ -519,20 +509,20 @@
                   <span>Коробка, 2 пакети по 0,5 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Вес 1 уп</span>
+                  <span>Вага 1 уп</span>
                   <span>1 кг</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Кол-во в групповой упаковке</span>
+                  <span>Кількість в груповій упаковці</span>
                   <span>10 шт(10 кг)</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Готовность продукции</span>
+                  <span>Готовність продукції</span>
                   <span>Концентрат</span>
                 </div>
                 <div class="productPageInfo__row">
-                  <span>Срок годности</span>
-                  <span>18 месяцев</span>
+                  <span>Термін придатності</span>
+                  <span>18 мiсяцiв</span>
                 </div>
               </div>
               <button class="btn productPageInfo__more">Дивитися ще</button>
@@ -547,7 +537,7 @@
 
               <div class="productPageCheckout__priceWrap">
                 <span class="productPageCheckout__price">305 грн</span>
-                <span class="productPageCheckout__min">Минимальный заказ 4 шт
+                <span class="productPageCheckout__min">Мiнiмальне замовлення 4 шт
                   <div class="tooltip tooltip--preview tooltip--short">
                     <div class="tooltip__pick">?</div>
                     <div class="tooltip__wrap">
@@ -560,7 +550,7 @@
               </div>
               <div class="productPageCheckout__tools">
                 <div class="quantly">
-                  <span class="quantly__label">Кол-во:</span>
+                  <span class="quantly__label">Кiлькiсть:</span>
                   <div class="quantly__inner">
                     <button class="btn quantly__button quantly__plus"></button>
                     <input type="text" name="quantly" class="quantly__input" value="1">
@@ -571,8 +561,7 @@
               </div>
               <div class="productPageCheckout__drops accordion">
                 <div class="accordion__item accordion__item--open">
-                  <div class="accordion__title arrow"><i class="ic-box-black"></i>Условия стоимости заказа:</div>
-                  <!-- <button class="btn accordion__opener arrow"></button> -->
+                  <div class="accordion__title arrow"><i class="ic-box-black"></i>Умови вартості замовлення:</div>
                   <div class="accordion__content">
                     <div class="productPageInfo__row">
                       <span>от 4 шт</span>
@@ -598,7 +587,6 @@
                 </div>
                 <div class="accordion__item">
                   <div class="accordion__title arrow"><i class="ic-truck"></i>Условия доставки:</div>
-                  <!-- <button class="btn accordion__opener arrow"></button> -->
                   <div class="accordion__content">
                     <div class="productPageInfo__row">
                       <span>от 4 шт</span>
@@ -624,7 +612,6 @@
                 </div>
                 <div class="accordion__item">
                   <div class="accordion__title arrow"><i class="ic-card"></i>Условия оплаты:</div>
-                  <!-- <button class="btn accordion__opener arrow"></button> -->
                   <div class="accordion__content">
                     <div class="productPageInfo__row">
                       <span>от 4 шт</span>
@@ -649,7 +636,6 @@
                   </div>
                 </div>
               </div>
-              <!-- if no commerce -->
               <div class="productPageCheckout__noCommerce seo seo--productNc">
                 <div class="seo__text scroll">
                   <p>Для отримання індивідуальної цінової пропозиції додайте цей товар в корзину. Вкажіть пріоритетний спосіб доставки і оформите ваш заказ. </p>
@@ -659,7 +645,6 @@
                 </div>
                 <button class="btn seo__more arrow">Читати ще</button>
               </div>
-              <!-- endif -->
             </div>
           </div>
 
@@ -671,13 +656,13 @@
 
           <div class="section__heading">
             <div class="section__titles">
-              <div class="section__title heading">О продукте</div>
+              <div class="section__title heading">Про продукт</div>
             </div>
             <div class="productsSlider__buttons">
               <button class="btn productsSlider__btn productsSlider__btn--active"
-                data-tab="description">Описание</button>
-              <button class="btn productsSlider__btn" data-tab="cooking">Особенности приготовления</button>
-              <button class="btn productsSlider__btn" data-tab="recipes">Рецепты</button>
+                data-tab="description">Опис</button>
+              <button class="btn productsSlider__btn" data-tab="cooking">Особливості приготування</button>
+              <button class="btn productsSlider__btn" data-tab="recipes">Рецепти</button>
             </div>
           </div>
 
@@ -719,17 +704,17 @@
                     <div class="items__col items__colSecond">
                       <div class="heading">Мисо суп</div>
                       <div class="recipes__categories">
-                        <a href="#">РЕЦЕПТИ</a>
+                        <a href="#">РЕЦЕПТI</a>
                         <a href="#">СУП</a>
-                        <a href="#">АЗИАТСКАЯ КУХНЯ</a>
+                        <a href="#">АЗIАТСЬКА КУХНЯ</a>
                       </div>
                     </div>
                     <div class="items__col items__colThird">
-                      <p>Мисосиру — блюдо японской кухни, суп с растворённой в нём пастой мисо. В состав супа включается
-                        множество второстепенных ингредиентов, их набор зависит от региона и сезона.</p>
+                      <p>Місосіру - блюдо японської кухні, суп з розчиненою в ньому пастою місо. До складу супу включається
+                        безліч другорядних інгредієнтів, їх набір залежить від регіону і сезону.</p>
                     </div>
                     <div class="items__col items__colFourth">
-                      <a href="./article.html" class="btn btn--primary items__btn">Подробнее</a>
+                      <a href="./article.html" class="btn btn--primary items__btn">Докладніше</a>
                     </div>
                   </div>
                   <div class="items__item swiper-slide">
@@ -742,19 +727,19 @@
                     <div class="items__col items__colSecond">
                       <div class="heading">Роллы «Филадельфия»</div>
                       <div class="recipes__categories">
-                        <a href="#">РЕЦЕПТИ</a>
+                        <a href="#">РЕЦЕПТI</a>
                         <a href="#">СУП</a>
-                        <a href="#">АЗИАТСКАЯ КУХНЯ</a>
+                        <a href="#">АЗIАТСЬКА КУХНЯ</a>
                       </div>
                     </div>
                     <div class="items__col items__colThird">
-                      <p>Ролл «Филадельфия» — разновидность суши, обычно сделанные из копченого лосося, сливочного сыра
-                        и
-                        огурца. Они также могут включать в себя другие ингредиенты, такие как другие виды рыбы, авокадо,
-                        зелёный лук и семена кунжута. </p>
+                      <p>Ролл «Філадельфія» - різновид суші, звичайно зроблені з копченого лосося, вершкового сиру
+                        і
+                        огірка. Вони також можуть включати в себе інші інгредієнти, такі як інші види риби, авокадо,
+                        зелену цибулю і насіння кунжуту.</p>
                     </div>
                     <div class="items__col items__colFourth">
-                      <a href="./article.html" class="btn btn--primary items__btn">Подробнее</a>
+                      <a href="./article.html" class="btn btn--primary items__btn">Докладніше</a>
                     </div>
                   </div>
                   <div class="items__item swiper-slide">
@@ -765,20 +750,20 @@
                       <div class="recipes__rate ic-star">4.5</div>
                     </div>
                     <div class="items__col items__colSecond">
-                      <div class="heading">Салат с креветками </div>
+                      <div class="heading">Салат з креветками</div>
                       <div class="recipes__categories">
                         <a href="#">РЕЦЕПТИ</a>
                         <a href="#">СУП</a>
-                        <a href="#">АЗИАТСКАЯ КУХНЯ</a>
+                        <a href="#">АЗIАТСЬКА КУХНЯ</a>
                       </div>
                     </div>
                     <div class="items__col items__colThird">
-                      <p>Нет ничего вкуснее, чем легкий, но одновременно питательный салат. Салат с креветками и
+                      <p>Немає нічого смачнішого, ніж легкий, але одночасно живильний салат. Салат з креветками і
                         кунжутом
-                        отлично подойдет для обеда или ужина.</p>
+                        відмінно підійде для обіду або вечері.</p>
                     </div>
                     <div class="items__col items__colFourth">
-                      <a href="./article.html" class="btn btn--primary items__btn">Подробнее</a>
+                      <a href="./article.html" class="btn btn--primary items__btn">Докладніше</a>
                     </div>
                   </div>
                 </div>
@@ -794,7 +779,7 @@
 
           <div class="section__heading">
             <div class="section__titles">
-              <div class="section__title heading">Вместе с этим товаром покупают</div>
+              <div class="section__title heading">Разом з цим товаром купують</div>
               <a href="./catalog.html" class="section__link">Переглянути все</a>
             </div>
           </div>
@@ -1040,32 +1025,32 @@
           <div class="footer__copy">© 2018 sushi-product.com</div>
         </div>
         <div class="footer__list">
-          <div class="footer__title">Клиенту</div>
+          <div class="footer__title">Клiенту</div>
           <ul>
-            <li><a href="./delivery.html">Оплата и Доставка</a></li>
-            <li><a href="./about.html">О Компании</a></li>
+            <li><a href="./delivery.html">Оплата i Доставка</a></li>
+            <li><a href="./about.html">О Компанii</a></li>
             <li><a href="./partners.html">Закупка</a></li>
             <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./carrier.html">Карьера</a></li>
-            <li><a href="./policy.html">Лицензионное соглашение</a></li>
+            <li><a href="./carrier.html">Кар'eра</a></li>
+            <li><a href="./policy.html">Лiцензiйна угода</a></li>
           </ul>
         </div>
         <div class="footer__list">
-          <div class="footer__title">Продукция</div>
+          <div class="footer__title">Продукцiя</div>
           <ul>
             <li><a href="./catalog.html">Бакалея</a></li>
-            <li><a href="./catalog.html">Водоросли</a></li>
+            <li><a href="./catalog.html">Водорослi</a></li>
             <li><a href="./catalog.html">Лапша</a></li>
             <li><a href="./catalog.html">Напитки</a></li>
-            <li><a href="./catalog.html">Салаты</a></li>
-            <li><a href="./catalog.html">Морепродукты</a></li>
+            <li><a href="./catalog.html">Салати</a></li>
+            <li><a href="./catalog.html">Морепродукти</a></li>
           </ul>
         </div>
         <div class="footer__list footer__list--contacts">
-          <div class="footer__title">Контакты</div>
+          <div class="footer__title">Контакти</div>
           <ul>
             <li>
-              <a href="https://goo.gl/maps/H3Z6qpv7cq7V6CZC7" target="_blank" class="ic-marker">Г. Харьков ул.Сумская
+              <a href="https://goo.gl/maps/H3Z6qpv7cq7V6CZC7" target="_blank" class="ic-marker">М. Харьков вул.Сумська
                 25</a>
             </li>
             <li>

@@ -47,86 +47,84 @@
           <form action="#" class="header__search">
             <label class="ic-search" for="header_search"></label>
             <input class="placeholder" name="search" type="text" id="header_search"
-              placeholder="Более 1 000 товаров....">
-            <button class="btn">Поиск</button>
+              placeholder="Бiльш 1 000 товарiв....">
+            <button class="btn">Пошук</button>
           </form>
           <div class="header__tools">
-
+  
             <div class="header__tool header__tool--auth header__tool--logged ic-user open_logged">
               <a href="#" class="arrow">Особистий кабінет</a>
-              <!-- <div class="header__tool header__tool--auth ic-user open_auth">
-              <a href="#">Особистий кабінет</a> -->
               <div class="headerDropdown logged">
                 <ul>
-                  <li><a href="./account.html">Личная информация</a></li>
-                  <li><a href="./wishlist.html">Список избранного</a></li>
-                  <li><a href="./orders.html">История заказов</a></li>
+                  <li><a href="./account.html">Особиста iнформацiя</a></li>
+                  <li><a href="./wishlist.html">Список обраного</a></li>
+                  <li><a href="./orders.html">Iсторiя заказiв</a></li>
                   <li><a href="./bonus.html">Мій бонусний рахунок</a></li>
-                  <li><a href="#">Выйти из аккаунта</a></li>
+                  <li><a href="#">Вийти iз аккаунта</a></li>
                 </ul>
               </div>
             </div>
-
+  
             <button class="btn ic-search-big header__searchMobile open_search"></button>
-
+  
             <div class="header__tool header__tool--wish open_wish ic-heart">
               <div class="header__toolName">В обраному</div>
               <div class="header__toolCount"><span>5</span> товаров</div>
-              <div class="headerDropdown wishlist wishlist--noCommerce1">
+              <div class="headerDropdown wishlist" data-empty="Нет товаров!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
@@ -134,96 +132,80 @@
                 </div>
               </div>
             </div>
-
+  
             <div class="header__tool header__tool--cart open_cart ic-cart" data-link="./cart.html">
               <!-- data-link value is required for redirecting to cart page on mobile devices -->
-
-              <div class="header__toolName">В кошику</div>
+  
+              <div class="header__toolName">У кошику</div>
               <div class="header__toolCount"><span>0</span> товаров</div>
               <div class="headerDropdown cart" data-empty="Ваша корзина пустая!">
                 <div class="headerDropdown__items scroll scroll--radius">
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/1.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Борошно Хуторок пшеничне,
                         фасоване, 1 кг</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
-                  <div class="headerDropdown__item">
+                  <div class="headerDropdown__item" data-deleted="Товар видалений!">
                     <img src="img/products/3.png" class="headerDropdown__thumb" alt="">
                     <div class="headerDropdown__caption">
                       <a href="./product.html" class="headerDropdown__name">Сир-крем Hochland вершковий
                         60% жиру, 200г</a>
                       <div class="headerDropdown__price">589 грн</div>
                     </div>
-                    <button class="btn ic-trash headerDropdown__del"></button>
+                    <button class="btn ic-trash headerDropdown__del cartContentProducts__del"></button>
                   </div>
                 </div>
                 <div class="headerDropdown__bottom">
-                  <!-- if no-commerce -->
-                  <!-- <div class="headerDropdown__total headerDropdown__total--noCommerce">
-                    Для отримання індивідуальної цінової пропозиції оформiть ваше замовлення
-                    <div class="tooltip tooltip--dropBottom">
-                      <div class="tooltip__pick">?</div>
-                      <div class="tooltip__wrap">
-                        <div class="tooltip__content">Додайте обранi товари до кошика та
-                          оформiть замовлення, слiдучи простим крокам.
-                          Пiсля успишного оформлення з Вами зв’яжеться наш менеджер та
-                          повiдомить вам вартiсть замовлення, умови оплати i доставки, i
-                          вiдповiсть на усi запитання.</div>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- else -->
                   <div class="headerDropdown__total headerDropdown__total--commerce">
                     <div class="cart__total">Разом:</div>
                     <div class="cart__price">838,54 грн</div>
                   </div>
-                  <!-- endif -->
                   <a href="./checkout.html" class="btn btn--primary">Оформити замовлення</a>
                   <a href="./cart.html" class="btn btn--dashed">Перейти до кошика</a>
                 </div>
               </div>
             </div>
-
+  
           </div>
           <button class="btn ic-burger header__burger open_mobile"></button>
         </div>
@@ -237,53 +219,53 @@
                     <a href="./catalog.html">Бакалея</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Мука и панировка</a>
+                    <a href="./catalog.html">Мука i панiровка</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 1</a>
+                        <a href="./catalog2.html">Мука i панiровка 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 2</a>
+                        <a href="./catalog2.html">Мука i панiровка 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Мука и панировка 3</a>
+                        <a href="./catalog2.html">Мука i панiровка 3</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Водоросли и грибы</a>
+                    <a href="./catalog.html">Водорослi та гриби</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Нори</a>
+                        <a href="./catalog2.html">Норi</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Водоросли разное</a>
+                        <a href="./catalog2.html">Водорослi</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Грибы</a>
+                        <a href="./catalog2.html">Гриби</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Васаби</a>
+                    <a href="./catalog.html">Васабi</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Имбирь</a>
+                    <a href="./catalog.html">iмбир</a>
                   </li>
                   <li class="catalog__link">
                     <a href="./catalog.html">Уксус</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Икра</a>
+                    <a href="./catalog.html">iкра</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Икра 1</a>
+                        <a href="./catalog2.html">iкра 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Икра 2</a>
+                        <a href="./catalog2.html">iкра 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Икра 3</a>
+                        <a href="./catalog2.html">iкра 3</a>
                       </li>
                     </ul>
                   </li>
@@ -302,53 +284,53 @@
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Морепродукты</a>
+                    <a href="./catalog.html">Морепродукти</a>
                   </li>
                   <li class="catalog__link">
                     <a href="./catalog.html">Рис</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
-                    <a href="./catalog.html">Рыба</a>
+                    <a href="./catalog.html">Риба</a>
                     <ul class="catalog__child">
                       <li>
-                        <a href="./catalog2.html">Рыба 1</a>
+                        <a href="./catalog2.html">Риба 1</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Рыба 2</a>
+                        <a href="./catalog2.html">Риба 2</a>
                       </li>
                       <li>
-                        <a href="./catalog2.html">Рыба 3</a>
+                        <a href="./catalog2.html">Риба 3</a>
                       </li>
                     </ul>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Сопутствующие товары</a>
+                    <a href="./catalog.html">Сопутнi товари</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Соусы</a>
+                    <a href="./catalog.html">Соуси</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Сыры и сливки</a>
+                    <a href="./catalog.html">Сири та сливки</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="./catalog.html">Фасованная продукция</a>
+                    <a href="./catalog.html">Фасована продукцiя</a>
                   </li>
                 </ul>
                 <ul class="catalog__pages">
                   <li class="catalog__link">
-                    <a href="#">Акция</a>
+                    <a href="#">Акцiя</a>
                   </li>
                   <li class="catalog__link">
                     <a href="#">Новинки</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="#">Собственное производство</a>
+                    <a href="#">Особисте виробництво</a>
                   </li>
                   <li class="catalog__link">
                     <a href="#">Эксклюзив</a>
                   </li>
                   <li class="catalog__link">
-                    <a href="#">Актуальное</a>
+                    <a href="#">Актуальне</a>
                   </li>
                   <li class="catalog__link catalog__link--parent arrow">
                     <a href="#">Подборки</a>
@@ -400,7 +382,7 @@
       <div class="container">
         <ul class="breadcrumbs__list">
           <li class="breadcrumbs__item breadcrumbs__item--start">
-            <a href="./index.html" class="ic-home">Главная</a>
+            <a href="./index.html" class="ic-home">Головна</a>
           </li>
           <li class="breadcrumbs__item breadcrumbs__item--end">Про компанiю</li>
         </ul>
@@ -625,32 +607,32 @@
           <div class="footer__copy">© 2018 sushi-product.com</div>
         </div>
         <div class="footer__list">
-          <div class="footer__title">Клиенту</div>
+          <div class="footer__title">Клiенту</div>
           <ul>
-            <li><a href="./delivery.html">Оплата и Доставка</a></li>
-            <li><a href="./about.html">О Компании</a></li>
+            <li><a href="./delivery.html">Оплата i Доставка</a></li>
+            <li><a href="./about.html">О Компанii</a></li>
             <li><a href="./partners.html">Закупка</a></li>
             <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./carrier.html">Карьера</a></li>
-            <li><a href="./policy.html">Лицензионное соглашение</a></li>
+            <li><a href="./carrier.html">Кар'eра</a></li>
+            <li><a href="./policy.html">Лiцензiйна угода</a></li>
           </ul>
         </div>
         <div class="footer__list">
-          <div class="footer__title">Продукция</div>
+          <div class="footer__title">Продукцiя</div>
           <ul>
             <li><a href="./catalog.html">Бакалея</a></li>
-            <li><a href="./catalog.html">Водоросли</a></li>
+            <li><a href="./catalog.html">Водорослi</a></li>
             <li><a href="./catalog.html">Лапша</a></li>
             <li><a href="./catalog.html">Напитки</a></li>
-            <li><a href="./catalog.html">Салаты</a></li>
-            <li><a href="./catalog.html">Морепродукты</a></li>
+            <li><a href="./catalog.html">Салати</a></li>
+            <li><a href="./catalog.html">Морепродукти</a></li>
           </ul>
         </div>
         <div class="footer__list footer__list--contacts">
-          <div class="footer__title">Контакты</div>
+          <div class="footer__title">Контакти</div>
           <ul>
             <li>
-              <a href="https://goo.gl/maps/H3Z6qpv7cq7V6CZC7" target="_blank" class="ic-marker">Г. Харьков ул.Сумская
+              <a href="https://goo.gl/maps/H3Z6qpv7cq7V6CZC7" target="_blank" class="ic-marker">М. Харьков вул.Сумська
                 25</a>
             </li>
             <li>
